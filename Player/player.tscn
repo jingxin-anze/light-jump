@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://clsxih71pb6nd"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_1knux"]
+[ext_resource type="Script" path="res://Player/state_macine.gd" id="1_m666x"]
+[ext_resource type="Texture2D" uid="uid://csax1m1vxt8q5" path="res://icon.svg" id="2_h1owf"]
+[ext_resource type="Script" path="res://Player/idle.gd" id="4_pcndm"]
+[ext_resource type="Script" path="res://Player/run.gd" id="5_4r43s"]
+[ext_resource type="Script" path="res://Player/jump.gd" id="6_j873j"]
+[ext_resource type="Script" path="res://Player/fall.gd" id="7_xx753"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxmw3"]
+size = Vector2(54, 54)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_1knux")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.422727, 0.422727)
+texture = ExtResource("2_h1owf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uxmw3")
+
+[node name="StateMacine" type="Node2D" parent="." node_paths=PackedStringArray("current_state")]
+script = ExtResource("1_m666x")
+current_state = NodePath("Idle")
+
+[node name="Idle" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player")]
+script = ExtResource("4_pcndm")
+player = NodePath("../..")
+
+[node name="Run" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player")]
+script = ExtResource("5_4r43s")
+player = NodePath("../..")
+
+[node name="Jump" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player")]
+script = ExtResource("6_j873j")
+player = NodePath("../..")
+
+[node name="Fall" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player")]
+script = ExtResource("7_xx753")
+player = NodePath("../..")
