@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gqwsgr70cvo"
-path="res://.godot/imported/精灵-005.png-2f736bd8a3eb2ddf395eaf68ce629fd0.ctex"
+path="res://.godot/imported/精灵-005.png-2a896872cb22d7982930f260a4417bba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Module/TestScene/Resource/精灵-005.png"
-dest_files=["res://.godot/imported/精灵-005.png-2f736bd8a3eb2ddf395eaf68ce629fd0.ctex"]
+source_file="res://Scenes/Module/LightBackground/Resource/精灵-005.png"
+dest_files=["res://.godot/imported/精灵-005.png-2a896872cb22d7982930f260a4417bba.ctex"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://dg1i5muyqauf5"]
 
-[ext_resource type="Texture2D" uid="uid://cwa1oyxleaknv" path="res://Scenes/Module/TestScene/Resource/torch-Sheet.png" id="1_1h5h2"]
-[ext_resource type="Texture2D" uid="uid://gqwsgr70cvo" path="res://Scenes/Module/TestScene/Resource/精灵-005.png" id="1_cnkcm"]
-[ext_resource type="Script" path="res://Scenes/Module/TestScene/Script/point_light_2d.gd" id="3_6hiyn"]
+[ext_resource type="Texture2D" uid="uid://cwa1oyxleaknv" path="res://Scenes/Module/LightBackground/Resource/torch-Sheet.png" id="1_1h5h2"]
+[ext_resource type="Texture2D" uid="uid://gqwsgr70cvo" path="res://Scenes/Module/LightBackground/Resource/精灵-005.png" id="1_cnkcm"]
+[ext_resource type="Script" path="res://Scenes/Module/LightBackground/Script/point_light_2d.gd" id="3_6hiyn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nyh7i"]
 atlas = ExtResource("1_1h5h2")
