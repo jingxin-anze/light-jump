@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://mptm71nq6jf2"]
+[gd_scene load_steps=5 format=3 uid="uid://mptm71nq6jf2"]
 
 [ext_resource type="PackedScene" uid="uid://clsxih71pb6nd" path="res://Scenes/Player/player.tscn" id="1_bx366"]
+[ext_resource type="PackedScene" uid="uid://dlqkt4nobjp6n" path="res://Scenes/Ui/start_ui.tscn" id="2_4i7x4"]
+[ext_resource type="PackedScene" uid="uid://dg1i5muyqauf5" path="res://Scenes/Module/TestScene/TestScenc.tscn" id="2_l85e7"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mnkeo"]
 
@@ -13,3 +15,13 @@ position = Vector2(40, 584)
 shape = SubResource("WorldBoundaryShape2D_mnkeo")
 
 [node name="Player" parent="." instance=ExtResource("1_bx366")]
+
+[node name="LightBackground" parent="." instance=ExtResource("2_l85e7")]
+position = Vector2(1140, 519)
+scale = Vector2(2, 2)
+
+[node name="MainUI" parent="." instance=ExtResource("2_4i7x4")]
+offset_left = 382.0
+offset_top = 529.0
+offset_right = 382.0
+offset_bottom = 529.0
