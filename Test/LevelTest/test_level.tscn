@@ -1,0 +1,125 @@
+[gd_scene load_steps=13 format=3 uid="uid://boalubf3kttpf"]
+
+[ext_resource type="Script" path="res://Test/LevelTest/test_level.gd" id="1_0e2xd"]
+[ext_resource type="PackedScene" uid="uid://clsxih71pb6nd" path="res://Scenes/Player/player.tscn" id="1_rskgl"]
+[ext_resource type="Texture2D" uid="uid://csax1m1vxt8q5" path="res://icon.svg" id="2_85f25"]
+[ext_resource type="PackedScene" uid="uid://dg1i5muyqauf5" path="res://Scenes/Module/LightBackground/LightBackground.tscn" id="3_sq62i"]
+[ext_resource type="Script" path="res://Test/LevelTest/death_area.gd" id="4_8hkta"]
+[ext_resource type="Script" path="res://Test/LevelTest/save_one.gd" id="6_huocc"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_dxh62"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evjuc"]
+size = Vector2(966.5, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nqsj"]
+size = Vector2(39, 373)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ruv48"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad6vx"]
+size = Vector2(1572, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6gaw"]
+size = Vector2(18, 96)
+
+[node name="TestLevel" type="Node2D"]
+script = ExtResource("1_0e2xd")
+metadata/_edit_horizontal_guides_ = [624.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.509804, 0.490196, 0.635294, 1)
+offset_right = 7159.0
+offset_bottom = 1794.0
+texture = SubResource("CanvasTexture_dxh62")
+
+[node name="Statics" type="Node2D" parent="."]
+
+[node name="Ground" type="StaticBody2D" parent="Statics"]
+position = Vector2(1138, 1083)
+
+[node name="Icon" type="Sprite2D" parent="Statics/Ground"]
+position = Vector2(-634, -1.5)
+scale = Vector2(7.60938, 0.414062)
+texture = ExtResource("2_85f25")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Statics/Ground"]
+position = Vector2(-637, -1)
+shape = SubResource("RectangleShape2D_evjuc")
+
+[node name="Block" type="StaticBody2D" parent="Statics"]
+position = Vector2(1176, 117)
+rotation = 1.5708
+
+[node name="Icon" type="Sprite2D" parent="Statics/Block"]
+position = Vector2(867, -133)
+scale = Vector2(0.305965, 3.00781)
+texture = ExtResource("2_85f25")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Statics/Block"]
+position = Vector2(865.5, -133.5)
+shape = SubResource("RectangleShape2D_6nqsj")
+
+[node name="Wall" type="StaticBody2D" parent="Statics"]
+position = Vector2(-3, 103)
+rotation = 1.5708
+
+[node name="Icon" type="Sprite2D" parent="Statics/Wall"]
+scale = Vector2(17.5156, 0.257813)
+texture = ExtResource("2_85f25")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Statics/Wall"]
+shape = SubResource("WorldBoundaryShape2D_ruv48")
+
+[node name="Player" parent="." instance=ExtResource("1_rskgl")]
+z_index = 3
+position = Vector2(252, 749)
+jump_height = 170.0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_bottom = 1070
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.7
+blend_mode = 1
+
+[node name="TestScenc" parent="." instance=ExtResource("3_sq62i")]
+position = Vector2(1175, 876)
+
+[node name="Backgroud" parent="TestScenc/Node" index="0"]
+visible = false
+
+[node name="PointLight2D" parent="TestScenc/Node" index="2"]
+position = Vector2(-12, -2)
+texture_scale = 0.5
+
+[node name="DeathArea" type="Area2D" parent="."]
+position = Vector2(842, 1196)
+script = ExtResource("4_8hkta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathArea"]
+position = Vector2(776, 2)
+shape = SubResource("RectangleShape2D_ad6vx")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1082.0
+offset_top = 743.0
+offset_right = 1253.0
+offset_bottom = 810.0
+theme_override_font_sizes/font_size = 48
+text = "存档点1"
+
+[node name="SaveOne" type="Area2D" parent="."]
+position = Vector2(1172, 891)
+script = ExtResource("6_huocc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SaveOne"]
+position = Vector2(1, 17)
+shape = SubResource("RectangleShape2D_x6gaw")
+
+[connection signal="body_entered" from="DeathArea" to="DeathArea" method="_on_body_entered"]
+[connection signal="body_entered" from="SaveOne" to="SaveOne" method="_on_body_entered"]
+
+[editable path="TestScenc"]
