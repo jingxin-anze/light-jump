@@ -48,7 +48,7 @@ animations = [{
 [node name="TestScenc" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(566, 341)
+position = Vector2(568, 339)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_qtlui")
 autoplay = "default"
