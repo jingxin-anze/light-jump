@@ -13,6 +13,8 @@ size = Vector2(54, 54)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_1knux")
+SPEED = 150.0
+jump_height = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.422727, 0.422727)
