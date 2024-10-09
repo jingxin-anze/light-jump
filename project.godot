@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="light-jump"
-run/main_scene="res://Ui/start_ui.tscn"
+run/main_scene="res://Scenes/Ui/start_ui.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [editor]
 

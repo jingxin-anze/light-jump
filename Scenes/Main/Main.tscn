@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://mptm71nq6jf2"]
 
-[ext_resource type="PackedScene" uid="uid://clsxih71pb6nd" path="res://Player/player.tscn" id="1_nc07n"]
+[ext_resource type="PackedScene" uid="uid://clsxih71pb6nd" path="res://Scenes/Player/player.tscn" id="1_bx366"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mnkeo"]
 
@@ -12,4 +12,4 @@
 position = Vector2(40, 584)
 shape = SubResource("WorldBoundaryShape2D_mnkeo")
 
-[node name="Player" parent="." instance=ExtResource("1_nc07n")]
+[node name="Player" parent="." instance=ExtResource("1_bx366")]

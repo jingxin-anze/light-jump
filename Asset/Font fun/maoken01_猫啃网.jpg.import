@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu81ul4x0d330"
-path="res://.godot/imported/maoken03_猫啃网.png-d6e37cdeb949416ff111f7c940c3805e.ctex"
+uid="uid://48uumdtvuesd"
+path="res://.godot/imported/maoken01_猫啃网.jpg-f80aa41720a12d1c06a0ed8f0d067d5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Font fun/maoken03_猫啃网.png"
-dest_files=["res://.godot/imported/maoken03_猫啃网.png-d6e37cdeb949416ff111f7c940c3805e.ctex"]
+source_file="res://Asset/Font fun/maoken01_猫啃网.jpg"
+dest_files=["res://.godot/imported/maoken01_猫啃网.jpg-f80aa41720a12d1c06a0ed8f0d067d5a.ctex"]
 
 [params]
 
