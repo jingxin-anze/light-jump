@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="StateMacine"
-run/main_scene="res://Main/Main.tscn"
+config/name="light-jump"
+run/main_scene="res://Ui/start_ui.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[editor]
+
+movie_writer/movie_file="F:/shipin/123.avi"
 
 [input]
 

@@ -1,0 +1,104 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlqkt4nobjp6n"]
+
+[ext_resource type="Theme" uid="uid://c78axvp43v5yl" path="res://Theme/start_ui_theme.tres" id="1_e3nsy"]
+[ext_resource type="Script" path="res://Ui/AnimationComponent.gd" id="2_hvv3s"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_e3nsy")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -35.5
+offset_right = 20.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationComponent" type="Node" parent="PanelContainer"]
+script = ExtResource("2_hvv3s")
+enter_animation = true
+enter_time = 0.5
+enter_delay = 0.2
+enter_transition = 9
+enter_easing = 2
+enter_scale = Vector2(0, 0)
+enter_modulate = Color(1, 1, 1, 0)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer2"]
+layout_mode = 2
+text = "light-jump"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "start"
+
+[node name="AnimationComponent" type="Node" parent="PanelContainer/VBoxContainer2/VBoxContainer/Button" node_paths=PackedStringArray("wait_for")]
+script = ExtResource("2_hvv3s")
+enter_animation = true
+hover_scale = Vector2(1.5, 1.5)
+wait_for = NodePath("../../../../AnimationComponent")
+enter_time = 0.4
+enter_delay = 0.1
+enter_scale = Vector2(0, 0)
+
+[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "achievement"
+
+[node name="AnimationComponent2" type="Node" parent="PanelContainer/VBoxContainer2/VBoxContainer/Button2" node_paths=PackedStringArray("wait_for")]
+script = ExtResource("2_hvv3s")
+enter_animation = true
+hover_scale = Vector2(1.5, 1.5)
+wait_for = NodePath("../../../../AnimationComponent")
+enter_time = 0.5
+enter_delay = 0.1
+enter_scale = Vector2(0, 0)
+
+[node name="Button3" type="Button" parent="PanelContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "set"
+
+[node name="AnimationComponent3" type="Node" parent="PanelContainer/VBoxContainer2/VBoxContainer/Button3" node_paths=PackedStringArray("wait_for")]
+script = ExtResource("2_hvv3s")
+enter_animation = true
+hover_scale = Vector2(1.5, 1.5)
+wait_for = NodePath("../../../../AnimationComponent")
+enter_time = 0.6
+enter_delay = 0.1
+enter_scale = Vector2(0, 0)
+
+[node name="Button4" type="Button" parent="PanelContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "exit"
+
+[node name="AnimationComponent4" type="Node" parent="PanelContainer/VBoxContainer2/VBoxContainer/Button4" node_paths=PackedStringArray("wait_for")]
+script = ExtResource("2_hvv3s")
+enter_animation = true
+hover_scale = Vector2(1.5, 1.5)
+wait_for = NodePath("../../../../AnimationComponent")
+enter_time = 0.7
+enter_delay = 0.1
+enter_scale = Vector2(0, 0)
