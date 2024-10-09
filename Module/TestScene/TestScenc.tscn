@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dg1i5muyqauf5"]
+[gd_scene load_steps=13 format=3 uid="uid://dg1i5muyqauf5"]
 
 [ext_resource type="Texture2D" uid="uid://cwa1oyxleaknv" path="res://Module/TestScene/Resource/torch-Sheet.png" id="1_1h5h2"]
+[ext_resource type="Texture2D" uid="uid://gqwsgr70cvo" path="res://Module/TestScene/Resource/精灵-005.png" id="1_cnkcm"]
+[ext_resource type="Script" path="res://Module/TestScene/Scripts/point_light_2d.gd" id="3_w58l8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nyh7i"]
 atlas = ExtResource("1_1h5h2")
@@ -45,10 +47,40 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_a5fkl"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ayi5f"]
+gradient = SubResource("Gradient_a5fkl")
+fill = 1
+fill_from = Vector2(0.495413, 0.449541)
+fill_to = Vector2(0.821101, 0.165138)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dgq1i"]
+cull_mode = 2
+polygon = PackedVector2Array(-2.42282, -3.69622, -1.71616, -5.05151, 0.100948, -4.9283, 0.807602, -3.57302)
+
 [node name="TestScenc" type="Node2D"]
+
+[node name="Backgroud" type="Sprite2D" parent="."]
+position = Vector2(565, 331)
+scale = Vector2(30.7677, -7.80901)
+texture = ExtResource("1_cnkcm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(568, 339)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_qtlui")
 autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(574, 332)
+scale = Vector2(9.90583, -8.11638)
+color = Color(0.98, 0.65072, 0.0392, 1)
+shadow_filter = 2
+shadow_filter_smooth = 3.4
+texture = SubResource("GradientTexture2D_ayi5f")
+script = ExtResource("3_w58l8")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="PointLight2D"]
+occluder = SubResource("OccluderPolygon2D_dgq1i")

@@ -25,6 +25,7 @@ offset_right = 20.0
 offset_bottom = 35.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.999994, 1)
 
 [node name="AnimationComponent" type="Node" parent="PanelContainer"]
 script = ExtResource("2_hvv3s")
