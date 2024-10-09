@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://clsxih71pb6nd"]
 
-[ext_resource type="Script" path="res://Player/player.gd" id="1_1knux"]
-[ext_resource type="Script" path="res://Player/state_macine.gd" id="1_m666x"]
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_1knux"]
+[ext_resource type="Script" path="res://Scenes/Player/state_macine.gd" id="1_m666x"]
 [ext_resource type="Texture2D" uid="uid://csax1m1vxt8q5" path="res://icon.svg" id="2_h1owf"]
-[ext_resource type="Script" path="res://Player/idle.gd" id="4_pcndm"]
-[ext_resource type="Script" path="res://Player/run.gd" id="5_4r43s"]
-[ext_resource type="Script" path="res://Player/jump.gd" id="6_j873j"]
-[ext_resource type="Script" path="res://Player/fall.gd" id="7_xx753"]
+[ext_resource type="Script" path="res://Scenes/Player/idle.gd" id="4_pcndm"]
+[ext_resource type="Script" path="res://Scenes/Player/run.gd" id="5_4r43s"]
+[ext_resource type="Script" path="res://Scenes/Player/jump.gd" id="6_j873j"]
+[ext_resource type="Script" path="res://Scenes/Player/fall.gd" id="7_xx753"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uxmw3"]
 size = Vector2(54, 54)

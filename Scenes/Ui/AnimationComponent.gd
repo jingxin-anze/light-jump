@@ -120,7 +120,7 @@ func set_up() -> void:
 func on_enter() -> void:
 	add_tween(enter_values, true, 0.0, 0.0, IMMEDIATE_TRANSITION, hover_easing,false
 	)
-	
+
 	if wait_for:
 		pass
 	else:

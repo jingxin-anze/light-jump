@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bgobvrldc4wip"
-path="res://.godot/imported/ChildFunSans-Demo.ttf-b6bad9c7ea0a12b8368d9e4382e77583.fontdata"
+path="res://.godot/imported/ChildFunSans-Demo.ttf-10547b6f9fcbf70f165065c9695c6531.fontdata"
 
 [deps]
 
-source_file="res://Font fun/Font fun/ChildFunSans-Demo.ttf"
-dest_files=["res://.godot/imported/ChildFunSans-Demo.ttf-b6bad9c7ea0a12b8368d9e4382e77583.fontdata"]
+source_file="res://Asset/Font fun/Font fun/ChildFunSans-Demo.ttf"
+dest_files=["res://.godot/imported/ChildFunSans-Demo.ttf-10547b6f9fcbf70f165065c9695c6531.fontdata"]
 
 [params]
 
