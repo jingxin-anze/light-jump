@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://dg1i5muyqauf5"]
 
-[ext_resource type="Texture2D" uid="uid://cwa1oyxleaknv" path="res://Module/TestScene/Resource/torch-Sheet.png" id="1_1h5h2"]
-[ext_resource type="Texture2D" uid="uid://gqwsgr70cvo" path="res://Module/TestScene/Resource/精灵-005.png" id="1_cnkcm"]
-[ext_resource type="Script" path="res://Module/TestScene/Scripts/point_light_2d.gd" id="3_w58l8"]
+[ext_resource type="Texture2D" uid="uid://cwa1oyxleaknv" path="res://Scenes/Module/TestScene/Resource/torch-Sheet.png" id="1_1h5h2"]
+[ext_resource type="Texture2D" uid="uid://gqwsgr70cvo" path="res://Scenes/Module/TestScene/Resource/精灵-005.png" id="1_cnkcm"]
+[ext_resource type="Script" path="res://Scenes/Module/TestScene/Script/point_light_2d.gd" id="3_6hiyn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nyh7i"]
 atlas = ExtResource("1_1h5h2")
@@ -80,7 +80,7 @@ color = Color(0.98, 0.65072, 0.0392, 1)
 shadow_filter = 2
 shadow_filter_smooth = 3.4
 texture = SubResource("GradientTexture2D_ayi5f")
-script = ExtResource("3_w58l8")
+script = ExtResource("3_6hiyn")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="PointLight2D"]
 occluder = SubResource("OccluderPolygon2D_dgq1i")
