@@ -224,7 +224,7 @@ autoplay = "Idle"
 
 [node name="Hand" type="AnimatedSprite2D" parent="Body"]
 sprite_frames = SubResource("SpriteFrames_4acv6")
-animation = &"Walk"
+animation = &"Atack"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
