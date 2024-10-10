@@ -1,12 +1,56 @@
-[gd_scene load_steps=9 format=3 uid="uid://clsxih71pb6nd"]
+[gd_scene load_steps=15 format=3 uid="uid://clsxih71pb6nd"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_1knux"]
 [ext_resource type="Script" path="res://Scenes/Player/state_macine.gd" id="1_m666x"]
-[ext_resource type="Texture2D" uid="uid://csax1m1vxt8q5" path="res://icon.svg" id="2_h1owf"]
+[ext_resource type="Texture2D" uid="uid://lvao0queys5h" path="res://Asset/Anim/player2-Sheet.png" id="2_asxgp"]
 [ext_resource type="Script" path="res://Scenes/Player/idle.gd" id="4_pcndm"]
 [ext_resource type="Script" path="res://Scenes/Player/run.gd" id="5_4r43s"]
 [ext_resource type="Script" path="res://Scenes/Player/jump.gd" id="6_j873j"]
 [ext_resource type="Script" path="res://Scenes/Player/fall.gd" id="7_xx753"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usrbb"]
+atlas = ExtResource("2_asxgp")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdifm"]
+atlas = ExtResource("2_asxgp")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_65fxx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usrbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdifm")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebv3f"]
+atlas = ExtResource("2_asxgp")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nk4ov"]
+atlas = ExtResource("2_asxgp")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4acv6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebv3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nk4ov")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uxmw3"]
 size = Vector2(54, 54)
@@ -16,9 +60,17 @@ script = ExtResource("1_1knux")
 SPEED = 150.0
 jump_height = 100.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.422727, 0.422727)
-texture = ExtResource("2_h1owf")
+[node name="Body" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_65fxx")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.848135
+
+[node name="Hand" type="AnimatedSprite2D" parent="Body"]
+sprite_frames = SubResource("SpriteFrames_4acv6")
+autoplay = "default"
+frame_progress = 0.990725
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uxmw3")
