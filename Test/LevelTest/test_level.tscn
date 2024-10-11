@@ -119,11 +119,11 @@ target_position = Vector2(0, 28)
 
 [node name="Player" parent="." instance=ExtResource("1_rskgl")]
 z_index = 3
-position = Vector2(454, 973)
+position = Vector2(252, 749)
+scale = Vector2(2, 2)
 jump_height = 170.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(2, 2)
 limit_left = 0
 limit_bottom = 1070
 
