@@ -1,0 +1,90 @@
+[gd_scene load_steps=12 format=3 uid="uid://456wy7bp1ync"]
+
+[ext_resource type="Texture2D" uid="uid://gx1b6imhr87o" path="res://Scenes/Module/Bonfire/Resouce/fire-Sheet.png" id="1_intc2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfq42"]
+atlas = ExtResource("1_intc2")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2aly"]
+atlas = ExtResource("1_intc2")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80cnv"]
+atlas = ExtResource("1_intc2")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmc5w"]
+atlas = ExtResource("1_intc2")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0c6b"]
+atlas = ExtResource("1_intc2")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_soo01"]
+atlas = ExtResource("1_intc2")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d44qe"]
+atlas = ExtResource("1_intc2")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6rxn"]
+atlas = ExtResource("1_intc2")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl4vu"]
+atlas = ExtResource("1_intc2")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8f4v5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfq42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2aly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80cnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmc5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0c6b")
+}],
+"loop": true,
+"name": &"Burn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soo01")
+}],
+"loop": true,
+"name": &"DnotLight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d44qe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6rxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl4vu")
+}],
+"loop": true,
+"name": &"Light",
+"speed": 5.0
+}]
+
+[node name="Bonfire" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8f4v5")
+animation = &"Light"
