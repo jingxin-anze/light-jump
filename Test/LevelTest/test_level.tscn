@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://boalubf3kttpf"]
+[gd_scene load_steps=20 format=4 uid="uid://boalubf3kttpf"]
 
 [ext_resource type="Script" path="res://Test/LevelTest/test_level.gd" id="1_0e2xd"]
 [ext_resource type="PackedScene" uid="uid://clsxih71pb6nd" path="res://Scenes/Player/player.tscn" id="1_rskgl"]
@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dg1i5muyqauf5" path="res://Scenes/Module/LightBackground/LightBackground.tscn" id="3_sq62i"]
 [ext_resource type="Script" path="res://Test/LevelTest/death_area.gd" id="4_8hkta"]
 [ext_resource type="Script" path="res://Test/LevelTest/save_one.gd" id="6_huocc"]
-[ext_resource type="Script" path="res://Scenes/Module/LightBackground/light_background.gd" id="6_yunqx"]
 [ext_resource type="Script" path="res://Test/LevelTest/box.gd" id="7_bm4b4"]
+[ext_resource type="PackedScene" uid="uid://hrui0frs4g7m" path="res://Scenes/Module/Crystal/Crystal.tscn" id="8_cqnni"]
+[ext_resource type="Texture2D" uid="uid://dm4cl68ru4t3n" path="res://Asset/TileSet/map3.png" id="8_detcv"]
+[ext_resource type="PackedScene" uid="uid://456wy7bp1ync" path="res://Scenes/Module/Bonfire/Bonfire.tscn" id="8_w8ubp"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_dxh62"]
 
@@ -19,31 +21,79 @@ size = Vector2(39, 373)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ruv48"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0cb3"]
-size = Vector2(82, 73)
-
-[sub_resource type="Curve" id="Curve_513jq"]
-max_value = 2.0
-_data = [Vector2(0.00292398, 2), 0.0, 0.0, 0, 0, Vector2(0.979532, 0.544052), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_ujbkh"]
-curve = SubResource("Curve_513jq")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kf6jj"]
-particle_flag_disable_z = true
-emission_shape = 3
-emission_box_extents = Vector3(120, 120, 1)
-gravity = Vector3(0, -10, 0)
-scale_curve = SubResource("CurveTexture_ujbkh")
-hue_variation_min = -2.23517e-08
-hue_variation_max = 0.12
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ad6vx"]
 size = Vector2(1572, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6gaw"]
 size = Vector2(18, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0cb3"]
+size = Vector2(82, 73)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5o6f8"]
+texture = ExtResource("8_detcv")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+3:0/0 = 0
+4:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_rn2r4"]
+tile_size = Vector2i(24, 24)
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "ground0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_5o6f8")
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_0e2xd")
@@ -95,28 +145,6 @@ texture = ExtResource("2_85f25")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Statics/Wall"]
 shape = SubResource("WorldBoundaryShape2D_ruv48")
 
-[node name="Box" type="RigidBody2D" parent="Statics"]
-position = Vector2(683, 1023)
-script = ExtResource("7_bm4b4")
-
-[node name="Icon" type="Sprite2D" parent="Statics/Box"]
-scale = Vector2(0.65625, 0.589844)
-texture = ExtResource("2_85f25")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Statics/Box"]
-shape = SubResource("RectangleShape2D_m0cb3")
-debug_color = Color(0.828053, 0.367079, 0.396247, 0.42)
-
-[node name="Left" type="RayCast2D" parent="Statics/Box"]
-position = Vector2(-11, 14)
-rotation = 1.5708
-target_position = Vector2(0, 33)
-
-[node name="Right" type="RayCast2D" parent="Statics/Box"]
-position = Vector2(15, 15)
-rotation = -1.5708
-target_position = Vector2(0, 28)
-
 [node name="Player" parent="." instance=ExtResource("1_rskgl")]
 z_index = 3
 position = Vector2(630, 1040)
@@ -128,27 +156,8 @@ zoom = Vector2(4, 4)
 limit_left = 0
 limit_bottom = 1070
 
-[node name="TestScenc" parent="Player" instance=ExtResource("3_sq62i")]
-position = Vector2(-1, -8.5)
-scale = Vector2(0.1, 0.1)
-script = ExtResource("6_yunqx")
-
-[node name="Node" parent="Player/TestScenc" index="0"]
-position = Vector2(-221.429, -75)
-
-[node name="Backgroud" parent="Player/TestScenc/Node" index="0"]
-visible = false
-
-[node name="PointLight2D" parent="Player/TestScenc/Node" index="2"]
-position = Vector2(5.50673, -3.36205)
-scale = Vector2(6, -4.916)
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Player/TestScenc/Node" index="3"]
-amount = 35
-process_material = SubResource("ParticleProcessMaterial_kf6jj")
-lifetime = 2.0
-
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 energy = 0.7
 blend_mode = 1
 
@@ -186,8 +195,44 @@ script = ExtResource("6_huocc")
 position = Vector2(1, 17)
 shape = SubResource("RectangleShape2D_x6gaw")
 
+[node name="Box" type="RigidBody2D" parent="."]
+position = Vector2(830, 983)
+script = ExtResource("7_bm4b4")
+
+[node name="Icon" type="Sprite2D" parent="Box"]
+position = Vector2(-176, 34.25)
+scale = Vector2(0.65625, 0.589844)
+texture = ExtResource("2_85f25")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
+position = Vector2(-176, 34.5)
+shape = SubResource("RectangleShape2D_m0cb3")
+debug_color = Color(0.828053, 0.367079, 0.396247, 0.42)
+
+[node name="Left" type="RayCast2D" parent="Box"]
+position = Vector2(-188, 34)
+rotation = 1.5708
+target_position = Vector2(0, 33)
+
+[node name="Right" type="RayCast2D" parent="Box"]
+position = Vector2(-159, 34)
+rotation = -1.5708
+target_position = Vector2(0, 28)
+
+[node name="Bonfire" parent="." instance=ExtResource("8_w8ubp")]
+position = Vector2(586, 1043)
+
+[node name="Crystal2" parent="." instance=ExtResource("8_cqnni")]
+position = Vector2(540, 1043)
+
+[node name="Crystal" parent="." instance=ExtResource("8_cqnni")]
+position = Vector2(435, 1040)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("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")
+tile_set = SubResource("TileSet_rn2r4")
+
 [connection signal="body_entered" from="DeathArea" to="DeathArea" method="_on_body_entered"]
 [connection signal="body_entered" from="SaveOne" to="SaveOne" method="_on_body_entered"]
 
-[editable path="Player/TestScenc"]
 [editable path="TestScenc"]

@@ -1,0 +1,143 @@
+[gd_scene load_steps=21 format=3 uid="uid://hrui0frs4g7m"]
+
+[ext_resource type="Texture2D" uid="uid://fa0e7v03r23s" path="res://Scenes/Module/Crystal/Resource/shuijin-Sheet.png" id="1_4xo6h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndjme"]
+atlas = ExtResource("1_4xo6h")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3e1g"]
+atlas = ExtResource("1_4xo6h")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41uss"]
+atlas = ExtResource("1_4xo6h")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5baox"]
+atlas = ExtResource("1_4xo6h")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mep11"]
+atlas = ExtResource("1_4xo6h")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysn0q"]
+atlas = ExtResource("1_4xo6h")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txv7v"]
+atlas = ExtResource("1_4xo6h")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1ui0"]
+atlas = ExtResource("1_4xo6h")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvh63"]
+atlas = ExtResource("1_4xo6h")
+region = Rect2(192, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12krr"]
+atlas = ExtResource("1_4xo6h")
+region = Rect2(216, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3hl8"]
+atlas = ExtResource("1_4xo6h")
+region = Rect2(240, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0p85t"]
+atlas = ExtResource("1_4xo6h")
+region = Rect2(264, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ujml"]
+atlas = ExtResource("1_4xo6h")
+region = Rect2(288, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqgvx"]
+atlas = ExtResource("1_4xo6h")
+region = Rect2(312, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o1wl"]
+atlas = ExtResource("1_4xo6h")
+region = Rect2(336, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpguq"]
+atlas = ExtResource("1_4xo6h")
+region = Rect2(360, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q3p0j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndjme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3e1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41uss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5baox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mep11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysn0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txv7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1ui0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvh63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12krr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3hl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0p85t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ujml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqgvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4o1wl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpguq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_h1i4e"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_20gyc"]
+gradient = SubResource("Gradient_h1i4e")
+fill = 1
+fill_from = Vector2(0.53211, 0.541284)
+fill_to = Vector2(0.830275, 0.165138)
+
+[node name="Crystal" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q3p0j")
+autoplay = "default"
+frame_progress = 0.200424
+
+[node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D"]
+color = Color(0.916667, 0, 1, 1)
+texture = SubResource("GradientTexture2D_20gyc")
