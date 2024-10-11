@@ -108,28 +108,29 @@ shape = SubResource("RectangleShape2D_m0cb3")
 debug_color = Color(0.828053, 0.367079, 0.396247, 0.42)
 
 [node name="Left" type="RayCast2D" parent="Statics/Box"]
-position = Vector2(-11, 0)
+position = Vector2(-11, 14)
 rotation = 1.5708
 target_position = Vector2(0, 33)
 
 [node name="Right" type="RayCast2D" parent="Statics/Box"]
-position = Vector2(15, 0)
+position = Vector2(15, 15)
 rotation = -1.5708
 target_position = Vector2(0, 28)
 
 [node name="Player" parent="." instance=ExtResource("1_rskgl")]
 z_index = 3
-position = Vector2(252, 749)
+position = Vector2(630, 1040)
 scale = Vector2(2, 2)
 jump_height = 170.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
 limit_left = 0
 limit_bottom = 1070
 
 [node name="TestScenc" parent="Player" instance=ExtResource("3_sq62i")]
-position = Vector2(-3, -26)
-scale = Vector2(0.28, 0.28)
+position = Vector2(-1, -8.5)
+scale = Vector2(0.1, 0.1)
 script = ExtResource("6_yunqx")
 
 [node name="Node" parent="Player/TestScenc" index="0"]
