@@ -13,7 +13,7 @@ var can_jump: bool = false
 @onready var jump_gravity: float = (2 * jump_height)/(jump_time_to_peak * jump_time_to_peak)
 @onready var fall_gravity: float = (2 * jump_height)/(fall_time_to_peak * fall_time_to_peak)
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_2d:  = $Body
 @onready var state_macine: StateMachine = $StateMacine
 
 func _physics_process(delta: float) -> void:

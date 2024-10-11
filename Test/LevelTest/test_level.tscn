@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://boalubf3kttpf"]
+[gd_scene load_steps=15 format=3 uid="uid://boalubf3kttpf"]
 
 [ext_resource type="Script" path="res://Test/LevelTest/test_level.gd" id="1_0e2xd"]
 [ext_resource type="PackedScene" uid="uid://clsxih71pb6nd" path="res://Scenes/Player/player.tscn" id="1_rskgl"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dg1i5muyqauf5" path="res://Scenes/Module/LightBackground/LightBackground.tscn" id="3_sq62i"]
 [ext_resource type="Script" path="res://Test/LevelTest/death_area.gd" id="4_8hkta"]
 [ext_resource type="Script" path="res://Test/LevelTest/save_one.gd" id="6_huocc"]
+[ext_resource type="Script" path="res://Test/LevelTest/box.gd" id="7_bm4b4"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_dxh62"]
 
@@ -23,14 +24,19 @@ size = Vector2(1572, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6gaw"]
 size = Vector2(18, 96)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0cb3"]
+size = Vector2(82, 73)
+
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_0e2xd")
 metadata/_edit_horizontal_guides_ = [624.0]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.509804, 0.490196, 0.635294, 1)
-offset_right = 7159.0
-offset_bottom = 1794.0
+offset_left = 20.0
+offset_top = 23.0
+offset_right = 7179.0
+offset_bottom = 1817.0
 texture = SubResource("CanvasTexture_dxh62")
 
 [node name="Statics" type="Node2D" parent="."]
@@ -48,7 +54,7 @@ position = Vector2(-637, -1)
 shape = SubResource("RectangleShape2D_evjuc")
 
 [node name="Block" type="StaticBody2D" parent="Statics"]
-position = Vector2(1176, 117)
+position = Vector2(1176, 20)
 rotation = 1.5708
 
 [node name="Icon" type="Sprite2D" parent="Statics/Block"]
@@ -86,7 +92,7 @@ energy = 0.7
 blend_mode = 1
 
 [node name="TestScenc" parent="." instance=ExtResource("3_sq62i")]
-position = Vector2(1175, 876)
+position = Vector2(1181, 777)
 
 [node name="Backgroud" parent="TestScenc/Node" index="0"]
 visible = false
@@ -112,12 +118,36 @@ theme_override_font_sizes/font_size = 48
 text = "存档点1"
 
 [node name="SaveOne" type="Area2D" parent="."]
-position = Vector2(1172, 891)
+position = Vector2(1177, 809)
 script = ExtResource("6_huocc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SaveOne"]
 position = Vector2(1, 17)
 shape = SubResource("RectangleShape2D_x6gaw")
+
+[node name="Box" type="StaticBody2D" parent="."]
+position = Vector2(830, 983)
+script = ExtResource("7_bm4b4")
+
+[node name="Icon" type="Sprite2D" parent="Box"]
+position = Vector2(-176, 34.25)
+scale = Vector2(0.65625, 0.589844)
+texture = ExtResource("2_85f25")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
+position = Vector2(-176, 34.5)
+shape = SubResource("RectangleShape2D_m0cb3")
+debug_color = Color(0.828053, 0.367079, 0.396247, 0.42)
+
+[node name="Left" type="RayCast2D" parent="Box"]
+position = Vector2(-165, 34)
+rotation = -1.5708
+target_position = Vector2(0, 33)
+
+[node name="Right" type="RayCast2D" parent="Box"]
+position = Vector2(-191, 34)
+rotation = 1.5708
+target_position = Vector2(0, 28)
 
 [connection signal="body_entered" from="DeathArea" to="DeathArea" method="_on_body_entered"]
 [connection signal="body_entered" from="SaveOne" to="SaveOne" method="_on_body_entered"]

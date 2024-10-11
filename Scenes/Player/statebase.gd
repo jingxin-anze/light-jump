@@ -2,7 +2,8 @@ class_name StateBase
 extends Node2D
 
 var state_machine: StateMachine
-
+@export var body:AnimatedSprite2D
+@export var hand:AnimatedSprite2D
 ## 进入状态
 func enter() -> void:
 	pass
