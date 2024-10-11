@@ -3,7 +3,7 @@ extends Node2D
 var player_body:AnimatedSprite2D
 
 func _ready() -> void:
-	player_body=get_parent().get_node("Body")
+	player_body=get_tree().get_first_node_in_group("player").get_node("Body")
 	float_in_air()
 
 #浮动灯光

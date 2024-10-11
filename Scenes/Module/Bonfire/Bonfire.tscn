@@ -82,3 +82,4 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_8f4v5")
 animation = &"Burn"
 autoplay = "Burn"
+frame_progress = 0.799633

@@ -47,11 +47,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_jyokh"]
+[sub_resource type="Gradient" id="Gradient_oub7q"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_kf4n5"]
-gradient = SubResource("Gradient_jyokh")
+gradient = SubResource("Gradient_oub7q")
 fill = 1
 fill_from = Vector2(0.477064, 0.426605)
 fill_to = Vector2(0.830275, 0.100917)
