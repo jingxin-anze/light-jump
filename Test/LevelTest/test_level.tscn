@@ -194,7 +194,7 @@ script = ExtResource("6_huocc")
 position = Vector2(1, 17)
 shape = SubResource("RectangleShape2D_x6gaw")
 
-[node name="Box" type="StaticBody2D" parent="."]
+[node name="Box" type="RigidBody2D" parent="."]
 position = Vector2(830, 983)
 script = ExtResource("7_bm4b4")
 
