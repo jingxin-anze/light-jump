@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://456wy7bp1ync"]
+[gd_scene load_steps=11 format=3 uid="uid://456wy7bp1ync"]
 
 [ext_resource type="Texture2D" uid="uid://gx1b6imhr87o" path="res://Scenes/Module/Bonfire/Resouce/fire-Sheet.png" id="1_intc2"]
 
@@ -23,10 +23,6 @@ atlas = ExtResource("1_intc2")
 region = Rect2(168, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_soo01"]
-atlas = ExtResource("1_intc2")
-region = Rect2(0, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d44qe"]
 atlas = ExtResource("1_intc2")
 region = Rect2(0, 0, 24, 24)
 
@@ -70,9 +66,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d44qe")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_s6rxn")
 }, {
 "duration": 1.0,
@@ -87,4 +80,5 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8f4v5")
-animation = &"Light"
+animation = &"Burn"
+autoplay = "Burn"
