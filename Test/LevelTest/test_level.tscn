@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://boalubf3kttpf"]
 
 [ext_resource type="Script" path="res://Test/LevelTest/test_level.gd" id="1_0e2xd"]
-[ext_resource type="PackedScene" uid="uid://clsxih71pb6nd" path="res://Scenes/Player/player.tscn" id="1_rskgl"]
+[ext_resource type="PackedScene" uid="uid://clsxih71pb6nd" path="res://Scenes/Player/player_REMOTE_1365.tscn" id="1_rskgl"]
 [ext_resource type="Texture2D" uid="uid://csax1m1vxt8q5" path="res://icon.svg" id="2_85f25"]
 [ext_resource type="PackedScene" uid="uid://dg1i5muyqauf5" path="res://Scenes/Module/LightBackground/LightBackground.tscn" id="3_sq62i"]
 [ext_resource type="Script" path="res://Test/LevelTest/death_area.gd" id="4_8hkta"]
@@ -88,6 +88,7 @@ limit_left = 0
 limit_bottom = 1070
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 energy = 0.7
 blend_mode = 1
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://clsxih71pb6nd"]
+[gd_scene load_steps=39 format=3 uid="uid://clsxih71pb6nd"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_1knux"]
 [ext_resource type="Script" path="res://Scenes/Player/state_macine.gd" id="1_m666x"]
@@ -7,8 +7,6 @@
 [ext_resource type="Script" path="res://Scenes/Player/run.gd" id="5_4r43s"]
 [ext_resource type="Script" path="res://Scenes/Player/jump.gd" id="6_j873j"]
 [ext_resource type="Script" path="res://Scenes/Player/fall.gd" id="7_xx753"]
-[ext_resource type="Script" path="res://Scenes/Player/attack.gd" id="8_v66x6"]
-[ext_resource type="Script" path="res://Scenes/Player/attack_2.gd" id="9_2pxhu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4a211"]
 atlas = ExtResource("2_asxgp")
@@ -89,7 +87,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2o6ar")
 }],
-"loop": false,
+"loop": true,
 "name": &"Attack2",
 "speed": 5.0
 }, {
@@ -156,14 +154,6 @@ region = Rect2(24, 216, 24, 24)
 atlas = ExtResource("2_asxgp")
 region = Rect2(48, 216, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ebv3f"]
-atlas = ExtResource("2_asxgp")
-region = Rect2(0, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nk4ov"]
-atlas = ExtResource("2_asxgp")
-region = Rect2(24, 24, 24, 24)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_8m482"]
 atlas = ExtResource("2_asxgp")
 region = Rect2(0, 168, 24, 24)
@@ -192,6 +182,14 @@ region = Rect2(96, 72, 24, 24)
 atlas = ExtResource("2_asxgp")
 region = Rect2(120, 72, 24, 24)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebv3f"]
+atlas = ExtResource("2_asxgp")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nk4ov"]
+atlas = ExtResource("2_asxgp")
+region = Rect2(24, 24, 24, 24)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_4acv6"]
 animations = [{
 "frames": [{
@@ -201,7 +199,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w0g4n")
 }],
-"loop": false,
+"loop": true,
 "name": &"Atack",
 "speed": 5.0
 }, {
@@ -215,19 +213,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u8qos")
 }],
-"loop": false,
-"name": &"Atack2",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ebv3f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nk4ov")
-}],
 "loop": true,
-"name": &"Idle",
+"name": &"Atack2",
 "speed": 5.0
 }, {
 "frames": [{
@@ -260,10 +247,21 @@ animations = [{
 "loop": true,
 "name": &"Walk",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebv3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nk4ov")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uxmw3"]
-size = Vector2(38, 102)
+size = Vector2(54, 54)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_1knux")
@@ -275,8 +273,6 @@ scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_65fxx")
 animation = &"Attack2"
 autoplay = "Idle"
-frame = 2
-frame_progress = 1.0
 
 [node name="Hand" type="AnimatedSprite2D" parent="Body"]
 sprite_frames = SubResource("SpriteFrames_4acv6")
@@ -284,45 +280,24 @@ animation = &"Atack2"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5, 6)
 shape = SubResource("RectangleShape2D_uxmw3")
 
 [node name="StateMacine" type="Node2D" parent="." node_paths=PackedStringArray("current_state")]
 script = ExtResource("1_m666x")
 current_state = NodePath("Idle")
 
-[node name="Idle" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player", "body", "hand")]
+[node name="Idle" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player")]
 script = ExtResource("4_pcndm")
 player = NodePath("../..")
-body = NodePath("../../Body")
-hand = NodePath("../../Body/Hand")
 
-[node name="Walk" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player", "body", "hand")]
+[node name="Run" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player")]
 script = ExtResource("5_4r43s")
 player = NodePath("../..")
-body = NodePath("../../Body")
-hand = NodePath("../../Body/Hand")
 
-[node name="Jump" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player", "body", "hand")]
+[node name="Jump" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player")]
 script = ExtResource("6_j873j")
 player = NodePath("../..")
-body = NodePath("../../Body")
-hand = NodePath("../../Body/Hand")
 
-[node name="Fall" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player", "body", "hand")]
+[node name="Fall" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player")]
 script = ExtResource("7_xx753")
 player = NodePath("../..")
-body = NodePath("../../Body")
-hand = NodePath("../../Body/Hand")
-
-[node name="Attack" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player", "body", "hand")]
-script = ExtResource("8_v66x6")
-player = NodePath("../..")
-body = NodePath("../../Body")
-hand = NodePath("../../Body/Hand")
-
-[node name="Attack2" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player", "body", "hand")]
-script = ExtResource("9_2pxhu")
-player = NodePath("../..")
-body = NodePath("../../Body")
-hand = NodePath("../../Body/Hand")

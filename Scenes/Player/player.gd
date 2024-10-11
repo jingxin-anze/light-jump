@@ -8,12 +8,13 @@ extends CharacterBody2D
 @export var acceleration: float = 2000.0
 
 var can_jump: bool = false
+var direction:int
 
 @onready var jump_velocity: float = (-2 * jump_height)/jump_time_to_peak
 @onready var jump_gravity: float = (2 * jump_height)/(jump_time_to_peak * jump_time_to_peak)
 @onready var fall_gravity: float = (2 * jump_height)/(fall_time_to_peak * fall_time_to_peak)
 
-@onready var sprite_2d:  = $Body
+@onready var body: AnimatedSprite2D = $Body
 @onready var state_macine: StateMachine = $StateMacine
 
 func _physics_process(delta: float) -> void:
@@ -23,13 +24,13 @@ func player_move_1(gravity: float, delta: float) -> void:
 	#有时下落速度要加以限制
 	#郊狼时间
 	velocity.y += gravity * delta
-	var direction := Input.get_axis("move_left", "move_right")
+	direction = Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = move_toward(velocity.x, direction * SPEED, acceleration*delta)
 		if direction > 0:
-			sprite_2d.flip_h = false
+			body.scale.x=abs(body.scale.x)
 		elif direction < 0:
-			sprite_2d.flip_h = true
+			body.scale.x=-abs(body.scale.x)
 	else:
 		velocity.x = move_toward(velocity.x, 0, acceleration*delta)
 	move_and_slide()

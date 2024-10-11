@@ -3,16 +3,15 @@ extends StateBase
 @export var player: Player 
 
 func enter() -> void:
-	body.play("Walk")
-	hand.play("Walk")
-	player.can_jump = true
+	hand.animation_finished.connect(func():state_machine.change_state("Idle"))
+	hand.play("Atack2")
+	body.play("Attack2")
 
 func physics_process_update(delta: float) -> void:
 	player.player_move_1(player.fall_gravity,delta)
-	if not player.is_on_floor() :
+	if not player.is_on_floor():
 		state_machine.change_state("Fall")
-	if player.direction==0:
-		state_machine.change_state("Idle")
+
 ## 退出状态
 func exit() -> void:
 	pass
