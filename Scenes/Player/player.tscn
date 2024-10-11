@@ -265,7 +265,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uxmw3"]
 size = Vector2(38, 102)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_1knux")
 SPEED = 150.0
 jump_height = 100.0
@@ -276,12 +276,12 @@ sprite_frames = SubResource("SpriteFrames_65fxx")
 animation = &"Attack2"
 autoplay = "Idle"
 frame = 2
-frame_progress = 1.0
 
 [node name="Hand" type="AnimatedSprite2D" parent="Body"]
 sprite_frames = SubResource("SpriteFrames_4acv6")
 animation = &"Atack2"
 autoplay = "default"
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 6)

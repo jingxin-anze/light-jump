@@ -28,6 +28,10 @@ window/size/viewport_height=1080
 
 movie_writer/movie_file="F:/shipin/123.avi"
 
+[global_group]
+
+player=""
+
 [input]
 
 move_left={

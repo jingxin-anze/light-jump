@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://boalubf3kttpf"]
 
 [ext_resource type="Script" path="res://Test/LevelTest/test_level.gd" id="1_0e2xd"]
-[ext_resource type="PackedScene" uid="uid://clsxih71pb6nd" path="res://Scenes/Player/player_REMOTE_1365.tscn" id="1_rskgl"]
+[ext_resource type="PackedScene" uid="uid://clsxih71pb6nd" path="res://Scenes/Player/player.tscn" id="1_rskgl"]
 [ext_resource type="Texture2D" uid="uid://csax1m1vxt8q5" path="res://icon.svg" id="2_85f25"]
 [ext_resource type="PackedScene" uid="uid://dg1i5muyqauf5" path="res://Scenes/Module/LightBackground/LightBackground.tscn" id="3_sq62i"]
 [ext_resource type="Script" path="res://Test/LevelTest/death_area.gd" id="4_8hkta"]
@@ -141,13 +141,13 @@ shape = SubResource("RectangleShape2D_m0cb3")
 debug_color = Color(0.828053, 0.367079, 0.396247, 0.42)
 
 [node name="Left" type="RayCast2D" parent="Box"]
-position = Vector2(-165, 34)
-rotation = -1.5708
+position = Vector2(-188, 34)
+rotation = 1.5708
 target_position = Vector2(0, 33)
 
 [node name="Right" type="RayCast2D" parent="Box"]
-position = Vector2(-191, 34)
-rotation = 1.5708
+position = Vector2(-159, 34)
+rotation = -1.5708
 target_position = Vector2(0, 28)
 
 [connection signal="body_entered" from="DeathArea" to="DeathArea" method="_on_body_entered"]
