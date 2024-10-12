@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0ksm38yg6k4j"]
+
+[ext_resource type="Texture2D" uid="uid://vvri6uxa5tlw" path="res://Scenes/Module/Torch/Resources/torch2-Sheet.png" id="1_f5lvs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csc4w"]
+atlas = ExtResource("1_f5lvs")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j0yr"]
+atlas = ExtResource("1_f5lvs")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeivp"]
+atlas = ExtResource("1_f5lvs")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nsmy7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csc4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j0yr")
+}],
+"loop": true,
+"name": &"Buring",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xeivp")
+}],
+"loop": true,
+"name": &"DontBure",
+"speed": 5.0
+}]
+
+[node name="Torch" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nsmy7")
+animation = &"DontBure"

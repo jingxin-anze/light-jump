@@ -63,4 +63,4 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_sfnsi")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.056005
+frame_progress = 0.72723
