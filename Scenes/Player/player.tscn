@@ -272,7 +272,7 @@ jump_height = 100.0
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_65fxx")
-animation = &"Atack"
+animation = &"Attack2"
 autoplay = "Idle"
 
 [node name="Hand" type="AnimatedSprite2D" parent="Body"]
