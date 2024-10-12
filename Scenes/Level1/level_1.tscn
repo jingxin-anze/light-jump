@@ -100,11 +100,11 @@ terrain_set_0/terrain_0/name = "ground0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_hjmv5")
 
-[sub_resource type="Gradient" id="Gradient_31ud2"]
+[sub_resource type="Gradient" id="Gradient_jtfx7"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_rykgi"]
-gradient = SubResource("Gradient_31ud2")
+gradient = SubResource("Gradient_jtfx7")
 fill = 1
 fill_from = Vector2(0.477064, 0.426605)
 fill_to = Vector2(0.830275, 0.100917)
@@ -131,7 +131,6 @@ tile_map_data = PackedByteArray("AAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAE
 tile_set = SubResource("TileSet_pnhyn")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Envir"]
-visible = false
 blend_mode = 1
 
 [node name="Crystal" parent="Envir" instance=ExtResource("3_oqfmu")]
@@ -177,6 +176,7 @@ visible = false
 
 [node name="Torch" parent="Player" instance=ExtResource("8_7fsp1")]
 unique_name_in_owner = true
+visible = false
 position = Vector2(-4, 2)
 scale = Vector2(0.44, 0.44)
 script = ExtResource("9_8xam4")
