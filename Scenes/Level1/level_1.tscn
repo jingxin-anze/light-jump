@@ -131,6 +131,7 @@ tile_map_data = PackedByteArray("AAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAE
 tile_set = SubResource("TileSet_pnhyn")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Envir"]
+visible = false
 blend_mode = 1
 
 [node name="Crystal" parent="Envir" instance=ExtResource("3_oqfmu")]
@@ -176,8 +177,7 @@ visible = false
 
 [node name="Torch" parent="Player" instance=ExtResource("8_7fsp1")]
 unique_name_in_owner = true
-visible = false
-position = Vector2(-2, -2)
+position = Vector2(-4, 2)
 scale = Vector2(0.44, 0.44)
 script = ExtResource("9_8xam4")
 

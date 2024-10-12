@@ -15,6 +15,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	#print(hand.scale.x)
 	if body.scale.x>0:
-		position=Vector2(-2,2)
+		position=Vector2(-4,2)
 	else:
-		position=Vector2(2.5,2)
+		position=Vector2(4.5,2)
