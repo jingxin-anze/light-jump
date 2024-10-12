@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://72nu5kncdr2w"]
+
+[ext_resource type="Script" path="res://Scenes/RigidFrog/frog.gd" id="1_oomue"]
+[ext_resource type="PackedScene" uid="uid://jtkjw35jbm3d" path="res://Scenes/Module/Frog/Frog.tscn" id="2_ipbck"]
+[ext_resource type="Script" path="res://Scenes/RigidFrog/sound.gd" id="3_g6syi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bpt51"]
+radius = 28.0
+height = 86.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm3vp"]
+size = Vector2(870, 394.75)
+
+[node name="Frog" type="RigidBody2D"]
+position = Vector2(1786, 947)
+script = ExtResource("1_oomue")
+
+[node name="Frog" parent="." instance=ExtResource("2_ipbck")]
+position = Vector2(6, -19)
+scale = Vector2(5, 5)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 10)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bpt51")
+debug_color = Color(0.828053, 0.367079, 0.396247, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="Left" type="RayCast2D" parent="."]
+position = Vector2(-7, 8)
+rotation = 1.5708
+target_position = Vector2(0, 47)
+metadata/_edit_lock_ = true
+
+[node name="Right" type="RayCast2D" parent="."]
+position = Vector2(1, 9)
+rotation = -1.5708
+target_position = Vector2(-0.000183105, 56)
+metadata/_edit_lock_ = true
+
+[node name="Sound" type="Area2D" parent="."]
+script = ExtResource("3_g6syi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound"]
+position = Vector2(11, -85.625)
+shape = SubResource("RectangleShape2D_gm3vp")
+
+[connection signal="body_entered" from="Sound" to="Sound" method="_on_body_entered"]
+[connection signal="body_exited" from="Sound" to="Sound" method="_on_body_exited"]

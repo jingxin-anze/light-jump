@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dg1i5muyqauf5" path="res://Scenes/Module/LightBackground/LightBackground.tscn" id="3_sq62i"]
 [ext_resource type="Script" path="res://Test/LevelTest/death_area.gd" id="4_8hkta"]
 [ext_resource type="Script" path="res://Test/LevelTest/save_one.gd" id="6_huocc"]
-[ext_resource type="Script" path="res://Test/LevelTest/box.gd" id="7_bm4b4"]
+[ext_resource type="Script" path="res://Scenes/RigidFrog/frog.gd" id="7_bm4b4"]
 [ext_resource type="PackedScene" uid="uid://hrui0frs4g7m" path="res://Scenes/Module/Crystal/Crystal.tscn" id="8_cqnni"]
 [ext_resource type="Texture2D" uid="uid://dm4cl68ru4t3n" path="res://Asset/TileSet/map3.png" id="8_detcv"]
 [ext_resource type="PackedScene" uid="uid://456wy7bp1ync" path="res://Scenes/Module/Bonfire/Bonfire.tscn" id="8_w8ubp"]
