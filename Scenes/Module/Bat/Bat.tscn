@@ -80,5 +80,5 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5qqq5")
-animation = &"Reading"
-frame_progress = 0.924488
+animation = &"Flay"
+frame_progress = 0.0284743
