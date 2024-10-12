@@ -19,7 +19,7 @@ func float_in_air():
 	t.tween_property(self,"position:y",position.y+6,3)
 	t.tween_property(self,"position:y",position.y+-6,3)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if player_body.scale.x!=current_body_scale:
 		var tween=create_tween()
 		if player_body.scale.x>0:

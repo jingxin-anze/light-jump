@@ -40,7 +40,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"DamageTaken",
-"speed": 3.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -54,7 +54,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 1.0
+"speed": 5.0
 }]
 
 [node name="Frog" type="Node2D"]
@@ -63,4 +63,5 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_sfnsi")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.72723
+frame = 1
+frame_progress = 0.00746206

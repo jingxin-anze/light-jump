@@ -8,7 +8,7 @@ extends CharacterBody2D
 @export var acceleration: float = 2000.0
 
 var can_jump: bool = false
-var direction:int
+var direction:float
 
 @onready var jump_velocity: float = (-2 * jump_height)/jump_time_to_peak
 @onready var jump_gravity: float = (2 * jump_height)/(jump_time_to_peak * jump_time_to_peak)
@@ -17,7 +17,7 @@ var direction:int
 @onready var body: AnimatedSprite2D = $Body
 @onready var state_macine: StateMachine = $StateMacine
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	pass
 
 func player_move_1(gravity: float, delta: float) -> void:
@@ -35,7 +35,7 @@ func player_move_1(gravity: float, delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, acceleration*delta)
 	move_and_slide()
 
-func player_move_2(delta: float) -> void:
+func player_move_2(_delta: float) -> void:
 	move_and_slide()
 
 func _unhandled_input(event: InputEvent) -> void:
