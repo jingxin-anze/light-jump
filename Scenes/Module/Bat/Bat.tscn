@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://bau4c3b8n6wfs"]
+
+[ext_resource type="Texture2D" uid="uid://00y6gtcec2h5" path="res://Scenes/Module/Bat/Resources/bat-Sheet.png" id="1_3w4ub"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koru6"]
+atlas = ExtResource("1_3w4ub")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybnia"]
+atlas = ExtResource("1_3w4ub")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aydbk"]
+atlas = ExtResource("1_3w4ub")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sh8h"]
+atlas = ExtResource("1_3w4ub")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ia7r"]
+atlas = ExtResource("1_3w4ub")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3s3o0"]
+atlas = ExtResource("1_3w4ub")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iojl7"]
+atlas = ExtResource("1_3w4ub")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7lbd"]
+atlas = ExtResource("1_3w4ub")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5qqq5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koru6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybnia")
+}],
+"loop": true,
+"name": &"Flay",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aydbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sh8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ia7r")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3s3o0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iojl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7lbd")
+}],
+"loop": true,
+"name": &"Reading",
+"speed": 2.0
+}]
+
+[node name="Bat" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5qqq5")
+animation = &"Reading"
+frame_progress = 0.872055
