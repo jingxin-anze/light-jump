@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0ksm38yg6k4j"]
+[gd_scene load_steps=6 format=3 uid="uid://d0ksm38yg6k4j"]
 
 [ext_resource type="Texture2D" uid="uid://vvri6uxa5tlw" path="res://Scenes/Module/Torch/Resources/torch2-Sheet.png" id="1_f5lvs"]
-[ext_resource type="Script" path="res://Scenes/Module/LightBackground/Script/point_light_2d.gd" id="2_7mfq7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_csc4w"]
 atlas = ExtResource("1_f5lvs")
@@ -37,27 +36,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_jyokh"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_05y21"]
-gradient = SubResource("Gradient_jyokh")
-fill = 1
-fill_from = Vector2(0.477064, 0.426605)
-fill_to = Vector2(0.830275, 0.100917)
-
 [node name="Torch" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nsmy7")
 animation = &"Buring"
-frame_progress = 0.339119
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-2, -18)
-scale = Vector2(5, -4.097)
-color = Color(0.98, 0.65072, 0.0392, 1)
-shadow_filter = 2
-shadow_filter_smooth = 3.4
-texture = SubResource("GradientTexture2D_05y21")
-script = ExtResource("2_7mfq7")
+frame_progress = 0.777119
