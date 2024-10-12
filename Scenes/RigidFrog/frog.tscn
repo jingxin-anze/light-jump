@@ -9,10 +9,11 @@ radius = 28.0
 height = 86.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gm3vp"]
-size = Vector2(870, 394.75)
+size = Vector2(764, 469.667)
 
 [node name="Frog" type="RigidBody2D"]
 position = Vector2(1786, 947)
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_oomue")
 
 [node name="Frog" parent="." instance=ExtResource("2_ipbck")]
@@ -43,8 +44,11 @@ metadata/_edit_lock_ = true
 script = ExtResource("3_g6syi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound"]
-position = Vector2(11, -85.625)
+position = Vector2(12.6666, -48.1667)
 shape = SubResource("RectangleShape2D_gm3vp")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
 
 [connection signal="body_entered" from="Sound" to="Sound" method="_on_body_entered"]
 [connection signal="body_exited" from="Sound" to="Sound" method="_on_body_exited"]

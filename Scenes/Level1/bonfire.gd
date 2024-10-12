@@ -7,8 +7,8 @@ var audio:AudioStreamPlayer
 #进入小区域显示悬浮火炬
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name=="Player":
-		%Torch.visible=true
-		AudioPlayer.contine(%Torch.audio)
+		$"../../Player/TestScenc".visible=true
+		AudioPlayer.contine($"../../Player/TestScenc".audio)
 		get_node("Area2D").call_deferred("queue_free")
 
 #离开区域销毁播放器

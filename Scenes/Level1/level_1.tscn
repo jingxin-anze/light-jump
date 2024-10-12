@@ -131,6 +131,7 @@ tile_map_data = PackedByteArray("AAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAE
 tile_set = SubResource("TileSet_pnhyn")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Envir"]
+visible = false
 blend_mode = 1
 
 [node name="Crystal" parent="Envir" instance=ExtResource("3_oqfmu")]
