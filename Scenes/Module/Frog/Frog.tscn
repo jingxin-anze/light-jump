@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://jtkjw35jbm3d"]
+
+[ext_resource type="Texture2D" uid="uid://dnp18wlbp7qjd" path="res://Scenes/Module/Frog/Resources/frog-Sheet.png" id="1_8atbv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fydsw"]
+atlas = ExtResource("1_8atbv")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xs5sy"]
+atlas = ExtResource("1_8atbv")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_af8vm"]
+atlas = ExtResource("1_8atbv")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m16xy"]
+atlas = ExtResource("1_8atbv")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfg3f"]
+atlas = ExtResource("1_8atbv")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvcsl"]
+atlas = ExtResource("1_8atbv")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sfnsi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fydsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xs5sy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_af8vm")
+}],
+"loop": true,
+"name": &"DamageTaken",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m16xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfg3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvcsl")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 1.0
+}]
+
+[node name="Frog" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sfnsi")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.056005
