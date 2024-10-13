@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=4 uid="uid://d0nxfjo0lk6el"]
+[gd_scene load_steps=24 format=4 uid="uid://d0nxfjo0lk6el"]
 
 [ext_resource type="Texture2D" uid="uid://dm4cl68ru4t3n" path="res://Asset/TileSet/map3.png" id="1_8cmpk"]
+[ext_resource type="Script" path="res://Scenes/Level1/level_1.gd" id="1_oqjah"]
 [ext_resource type="Texture2D" uid="uid://b72hmchmgqtfv" path="res://Test/TempArt/P`[KRUGPL5LIQ6GK1{W$U{E.png" id="1_yov0r"]
 [ext_resource type="PackedScene" uid="uid://clsxih71pb6nd" path="res://Scenes/Player/player.tscn" id="2_bnyn2"]
 [ext_resource type="PackedScene" uid="uid://456wy7bp1ync" path="res://Scenes/Module/Bonfire/Bonfire.tscn" id="2_ih0qk"]
@@ -121,6 +122,7 @@ size = Vector2(348.5, 232.5)
 size = Vector2(49, 285)
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_oqjah")
 
 [node name="Bg" type="Sprite2D" parent="."]
 position = Vector2(1790, 107)
@@ -136,6 +138,7 @@ tile_map_data = PackedByteArray("AAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAE
 tile_set = SubResource("TileSet_pnhyn")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Envir"]
+visible = false
 blend_mode = 1
 
 [node name="Crystal" parent="Envir" instance=ExtResource("3_oqfmu")]

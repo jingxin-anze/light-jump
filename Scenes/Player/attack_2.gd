@@ -4,7 +4,7 @@ extends StateBase
 
 func enter() -> void:
 	hand.animation_finished.connect(func():state_machine.change_state("Idle"))
-	hand.play("Atack2")
+	hand.play("Attack2")
 	body.play("Attack2")
 
 func physics_process_update(delta: float) -> void:

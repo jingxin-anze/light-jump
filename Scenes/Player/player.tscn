@@ -76,7 +76,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_e1fej")
 }],
 "loop": true,
-"name": &"Atack",
+"name": &"Attack",
 "speed": 5.0
 }, {
 "frames": [{
@@ -202,7 +202,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_w0g4n")
 }],
 "loop": false,
-"name": &"Atack",
+"name": &"Attack",
 "speed": 5.0
 }, {
 "frames": [{
@@ -216,7 +216,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_u8qos")
 }],
 "loop": false,
-"name": &"Atack2",
+"name": &"Attack2",
 "speed": 5.0
 }, {
 "frames": [{
@@ -272,15 +272,14 @@ jump_height = 100.0
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_65fxx")
-animation = &"Attack2"
+animation = &"Attack"
 autoplay = "Idle"
 
 [node name="Hand" type="AnimatedSprite2D" parent="Body"]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_4acv6")
-animation = &"Atack2"
+animation = &"Attack2"
 autoplay = "default"
-frame = 2
 
 [node name="Right" type="RayCast2D" parent="Body"]
 unique_name_in_owner = true

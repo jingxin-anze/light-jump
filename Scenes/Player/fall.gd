@@ -3,7 +3,9 @@ extends StateBase
 @export var player: Player 
 
 func enter() -> void:
-	pass
+	hand.animation="Attack2"
+	hand.frame=2
+	hand.speed_scale=0
 
 func physics_process_update(delta: float) -> void:
 	player.player_move_1(player.fall_gravity,delta)
@@ -12,4 +14,4 @@ func physics_process_update(delta: float) -> void:
 
 ## 退出状态
 func exit() -> void:
-	pass
+	hand.speed_scale=1
