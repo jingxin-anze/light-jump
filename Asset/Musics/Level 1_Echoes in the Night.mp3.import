@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bai32s7xsnawo"
+path="res://.godot/imported/Level 1_Echoes in the Night.mp3-8f724de0b4e809dc2a7ee670ca60e5a8.mp3str"
+
+[deps]
+
+source_file="res://Asset/Musics/Level 1_Echoes in the Night.mp3"
+dest_files=["res://.godot/imported/Level 1_Echoes in the Night.mp3-8f724de0b4e809dc2a7ee670ca60e5a8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
