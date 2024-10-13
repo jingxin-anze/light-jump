@@ -9,6 +9,7 @@ const SCRAPE = preload("res://Asset/Sounds/Level1/scrape.MP3")
 const FROG = preload("res://Asset/Sounds/Level1/frog.mp3")
 
 func _ready() -> void:
+	set_process(false)
 	#从全局组里获得玩家
 	player=get_tree().get_first_node_in_group("player")
 	#获得动画
@@ -16,6 +17,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	#判断检测物是否为玩家
+
 	if $Left.is_colliding() && $Left.get_collider().name=="Player":
 		#若玩家动画为攻击二的第二帧则移动
 		if hand.animation=="Atack2" && hand.frame==2:

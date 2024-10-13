@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://d0nxfjo0lk6el"]
+[gd_scene load_steps=23 format=4 uid="uid://d0nxfjo0lk6el"]
 
 [ext_resource type="Texture2D" uid="uid://dm4cl68ru4t3n" path="res://Asset/TileSet/map3.png" id="1_8cmpk"]
 [ext_resource type="Texture2D" uid="uid://b72hmchmgqtfv" path="res://Test/TempArt/P`[KRUGPL5LIQ6GK1{W$U{E.png" id="1_yov0r"]
@@ -13,8 +13,10 @@
 [ext_resource type="Script" path="res://Scenes/Module/Torch/torch.gd" id="9_8xam4"]
 [ext_resource type="PackedScene" uid="uid://dg1i5muyqauf5" path="res://Scenes/Module/LightBackground/LightBackground.tscn" id="9_kxi1o"]
 [ext_resource type="PackedScene" uid="uid://72nu5kncdr2w" path="res://Scenes/RigidFrog/frog.tscn" id="13_ke5qs"]
+[ext_resource type="PackedScene" uid="uid://dta85e3nl6oi1" path="res://Scenes/ChangeScene/change_scene.tscn" id="14_n4j3t"]
+[ext_resource type="PackedScene" uid="uid://mnpsqwvvsjsf" path="res://Scenes/Level2/level_2.tscn" id="15_dqxgq"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hjmv5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hv1lo"]
 texture = ExtResource("1_8cmpk")
 texture_region_size = Vector2i(24, 24)
 0:0/0 = 0
@@ -98,7 +100,7 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "ground0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_hjmv5")
+sources/0 = SubResource("TileSetAtlasSource_hv1lo")
 
 [sub_resource type="Gradient" id="Gradient_jtfx7"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -114,6 +116,9 @@ radius = 33.0038
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5o1r"]
 size = Vector2(348.5, 232.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1eod"]
+size = Vector2(49, 285)
 
 [node name="Level1" type="Node2D"]
 
@@ -131,7 +136,6 @@ tile_map_data = PackedByteArray("AAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAE
 tile_set = SubResource("TileSet_pnhyn")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Envir"]
-visible = false
 blend_mode = 1
 
 [node name="Crystal" parent="Envir" instance=ExtResource("3_oqfmu")]
@@ -212,8 +216,16 @@ debug_color = Color(0.853681, 0.333886, 0.419726, 0.42)
 [node name="Frog" parent="Props" instance=ExtResource("13_ke5qs")]
 position = Vector2(1618, 962)
 
+[node name="ChangeScene" parent="." instance=ExtResource("14_n4j3t")]
+next_scene = ExtResource("15_dqxgq")
+
+[node name="CollisionShape2D" parent="ChangeScene" index="0"]
+position = Vector2(2598.5, 693.5)
+shape = SubResource("RectangleShape2D_x1eod")
+
 [connection signal="body_entered" from="Props/Bonfire/Area2D" to="Props/Bonfire" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Props/Bonfire/SoundFree" to="Props/Bonfire" method="_on_sound_free_body_entered"]
 [connection signal="body_exited" from="Props/Bonfire/SoundFree" to="Props/Bonfire" method="_on_sound_free_body_exited"]
 
 [editable path="Player/TestScenc"]
+[editable path="ChangeScene"]

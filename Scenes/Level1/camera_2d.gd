@@ -1,4 +1,5 @@
 extends Camera2D
+#这是第一关的相机脚本
 
 @onready var tile_map: TileMapLayer = $"../../Envir/TileMapLayer"
 
