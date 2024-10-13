@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8jkqh1r14od6"]
+
+[ext_resource type="Texture2D" uid="uid://x4xmmiaiyjo2" path="res://Scenes/Module/Snake/Reourses/snake-Sheet.png" id="1_ruf3o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7vns"]
+atlas = ExtResource("1_ruf3o")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_othho"]
+atlas = ExtResource("1_ruf3o")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mro4o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7vns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_othho")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Snake" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mro4o")
+frame_progress = 0.0304134
