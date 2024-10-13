@@ -145,6 +145,10 @@ script = ExtResource("6_oasrj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/TestScenc/Torch" index="0"]
 shape = SubResource("CircleShape2D_p2a0n")
 
+[node name="ChangeScene" parent="." index="4"]
+position = Vector2(3.05176e-05, 6.10352e-05)
+scale = Vector2(1, 1)
+
 [node name="Bat" type="CharacterBody2D" parent="." index="5"]
 position = Vector2(406, -246)
 collision_layer = 2
