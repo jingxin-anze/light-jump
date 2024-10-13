@@ -1,16 +1,95 @@
-[gd_scene load_steps=8 format=4 uid="uid://mnpsqwvvsjsf"]
+[gd_scene load_steps=20 format=4 uid="uid://mnpsqwvvsjsf"]
 
 [ext_resource type="PackedScene" uid="uid://c4ajgw6w6y7ra" path="res://Scenes/NormalLevel/normal_level.tscn" id="1_3ye6q"]
 [ext_resource type="Script" path="res://Scenes/Level2/level_2.gd" id="2_0d0jv"]
 [ext_resource type="Script" path="res://Scenes/Level2/cliff_warn.gd" id="2_rf5m8"]
 [ext_resource type="Script" path="res://Scenes/Level2/camera_2d.gd" id="3_8tqgd"]
 [ext_resource type="Script" path="res://Scenes/Level2/vine.gd" id="3_ucfki"]
+[ext_resource type="Script" path="res://Scenes/Level2/character_body_2d.gd" id="6_d4ddl"]
+[ext_resource type="Texture2D" uid="uid://bx582hex4wnq0" path="res://Scenes/Module/Bat/Resources/bat-Sheet.png" id="7_5t3fd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8ujo"]
 size = Vector2(300.5, 245)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sl2rm"]
 size = Vector2(95, 918)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koru6"]
+atlas = ExtResource("7_5t3fd")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybnia"]
+atlas = ExtResource("7_5t3fd")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aydbk"]
+atlas = ExtResource("7_5t3fd")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sh8h"]
+atlas = ExtResource("7_5t3fd")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ia7r"]
+atlas = ExtResource("7_5t3fd")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3s3o0"]
+atlas = ExtResource("7_5t3fd")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iojl7"]
+atlas = ExtResource("7_5t3fd")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7lbd"]
+atlas = ExtResource("7_5t3fd")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jkihk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koru6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybnia")
+}],
+"loop": true,
+"name": &"Flay",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aydbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sh8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ia7r")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3s3o0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iojl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7lbd")
+}],
+"loop": true,
+"name": &"Reading",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cwtam"]
+radius = 353.051
 
 [node name="Level2" instance=ExtResource("1_3ye6q")]
 script = ExtResource("2_0d0jv")
@@ -42,6 +121,7 @@ debug_color = Color(0.63572, 0.487173, 0.549035, 0.42)
 position = Vector2(119, -68)
 
 [node name="Camera2D" parent="Player" index="3"]
+zoom = Vector2(1.5, 1.5)
 limit_left = 0
 limit_bottom = 1125
 script = ExtResource("3_8tqgd")
@@ -50,9 +130,26 @@ script = ExtResource("3_8tqgd")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
+[node name="Bat" type="CharacterBody2D" parent="." index="5"]
+position = Vector2(406, -246)
+script = ExtResource("6_d4ddl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bat" index="0"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_jkihk")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="Checker" type="Area2D" parent="Bat" index="1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bat/Checker" index="0"]
+position = Vector2(3, -10)
+shape = SubResource("CircleShape2D_cwtam")
+
 [connection signal="body_entered" from="Props/CliffWarn" to="Props/CliffWarn" method="_on_body_entered"]
 [connection signal="body_exited" from="Props/CliffWarn" to="Props/CliffWarn" method="_on_body_exited"]
 [connection signal="body_entered" from="Props/Vine" to="Props/Vine" method="_on_body_entered"]
 [connection signal="body_exited" from="Props/Vine" to="Props/Vine" method="_on_body_exited"]
+[connection signal="body_entered" from="Bat/Checker" to="Bat" method="_on_checker_body_entered"]
 
 [editable path="Player/TestScenc"]

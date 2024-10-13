@@ -73,12 +73,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"Reading",
-"speed": 2.0
+"speed": 5.0
 }]
 
 [node name="Bat" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5qqq5")
-animation = &"Flay"
-frame_progress = 0.0284743
+animation = &"Reading"
