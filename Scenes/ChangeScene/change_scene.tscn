@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dta85e3nl6oi1"]
 
-[ext_resource type="Script" path="res://change_scene.gd" id="1_jd0hn"]
+[ext_resource type="Script" path="res://Scenes/ChangeScene/change_scene.gd" id="1_jd0hn"]
 
 [node name="ChangeScene" type="Area2D"]
 script = ExtResource("1_jd0hn")
