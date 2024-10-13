@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://dj6er3ilqgvjd"]
+
+[ext_resource type="Texture2D" uid="uid://cu7l46j7nba6q" path="res://Scenes/Module/Methane/Resources/methane-Sheet.png" id="1_3esr1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg3su"]
+atlas = ExtResource("1_3esr1")
+region = Rect2(0, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro2d5"]
+atlas = ExtResource("1_3esr1")
+region = Rect2(24, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hegd7"]
+atlas = ExtResource("1_3esr1")
+region = Rect2(48, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kirbi"]
+atlas = ExtResource("1_3esr1")
+region = Rect2(72, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rc74"]
+atlas = ExtResource("1_3esr1")
+region = Rect2(96, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g43j"]
+atlas = ExtResource("1_3esr1")
+region = Rect2(120, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jkpu"]
+atlas = ExtResource("1_3esr1")
+region = Rect2(144, 0, 24, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dfuev"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg3su")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro2d5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hegd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kirbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rc74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g43j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jkpu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Methane" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dfuev")
+frame_progress = 0.721946
