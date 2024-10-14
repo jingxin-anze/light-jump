@@ -266,7 +266,7 @@ animations = [{
 size = Vector2(6, 16)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-collision_mask = 6
+collision_mask = 4
 script = ExtResource("1_1knux")
 SPEED = 150.0
 jump_height = 100.0

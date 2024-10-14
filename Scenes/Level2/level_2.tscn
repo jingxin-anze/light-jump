@@ -168,7 +168,7 @@ position = Vector2(868, 340)
 position = Vector2(852, 340)
 
 [node name="Bat" type="CharacterBody2D" parent="." index="10"]
-position = Vector2(406, -246)
+position = Vector2(404, -246)
 collision_layer = 2
 script = ExtResource("6_d4ddl")
 
