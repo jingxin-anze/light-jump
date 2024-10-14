@@ -129,6 +129,7 @@ debug_color = Color(0.63572, 0.487173, 0.549035, 0.42)
 
 [node name="Player" parent="." index="3"]
 position = Vector2(81, -47)
+collision_mask = 3
 
 [node name="Camera2D" parent="Player" index="3"]
 visible = false
@@ -143,6 +144,8 @@ metadata/_edit_group_ = true
 
 [node name="Torch" type="Area2D" parent="Player/TestScenc" index="1"]
 collision_mask = 2
+monitoring = false
+monitorable = false
 script = ExtResource("6_oasrj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/TestScenc/Torch" index="0"]
@@ -154,7 +157,6 @@ position = Vector2(3.05176e-05, 6.10352e-05)
 [node name="Bat" type="CharacterBody2D" parent="." index="5"]
 position = Vector2(406, -246)
 collision_layer = 2
-collision_mask = 0
 script = ExtResource("6_d4ddl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bat" index="0"]
@@ -169,99 +171,9 @@ autoplay = "Idle"
 position = Vector2(3, -10)
 shape = SubResource("CircleShape2D_cwtam")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bat" index="2"]
-position = Vector2(1, -11)
-shape = SubResource("CircleShape2D_8eeyf")
-debug_color = Color(0.715876, 0.457144, 0.425626, 0.42)
+[node name="Body" type="Area2D" parent="Bat" index="2"]
 
-[node name="Bat2" type="CharacterBody2D" parent="." index="6"]
-position = Vector2(406, -246)
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("6_d4ddl")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bat2" index="0"]
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_jkihk")
-animation = &"Idle"
-autoplay = "Idle"
-
-[node name="Checker" type="Area2D" parent="Bat2" index="1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bat2/Checker" index="0"]
-position = Vector2(3, -10)
-shape = SubResource("CircleShape2D_cwtam")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bat2" index="2"]
-position = Vector2(1, -11)
-shape = SubResource("CircleShape2D_8eeyf")
-debug_color = Color(0.715876, 0.457144, 0.425626, 0.42)
-
-[node name="Bat3" type="CharacterBody2D" parent="." index="7"]
-position = Vector2(406, -246)
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("6_d4ddl")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bat3" index="0"]
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_jkihk")
-animation = &"Idle"
-autoplay = "Idle"
-
-[node name="Checker" type="Area2D" parent="Bat3" index="1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bat3/Checker" index="0"]
-position = Vector2(3, -10)
-shape = SubResource("CircleShape2D_cwtam")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bat3" index="2"]
-position = Vector2(1, -11)
-shape = SubResource("CircleShape2D_8eeyf")
-debug_color = Color(0.715876, 0.457144, 0.425626, 0.42)
-
-[node name="Bat4" type="CharacterBody2D" parent="." index="8"]
-position = Vector2(406, -246)
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("6_d4ddl")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bat4" index="0"]
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_jkihk")
-animation = &"Idle"
-autoplay = "Idle"
-
-[node name="Checker" type="Area2D" parent="Bat4" index="1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bat4/Checker" index="0"]
-position = Vector2(3, -10)
-shape = SubResource("CircleShape2D_cwtam")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bat4" index="2"]
-position = Vector2(1, -11)
-shape = SubResource("CircleShape2D_8eeyf")
-debug_color = Color(0.715876, 0.457144, 0.425626, 0.42)
-
-[node name="Bat5" type="CharacterBody2D" parent="." index="9"]
-position = Vector2(406, -246)
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("6_d4ddl")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bat5" index="0"]
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_jkihk")
-animation = &"Idle"
-autoplay = "Idle"
-
-[node name="Checker" type="Area2D" parent="Bat5" index="1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bat5/Checker" index="0"]
-position = Vector2(3, -10)
-shape = SubResource("CircleShape2D_cwtam")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bat5" index="2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bat/Body" index="0"]
 position = Vector2(1, -11)
 shape = SubResource("CircleShape2D_8eeyf")
 debug_color = Color(0.715876, 0.457144, 0.425626, 0.42)
@@ -272,10 +184,6 @@ debug_color = Color(0.715876, 0.457144, 0.425626, 0.42)
 [connection signal="body_exited" from="Props/Vine" to="Props/Vine" method="_on_body_exited"]
 [connection signal="area_entered" from="Player/TestScenc/Torch" to="Player/TestScenc/Torch" method="_on_area_entered"]
 [connection signal="body_entered" from="Player/TestScenc/Torch" to="Player/TestScenc/Torch" method="_on_body_entered"]
-[connection signal="body_entered" from="Bat/Checker" to="Bat" method="_on_checker_body_entered"]
-[connection signal="body_entered" from="Bat2/Checker" to="Bat2" method="_on_checker_body_entered"]
-[connection signal="body_entered" from="Bat3/Checker" to="Bat3" method="_on_checker_body_entered"]
-[connection signal="body_entered" from="Bat4/Checker" to="Bat4" method="_on_checker_body_entered"]
-[connection signal="body_entered" from="Bat5/Checker" to="Bat5" method="_on_checker_body_entered"]
+[connection signal="body_entered" from="Bat/Body" to="Bat" method="_on_body_body_entered"]
 
 [editable path="Player/TestScenc"]

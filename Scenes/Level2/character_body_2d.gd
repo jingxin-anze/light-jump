@@ -8,6 +8,8 @@ var is_flay_away:bool
 var first_idle:bool=true
 var first_reading:bool=true
 var rand:Vector2
+var tem_t:float
+var tem:float
 
 const BAT = preload("res://Asset/Sounds/Level2/bat_02.mp3")
 
@@ -18,11 +20,12 @@ const BAT = preload("res://Asset/Sounds/Level2/bat_02.mp3")
 @onready var player:CharacterBody2D=get_tree().get_first_node_in_group("player")
 
 func _ready() -> void:
+	#给每个蝙蝠随机不同的返回点
 	randomize()
 	rand=Vector2(randi_range(500,2000),randi_range(-500,-600))
 
 func _physics_process(delta: float) -> void:
-	print(state)
+	#每帧检测，切换状态
 	match state:
 		State.idle:
 			anim.play("Idle")
@@ -35,53 +38,75 @@ func _physics_process(delta: float) -> void:
 			reading_state()
 	pass
 
-func _on_checker_body_entered(body: Node2D) -> void:
-	if body.name=="Player":
-		state=State.flay
 
 func idle_state():
+	#判断是否进入过
 	if first_idle:
+		#调整切换状态的条件
+		first_reading=true
+		first_idle=false
+		#销毁播放器
 		if is_instance_valid(audio):
 			AudioPlayer.destroy(audio)
+		#重置飞远
 		is_flay_away=false
-		await get_tree().create_timer(7).timeout
+		#等待五秒切换到reading
+		await get_tree().create_timer(5).timeout
 		state=State.reading
-		first_idle=true
+
 	else:
 		return
 
 func flay_state(dt):
+	#调整切换状态的条件
+	first_idle=true
+	first_reading=false
+	#若不飞远，则飞向玩家
 	if not is_flay_away:
+		#创建播放器并播放
 		audio=AudioPlayer.play(BAT,true,false,4)
+		#获得玩家方向
 		dir=-(self.position-player.position).normalized()
+		#调整翻转
+		anim.flip_h=false if dir.x<0 else true
+		#若接近目标点进入此函数
 		if_near(player.position)
-		anim.flip_h=false if dir.x<0 else true
+		#赋值velocity
 		velocity=dir*speed*dt
-		
 	else:
-		
+		#获得目标点方向
 		dir=-(self.position-rand).normalized()
-		if_near(rand)
+		#调整翻转
 		anim.flip_h=false if dir.x<0 else true
+		#若接近目标点进入此函数
+		if_near(rand)
+		#赋值velocity
 		velocity=dir*speed*dt
-	
+	#沿着velocity移动
 	move_and_collide(velocity)
 	pass
 
 func reading_state():
+	#判断是否进入过
 	if first_reading:
+		#将reading设为false
+		first_reading=false
+		#销毁播放器
 		if is_instance_valid(audio):
 			AudioPlayer.destroy(audio)
-		await get_tree().create_timer(2).timeout
+		#等待1.5秒进入flay状态
+		await get_tree().create_timer(1.5).timeout
 		state=State.flay
-		first_reading=true
+		
 	else:
 		return
 
 func if_near(pos:Vector2):
+	#若小于10则进入Idle状态
 	if abs(self.position-pos).x<10:
 		state=State.idle
 
-
-
-	
+#若无灯光，则靠近玩家并飞离
+func _on_body_body_entered(body: Node2D) -> void:
+	if body.name=="Player":
+		is_flay_away=true
