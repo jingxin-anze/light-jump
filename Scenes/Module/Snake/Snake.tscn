@@ -1,6 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8jkqh1r14od6"]
+[gd_scene load_steps=10 format=3 uid="uid://c8jkqh1r14od6"]
 
+[ext_resource type="Script" path="res://Scenes/Module/Snake/Script/snake.gd" id="1_mskcj"]
 [ext_resource type="Texture2D" uid="uid://x4xmmiaiyjo2" path="res://Scenes/Module/Snake/Reourses/snake-Sheet.png" id="1_ruf3o"]
+[ext_resource type="Script" path="res://Scenes/Player/state_macine.gd" id="3_dn4wg"]
+[ext_resource type="Script" path="res://Scenes/Module/Snake/Script/idle.gd" id="4_0emon"]
+[ext_resource type="Script" path="res://Scenes/Module/Snake/Script/LeftMove.gd" id="4_gfm37"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p7vns"]
 atlas = ExtResource("1_ruf3o")
@@ -24,8 +28,46 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="Snake" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vq37p"]
+size = Vector2(42, 35)
+
+[node name="Snake" type="CharacterBody2D"]
+scale = Vector2(-1, 1)
+script = ExtResource("1_mskcj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mro4o")
-frame_progress = 0.848452
+autoplay = "default"
+frame = 1
+frame_progress = 0.836995
+
+[node name="LeftWallDetection" type="RayCast2D" parent="."]
+target_position = Vector2(29, 0)
+
+[node name="RightWallDetection" type="RayCast2D" parent="."]
+scale = Vector2(1, 0.93928)
+target_position = Vector2(-29, 1)
+
+[node name="GroundDetection" type="RayCast2D" parent="."]
+rotation = 0.00221875
+target_position = Vector2(1, 29)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_vq37p")
+
+[node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("current_state")]
+script = ExtResource("3_dn4wg")
+current_state = NodePath("Idle")
+
+[node name="Idle" type="Node2D" parent="StateMachine"]
+scale = Vector2(0.971919, 1.01981)
+script = ExtResource("4_0emon")
+
+[node name="Move" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("snake")]
+script = ExtResource("4_gfm37")
+snake = NodePath("../..")
+
+[node name="DetectThePlayer" type="RayCast2D" parent="."]
+position = Vector2(1, -1)
+target_position = Vector2(-82, 1)
