@@ -178,7 +178,7 @@ script = ExtResource("6_d4ddl")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bat" index="0"]
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_jkihk")
-animation = &"Idle"
+animation = &"Reading"
 autoplay = "Idle"
 
 [node name="Checker" type="Area2D" parent="Bat" index="1"]
