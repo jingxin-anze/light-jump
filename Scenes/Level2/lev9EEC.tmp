@@ -144,8 +144,7 @@ metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
 [node name="Torch" type="Area2D" parent="Player/TestScenc" index="1"]
-collision_layer = 16
-collision_mask = 8
+collision_mask = 2
 script = ExtResource("6_oasrj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/TestScenc/Torch" index="0"]
@@ -172,13 +171,14 @@ position = Vector2(852, 340)
 
 [node name="Bat" type="CharacterBody2D" parent="." index="10"]
 position = Vector2(406, -246)
-collision_layer = 8
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("6_d4ddl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bat" index="0"]
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_jkihk")
-animation = &"Reading"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="Checker" type="Area2D" parent="Bat" index="1"]
