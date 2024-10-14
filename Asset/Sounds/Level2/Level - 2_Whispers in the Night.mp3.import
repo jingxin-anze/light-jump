@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bhcy8fim14ws"
+path="res://.godot/imported/Level - 2_Whispers in the Night.mp3-f78541fd0faad076423983a8b449462e.mp3str"
+
+[deps]
+
+source_file="res://Asset/Sounds/Level2/Level - 2_Whispers in the Night.mp3"
+dest_files=["res://.godot/imported/Level - 2_Whispers in the Night.mp3-f78541fd0faad076423983a8b449462e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

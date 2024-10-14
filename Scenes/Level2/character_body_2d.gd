@@ -7,6 +7,7 @@ var audio:AudioStreamPlayer
 var is_flay_away:bool
 var first_idle:bool=true
 var first_reading:bool=true
+var rand:Vector2
 
 const BAT = preload("res://Asset/Sounds/Level2/bat_02.mp3")
 
@@ -16,8 +17,12 @@ const BAT = preload("res://Asset/Sounds/Level2/bat_02.mp3")
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player:CharacterBody2D=get_tree().get_first_node_in_group("player")
 
+func _ready() -> void:
+	randomize()
+	rand=Vector2(randi_range(500,2000),randi_range(-500,-600))
+
 func _physics_process(delta: float) -> void:
-	#print(state)
+	print(state)
 	match state:
 		State.idle:
 			anim.play("Idle")
@@ -54,8 +59,7 @@ func flay_state(dt):
 		velocity=dir*speed*dt
 		
 	else:
-		randomize()
-		var rand:Vector2=Vector2(randi_range(500,2000),randi_range(-500,-600))
+		
 		dir=-(self.position-rand).normalized()
 		if_near(rand)
 		anim.flip_h=false if dir.x<0 else true
