@@ -24,14 +24,14 @@ var direction:float
 
 func _physics_process(_delta: float) -> void:
 	fall_gravity=(2 * jump_height)/(fall_time_to_peak * fall_time_to_peak)
-	if right.is_colliding() && right.get_collider().name=="Frog":
-		if hand.animation=="Attack2" && hand.frame==2:
-			var frog=right.get_collider()
-			frog.position.x+=40
-	if left.is_colliding() && left.get_collider().name=="Frog":
-		if hand.animation=="Attack2" && hand.frame==2:
-			var frog=right.get_collider()
-			frog.position.x+=-40
+	#if right.is_colliding() && right.get_collider().name=="Frog":
+		#if hand.animation=="Attack2" && hand.frame==2:
+			#var frog=right.get_collider()
+			#frog.position.x+=40
+	#if left.is_colliding() && left.get_collider().name=="Frog":
+		#if hand.animation=="Attack2" && hand.frame==2:
+			#var frog=right.get_collider()
+			#frog.position.x+=-40
 		
 		
 func player_move_1(gravity: float, delta: float) -> void:
