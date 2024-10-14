@@ -1,18 +1,16 @@
 extends Node2D
 
-@export var max_reflections = 3
-var direction = Vector2.RIGHT
-var points = []
+@export var max_reflections = 3 #最大折射次数，也就是新生成Raycast的次数
+var direction = Vector2.RIGHT   # 折射之后的方向
 @onready var ray: RayCast2D = $"../RayCast2D"
 @onready var line_2d: Line2D = $"../Line2D"
 
-@onready var points_range = []
+@onready var points_range = [] # 存储生成光线的点位
 
-var is_update = false
+var is_update = false 
+
 func _ready():
 	points_range.append(ray.position)
-	
-	
 	
 func _physics_process(delta):
 	# 获取碰撞点

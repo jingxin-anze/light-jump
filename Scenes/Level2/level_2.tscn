@@ -11,14 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://c8jkqh1r14od6" path="res://Scenes/Module/Snake/Snake.tscn" id="7_sr3l8"]
 [ext_resource type="PackedScene" uid="uid://dj6er3ilqgvjd" path="res://Scenes/Module/Methane/Methane.tscn" id="7_t6mwb"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_p2a0n"]
+radius = 350.091
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8ujo"]
 size = Vector2(300.5, 245)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sl2rm"]
 size = Vector2(95, 918)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_p2a0n"]
-radius = 350.091
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_koru6"]
 atlas = ExtResource("7_5t3fd")
@@ -103,8 +103,16 @@ radius = 17.0294
 [node name="Level2" instance=ExtResource("1_3ye6q")]
 script = ExtResource("2_0d0jv")
 
-[node name="Bg" parent="." index="0"]
+[node name="Player_TestScenc_Torch#CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_p2a0n")
+
+[node name="Bg" parent="." index="1"]
 metadata/_edit_lock_ = true
+
+[node name="Player_TestScenc#Torch" type="Area2D" parent="." index="2"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("6_oasrj")
 
 [node name="TileMapLayer" parent="Envir" index="0"]
 position = Vector2(100, -28)
@@ -126,31 +134,6 @@ script = ExtResource("3_ucfki")
 position = Vector2(207.5, 461)
 shape = SubResource("RectangleShape2D_sl2rm")
 debug_color = Color(0.63572, 0.487173, 0.549035, 0.42)
-
-[node name="Player" parent="." index="3"]
-position = Vector2(81, -47)
-
-[node name="Camera2D" parent="Player" index="3"]
-visible = false
-zoom = Vector2(1.5, 1.5)
-limit_left = 0
-limit_bottom = 1125
-script = ExtResource("3_8tqgd")
-
-[node name="TestScenc" parent="Player" index="4"]
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
-
-[node name="Torch" type="Area2D" parent="Player/TestScenc" index="1"]
-collision_layer = 16
-collision_mask = 2
-script = ExtResource("6_oasrj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/TestScenc/Torch" index="0"]
-shape = SubResource("CircleShape2D_p2a0n")
-
-[node name="ChangeScene" parent="." index="4"]
-position = Vector2(3.05176e-05, 6.10352e-05)
 
 [node name="Snake" parent="." index="5" instance=ExtResource("7_sr3l8")]
 position = Vector2(98, 334)
@@ -198,13 +181,24 @@ position = Vector2(1, -11)
 shape = SubResource("CircleShape2D_8eeyf")
 debug_color = Color(0.715876, 0.457144, 0.425626, 0.42)
 
+[node name="Player" parent="." index="11"]
+position = Vector2(81, -47)
+
+[node name="Camera2D" parent="Player" index="3"]
+visible = false
+zoom = Vector2(1.5, 1.5)
+limit_left = 0
+limit_bottom = 1125
+script = ExtResource("3_8tqgd")
+
+[node name="ChangeScene" parent="." index="12"]
+position = Vector2(3.05176e-05, 6.10352e-05)
+
 [connection signal="body_entered" from="Props/CliffWarn" to="Props/CliffWarn" method="_on_body_entered"]
 [connection signal="body_exited" from="Props/CliffWarn" to="Props/CliffWarn" method="_on_body_exited"]
 [connection signal="body_entered" from="Props/Vine" to="Props/Vine" method="_on_body_entered"]
 [connection signal="body_exited" from="Props/Vine" to="Props/Vine" method="_on_body_exited"]
-[connection signal="area_entered" from="Player/TestScenc/Torch" to="Player/TestScenc/Torch" method="_on_area_entered"]
-[connection signal="body_entered" from="Player/TestScenc/Torch" to="Player/TestScenc/Torch" method="_on_body_entered"]
 [connection signal="body_entered" from="Bat/Checker" to="Bat" method="_on_checker_body_entered"]
 [connection signal="body_entered" from="Bat/Body" to="Bat" method="_on_body_body_entered"]
 
-[editable path="Player/TestScenc"]
+[editable path="Player/Torch"]
