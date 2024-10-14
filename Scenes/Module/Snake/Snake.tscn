@@ -70,7 +70,8 @@ target_position = Vector2(-26, 0)
 
 [node name="GroundDetection" type="RayCast2D" parent="."]
 rotation = 0.00221875
-target_position = Vector2(1, 29)
+target_position = Vector2(0.0998437, 44.9999)
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 7)
@@ -91,8 +92,9 @@ snake = NodePath("../..")
 [node name="Attack" type="Node2D" parent="StateMachine"]
 script = ExtResource("6_a5vk3")
 
-[node name="Jump" type="Node2D" parent="StateMachine"]
+[node name="Jump" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("snake")]
 script = ExtResource("7_oi06b")
+snake = NodePath("../..")
 
 [node name="DetectThePlayer" type="RayCast2D" parent="."]
 position = Vector2(1, -1)
