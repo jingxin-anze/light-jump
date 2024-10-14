@@ -8,8 +8,7 @@ var is_flay_away:bool
 var first_idle:bool=true
 var first_reading:bool=true
 var rand:Vector2
-var tem_t:float
-var tem:float
+var is_bat:bool=true
 
 const BAT = preload("res://Asset/Sounds/Level2/bat_02.mp3")
 
@@ -53,7 +52,6 @@ func idle_state():
 		#等待五秒切换到reading
 		await get_tree().create_timer(5).timeout
 		state=State.reading
-
 	else:
 		return
 
@@ -97,7 +95,6 @@ func reading_state():
 		#等待1.5秒进入flay状态
 		await get_tree().create_timer(1.5).timeout
 		state=State.flay
-		
 	else:
 		return
 
