@@ -107,3 +107,9 @@ func if_near(pos:Vector2):
 func _on_body_body_entered(body: Node2D) -> void:
 	if body.name=="Player":
 		is_flay_away=true
+
+#若进入区域，直接追击,此功能有bug，等会再修 ψ(*｀ー´)ψ
+#func _on_checker_body_entered(body: Node2D) -> void:
+	#if body.name=="Player":
+		#state=State.flay
+		#is_flay_away=false
