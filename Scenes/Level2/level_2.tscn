@@ -172,6 +172,7 @@ position = Vector2(852, 340)
 position = Vector2(404, -246)
 collision_layer = 2
 script = ExtResource("6_d4ddl")
+metadata/is_bat = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bat" index="0"]
 scale = Vector2(3, 3)
@@ -181,6 +182,8 @@ autoplay = "Idle"
 
 [node name="Checker" type="Area2D" parent="Bat" index="1"]
 collision_layer = 0
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bat/Checker" index="0"]
 position = Vector2(3, -10)

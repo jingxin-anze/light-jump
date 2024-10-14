@@ -149,15 +149,15 @@ jump_height = 120.0
 [node name="Camera2D" type="Camera2D" parent="Player"]
 script = ExtResource("5_i11rd")
 
-[node name="TestScenc" parent="Player" instance=ExtResource("6_rl0lu")]
+[node name="Torch" parent="Player" instance=ExtResource("6_rl0lu")]
 position = Vector2(-11, -10)
 scale = Vector2(0.0714286, 0.0714286)
 script = ExtResource("7_u1ghu")
 
-[node name="Backgroud" parent="Player/TestScenc/Node" index="0"]
+[node name="Backgroud" parent="Player/Torch/Node" index="0"]
 visible = false
 
-[node name="PointLight2D" parent="Player/TestScenc/Node" index="2"]
+[node name="PointLight2D" parent="Player/Torch/Node" index="2"]
 position = Vector2(4, -15.9998)
 scale = Vector2(30, -24.579)
 color = Color(0.999441, 0.765404, 0.458621, 1)
@@ -165,9 +165,9 @@ min_energy = 0.3
 max_energy = 3.0
 flicker_speed = 0.2
 
-[node name="LightOccluder2D" parent="Player/TestScenc/Node/PointLight2D" index="0"]
+[node name="LightOccluder2D" parent="Player/Torch/Node/PointLight2D" index="0"]
 visible = false
 
 [node name="ChangeScene" parent="." instance=ExtResource("8_2aetb")]
 
-[editable path="Player/TestScenc"]
+[editable path="Player/Torch"]
