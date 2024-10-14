@@ -6,6 +6,8 @@ extends StateBase
 @onready var animated_sprite_2d: AnimatedSprite2D = $"../../AnimatedSprite2D"
 @onready var attack_detection: RayCast2D = $"../../AnimatedSprite2D/AttackDetection"
 
+@onready var right_wall_detection: RayCast2D = $"../../RightWallDetection"
+@onready var left_wall_detection: RayCast2D = $"../../LeftWallDetection"
 
 var player:Player
 
@@ -15,11 +17,14 @@ var gravity = 500.0 # 模拟重力
 var direction:int = 1
 
 func enter() -> void:
-	player = get_tree().root.find_child("Player",true,false)
+	player = get_tree().get_first_node_in_group("player")
 
 func physics_process_update(delta: float) -> void:
-	#is_on_floor = ground_detection.is_colliding()
-	
+	is_on_floor = ground_detection.is_colliding()
+	if snake.position.y > player.position.y and is_on_floor:
+		state_machine.change_state("Jump")
+			
+			
 	if player:
 		if direction != sign(player.position.x - snake.position.x):
 			filp()
