@@ -44,7 +44,7 @@ func idle_state():
 		first_idle=true
 	else:
 		return
-	
+
 func flay_state(dt):
 	if not is_flay_away:
 		audio=AudioPlayer.play(BAT,true,false,4)
