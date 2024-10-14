@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c8jkqh1r14od6"]
+[gd_scene load_steps=12 format=3 uid="uid://c8jkqh1r14od6"]
 
 [ext_resource type="Script" path="res://Scenes/Module/Snake/Script/snake.gd" id="1_mskcj"]
 [ext_resource type="Texture2D" uid="uid://x4xmmiaiyjo2" path="res://Scenes/Module/Snake/Reourses/snake-Sheet.png" id="1_ruf3o"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://Scenes/Module/Snake/Script/idle.gd" id="4_0emon"]
 [ext_resource type="Script" path="res://Scenes/Module/Snake/Script/LeftMove.gd" id="4_gfm37"]
 [ext_resource type="Script" path="res://Scenes/Module/Snake/Script/Attack.gd" id="6_a5vk3"]
-[ext_resource type="Script" path="res://Scenes/Module/Snake/Script/jump.gd" id="7_oi06b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lfus4"]
 atlas = ExtResource("1_ruf3o")
@@ -23,10 +22,10 @@ region = Rect2(48, 0, 48, 48)
 [sub_resource type="SpriteFrames" id="SpriteFrames_mro4o"]
 animations = [{
 "frames": [{
-"duration": 3.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_lfus4")
 }],
-"loop": false,
+"loop": true,
 "name": &"Attack",
 "speed": 5.0
 }, {
@@ -47,8 +46,6 @@ size = Vector2(42, 35)
 
 [node name="Snake" type="CharacterBody2D"]
 scale = Vector2(-1, 1)
-collision_layer = 2
-collision_mask = 5
 script = ExtResource("1_mskcj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -90,9 +87,6 @@ snake = NodePath("../..")
 
 [node name="Attack" type="Node2D" parent="StateMachine"]
 script = ExtResource("6_a5vk3")
-
-[node name="Jump" type="Node2D" parent="StateMachine"]
-script = ExtResource("7_oi06b")
 
 [node name="DetectThePlayer" type="RayCast2D" parent="."]
 position = Vector2(1, -1)
