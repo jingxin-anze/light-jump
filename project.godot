@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 AudioPlayer="*res://Global/audio_player.gd"
+GameHuayu="*res://Test/TestLight/Game_huayu.gd"
 
 [display]
 
