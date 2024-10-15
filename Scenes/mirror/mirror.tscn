@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://df47f4mv64qih"]
+
+[ext_resource type="Texture2D" uid="uid://dm4hrk3i78y5i" path="res://Scenes/mirror/mirror-Sheet.png" id="1_ejote"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6fhh"]
+atlas = ExtResource("1_ejote")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3o4mq"]
+atlas = ExtResource("1_ejote")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw51p"]
+atlas = ExtResource("1_ejote")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vx00t"]
+atlas = ExtResource("1_ejote")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8sxt"]
+atlas = ExtResource("1_ejote")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvcl6"]
+atlas = ExtResource("1_ejote")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klvw8"]
+atlas = ExtResource("1_ejote")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7bkf"]
+atlas = ExtResource("1_ejote")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vkyrv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6fhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3o4mq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vw51p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vx00t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8sxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvcl6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klvw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7bkf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Mirror" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vkyrv")
+autoplay = "default"
+frame_progress = 0.912945
