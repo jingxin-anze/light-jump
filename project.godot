@@ -81,7 +81,7 @@ down={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Enemy"
 2d_physics/layer_3="Ground"
-2d_physics/layer_5="Torch"
+2d_physics/layer_5="Props"
 
 [rendering]
 
