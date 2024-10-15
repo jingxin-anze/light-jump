@@ -12,15 +12,16 @@ func physics_process_update(delta: float) -> void:
 	if not player.is_on_floor():
 		state_machine.change_state("Fall")
 		
-	check_frog_collision(player, player.right, 40)
-	check_frog_collision(player, player.left, -40)
+	check_frog_collision(player, player.right, Vector2(120,0))
+	check_frog_collision(player, player.left, Vector2(-120,0))
 
 ## 退出状态
 func exit() -> void:
 	pass
 	
-func check_frog_collision(player: Player, ray: RayCast2D, offset: float) -> void:
+func check_frog_collision(player: Player, ray: RayCast2D, force:Vector2) -> void:
 	if ray.is_colliding() and ray.get_collider().name == "Frog":
 		if player.hand.animation == "Attack2" and player.hand.frame == 2:
-			var frog = ray.get_collider()
-			frog.position.x += offset
+			var frog:RigidBody2D = ray.get_collider()
+			frog.apply_central_impulse(force)
+			frog.sound_play()
