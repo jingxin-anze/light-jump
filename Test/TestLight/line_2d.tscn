@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwl4nswjj8h1d"]
+
+[ext_resource type="Script" path="res://Test/TestLight/line_2d.gd" id="1_ghslb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ans0y"]
+
+[node name="Line2D" type="Line2D"]
+material = SubResource("ShaderMaterial_ans0y")
+default_color = Color(0.952941, 0.603922, 0.505882, 0.65098)
+script = ExtResource("1_ghslb")

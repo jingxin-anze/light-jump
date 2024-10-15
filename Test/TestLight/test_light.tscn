@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://dy1215ltawyna"]
+
+[ext_resource type="Script" path="res://Test/TestLight/test_player.gd" id="1_yxrl6"]
+[ext_resource type="PackedScene" uid="uid://dwl4nswjj8h1d" path="res://Test/TestLight/line_2d.tscn" id="2_olvf3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnmrc"]
+size = Vector2(89, 9)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2c1jy"]
+radius = 7.0
+
+[sub_resource type="Environment" id="Environment_wjyew"]
+background_mode = 3
+background_color = Color(0.91, 0.881183, 0.0455, 1)
+tonemap_exposure = 1.5
+glow_enabled = true
+glow_levels/4 = 1.08
+glow_intensity = 1.05
+glow_blend_mode = 0
+glow_hdr_threshold = 0.5
+glow_hdr_scale = 1.36
+glow_hdr_luminance_cap = 50.5
+glow_map_strength = 0.0
+
+[node name="TestLight" type="Node2D"]
+
+[node name="Mirror" type="StaticBody2D" parent="."]
+position = Vector2(56, 36)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror"]
+rotation = 0.296796
+shape = SubResource("RectangleShape2D_cnmrc")
+
+[node name="TestPlayer" type="CharacterBody2D" parent="."]
+script = ExtResource("1_yxrl6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestPlayer"]
+shape = SubResource("CircleShape2D_2c1jy")
+
+[node name="Camera2D" type="Camera2D" parent="TestPlayer"]
+zoom = Vector2(4, 4)
+
+[node name="Line2D" parent="." instance=ExtResource("2_olvf3")]
+default_color = Color(1, 0.784314, 0.533333, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wjyew")

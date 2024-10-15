@@ -22,10 +22,11 @@ func _physics_process(delta):
 	var normal = ray.get_collision_normal()
 	# 使用 bounce 函数计算反射方向
 	direction = direction.bounce(normal.normalized())
-	
+
 	# 用碰撞的点位加上方向x距离
 	var target_point = collision_point + direction * 50000
 	points_range.append(target_point)
+
 	
 	
 	#update_line()

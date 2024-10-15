@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://0ob2tjd60nwu"]
+
+[ext_resource type="Script" path="res://Test/TestLight/light_ball.gd" id="1_kwpin"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_opd7g"]
+radius = 3.0
+
+[node name="LightBall" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("1_kwpin")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_opd7g")
+debug_color = Color(0.817612, 0.349522, 0.539063, 0.42)
