@@ -296,9 +296,10 @@ target_position = Vector2(-5.24537e-07, 12)
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_uxmw3")
 
-[node name="StateMacine" type="Node2D" parent="." node_paths=PackedStringArray("current_state")]
+[node name="StateMacine" type="Node2D" parent="." node_paths=PackedStringArray("current_state", "player")]
 script = ExtResource("1_m666x")
 current_state = NodePath("Idle")
+player = NodePath("..")
 
 [node name="Idle" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player", "body", "hand")]
 script = ExtResource("4_pcndm")
