@@ -25,7 +25,6 @@ var vine_fall:bool
 
 
 func _physics_process(delta: float) -> void:
-		
 	#下落重力是否为零
 	if can_fall:
 		fall_gravity=(2 * jump_height)/(fall_time_to_peak * fall_time_to_peak)

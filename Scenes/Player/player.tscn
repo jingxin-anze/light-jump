@@ -282,16 +282,6 @@ sprite_frames = SubResource("SpriteFrames_4acv6")
 animation = &"Attack2"
 autoplay = "default"
 
-[node name="Right" type="RayCast2D" parent="Body"]
-unique_name_in_owner = true
-rotation = -1.5708
-target_position = Vector2(-5.24537e-07, 12)
-
-[node name="Left" type="RayCast2D" parent="Body"]
-unique_name_in_owner = true
-rotation = 1.5708
-target_position = Vector2(-5.24537e-07, 12)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_uxmw3")
@@ -336,3 +326,13 @@ script = ExtResource("9_2pxhu")
 player = NodePath("../..")
 body = NodePath("../../Body")
 hand = NodePath("../../Body/Hand")
+
+[node name="Right" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+rotation = -1.5708
+target_position = Vector2(-5.24537e-07, 12)
+
+[node name="Left" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+rotation = 1.5708
+target_position = Vector2(-5.24537e-07, 12)

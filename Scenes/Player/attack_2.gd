@@ -20,7 +20,9 @@ func exit() -> void:
 	pass
 	
 func check_frog_collision(_player: Player, ray: RayCast2D, force:Vector2) -> void:
+
 	if ray.is_colliding() and ray.get_collider().name == "Frog":
+		print(ray.name)
 		if player.hand.animation == "Attack2" and player.hand.frame == 2:
 			var frog:RigidBody2D = ray.get_collider()
 			frog.apply_central_impulse(force)
