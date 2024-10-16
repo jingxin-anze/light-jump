@@ -46,7 +46,7 @@ func filp() -> void:
 # 设置移动变量	
 func set_velocity(delta:float) -> void:
 	direction = sign(player.position.x - snake.position.x)
-	print(direction)
+	# print(direction)
 	snake.velocity.x = direction * speed
 	snake.velocity.y += gravity * delta
 	
