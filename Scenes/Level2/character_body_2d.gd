@@ -106,7 +106,10 @@ func if_near(pos:Vector2):
 #若无灯光，则靠近玩家并飞离
 func _on_body_body_entered(body: Node2D) -> void:
 	if body.name=="Player":
+		body.SPEED/=2
 		is_flay_away=true
+		await get_tree().create_timer(5).timeout
+		body.SPEED*=2
 
 #若进入区域，直接追击,此功能有bug，等会再修 ψ(*｀ー´)ψ
 #func _on_checker_body_entered(body: Node2D) -> void:
