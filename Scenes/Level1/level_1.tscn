@@ -140,8 +140,8 @@ size = Vector2(49, 285)
 script = ExtResource("1_oqjah")
 
 [node name="Bg" type="Sprite2D" parent="."]
-position = Vector2(1790, 107)
-scale = Vector2(2, 2)
+position = Vector2(1299.12, 336.5)
+scale = Vector2(1.44434, 1.44434)
 texture = ExtResource("1_yov0r")
 metadata/_edit_lock_ = true
 
