@@ -19,5 +19,6 @@ func physics_process_update(delta: float) -> void:
 
 ## 退出状态
 func exit() -> void:
-	AudioPlayer.destroy(audio)
+	if is_instance_valid(audio):
+		AudioPlayer.destroy(audio)
 	pass

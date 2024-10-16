@@ -32,6 +32,46 @@ collision_layer = 8
 rotation = 0.296796
 shape = SubResource("RectangleShape2D_cnmrc")
 
+[node name="Mirror2" type="StaticBody2D" parent="."]
+position = Vector2(169, -33)
+rotation = 0.9426
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror2"]
+rotation = 0.296796
+shape = SubResource("RectangleShape2D_cnmrc")
+debug_color = Color(0.432885, 0.54755, 0.674529, 0.42)
+
+[node name="Mirror3" type="StaticBody2D" parent="."]
+position = Vector2(58, -68)
+rotation = -0.821777
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror3"]
+rotation = 0.296796
+shape = SubResource("RectangleShape2D_cnmrc")
+debug_color = Color(0.827412, 0.24396, 0.77469, 0.42)
+
+[node name="Mirror4" type="StaticBody2D" parent="."]
+position = Vector2(193, 63)
+rotation = 2.46562
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror4"]
+rotation = 0.296796
+shape = SubResource("RectangleShape2D_cnmrc")
+debug_color = Color(0.826264, 0.350728, 0.493137, 0.42)
+
+[node name="Mirror5" type="RigidBody2D" parent="."]
+position = Vector2(147, -112)
+collision_layer = 8
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror5"]
+rotation = 0.296796
+shape = SubResource("RectangleShape2D_cnmrc")
+debug_color = Color(0.581864, 0.53274, 0.400999, 0.42)
+
 [node name="TestPlayer" type="CharacterBody2D" parent="."]
 script = ExtResource("1_yxrl6")
 
