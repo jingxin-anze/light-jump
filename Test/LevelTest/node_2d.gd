@@ -13,24 +13,22 @@ func _ready():
 	points_range.append(ray.position)
 	
 func _physics_process(delta):
-	# 获取碰撞点
-	var collision_point = ray.get_collision_point()
 	
-	points_range.append(collision_point)
-	
-	# 获取碰撞法线
-	var normal = ray.get_collision_normal()
-	# 使用 bounce 函数计算反射方向
-	direction = direction.bounce(normal.normalized())
-
-	# 用碰撞的点位加上方向x距离
-	var target_point = collision_point + direction * 50000
-	points_range.append(target_point)
-
-	
-	
-	#update_line()
 	if !is_update:
+		# 获取碰撞点
+		var collision_point = ray.get_collision_point()
+		
+		points_range.append(collision_point)
+		
+		# 获取碰撞法线
+		var normal = ray.get_collision_normal()
+		# 使用 bounce 函数计算反射方向
+		direction = direction.bounce(normal.normalized())
+
+		# 用碰撞的点位加上方向x距离
+		var target_point = collision_point + direction * 50000
+		points_range.append(target_point)
+		#update_line()
 		update_line()
 		is_update= true
 

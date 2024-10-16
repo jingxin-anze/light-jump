@@ -15,8 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://dg1i5muyqauf5" path="res://Scenes/Module/LightBackground/LightBackground.tscn" id="9_kxi1o"]
 [ext_resource type="PackedScene" uid="uid://72nu5kncdr2w" path="res://Scenes/RigidFrog/frog.tscn" id="13_ke5qs"]
 [ext_resource type="PackedScene" uid="uid://dta85e3nl6oi1" path="res://Scenes/ChangeScene/change_scene.tscn" id="14_n4j3t"]
-[ext_resource type="Texture2D" uid="uid://0s0cdntu6wn8" path="res://Cristal_block.png" id="15_d1p6y"]
 [ext_resource type="PackedScene" uid="uid://mnpsqwvvsjsf" path="res://Scenes/Level2/level_2.tscn" id="15_dqxgq"]
+[ext_resource type="PackedScene" uid="uid://df47f4mv64qih" path="res://Scenes/mirror/mirror.tscn" id="17_4iy42"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hv1lo"]
 texture = ExtResource("1_8cmpk")
@@ -237,17 +237,16 @@ debug_color = Color(0.853681, 0.333886, 0.419726, 0.42)
 [node name="Frog" parent="Props" instance=ExtResource("13_ke5qs")]
 position = Vector2(1618, 962)
 
-[node name="Sprite2D" type="Sprite2D" parent="Props"]
-position = Vector2(1188, 717)
-scale = Vector2(3.6566, 3.6598)
-texture = ExtResource("15_d1p6y")
-
 [node name="ChangeScene" parent="." instance=ExtResource("14_n4j3t")]
 next_scene = ExtResource("15_dqxgq")
 
 [node name="CollisionShape2D" parent="ChangeScene" index="0"]
 position = Vector2(2598.5, 693.5)
 shape = SubResource("RectangleShape2D_x1eod")
+
+[node name="Mirror" parent="." instance=ExtResource("17_4iy42")]
+position = Vector2(1199, 705)
+scale = Vector2(3, 3)
 
 [connection signal="body_entered" from="Props/Bonfire/Area2D" to="Props/Bonfire" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Props/Bonfire/SoundFree" to="Props/Bonfire" method="_on_sound_free_body_entered"]

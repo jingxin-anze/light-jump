@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8fceh0opyvvs"]
+
+[ext_resource type="Script" path="res://Test/TestLight/ball_huayu.gd" id="1_uyn14"]
+
+[sub_resource type="Environment" id="Environment_8m4x1"]
+
+[node name="Ball_huayu" type="Node2D"]
+script = ExtResource("1_uyn14")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 100, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Line2D"]
+environment = SubResource("Environment_8m4x1")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(786, 0)
