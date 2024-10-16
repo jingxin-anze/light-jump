@@ -26,8 +26,8 @@ metadata/_edit_horizontal_guides_ = [624.0]
 position = Vector2(807, 514)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(271, 272)
-target_position = Vector2(100000, -2)
+position = Vector2(436, 294)
+target_position = Vector2(-88, 81)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(509, 284)

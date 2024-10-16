@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0bxtcn4uisch"]
+[gd_scene load_steps=3 format=3 uid="uid://dk3n0qac5jyg1"]
 
-[ext_resource type="PackedScene" uid="uid://bpv1gwkwwcf1p" path="res://Test/TestLight/ball_huayu.tscn" id="1_5nn46"]
-[ext_resource type="PackedScene" uid="uid://bqglsqsakw6hd" path="res://Test/TestLight/mirror_huayu.tscn" id="2_364dx"]
+[ext_resource type="PackedScene" path="res://Test/TestLight/ball_huayu.tscn" id="1_5nn46"]
+[ext_resource type="PackedScene" path="res://Test/TestLight/mirror_huayu.tscn" id="2_364dx"]
 
 [node name="light_test_huayu" type="Node2D"]
 
