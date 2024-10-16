@@ -52,7 +52,7 @@ rotation = 0.296796
 shape = SubResource("RectangleShape2D_cnmrc")
 debug_color = Color(0.827412, 0.24396, 0.77469, 0.42)
 
-[node name="Mirror4" type="StaticBody2D" parent="."]
+[node name="Mirror4" type="CharacterBody2D" parent="."]
 position = Vector2(193, 63)
 rotation = 2.46562
 collision_layer = 8
