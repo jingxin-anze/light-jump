@@ -4,6 +4,7 @@ extends Node2D
 var state_machine: StateMachine
 @export var body:AnimatedSprite2D
 @export var hand:AnimatedSprite2D
+@export var state_index: int
 ## 进入状态
 func enter() -> void:
 	pass

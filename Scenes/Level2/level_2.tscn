@@ -245,11 +245,14 @@ position = Vector2(852, 309)
 [node name="Player" parent="." index="8"]
 position = Vector2(153, -71)
 
-[node name="Camera2D" parent="Player" index="5"]
+[node name="Camera2D" parent="Player" index="6"]
 visible = false
 zoom = Vector2(1.5, 1.5)
 limit_left = 0
 limit_bottom = 1125
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 script = ExtResource("3_8tqgd")
 
 [node name="Torch" type="Area2D" parent="Player/Torch" index="1"]

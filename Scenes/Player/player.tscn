@@ -296,24 +296,28 @@ script = ExtResource("4_pcndm")
 player = NodePath("../..")
 body = NodePath("../../Body")
 hand = NodePath("../../Body/Hand")
+state_index = 1
 
 [node name="Walk" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player", "body", "hand")]
 script = ExtResource("5_4r43s")
 player = NodePath("../..")
 body = NodePath("../../Body")
 hand = NodePath("../../Body/Hand")
+state_index = 2
 
 [node name="Jump" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player", "body", "hand")]
 script = ExtResource("6_j873j")
 player = NodePath("../..")
 body = NodePath("../../Body")
 hand = NodePath("../../Body/Hand")
+state_index = 3
 
 [node name="Fall" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player", "body", "hand")]
 script = ExtResource("7_xx753")
 player = NodePath("../..")
 body = NodePath("../../Body")
 hand = NodePath("../../Body/Hand")
+state_index = 4
 
 [node name="Attack" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player", "body", "hand")]
 script = ExtResource("8_v66x6")
@@ -336,3 +340,6 @@ target_position = Vector2(-5.24537e-07, 12)
 unique_name_in_owner = true
 rotation = 1.5708
 target_position = Vector2(-5.24537e-07, 12)
+
+[node name="CoyoteTime" type="Timer" parent="."]
+one_shot = true

@@ -16,9 +16,14 @@ func physics_process_update(delta: float) -> void:
 		player.velocity=dir*vine_fall_speed*delta
 	if not player.vine_fall:
 		time+=delta
+	if player.cache_jump > 0 and player.coyote_time.time_left > 0:
+		state_machine.change_state("Jump")
+		return
 	if player.is_on_floor():
-		state_machine.change_state("Idle")
-		
+		if player.velocity.x == 0:
+			state_machine.change_state("Idle")
+		else:
+			state_machine.change_state("Walk")
 	player.player_move_1(player.fall_gravity,delta)
 	
 ## 退出状态

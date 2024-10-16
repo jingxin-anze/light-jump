@@ -8,12 +8,17 @@ func enter() -> void:
 	hand.play("Walk")
 	audio=AudioPlayer.play(STEP_SOUND,true,false)
 	audio.name="脚步声"
-	player.can_jump = true
 
 func physics_process_update(delta: float) -> void:
 	player.player_move_1(player.fall_gravity,delta)
+
+	if player.cache_jump > 0 and player.is_on_floor():
+		state_machine.change_state("Jump")
+		return
 	if not player.is_on_floor() :
+		player.coyote_time.start()
 		state_machine.change_state("Fall")
+		return
 	if player.direction==0:
 		state_machine.change_state("Idle")
 
