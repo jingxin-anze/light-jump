@@ -7,9 +7,11 @@ extends CharacterBody2D
 @export var fall_time_to_peak: float = 0.4
 @export var acceleration: float = 2000.0
 @export var jump_event:String="jump"
+@export var can_fall:bool=true
 
 var can_jump: bool = false
 var direction:float
+var vine_fall:bool
 
 @onready var jump_velocity: float = (-2 * jump_height)/jump_time_to_peak
 @onready var jump_gravity: float = (2 * jump_height)/(jump_time_to_peak * jump_time_to_peak)
@@ -23,8 +25,11 @@ var direction:float
 
 
 func _physics_process(_delta: float) -> void:
-	fall_gravity=(2 * jump_height)/(fall_time_to_peak * fall_time_to_peak)
-		
+	if can_fall:
+		fall_gravity=(2 * jump_height)/(fall_time_to_peak * fall_time_to_peak)
+	else:
+		fall_gravity=0.0
+
 func player_move_1(gravity: float, delta: float) -> void:
 	#有时下落速度要加以限制
 	#郊狼时间

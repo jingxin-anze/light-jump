@@ -99,8 +99,8 @@ func reading_state():
 		return
 
 func if_near(pos:Vector2):
-	#若小于10则进入Idle状态
-	if abs(self.position-pos).x<10:
+	#若小于3则进入Idle状态
+	if abs(self.position-pos).x<3:
 		state=State.idle
 
 #若无灯光，则靠近玩家并飞离

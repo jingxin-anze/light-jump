@@ -2,11 +2,15 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name=="Player":
-		body.fall_time_to_peak=1.3
+		print("pp")
+		body.can_fall=false
+		body.velocity.y=0
+		body.vine_fall=true
 		pass
 		
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name=="Player":
-		body.fall_time_to_peak=0.4
+		body.can_fall=true
+		body.vine_fall=false

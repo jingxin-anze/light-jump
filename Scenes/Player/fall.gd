@@ -1,6 +1,7 @@
 extends StateBase
 
 @export var player: Player 
+@export var vine_fall_speed:int=3500
 
 func enter() -> void:
 	hand.animation="Attack2"
@@ -8,6 +9,9 @@ func enter() -> void:
 	hand.speed_scale=0
 
 func physics_process_update(delta: float) -> void:
+	if player.vine_fall:
+		var dir:Vector2=Input.get_vector("move_left","move_right","jump","down")
+		player.velocity=dir*vine_fall_speed*delta
 	player.player_move_1(player.fall_gravity,delta)
 	if player.is_on_floor():
 		state_machine.change_state("Idle")
