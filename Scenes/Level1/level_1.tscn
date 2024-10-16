@@ -160,7 +160,7 @@ blend_mode = 1
 position = Vector2(1243, 996)
 
 [node name="Crystal2" parent="Envir" instance=ExtResource("3_oqfmu")]
-position = Vector2(740, 875)
+position = Vector2(884, 828)
 
 [node name="Crystal3" parent="Envir" instance=ExtResource("3_oqfmu")]
 position = Vector2(78, 993)
@@ -235,7 +235,7 @@ shape = SubResource("RectangleShape2D_b5o1r")
 debug_color = Color(0.853681, 0.333886, 0.419726, 0.42)
 
 [node name="Frog" parent="Props" instance=ExtResource("13_ke5qs")]
-position = Vector2(777, 934)
+position = Vector2(1447, 939)
 
 [node name="ChangeScene" parent="." instance=ExtResource("14_n4j3t")]
 next_scene = ExtResource("15_dqxgq")
