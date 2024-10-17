@@ -187,7 +187,7 @@ position = Vector2(2270, 992)
 position = Vector2(796, 901)
 scale = Vector2(3.5, 3.5)
 SPEED = 170.0
-jump_height = 200.0
+jump_height = 120.0
 
 [node name="TestScenc" parent="Player" instance=ExtResource("9_kxi1o")]
 visible = false
