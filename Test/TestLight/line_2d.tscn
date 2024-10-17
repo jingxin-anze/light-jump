@@ -6,5 +6,5 @@
 
 [node name="Line2D" type="Line2D"]
 material = SubResource("ShaderMaterial_ans0y")
-default_color = Color(0.952941, 0.603922, 0.505882, 0.65098)
+default_color = Color(0.952941, 0.211765, 0.333333, 0.996078)
 script = ExtResource("1_ghslb")

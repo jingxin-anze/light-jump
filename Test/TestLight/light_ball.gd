@@ -12,9 +12,11 @@ func _ready() -> void:
 	#设置line的target为自身
 	line.target=self
 	#存在五秒则自动销毁
-	await  get_tree().create_timer(5).timeout
-	line.queue_free()
-	queue_free()
+	await  get_tree().create_timer(10).timeout
+	speed=0
+	velocity=Vector2.ZERO
+	#line.queue_free()
+	#queue_free()
 
 #初始化角度和自身的位置
 func start(pos,rotat):

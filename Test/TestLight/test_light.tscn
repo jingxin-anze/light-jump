@@ -16,6 +16,7 @@ tonemap_exposure = 1.5
 glow_enabled = true
 glow_levels/4 = 1.08
 glow_intensity = 1.05
+glow_strength = 1.2
 glow_blend_mode = 0
 glow_hdr_threshold = 0.5
 glow_hdr_scale = 1.36
@@ -26,7 +27,8 @@ glow_map_strength = 0.0
 
 [node name="Mirror" type="StaticBody2D" parent="."]
 position = Vector2(56, 36)
-collision_layer = 8
+collision_layer = 16
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror"]
 rotation = 0.296796
@@ -35,7 +37,8 @@ shape = SubResource("RectangleShape2D_cnmrc")
 [node name="Mirror2" type="StaticBody2D" parent="."]
 position = Vector2(169, -33)
 rotation = 0.9426
-collision_layer = 8
+collision_layer = 16
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror2"]
 rotation = 0.296796
@@ -45,7 +48,8 @@ debug_color = Color(0.432885, 0.54755, 0.674529, 0.42)
 [node name="Mirror3" type="StaticBody2D" parent="."]
 position = Vector2(58, -68)
 rotation = -0.821777
-collision_layer = 8
+collision_layer = 16
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror3"]
 rotation = 0.296796
@@ -55,7 +59,8 @@ debug_color = Color(0.827412, 0.24396, 0.77469, 0.42)
 [node name="Mirror4" type="CharacterBody2D" parent="."]
 position = Vector2(193, 63)
 rotation = 2.46562
-collision_layer = 8
+collision_layer = 16
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror4"]
 rotation = 0.296796
@@ -64,7 +69,8 @@ debug_color = Color(0.826264, 0.350728, 0.493137, 0.42)
 
 [node name="Mirror5" type="RigidBody2D" parent="."]
 position = Vector2(147, -112)
-collision_layer = 8
+collision_layer = 16
+collision_mask = 16
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror5"]

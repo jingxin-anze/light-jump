@@ -273,13 +273,13 @@ jump_height = 100.0
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_65fxx")
-animation = &"Attack"
+animation = &"Jump"
 autoplay = "Idle"
 
 [node name="Hand" type="AnimatedSprite2D" parent="Body"]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_4acv6")
-animation = &"Attack2"
+animation = &"Jump"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

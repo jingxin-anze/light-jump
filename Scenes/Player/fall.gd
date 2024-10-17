@@ -6,15 +6,16 @@ extends StateBase
 var time:float
 
 func enter() -> void:
-	hand.animation="Attack2"
-	hand.frame=2
+	hand.animation="Jump"
 	hand.speed_scale=0
-
 func physics_process_update(delta: float) -> void:
 	if player.vine_fall:
 		var dir:Vector2=Input.get_vector("move_left","move_right","jump","down")
 		player.velocity=dir*vine_fall_speed*delta
+		hand.animation="Attack2"
+		hand.frame=2
 	if not player.vine_fall:
+		hand.animation="Jump"
 		time+=delta
 	if player.cache_jump > 0 and player.coyote_time.time_left > 0:
 		state_machine.change_state("Jump")

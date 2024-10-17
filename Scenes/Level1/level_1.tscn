@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://d0nxfjo0lk6el"]
+[gd_scene load_steps=31 format=4 uid="uid://d0nxfjo0lk6el"]
 
 [ext_resource type="Texture2D" uid="uid://dm4cl68ru4t3n" path="res://Asset/TileSet/map3.png" id="1_8cmpk"]
 [ext_resource type="Script" path="res://Scenes/Level1/level_1.gd" id="1_oqjah"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://hrui0frs4g7m" path="res://Scenes/Module/Crystal/Crystal.tscn" id="3_oqfmu"]
 [ext_resource type="Script" path="res://Scenes/Level1/float_torch.gd" id="4_8uulg"]
 [ext_resource type="Script" path="res://Scenes/Module/LightBackground/Script/point_light_2d.gd" id="4_43tl7"]
+[ext_resource type="PackedScene" uid="uid://clp04bls37q2b" path="res://Scenes/Door/Door.tscn" id="5_i1gln"]
+[ext_resource type="Script" path="res://Scenes/Level1/sun_ray_manager.gd" id="7_qrvlf"]
 [ext_resource type="PackedScene" uid="uid://d0ksm38yg6k4j" path="res://Scenes/Module/Torch/Torch.tscn" id="8_7fsp1"]
 [ext_resource type="Script" path="res://Scenes/Level1/bonfire.gd" id="8_p4717"]
 [ext_resource type="Script" path="res://Scenes/Module/Torch/torch.gd" id="9_8xam4"]
@@ -16,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://72nu5kncdr2w" path="res://Scenes/RigidFrog/frog.tscn" id="13_ke5qs"]
 [ext_resource type="PackedScene" uid="uid://dta85e3nl6oi1" path="res://Scenes/ChangeScene/change_scene.tscn" id="14_n4j3t"]
 [ext_resource type="PackedScene" uid="uid://mnpsqwvvsjsf" path="res://Scenes/Level2/level_2.tscn" id="15_dqxgq"]
+[ext_resource type="Script" path="res://Scenes/Level1/door_area.gd" id="16_vd3vo"]
 [ext_resource type="PackedScene" uid="uid://df47f4mv64qih" path="res://Scenes/mirror/mirror.tscn" id="17_4iy42"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hv1lo"]
@@ -133,6 +136,18 @@ radius = 33.0038
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5o1r"]
 size = Vector2(348.5, 232.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ofx"]
+size = Vector2(22.6667, 70.75)
+
+[sub_resource type="Gradient" id="Gradient_oub7q"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jfhj4"]
+gradient = SubResource("Gradient_oub7q")
+fill = 1
+fill_from = Vector2(0.477064, 0.426605)
+fill_to = Vector2(0.830275, 0.100917)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1eod"]
 size = Vector2(49, 285)
 
@@ -169,18 +184,10 @@ position = Vector2(78, 993)
 position = Vector2(2270, 992)
 
 [node name="Player" parent="." instance=ExtResource("2_bnyn2")]
-position = Vector2(822, 851)
+position = Vector2(796, 901)
 scale = Vector2(3.5, 3.5)
 SPEED = 170.0
 jump_height = 200.0
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(1.5, 1.5)
-limit_smoothed = true
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-script = ExtResource("3_ggaev")
 
 [node name="TestScenc" parent="Player" instance=ExtResource("9_kxi1o")]
 visible = false
@@ -208,6 +215,14 @@ visible = false
 position = Vector2(-4, 2)
 scale = Vector2(0.44, 0.44)
 script = ExtResource("9_8xam4")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(1.5, 1.5)
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = ExtResource("3_ggaev")
 
 [node name="Props" type="Node2D" parent="."]
 
@@ -241,6 +256,40 @@ debug_color = Color(0.853681, 0.333886, 0.419726, 0.42)
 [node name="Frog" parent="Props" instance=ExtResource("13_ke5qs")]
 position = Vector2(1447, 939)
 
+[node name="Door" parent="Props" instance=ExtResource("5_i1gln")]
+position = Vector2(2576, 697)
+scale = Vector2(3, 4)
+
+[node name="DoorArea" type="Area2D" parent="Props/Door"]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("16_vd3vo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Door/DoorArea"]
+position = Vector2(0, -0.125)
+shape = SubResource("RectangleShape2D_x0ofx")
+debug_color = Color(0.755347, 0.417439, 0.494449, 0.42)
+
+[node name="SourceLight" type="PointLight2D" parent="Props"]
+position = Vector2(1592, 444)
+scale = Vector2(3, 3)
+color = Color(0.98, 0.65072, 0.0392, 1)
+shadow_filter = 2
+shadow_filter_smooth = 3.4
+texture = SubResource("GradientTexture2D_jfhj4")
+script = ExtResource("4_43tl7")
+min_energy = 3.5
+max_energy = 5.0
+flicker_speed = 0.2
+
+[node name="SunRayManager" type="Node2D" parent="Props/SourceLight"]
+unique_name_in_owner = true
+script = ExtResource("7_qrvlf")
+
+[node name="Camera2D" type="Camera2D" parent="Props/SourceLight"]
+enabled = false
+zoom = Vector2(1.5, 1.5)
+
 [node name="ChangeScene" parent="." instance=ExtResource("14_n4j3t")]
 next_scene = ExtResource("15_dqxgq")
 
@@ -255,6 +304,7 @@ scale = Vector2(3, 3)
 [connection signal="body_entered" from="Props/Bonfire/Area2D" to="Props/Bonfire" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Props/Bonfire/SoundFree" to="Props/Bonfire" method="_on_sound_free_body_entered"]
 [connection signal="body_exited" from="Props/Bonfire/SoundFree" to="Props/Bonfire" method="_on_sound_free_body_exited"]
+[connection signal="body_entered" from="Props/Door/DoorArea" to="Props/Door/DoorArea" method="_on_body_entered"]
 
 [editable path="Player/TestScenc"]
 [editable path="ChangeScene"]
