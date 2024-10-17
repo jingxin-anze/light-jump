@@ -100,4 +100,4 @@ snake = NodePath("../..")
 
 [node name="DetectThePlayer" type="RayCast2D" parent="."]
 position = Vector2(0, -3)
-target_position = Vector2(-82, 1)
+target_position = Vector2(-420, 2)
