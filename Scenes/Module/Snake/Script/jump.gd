@@ -1,7 +1,7 @@
 extends StateBase
 
 var player: Player 
-@onready var detect_the_player: RayCast2D = $"../../DetectThePlayer"
+@onready var detect_the_player: RayCast2D = %DetectThePlayer
 @export var snake: Snake
 @onready var ground_detection: RayCast2D = $"../../GroundDetection"
 
@@ -10,6 +10,7 @@ var jump_force = -300.0  # 跳跃力
 var gravity = 500.0 # 模拟重力
 var speed = 100 
 func enter() -> void:
+	print("is jump")
 	snake.velocity.y = jump_force
 
 func physics_process_update(delta: float) -> void:	

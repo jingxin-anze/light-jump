@@ -69,7 +69,7 @@ collision_mask = 4
 
 [node name="DetectThePlayer" type="RayCast2D" parent="AnimatedSprite2D"]
 unique_name_in_owner = true
-position = Vector2(0, -3)
+position = Vector2(-1, 20)
 target_position = Vector2(-420, 2)
 
 [node name="AttackDetection" type="RayCast2D" parent="AnimatedSprite2D"]
@@ -112,3 +112,4 @@ snake = NodePath("../..")
 [node name="VineDetection" type="RayCast2D" parent="."]
 target_position = Vector2(0, -94)
 collision_mask = 4
+collide_with_areas = true

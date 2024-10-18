@@ -20,12 +20,13 @@ var gravity = 500.0 # 模拟重力
 var direction:int = 1
 
 func enter() -> void:
+	print("is move")
 	player = get_tree().get_first_node_in_group("player")
 
 func physics_process_update(delta: float) -> void:
 	is_on_floor = ground_detection.is_colliding() 
 	is_on_wall = wall_detection.is_colliding() or wall_detection_2.is_colliding()
-	is_on_vine = vine_detection.is_collididng()
+	is_on_vine = vine_detection.is_colliding()
 	
 	if snake.position.y != player.position.y and snake.is_vine and !is_on_floor:
 		state_machine.change_state("Cilmb")

@@ -5,23 +5,24 @@ var player: Player
 @export var speed:float = 3000
 
 @onready var ground_detection: RayCast2D = $"../../GroundDetection"
-@onready var dir_up:Vector2 = Vector2(0,-1)
-@onready var dir_dowm:Vector2 = Vector2(0,1)
+@onready var dir:Vector2 = Vector2(0,-1)
+
 @onready var detect_the_player: RayCast2D = %DetectThePlayer
 
 
 func enter() -> void:
+	print("in cilmb")
 	player = get_tree().get_first_node_in_group("player")
 	snake.set_collision_mask_value(3,false)
+	if snake.position.y > player.position.y:
+		dir = Vector2(0,-1)
+	
+	else:
+		dir = Vector2(0,1)
 
 func physics_process_update(delta: float) -> void:	
 	
-	if snake.position.y > player.position.y:
-		snake.velocity = dir_up * speed * delta
-	elif snake.position.y < player.position.y:
-		snake.velocity = dir_dowm * speed * delta
-	else:
-		snake.velocity = Vector2.ZERO  # 停止移动
+	snake.velocity = dir * speed * delta
 		
 	if ground_detection.is_colliding():
 		state_machine.change_state("Move")
