@@ -21,6 +21,10 @@ func enter() -> void:
 
 func physics_process_update(delta: float) -> void:
 	is_on_floor = ground_detection.is_colliding()
+	
+	if snake.position.y != player.position.y and snake.is_vine and !is_on_floor:
+		state_machine.change_state("Cilmb")
+	
 	if snake.position.y > player.position.y and is_on_floor:
 		state_machine.change_state("Jump")
 			

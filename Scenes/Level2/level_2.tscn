@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://mnpsqwvvsjsf"]
+[gd_scene load_steps=28 format=4 uid="uid://mnpsqwvvsjsf"]
 
 [ext_resource type="PackedScene" uid="uid://c4ajgw6w6y7ra" path="res://Scenes/NormalLevel/normal_level.tscn" id="1_3ye6q"]
 [ext_resource type="Script" path="res://Scenes/Level2/level_2.gd" id="2_0d0jv"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c8jkqh1r14od6" path="res://Scenes/Module/Snake/Snake.tscn" id="7_sr3l8"]
 [ext_resource type="PackedScene" uid="uid://dj6er3ilqgvjd" path="res://Scenes/Module/Methane/Methane.tscn" id="7_t6mwb"]
 [ext_resource type="PackedScene" uid="uid://d0ksm38yg6k4j" path="res://Scenes/Module/Torch/Torch.tscn" id="11_adcji"]
+[ext_resource type="PackedScene" uid="uid://boalubf3kttpf" path="res://Test/LevelTest/test_level.tscn" id="12_hmc45"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8ujo"]
 size = Vector2(300.5, 245)
@@ -106,9 +107,18 @@ radius = 17.0
 height = 46.0
 
 [node name="Level2" instance=ExtResource("1_3ye6q")]
+self_modulate = Color(100, 100, 100, 1)
 script = ExtResource("2_0d0jv")
 
-[node name="Bg" parent="." index="0"]
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="0"]
+visible = false
+modulate = Color(8.648, 11.352, 14.595, 1)
+light_mask = 3
+visibility_layer = 3
+position = Vector2(0, -2)
+color = Color(0.09, 0.09, 0.09, 1)
+
+[node name="Bg" parent="." index="1"]
 metadata/_edit_lock_ = true
 
 [node name="TileMapLayer" parent="Envir" index="0"]
@@ -127,6 +137,9 @@ position = Vector2(-43.25, -115.5)
 shape = SubResource("RectangleShape2D_l8ujo")
 
 [node name="Vine" type="Area2D" parent="Props" index="1"]
+position = Vector2(1, -2)
+collision_layer = 5
+collision_mask = 3
 script = ExtResource("3_ucfki")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Vine" index="0"]
@@ -226,23 +239,23 @@ position = Vector2(1, -11)
 shape = SubResource("CircleShape2D_8eeyf")
 debug_color = Color(0.715876, 0.457144, 0.425626, 0.42)
 
-[node name="Snake" parent="." index="3" instance=ExtResource("7_sr3l8")]
-position = Vector2(124, 309)
+[node name="Snake" parent="." index="4" instance=ExtResource("7_sr3l8")]
+position = Vector2(124, 309.05)
 rotation = 0.00115847
 
-[node name="Methane2" parent="." index="4" instance=ExtResource("7_t6mwb")]
+[node name="Methane2" parent="." index="5" instance=ExtResource("7_t6mwb")]
 position = Vector2(902, 309)
 
-[node name="Methane4" parent="." index="5" instance=ExtResource("7_t6mwb")]
+[node name="Methane4" parent="." index="6" instance=ExtResource("7_t6mwb")]
 position = Vector2(886, 308)
 
-[node name="Methane3" parent="." index="6" instance=ExtResource("7_t6mwb")]
+[node name="Methane3" parent="." index="7" instance=ExtResource("7_t6mwb")]
 position = Vector2(868, 309)
 
-[node name="Methane" parent="." index="7" instance=ExtResource("7_t6mwb")]
+[node name="Methane" parent="." index="8" instance=ExtResource("7_t6mwb")]
 position = Vector2(852, 309)
 
-[node name="Player" parent="." index="8"]
+[node name="Player" parent="." index="9"]
 position = Vector2(153, -71)
 
 [node name="Camera2D" parent="Player" index="6"]
@@ -267,13 +280,21 @@ position = Vector2(3, 1)
 shape = SubResource("CapsuleShape2D_1k3sn")
 debug_color = Color(0.747569, 0.406549, 0.579744, 0.42)
 
-[node name="ChangeScene" parent="." index="9"]
-position = Vector2(3.05176e-05, 6.10352e-05)
+[node name="ChangeScene" parent="." index="10"]
+position = Vector2(-11, 9)
 
-[node name="Torch" parent="." index="10" instance=ExtResource("11_adcji")]
+[node name="Torch" parent="." index="11" instance=ExtResource("11_adcji")]
 position = Vector2(157, 292)
 rotation = -3.14043
 scale = Vector2(1, -1)
+
+[node name="TestLevel" parent="." index="12" instance=ExtResource("12_hmc45")]
+visible = false
+light_mask = 2
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="13"]
+position = Vector2(418, 1)
+scale = Vector2(12.6019, -1.05838)
 
 [connection signal="body_entered" from="Props/CliffWarn" to="Props/CliffWarn" method="_on_body_entered"]
 [connection signal="body_exited" from="Props/CliffWarn" to="Props/CliffWarn" method="_on_body_exited"]
