@@ -11,7 +11,8 @@ var player: Player
 
 
 func enter() -> void:
-	print("in cilmb")
+	snake.is_vine = true
+	#print("in cilmb")
 	player = get_tree().get_first_node_in_group("player")
 	snake.set_collision_mask_value(3,false)
 	if snake.position.y > player.position.y:
@@ -28,13 +29,14 @@ func physics_process_update(delta: float) -> void:
 		state_machine.change_state("Move")
 		
 	if get_player_collide() is Player:
-		state_machine.change_state("Move")
+		state_machine.change_state("Jump")
 	
 	
 	
 ## 退出状态
 func exit() -> void:
 	snake.set_collision_mask_value(3,true)
+	snake.is_vine = false
 	
 func get_player_collide():
 	return detect_the_player.get_collider()

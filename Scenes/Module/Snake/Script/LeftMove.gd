@@ -20,7 +20,7 @@ var gravity = 500.0 # 模拟重力
 var direction:int = 1
 
 func enter() -> void:
-	print("is move")
+	#print("is move")
 	player = get_tree().get_first_node_in_group("player")
 
 func physics_process_update(delta: float) -> void:

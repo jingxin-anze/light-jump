@@ -10,7 +10,7 @@ var jump_force = -300.0  # 跳跃力
 var gravity = 500.0 # 模拟重力
 var speed = 100 
 func enter() -> void:
-	print("is jump")
+	#print("is jump")
 	snake.velocity.y = jump_force
 
 func physics_process_update(delta: float) -> void:	
