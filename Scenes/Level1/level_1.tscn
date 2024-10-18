@@ -209,14 +209,12 @@ flicker_speed = 0.2
 visible = false
 
 [node name="Torch" parent="Player" instance=ExtResource("8_7fsp1")]
-unique_name_in_owner = true
 visible = false
 position = Vector2(-4, 2)
 scale = Vector2(0.44, 0.44)
 script = ExtResource("9_8xam4")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-enabled = false
 zoom = Vector2(1.5, 1.5)
 limit_smoothed = true
 position_smoothing_enabled = true
@@ -249,6 +247,7 @@ shape = SubResource("CircleShape2D_ttpon")
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Bonfire/SoundFree"]
+visible = false
 position = Vector2(79.75, -106.25)
 shape = SubResource("RectangleShape2D_b5o1r")
 debug_color = Color(0.853681, 0.333886, 0.419726, 0.42)
@@ -287,6 +286,7 @@ unique_name_in_owner = true
 script = ExtResource("7_qrvlf")
 
 [node name="Camera2D" type="Camera2D" parent="Props/SourceLight"]
+enabled = false
 
 [node name="ChangeScene" parent="." instance=ExtResource("14_n4j3t")]
 next_scene = ExtResource("15_dqxgq")
