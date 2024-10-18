@@ -1,6 +1,6 @@
 extends Node2D
 
-var can_shoot:bool
+var can_shoot:bool=true
 
 func _physics_process(delta: float) -> void:
 	if can_shoot:
