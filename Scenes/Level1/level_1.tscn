@@ -168,6 +168,7 @@ tile_map_data = PackedByteArray("AAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAE
 tile_set = SubResource("TileSet_pnhyn")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Envir"]
+visible = false
 blend_mode = 1
 
 [node name="Crystal" parent="Envir" instance=ExtResource("3_oqfmu")]
@@ -209,14 +210,12 @@ flicker_speed = 0.2
 visible = false
 
 [node name="Torch" parent="Player" instance=ExtResource("8_7fsp1")]
-unique_name_in_owner = true
 visible = false
 position = Vector2(-4, 2)
 scale = Vector2(0.44, 0.44)
 script = ExtResource("9_8xam4")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-enabled = false
 zoom = Vector2(1.5, 1.5)
 limit_smoothed = true
 position_smoothing_enabled = true
@@ -287,6 +286,7 @@ unique_name_in_owner = true
 script = ExtResource("7_qrvlf")
 
 [node name="Camera2D" type="Camera2D" parent="Props/SourceLight"]
+enabled = false
 
 [node name="ChangeScene" parent="." instance=ExtResource("14_n4j3t")]
 next_scene = ExtResource("15_dqxgq")
