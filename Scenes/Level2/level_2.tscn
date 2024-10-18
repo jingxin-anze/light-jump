@@ -99,7 +99,7 @@ position = Vector2(868, 309)
 position = Vector2(852, 309)
 
 [node name="Player" parent="." index="9"]
-position = Vector2(1500, 500)
+position = Vector2(1616, -403)
 
 [node name="Camera2D" parent="Player" index="6"]
 visible = false

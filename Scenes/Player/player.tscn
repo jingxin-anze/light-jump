@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://clsxih71pb6nd"]
+[gd_scene load_steps=43 format=3 uid="uid://clsxih71pb6nd"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_1knux"]
 [ext_resource type="Script" path="res://Scenes/Player/state_macine.gd" id="1_m666x"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" path="res://Scenes/Player/fall.gd" id="7_xx753"]
 [ext_resource type="Script" path="res://Scenes/Player/attack.gd" id="8_v66x6"]
 [ext_resource type="Script" path="res://Scenes/Player/attack_2.gd" id="9_2pxhu"]
+[ext_resource type="Script" path="res://Scenes/Player/death.gd" id="10_5an85"]
+[ext_resource type="PackedScene" uid="uid://bntrd0ehljn5k" path="res://Scenes/DeathUI/death_ui.tscn" id="11_31ra5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4a211"]
 atlas = ExtResource("2_asxgp")
@@ -328,6 +330,13 @@ hand = NodePath("../../Body/Hand")
 [node name="Attack2" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player", "body", "hand")]
 script = ExtResource("9_2pxhu")
 player = NodePath("../..")
+body = NodePath("../../Body")
+hand = NodePath("../../Body/Hand")
+
+[node name="Death" type="Node2D" parent="StateMacine" node_paths=PackedStringArray("player", "body", "hand")]
+script = ExtResource("10_5an85")
+player = NodePath("../..")
+death_ui = ExtResource("11_31ra5")
 body = NodePath("../../Body")
 hand = NodePath("../../Body/Hand")
 

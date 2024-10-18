@@ -5,12 +5,14 @@ extends StateBase
 @export var extreme_time:float=0.7
 @export var death_time:float=0.92
 var time:float
+var is_to_death:bool=true
 
 func enter() -> void:
 	hand.animation="Jump"
 	hand.speed_scale=0
 
 func physics_process_update(delta: float) -> void:
+	#根据下落的种类播放对应的动画
 	if player.vine_fall:
 		var dir:Vector2=Input.get_vector("move_left","move_right","jump","down")
 		player.velocity=dir*vine_fall_speed*delta
@@ -19,24 +21,32 @@ func physics_process_update(delta: float) -> void:
 	if not player.vine_fall:
 		hand.animation="Jump"
 		time+=delta
+	#跳跃
 	if player.cache_jump > 0 and player.coyote_time.time_left > 0:
 		state_machine.change_state("Jump")
 		return
+	#状态切换
 	if player.is_on_floor():
 		if player.velocity.x == 0:
 			state_machine.change_state("Idle")
 		else:
 			state_machine.change_state("Walk")
+	#判断减速和死亡
+
+
+	#处理移动
 	player.player_move_1(player.fall_gravity,delta)
 	
 ## 退出状态
 func exit() -> void:
-	print("fall_lasting:",time)
-	hand.speed_scale=1
 	if time>extreme_time:
 		player.SPEED/=2
 		await get_tree().create_timer(5).timeout
 		player.SPEED*=2
-	if time>death_time:
-		get_tree().call_deferred("reload_current_scene")
+	if time>death_time && is_to_death:
+		is_to_death=false
+		print("death")
+		state_machine.change_state("Death")
+	#print("fall_lasting:",time)
+	hand.speed_scale=1
 	time=0.0

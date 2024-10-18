@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlqkt4nobjp6n"]
+[gd_scene load_steps=4 format=3 uid="uid://dlqkt4nobjp6n"]
 
 [ext_resource type="Theme" uid="uid://c78axvp43v5yl" path="res://Data/Theme/start_ui_theme.tres" id="1_e3nsy"]
+[ext_resource type="Script" path="res://Scenes/Ui/start_ui.gd" id="2_hstqr"]
 [ext_resource type="Script" path="res://Scenes/Ui/AnimationComponent.gd" id="2_hvv3s"]
 
 [node name="Control" type="Control"]
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_e3nsy")
+script = ExtResource("2_hstqr")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -52,11 +54,11 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 20
 
-[node name="Button" type="Button" parent="PanelContainer/VBoxContainer2/VBoxContainer"]
+[node name="Start" type="Button" parent="PanelContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "start"
 
-[node name="AnimationComponent" type="Node" parent="PanelContainer/VBoxContainer2/VBoxContainer/Button" node_paths=PackedStringArray("wait_for")]
+[node name="AnimationComponent" type="Node" parent="PanelContainer/VBoxContainer2/VBoxContainer/Start" node_paths=PackedStringArray("wait_for")]
 script = ExtResource("2_hvv3s")
 enter_animation = true
 hover_scale = Vector2(1.5, 1.5)
@@ -65,11 +67,11 @@ enter_time = 0.4
 enter_delay = 0.1
 enter_scale = Vector2(0, 0)
 
-[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer2/VBoxContainer"]
+[node name="Achievement" type="Button" parent="PanelContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "achievement"
 
-[node name="AnimationComponent2" type="Node" parent="PanelContainer/VBoxContainer2/VBoxContainer/Button2" node_paths=PackedStringArray("wait_for")]
+[node name="AnimationComponent2" type="Node" parent="PanelContainer/VBoxContainer2/VBoxContainer/Achievement" node_paths=PackedStringArray("wait_for")]
 script = ExtResource("2_hvv3s")
 enter_animation = true
 hover_scale = Vector2(1.5, 1.5)
@@ -78,11 +80,11 @@ enter_time = 0.5
 enter_delay = 0.1
 enter_scale = Vector2(0, 0)
 
-[node name="Button3" type="Button" parent="PanelContainer/VBoxContainer2/VBoxContainer"]
+[node name="Set" type="Button" parent="PanelContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "set"
 
-[node name="AnimationComponent3" type="Node" parent="PanelContainer/VBoxContainer2/VBoxContainer/Button3" node_paths=PackedStringArray("wait_for")]
+[node name="AnimationComponent3" type="Node" parent="PanelContainer/VBoxContainer2/VBoxContainer/Set" node_paths=PackedStringArray("wait_for")]
 script = ExtResource("2_hvv3s")
 enter_animation = true
 hover_scale = Vector2(1.5, 1.5)
@@ -91,11 +93,11 @@ enter_time = 0.6
 enter_delay = 0.1
 enter_scale = Vector2(0, 0)
 
-[node name="Button4" type="Button" parent="PanelContainer/VBoxContainer2/VBoxContainer"]
+[node name="Exit" type="Button" parent="PanelContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "exit"
 
-[node name="AnimationComponent4" type="Node" parent="PanelContainer/VBoxContainer2/VBoxContainer/Button4" node_paths=PackedStringArray("wait_for")]
+[node name="AnimationComponent4" type="Node" parent="PanelContainer/VBoxContainer2/VBoxContainer/Exit" node_paths=PackedStringArray("wait_for")]
 script = ExtResource("2_hvv3s")
 enter_animation = true
 hover_scale = Vector2(1.5, 1.5)
@@ -103,3 +105,5 @@ wait_for = NodePath("../../../../AnimationComponent")
 enter_time = 0.7
 enter_delay = 0.1
 enter_scale = Vector2(0, 0)
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer2/VBoxContainer/Start" to="." method="_on_start_pressed"]

@@ -34,6 +34,10 @@ movie_writer/movie_file="F:/shipin/123.avi"
 
 player=""
 
+[gui]
+
+theme/custom="res://Data/Theme/start_ui_theme.tres"
+
 [input]
 
 move_left={

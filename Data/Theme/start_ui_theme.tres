@@ -21,3 +21,4 @@ Label/font_sizes/font_size = 98
 Label/fonts/font = ExtResource("1_2tcis")
 Label/styles/normal = null
 PanelContainer/styles/panel = SubResource("StyleBoxEmpty_3qm1u")
+RichTextLabel/fonts/normal_font = ExtResource("1_2tcis")
