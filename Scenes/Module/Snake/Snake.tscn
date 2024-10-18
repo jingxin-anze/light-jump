@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c8jkqh1r14od6"]
+[gd_scene load_steps=14 format=3 uid="uid://c8jkqh1r14od6"]
 
 [ext_resource type="Script" path="res://Scenes/Module/Snake/Script/snake.gd" id="1_mskcj"]
 [ext_resource type="Texture2D" uid="uid://x4xmmiaiyjo2" path="res://Scenes/Module/Snake/Reourses/snake-Sheet.png" id="1_ruf3o"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scenes/Module/Snake/Script/LeftMove.gd" id="4_gfm37"]
 [ext_resource type="Script" path="res://Scenes/Module/Snake/Script/Attack.gd" id="6_a5vk3"]
 [ext_resource type="Script" path="res://Scenes/Module/Snake/Script/jump.gd" id="7_oi06b"]
+[ext_resource type="Script" path="res://Scenes/Module/Snake/Script/cilmb.gd" id="8_chpn3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lfus4"]
 atlas = ExtResource("1_ruf3o")
@@ -98,6 +99,10 @@ script = ExtResource("6_a5vk3")
 script = ExtResource("7_oi06b")
 snake = NodePath("../..")
 
+[node name="Cilmb" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("snake")]
+script = ExtResource("8_chpn3")
+snake = NodePath("../..")
+
 [node name="DetectThePlayer" type="RayCast2D" parent="."]
 position = Vector2(0, -3)
-target_position = Vector2(-82, 1)
+target_position = Vector2(-420, 2)

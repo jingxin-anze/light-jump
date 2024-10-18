@@ -2,25 +2,26 @@
 
 [ext_resource type="Script" path="res://Test/LevelTest/node_2d.gd" id="2_a0oa3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ji3uk"]
-size = Vector2(175.55, 8.80878)
-
 [sub_resource type="Environment" id="Environment_mktxh"]
 background_mode = 3
 background_color = Color(0.91, 0.881183, 0.0455, 1)
-tonemap_exposure = 1.5
+background_energy_multiplier = 5.21
 glow_enabled = true
-glow_levels/4 = 1.08
-glow_intensity = 0.9
+glow_levels/4 = 1.0
+glow_normalized = true
+glow_intensity = 1.57
+glow_strength = 0.68
 glow_blend_mode = 0
-glow_hdr_threshold = 0.5
-glow_hdr_scale = 1.36
-glow_hdr_luminance_cap = 50.5
-glow_map_strength = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ji3uk"]
+size = Vector2(175.55, 8.80878)
 
 [node name="TestLevel" type="Node2D"]
 position = Vector2(5, 0)
 metadata/_edit_horizontal_guides_ = [624.0]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mktxh")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(807, 514)
@@ -42,8 +43,10 @@ script = ExtResource("2_a0oa3")
 max_reflections = 2
 
 [node name="Line2D" type="Line2D" parent="."]
+light_mask = 2
+position = Vector2(255, 217)
 points = PackedVector2Array(0, 0, 100, 0)
-default_color = Color(0.964, 1, 0.46, 1)
+default_color = Color(16.756, 14.595, 1, 1)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Line2D"]
-environment = SubResource("Environment_mktxh")
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(117, 137)
