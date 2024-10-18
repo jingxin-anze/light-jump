@@ -168,6 +168,7 @@ tile_map_data = PackedByteArray("AAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAE
 tile_set = SubResource("TileSet_pnhyn")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Envir"]
+visible = false
 blend_mode = 1
 
 [node name="Crystal" parent="Envir" instance=ExtResource("3_oqfmu")]
@@ -247,7 +248,6 @@ shape = SubResource("CircleShape2D_ttpon")
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Bonfire/SoundFree"]
-visible = false
 position = Vector2(79.75, -106.25)
 shape = SubResource("RectangleShape2D_b5o1r")
 debug_color = Color(0.853681, 0.333886, 0.419726, 0.42)
