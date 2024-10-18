@@ -175,17 +175,17 @@ blend_mode = 1
 position = Vector2(1243, 996)
 
 [node name="Crystal2" parent="Envir" instance=ExtResource("3_oqfmu")]
-position = Vector2(884, 828)
+position = Vector2(1771, 994)
 
 [node name="Crystal3" parent="Envir" instance=ExtResource("3_oqfmu")]
-position = Vector2(78, 993)
+position = Vector2(2078, 993)
 
 [node name="Crystal4" parent="Envir" instance=ExtResource("3_oqfmu")]
-position = Vector2(2270, 992)
+position = Vector2(2419, 994)
 
 [node name="Player" parent="." instance=ExtResource("2_bnyn2")]
 position = Vector2(1191, 658)
-scale = Vector2(3.5, 3.5)
+scale = Vector2(2, 2)
 SPEED = 170.0
 jump_height = 120.0
 
@@ -253,7 +253,7 @@ shape = SubResource("RectangleShape2D_b5o1r")
 debug_color = Color(0.853681, 0.333886, 0.419726, 0.42)
 
 [node name="Frog" parent="Props" instance=ExtResource("13_ke5qs")]
-position = Vector2(1447, 939)
+position = Vector2(1338, 943)
 
 [node name="Door" parent="Props" instance=ExtResource("5_i1gln")]
 position = Vector2(2576, 697)
