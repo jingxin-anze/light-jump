@@ -2,12 +2,14 @@ extends StateBase
 
 @export var player: Player 
 @export var vine_fall_speed:int=3500
-@export var extreme_speed:float=0.7
+@export var extreme_time:float=0.7
+@export var death_time:float=0.92
 var time:float
 
 func enter() -> void:
 	hand.animation="Jump"
 	hand.speed_scale=0
+
 func physics_process_update(delta: float) -> void:
 	if player.vine_fall:
 		var dir:Vector2=Input.get_vector("move_left","move_right","jump","down")
@@ -31,8 +33,10 @@ func physics_process_update(delta: float) -> void:
 func exit() -> void:
 	print("fall_lasting:",time)
 	hand.speed_scale=1
-	if time>extreme_speed:
+	if time>extreme_time:
 		player.SPEED/=2
 		await get_tree().create_timer(5).timeout
 		player.SPEED*=2
+	if time>death_time:
+		get_tree().call_deferred("reload_current_scene")
 	time=0.0

@@ -1,0 +1,103 @@
+[gd_scene load_steps=13 format=3 uid="uid://jhb0tjyojsnb"]
+
+[ext_resource type="Script" path="res://Scenes/Level2/character_body_2d.gd" id="1_vkaas"]
+[ext_resource type="Texture2D" uid="uid://bx582hex4wnq0" path="res://Scenes/Module/Bat/Resources/bat-Sheet.png" id="2_ibhl8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koru6"]
+atlas = ExtResource("2_ibhl8")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybnia"]
+atlas = ExtResource("2_ibhl8")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aydbk"]
+atlas = ExtResource("2_ibhl8")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sh8h"]
+atlas = ExtResource("2_ibhl8")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ia7r"]
+atlas = ExtResource("2_ibhl8")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3s3o0"]
+atlas = ExtResource("2_ibhl8")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iojl7"]
+atlas = ExtResource("2_ibhl8")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7lbd"]
+atlas = ExtResource("2_ibhl8")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jkihk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koru6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybnia")
+}],
+"loop": true,
+"name": &"Flay",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aydbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sh8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ia7r")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3s3o0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iojl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7lbd")
+}],
+"loop": true,
+"name": &"Reading",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8eeyf"]
+radius = 17.0294
+
+[node name="Bat" type="CharacterBody2D"]
+position = Vector2(404, -246)
+collision_layer = 2
+script = ExtResource("1_vkaas")
+metadata/is_bat = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_jkihk")
+animation = &"Reading"
+autoplay = "Idle"
+
+[node name="Body" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+position = Vector2(1, -11)
+shape = SubResource("CircleShape2D_8eeyf")
+debug_color = Color(0.715876, 0.457144, 0.425626, 0.42)
+
+[connection signal="body_entered" from="Body" to="." method="_on_body_body_entered"]
