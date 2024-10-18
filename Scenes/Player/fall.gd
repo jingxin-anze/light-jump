@@ -1,7 +1,7 @@
 extends StateBase
 
 @export var player: Player 
-@export var vine_fall_speed:int=3500
+@export var vine_fall_speed:int=4500
 @export var extreme_time:float=0.7
 @export var death_time:float=0.92
 var time:float

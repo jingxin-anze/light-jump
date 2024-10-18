@@ -304,16 +304,16 @@ script = ExtResource("7_qrvlf")
 [node name="Camera2D" type="Camera2D" parent="Props/SourceLight"]
 enabled = false
 
+[node name="Mirror" parent="Props" instance=ExtResource("17_4iy42")]
+position = Vector2(1195, 707)
+scale = Vector2(3, 3)
+
 [node name="ChangeScene" parent="." instance=ExtResource("14_n4j3t")]
 next_scene = ExtResource("15_dqxgq")
 
 [node name="CollisionShape2D" parent="ChangeScene" index="0"]
 position = Vector2(2598.5, 693.5)
 shape = SubResource("RectangleShape2D_x1eod")
-
-[node name="Mirror" parent="." instance=ExtResource("17_4iy42")]
-position = Vector2(1199, 705)
-scale = Vector2(3, 3)
 
 [connection signal="body_entered" from="Props/Bonfire/Area2D" to="Props/Bonfire" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Props/Bonfire/SoundFree" to="Props/Bonfire" method="_on_sound_free_body_entered"]
