@@ -1,7 +1,7 @@
 extends StateBase
 
 var player: Player 
-@onready var detect_the_player: RayCast2D = $"../../DetectThePlayer"
+@onready var detect_the_player: RayCast2D = %DetectThePlayer
 @onready var animated_sprite_2d: AnimatedSprite2D = $"../../AnimatedSprite2D"
 
 func enter() -> void:

@@ -7,6 +7,7 @@ var player: Player
 @onready var ground_detection: RayCast2D = $"../../GroundDetection"
 @onready var dir_up:Vector2 = Vector2(0,-1)
 @onready var dir_dowm:Vector2 = Vector2(0,1)
+@onready var detect_the_player: RayCast2D = %DetectThePlayer
 
 
 func enter() -> void:
@@ -24,8 +25,15 @@ func physics_process_update(delta: float) -> void:
 		
 	if ground_detection.is_colliding():
 		state_machine.change_state("Move")
+		
+	if get_player_collide() is Player:
+		state_machine.change_state("Move")
+	
 	
 	
 ## 退出状态
 func exit() -> void:
 	snake.set_collision_mask_value(3,true)
+	
+func get_player_collide():
+	return detect_the_player.get_collider()
