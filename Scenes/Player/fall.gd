@@ -31,22 +31,20 @@ func physics_process_update(delta: float) -> void:
 			state_machine.change_state("Idle")
 		else:
 			state_machine.change_state("Walk")
-	#判断减速和死亡
-
-
+	#判断和死亡
+	if time>death_time && is_to_death:
+		is_to_death=false
+		print("death")
+		state_machine.change_state("Death")
 	#处理移动
 	player.player_move_1(player.fall_gravity,delta)
 	
 ## 退出状态
 func exit() -> void:
+	#判断减速
 	if time>extreme_time:
 		player.SPEED/=2
 		await get_tree().create_timer(5).timeout
 		player.SPEED*=2
-	if time>death_time && is_to_death:
-		is_to_death=false
-		print("death")
-		state_machine.change_state("Death")
-	#print("fall_lasting:",time)
 	hand.speed_scale=1
 	time=0.0

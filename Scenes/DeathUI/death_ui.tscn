@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bntrd0ehljn5k"]
+[gd_scene load_steps=4 format=3 uid="uid://bntrd0ehljn5k"]
 
 [ext_resource type="PackedScene" uid="uid://dg1i5muyqauf5" path="res://Scenes/Module/LightBackground/LightBackground.tscn" id="1_bt5tn"]
+[ext_resource type="Script" path="res://Scenes/DeathUI/death_ui.gd" id="1_nc2jq"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_1irm2"]
 
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nc2jq")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 self_modulate = Color(0, 0, 0, 1)
