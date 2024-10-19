@@ -13,7 +13,7 @@ bg_color = Color(0, 0, 0, 1)
 
 [resource]
 Button/font_sizes/font_size = 32
-Button/fonts/font = ExtResource("1_2s4nu")
+Button/fonts/font = ExtResource("1_2tcis")
 Button/styles/hover = SubResource("StyleBoxFlat_v0lyv")
 Button/styles/normal = SubResource("StyleBoxFlat_365e0")
 Label/colors/font_outline_color = Color(0.345098, 0.909804, 0.913725, 1)

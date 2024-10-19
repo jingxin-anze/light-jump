@@ -201,7 +201,7 @@ position = Vector2(2078, 993)
 position = Vector2(2419, 994)
 
 [node name="Player" parent="." instance=ExtResource("2_bnyn2")]
-position = Vector2(1191, 658)
+position = Vector2(598, 939)
 scale = Vector2(2, 2)
 SPEED = 170.0
 jump_height = 120.0
@@ -270,7 +270,7 @@ shape = SubResource("RectangleShape2D_b5o1r")
 debug_color = Color(0.853681, 0.333886, 0.419726, 0.42)
 
 [node name="Frog" parent="Props" instance=ExtResource("13_ke5qs")]
-position = Vector2(1338, 943)
+position = Vector2(1417, 949)
 
 [node name="Door" parent="Props" instance=ExtResource("5_i1gln")]
 position = Vector2(2576, 697)

@@ -14,7 +14,7 @@ func _physics_process(delta: float) -> void:
 	if level1:
 		if self.global_position.x<200:
 			player.to_death=true
-			#death_ui.get_node("TextureRect/YouDie").text="青蛙罢工了"
+			Global.frog_on_strike=true
 		if self.global_position.x>2300 and level1_shoot:
 			%SunRayManager.can_shoot=true
 			level1_shoot=false

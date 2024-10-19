@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 AudioPlayer="*res://Global/audio_player.gd"
 GameHuayu="*res://Test/TestLight/Game_huayu.gd"
+Global="*res://Global/Global.gd"
 
 [display]
 
@@ -34,10 +35,6 @@ movie_writer/movie_file="F:/shipin/123.avi"
 
 player=""
 death_ui=""
-
-[gui]
-
-theme/custom="res://Data/Theme/start_ui_theme.tres"
 
 [input]
 
