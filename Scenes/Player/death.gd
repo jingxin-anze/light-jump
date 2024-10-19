@@ -4,6 +4,7 @@ extends StateBase
 @export var death_ui:PackedScene
 
 func enter() -> void:
+	death_ui
 	get_tree().change_scene_to_packed(death_ui)
 
 func physics_process_update(delta: float) -> void:

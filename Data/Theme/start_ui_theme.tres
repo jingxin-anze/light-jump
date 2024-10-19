@@ -1,5 +1,6 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://c78axvp43v5yl"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://c78axvp43v5yl"]
 
+[ext_resource type="FontFile" uid="uid://dy6go34b526to" path="res://Asset/Font fun/IPix中文像素字体.ttf" id="1_2s4nu"]
 [ext_resource type="FontFile" uid="uid://bgobvrldc4wip" path="res://Asset/Font fun/Font fun/ChildFunSans-Demo.ttf" id="1_2tcis"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0lyv"]
@@ -12,7 +13,7 @@ bg_color = Color(0, 0, 0, 1)
 
 [resource]
 Button/font_sizes/font_size = 32
-Button/fonts/font = ExtResource("1_2tcis")
+Button/fonts/font = ExtResource("1_2s4nu")
 Button/styles/hover = SubResource("StyleBoxFlat_v0lyv")
 Button/styles/normal = SubResource("StyleBoxFlat_365e0")
 Label/colors/font_outline_color = Color(0.345098, 0.909804, 0.913725, 1)
@@ -21,4 +22,4 @@ Label/font_sizes/font_size = 98
 Label/fonts/font = ExtResource("1_2tcis")
 Label/styles/normal = null
 PanelContainer/styles/panel = SubResource("StyleBoxEmpty_3qm1u")
-RichTextLabel/fonts/normal_font = ExtResource("1_2tcis")
+RichTextLabel/fonts/normal_font = ExtResource("1_2s4nu")

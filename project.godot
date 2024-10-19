@@ -33,6 +33,7 @@ movie_writer/movie_file="F:/shipin/123.avi"
 [global_group]
 
 player=""
+death_ui=""
 
 [gui]
 

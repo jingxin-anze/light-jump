@@ -13,6 +13,8 @@ height = 116.0
 
 [node name="Frog" type="RigidBody2D"]
 position = Vector2(1786, 947)
+collision_layer = 16
+collision_mask = 23
 script = ExtResource("1_oomue")
 
 [node name="FrogSprite" parent="." instance=ExtResource("2_ipbck")]
