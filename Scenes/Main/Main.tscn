@@ -17,7 +17,7 @@ shape = SubResource("WorldBoundaryShape2D_mnkeo")
 [node name="Player" parent="." instance=ExtResource("1_bx366")]
 
 [node name="LightBackground" parent="." instance=ExtResource("2_l85e7")]
-position = Vector2(1140, 519)
+position = Vector2(1138, 519)
 scale = Vector2(2, 2)
 
 [node name="MainUI" parent="." instance=ExtResource("2_4i7x4")]
