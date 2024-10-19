@@ -268,7 +268,7 @@ animations = [{
 size = Vector2(6, 16)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-collision_mask = 5
+collision_mask = 23
 script = ExtResource("1_1knux")
 SPEED = 150.0
 jump_height = 100.0
@@ -344,11 +344,13 @@ hand = NodePath("../../Body/Hand")
 unique_name_in_owner = true
 rotation = -1.5708
 target_position = Vector2(-5.24537e-07, 12)
+collision_mask = 19
 
 [node name="Left" type="RayCast2D" parent="."]
 unique_name_in_owner = true
 rotation = 1.5708
 target_position = Vector2(-5.24537e-07, 12)
+collision_mask = 19
 
 [node name="CoyoteTime" type="Timer" parent="."]
 one_shot = true
