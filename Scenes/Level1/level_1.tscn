@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://d0nxfjo0lk6el"]
+[gd_scene load_steps=32 format=4 uid="uid://d0nxfjo0lk6el"]
 
 [ext_resource type="Texture2D" uid="uid://dm4cl68ru4t3n" path="res://Asset/TileSet/map3.png" id="1_8cmpk"]
 [ext_resource type="Script" path="res://Scenes/Level1/level_1.gd" id="1_oqjah"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://mnpsqwvvsjsf" path="res://Scenes/Level2/level_2.tscn" id="15_dqxgq"]
 [ext_resource type="Script" path="res://Scenes/Level1/door_area.gd" id="16_vd3vo"]
 [ext_resource type="PackedScene" uid="uid://df47f4mv64qih" path="res://Scenes/mirror/mirror.tscn" id="17_4iy42"]
+[ext_resource type="PackedScene" uid="uid://co1sslt5eecir" path="res://Scenes/AirWall/air_wall.tscn" id="21_ajk31"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hv1lo"]
 texture = ExtResource("1_8cmpk")
@@ -201,7 +202,7 @@ position = Vector2(2078, 993)
 position = Vector2(2419, 994)
 
 [node name="Player" parent="." instance=ExtResource("2_bnyn2")]
-position = Vector2(598, 939)
+position = Vector2(1071, 711)
 scale = Vector2(2, 2)
 SPEED = 170.0
 jump_height = 120.0
@@ -265,7 +266,7 @@ shape = SubResource("CircleShape2D_ttpon")
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Bonfire/SoundFree"]
-position = Vector2(79.75, -106.25)
+position = Vector2(90.5, -107)
 shape = SubResource("RectangleShape2D_b5o1r")
 debug_color = Color(0.853681, 0.333886, 0.419726, 0.42)
 
@@ -306,8 +307,7 @@ script = ExtResource("7_qrvlf")
 enabled = false
 
 [node name="Mirror" parent="Props" instance=ExtResource("17_4iy42")]
-position = Vector2(1195, 707)
-scale = Vector2(3, 3)
+position = Vector2(1218, 709)
 
 [node name="ChangeScene" parent="." instance=ExtResource("14_n4j3t")]
 next_scene = ExtResource("15_dqxgq")
@@ -315,6 +315,9 @@ next_scene = ExtResource("15_dqxgq")
 [node name="CollisionShape2D" parent="ChangeScene" index="0"]
 position = Vector2(2598.5, 693.5)
 shape = SubResource("RectangleShape2D_x1eod")
+
+[node name="AirWall" parent="." instance=ExtResource("21_ajk31")]
+position = Vector2(1266, 740)
 
 [connection signal="body_entered" from="Props/Bonfire/Area2D" to="Props/Bonfire" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Props/Bonfire/SoundFree" to="Props/Bonfire" method="_on_sound_free_body_entered"]
