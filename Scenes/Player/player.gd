@@ -14,6 +14,7 @@ var little_speed: bool = false
 var direction:float
 var vine_fall:bool
 var cache_jump: int = 0
+var to_death:bool
 
 @onready var jump_velocity: float = (-2 * jump_height)/jump_time_to_peak
 @onready var jump_gravity: float = (2 * jump_height)/(jump_time_to_peak * jump_time_to_peak)
@@ -38,6 +39,9 @@ func _physics_process(delta: float) -> void:
 	cache_jump = clamp(cache_jump,0,6)
 	if cache_jump == 0:
 		little_speed = false
+	
+	if to_death:
+		$StateMacine.change_state("Death")
 
 func player_move_1(gravity: float, delta: float) -> void:
 	#有时下落速度要加以限制
