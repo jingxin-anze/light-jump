@@ -13,13 +13,11 @@ func _ready() -> void:
 	get_parent().add_child(line)
 	#设置line的target为自身
 	line.target=self
-	#line.position=
 	#存在五秒则自动销毁
 	await  get_tree().create_timer(10).timeout
 	speed=0
 	velocity=Vector2.ZERO
-	#line.queue_free()
-	#queue_free()
+
 
 #初始化角度和自身的位置
 func start(pos,rotat,light_degrees):
@@ -40,7 +38,12 @@ func _physics_process(delta):
 
 		if collision.get_collider() is TileMapLayer:
 			velocity=Vector2(0,0)
-			pass
+			
+		if collision.get_collider().name=="DarkPlatform":
+			print(collision.get_collider().get_parent())
+			collision.get_collider().get_parent().modulate=Color.ANTIQUE_WHITE
+			collision.get_collider().collision_layer=16
+
 	if is_free:
 		line.queue_free()
 		queue_free()

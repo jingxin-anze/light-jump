@@ -47,4 +47,5 @@ func exit() -> void:
 		await get_tree().create_timer(5).timeout
 		player.SPEED*=2
 	hand.speed_scale=1
+	print("下落持续时间为:",time)
 	time=0.0

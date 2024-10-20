@@ -92,6 +92,7 @@ turn={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Enemy"
 2d_physics/layer_3="Ground"
+2d_physics/layer_4="只有光能检测到"
 2d_physics/layer_5="Props"
 
 [rendering]
