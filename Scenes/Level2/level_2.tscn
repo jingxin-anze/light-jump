@@ -154,15 +154,12 @@ position = Vector2(2720, 241)
 color = "green"
 
 [node name="DarkPlatform" parent="Props" index="13" instance=ExtResource("13_d8n6q")]
-modulate = Color(0.886275, 0.568627, 0.584314, 0.517647)
 position = Vector2(1836, 188)
 
 [node name="DarkPlatform2" parent="Props" index="14" instance=ExtResource("13_d8n6q")]
-modulate = Color(0.886275, 0.568627, 0.584314, 0.517647)
 position = Vector2(2713, 419)
 
 [node name="DarkPlatform3" parent="Props" index="15" instance=ExtResource("13_d8n6q")]
-modulate = Color(0.886275, 0.568627, 0.584314, 0.517647)
 position = Vector2(2715, 129)
 
 [node name="Player" parent="." index="3"]
