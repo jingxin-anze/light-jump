@@ -6,8 +6,7 @@
 size = Vector2(1, 0.952382)
 
 [node name="DarkPlatform" type="Sprite2D"]
-modulate = Color(0.235294, 0.227451, 0.239216, 1)
-position = Vector2(1834, 197)
+modulate = Color(0.886275, 0.568627, 0.584314, 0.517647)
 scale = Vector2(122, 21)
 texture = SubResource("CanvasTexture_fuw7k")
 
@@ -17,5 +16,4 @@ collision_mask = 22
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DarkPlatform"]
 visible = false
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_om3ra")

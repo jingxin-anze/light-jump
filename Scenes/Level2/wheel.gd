@@ -14,9 +14,11 @@ func _ready() -> void:
 			
 func _physics_process(delta: float) -> void:
 	if can_turn:
-		if Input.is_action_pressed("turn"):
+		if Input.is_action_pressed("turn_left"):
+			target_mirror.rotation_degrees-=turn_speed
+		if Input.is_action_pressed("turn_right"):
 			target_mirror.rotation_degrees+=turn_speed
-		if Input.is_action_just_released("turn"):
+		if Input.is_action_just_released("turn_left") or Input.is_action_just_released("turn_right"):
 			%Crystal4.can_shoot=true
 
 func _on_wheel_area_body_entered(body: Node2D) -> void:
