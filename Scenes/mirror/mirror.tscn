@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://df47f4mv64qih"]
+[gd_scene load_steps=13 format=3 uid="uid://df47f4mv64qih"]
 
 [ext_resource type="Texture2D" uid="uid://dm4hrk3i78y5i" path="res://Scenes/Mirror/mirror-Sheet.png" id="1_ejote"]
 
@@ -66,9 +66,33 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="Mirror" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbf71"]
+size = Vector2(24, 16)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ntcw2"]
+a = Vector2(34.1143, -9.603)
+b = Vector2(9.59134, 35.1142)
+
+[node name="Mirror" type="RigidBody2D"]
+rotation = -0.0116568
+collision_layer = 16
+collision_mask = 23
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_vkyrv")
 autoplay = "default"
 frame_progress = 0.431673
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 11)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_cbf71")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("SegmentShape2D_ntcw2")
+debug_color = Color(0.966772, 0.135364, 0.31688, 0.42)
