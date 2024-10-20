@@ -35,7 +35,10 @@ height = 46.0
 self_modulate = Color(100, 100, 100, 1)
 script = ExtResource("2_0d0jv")
 
-[node name="Bg" parent="." index="0"]
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="0"]
+color = Color(0.144063, 0.144063, 0.144063, 1)
+
+[node name="Bg" parent="." index="1"]
 metadata/_edit_lock_ = true
 
 [node name="TileMapLayer" parent="Envir" index="0"]
@@ -162,7 +165,7 @@ position = Vector2(2713, 419)
 [node name="DarkPlatform3" parent="Props" index="15" instance=ExtResource("13_d8n6q")]
 position = Vector2(2715, 129)
 
-[node name="Player" parent="." index="3"]
+[node name="Player" parent="." index="4"]
 position = Vector2(1710, 235)
 
 [node name="Camera2D" parent="Player" index="6"]
@@ -189,18 +192,18 @@ position = Vector2(3, 1)
 shape = SubResource("CapsuleShape2D_1k3sn")
 debug_color = Color(0.747569, 0.406549, 0.579744, 0.42)
 
-[node name="ChangeScene" parent="." index="4"]
+[node name="ChangeScene" parent="." index="5"]
 position = Vector2(-11, 9)
 
-[node name="TestLevel" parent="." index="5" instance=ExtResource("12_hmc45")]
+[node name="TestLevel" parent="." index="6" instance=ExtResource("12_hmc45")]
 visible = false
 light_mask = 2
 
-[node name="PointLight2D" type="PointLight2D" parent="." index="6"]
+[node name="PointLight2D" type="PointLight2D" parent="." index="7"]
 position = Vector2(418, 1)
 scale = Vector2(12.6019, -1.05838)
 
-[node name="Frog" parent="." index="7" instance=ExtResource("13_8hpa2")]
+[node name="Frog" parent="." index="8" instance=ExtResource("13_8hpa2")]
 visible = false
 position = Vector2(1718, 341)
 

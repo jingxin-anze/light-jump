@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxrq21acmfrxj"]
+
+[ext_resource type="PackedScene" uid="uid://c4ajgw6w6y7ra" path="res://Scenes/NormalLevel/normal_level.tscn" id="1_6x0qj"]
+
+[node name="Level3" instance=ExtResource("1_6x0qj")]
+
+[editable path="Player/Torch"]

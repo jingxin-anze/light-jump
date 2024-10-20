@@ -9,7 +9,6 @@ func _ready() -> void:
 	pass
 
 func _process(_delta: float) -> void:
-		
 	if is_light:
 		tile_map_layer.set_cell(Vector2i(71,8),0,tile_top)
 		tile_map_layer.set_cell(Vector2i(72,8),0,tile_top)
