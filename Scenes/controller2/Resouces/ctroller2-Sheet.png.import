@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cv5flhv3yq578"
-path="res://.godot/imported/ctroller2-Sheet.png-fd37e6ea92348616387dc1ce5b6939b3.ctex"
+path="res://.godot/imported/ctroller2-Sheet.png-ecc1bb4a6686599020e17632e4d19f64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Controller2/Resouces/ctroller2-Sheet.png"
-dest_files=["res://.godot/imported/ctroller2-Sheet.png-fd37e6ea92348616387dc1ce5b6939b3.ctex"]
+source_file="res://Scenes/controller2/Resouces/ctroller2-Sheet.png"
+dest_files=["res://.godot/imported/ctroller2-Sheet.png-ecc1bb4a6686599020e17632e4d19f64.ctex"]
 
 [params]
 

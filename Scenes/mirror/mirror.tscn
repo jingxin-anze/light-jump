@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://df47f4mv64qih"]
 
-[ext_resource type="Texture2D" uid="uid://dm4hrk3i78y5i" path="res://Scenes/Mirror/mirror-Sheet.png" id="1_ejote"]
+[ext_resource type="Texture2D" uid="uid://dm4hrk3i78y5i" path="res://Scenes/mirror/mirror-Sheet.png" id="1_ejote"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n6fhh"]
 atlas = ExtResource("1_ejote")
@@ -77,6 +77,7 @@ b = Vector2(9.59134, 35.1142)
 rotation = -0.0116568
 collision_layer = 16
 collision_mask = 23
+lock_rotation = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)
