@@ -6,7 +6,7 @@
 size = Vector2(1, 0.952382)
 
 [node name="DarkPlatform" type="Sprite2D"]
-modulate = Color(0.886275, 0.568627, 0.584314, 0.517647)
+modulate = Color(0, 0, 0, 1)
 scale = Vector2(122, 21)
 texture = SubResource("CanvasTexture_fuw7k")
 
