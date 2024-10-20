@@ -2,15 +2,18 @@ extends CharacterBody2D
 
 #定义球的速度
 @export var speed:int= 1000
+var line:Line2D
+var is_free:bool
 
 #在ready完成的时候加载line
 func _ready() -> void:
 	#实例化line
-	var line:Line2D=preload("res://Test/TestLight/line_2d.tscn").instantiate()
-	#将其置于场景根节点下
+	line=preload("res://Test/TestLight/line_2d.tscn").instantiate()
+	#将其置于父节点下
 	get_parent().add_child(line)
 	#设置line的target为自身
 	line.target=self
+	#line.position=
 	#存在五秒则自动销毁
 	await  get_tree().create_timer(10).timeout
 	speed=0
@@ -19,7 +22,8 @@ func _ready() -> void:
 	#queue_free()
 
 #初始化角度和自身的位置
-func start(pos,rotat):
+func start(pos,rotat,light_degrees):
+	line.light_degrees=light_degrees
 	rotation = rotat
 	position =pos
 	#速度为自身速度旋转rotation角度
@@ -33,3 +37,10 @@ func _physics_process(delta):
 	if collision:
 		#根据物理体的法线反弹
 		velocity = velocity.bounce(collision.get_normal())
+
+		if collision.get_collider() is TileMapLayer:
+			velocity=Vector2(0,0)
+			pass
+	if is_free:
+		line.queue_free()
+		queue_free()

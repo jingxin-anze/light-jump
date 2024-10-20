@@ -18,7 +18,7 @@ func physics_process_update(delta: float) -> void:
 ## 退出状态
 func exit() -> void:
 	pass
-	
+
 func check_frog_collision(_player: Player, ray: RayCast2D, force:Vector2) -> void:
 	if ray.is_colliding() and ray.get_collider().name == "Frog":
 		if player.hand.animation == "Attack2" and player.hand.frame == 2:

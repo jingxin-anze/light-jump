@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://82p42a4l8lc5"]
+
+[ext_resource type="Texture2D" uid="uid://cv5flhv3yq578" path="res://Scenes/Controller2/Resouces/ctroller2-Sheet.png" id="1_0svxw"]
+[ext_resource type="Script" path="res://Scenes/Level2/wheel.gd" id="2_a62lw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rldnk"]
+atlas = ExtResource("1_0svxw")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5opay"]
+atlas = ExtResource("1_0svxw")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rofk"]
+atlas = ExtResource("1_0svxw")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vdd5p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rldnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5opay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rofk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kb8vr"]
+radius = 13.537
+
+[node name="Wheel" type="AnimatedSprite2D" groups=["wheel"]]
+position = Vector2(1686, 244)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_vdd5p")
+animation = &"idle"
+script = ExtResource("2_a62lw")
+color = "red"
+
+[node name="WheelArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WheelArea"]
+visible = false
+shape = SubResource("CircleShape2D_kb8vr")
+
+[connection signal="body_entered" from="WheelArea" to="." method="_on_wheel_area_body_entered"]
+[connection signal="body_exited" from="WheelArea" to="." method="_on_wheel_area_body_exited"]

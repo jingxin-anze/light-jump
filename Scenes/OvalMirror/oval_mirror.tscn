@@ -1,36 +1,37 @@
-[gd_scene load_steps=10 format=3 uid="uid://da7ndmw7fvcn4"]
+[gd_scene load_steps=12 format=3 uid="uid://br5lctyc284mr"]
 
-[ext_resource type="Texture2D" uid="uid://c2t5jcc1330k1" path="res://Scenes/Mirror2/Resouces/mrror2-Sheet.png" id="1_0yv4y"]
+[ext_resource type="Texture2D" uid="uid://c2t5jcc1330k1" path="res://Scenes/Mirror2/Resouces/mrror2-Sheet.png" id="1_r47kh"]
+[ext_resource type="Script" path="res://Scenes/Level2/oval_mirror.gd" id="2_yc76e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxjno"]
-atlas = ExtResource("1_0yv4y")
+atlas = ExtResource("1_r47kh")
 region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qkjro"]
-atlas = ExtResource("1_0yv4y")
+atlas = ExtResource("1_r47kh")
 region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v8lc7"]
-atlas = ExtResource("1_0yv4y")
+atlas = ExtResource("1_r47kh")
 region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wpljl"]
-atlas = ExtResource("1_0yv4y")
+atlas = ExtResource("1_r47kh")
 region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0eool"]
-atlas = ExtResource("1_0yv4y")
+atlas = ExtResource("1_r47kh")
 region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2iwir"]
-atlas = ExtResource("1_0yv4y")
+atlas = ExtResource("1_r47kh")
 region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ferhs"]
-atlas = ExtResource("1_0yv4y")
+atlas = ExtResource("1_r47kh")
 region = Rect2(288, 0, 48, 48)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_f3c3v"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_qoijd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -59,8 +60,21 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Mirror2Sprite" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oqbhp"]
+radius = 6.36389
+height = 45.2549
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_f3c3v")
-frame_progress = 0.343034
+[node name="OvalMirror" type="AnimatedSprite2D" groups=["oval_mirror", "wheel"]]
+position = Vector2(1557, 45.9999)
+rotation = -0.958186
+sprite_frames = SubResource("SpriteFrames_qoijd")
+script = ExtResource("2_yc76e")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.707105, 0.707109)
+shape = SubResource("CapsuleShape2D_oqbhp")
+debug_color = Color(0.842512, 0.32475, 0.521629, 0.42)
