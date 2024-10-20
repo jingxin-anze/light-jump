@@ -1,23 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dta85e3nl6oi1"]
+[gd_scene load_steps=2 format=3 uid="uid://dta85e3nl6oi1"]
 
 [ext_resource type="Script" path="res://Scenes/ChangeScene/change_scene.gd" id="1_jd0hn"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_khs41"]
 
 [node name="ChangeScene" type="Area2D"]
 script = ExtResource("1_jd0hn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-color = Color(1, 1, 1, 0.470588)
-energy = 0.0
-blend_mode = 1
-
-[node name="BlackBg" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(968.25, 535.25)
-scale = Vector2(1933.5, 1071.5)
-texture = SubResource("CanvasTexture_khs41")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
