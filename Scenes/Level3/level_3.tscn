@@ -1,7 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxrq21acmfrxj"]
+[gd_scene load_steps=3 format=4 uid="uid://cxrq21acmfrxj"]
 
 [ext_resource type="PackedScene" uid="uid://c4ajgw6w6y7ra" path="res://Scenes/NormalLevel/normal_level.tscn" id="1_6x0qj"]
+[ext_resource type="PackedScene" uid="uid://xneumqgnss1q" path="res://Scenes/IceGround/ice_ground.tscn" id="2_657p4"]
 
 [node name="Level3" instance=ExtResource("1_6x0qj")]
+
+[node name="TileMapLayer" parent="Envir" index="0"]
+tile_map_data = PackedByteArray("AABqAPz/AAABAAIAAABrAPz/AAABAAIAAAAiAAMAAAAAAAAAAAAjAAMAAAAAAAAAAAAkAAMAAAAAAAAAAAAlAAMAAAAAAAAAAAAmAAMAAAAAAAAAAAA=")
+
+[node name="Player" parent="." index="3"]
+position = Vector2(275, -21)
+
+[node name="Camera2D" parent="Player" index="6"]
+zoom = Vector2(1.5, 1.5)
+script = null
+
+[node name="IceGround" parent="." index="5" instance=ExtResource("2_657p4")]
 
 [editable path="Player/Torch"]

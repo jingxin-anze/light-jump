@@ -15,6 +15,7 @@ var direction:float
 var vine_fall:bool
 var cache_jump: int = 0
 var to_death:bool
+var is_on_cliff:bool
 
 @onready var jump_velocity: float = (-2 * jump_height)/jump_time_to_peak
 @onready var jump_gravity: float = (2 * jump_height)/(jump_time_to_peak * jump_time_to_peak)
@@ -62,10 +63,10 @@ func player_move_2(_delta: float) -> void:
 	move_and_slide()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("jump"):
+	if event.is_action_pressed(jump_event):
 		cache_jump = 6
 
-	if event.is_action_released("jump"):
+	if event.is_action_released(jump_event):
 		#if Player_life_died():
 			#get_window().set_input_as_handled()
 			#return
@@ -74,11 +75,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif cache_jump > 0 and not state_macine.current_state.state_index == 3:
 			little_speed = true
 
-	if jump_event=="null" && event.is_action_pressed("jump") :
+	if jump_event=="null" && is_on_cliff && event.is_action_pressed("jump") :
 		var label=Label.new()
 		add_child(label)
 		label.text="!"
 		label.position=Vector2(0,-40)
 		label.modulate=Color.RED
+	
 
+		
 		

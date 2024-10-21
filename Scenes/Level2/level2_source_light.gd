@@ -15,7 +15,6 @@ func _physics_process(delta: float) -> void:
 		add_child(light_ball_ins)
 		light_ball_ins.start(Vector2(0,0),degrees_to_radians(90),-90)
 		can_shoot=false
-
 	pass
 
 

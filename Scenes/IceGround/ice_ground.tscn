@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://xneumqgnss1q"]
+
+[ext_resource type="Script" path="res://Scenes/Level3/ice_ground.gd" id="1_hyqla"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lsjq4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sor2t"]
+size = Vector2(1.00305, 0.977011)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxgui"]
+size = Vector2(1.0128, 1.09195)
+
+[node name="IceGround" type="Sprite2D"]
+modulate = Color(0.780392, 1, 1, 1)
+scale = Vector2(820.5, 87)
+texture = SubResource("CanvasTexture_lsjq4")
+script = ExtResource("1_hyqla")
+
+[node name="IceGround" type="StaticBody2D" parent="."]
+collision_layer = 256
+collision_mask = 243
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IceGround"]
+position = Vector2(0.00213283, 1.19209e-07)
+shape = SubResource("RectangleShape2D_sor2t")
+debug_color = Color(0.623245, 0.451207, 0.746046, 0.42)
+
+[node name="IceGroundArea" type="Area2D" parent="."]
+position = Vector2(0.00274223, 0.0172414)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IceGroundArea"]
+position = Vector2(-0.00487508, -0.045977)
+shape = SubResource("RectangleShape2D_lxgui")
+debug_color = Color(0.854298, 0.318687, 0.486206, 0.42)
+
+[connection signal="body_entered" from="IceGroundArea" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="IceGroundArea" to="." method="_on_body_exited"]
