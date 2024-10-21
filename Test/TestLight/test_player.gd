@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 		#将其置于根节点下
 		get_parent().add_child(light_ball)
 		#调用球体的Start函数，确保射出的角度正确
-		light_ball.start(position,rotation)
+		light_ball.start(position,rotation,90)
 		print(rotation)
 		
 

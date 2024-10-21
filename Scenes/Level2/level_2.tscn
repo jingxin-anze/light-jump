@@ -41,7 +41,7 @@ self_modulate = Color(100, 100, 100, 1)
 script = ExtResource("2_0d0jv")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." index="0"]
-color = Color(0.144063, 0.144063, 0.144063, 1)
+color = Color(0.479834, 0.479834, 0.479834, 1)
 
 [node name="Bg" parent="." index="1"]
 metadata/_edit_lock_ = true
@@ -175,7 +175,7 @@ position = Vector2(2713, 419)
 position = Vector2(2715, 129)
 
 [node name="Player" parent="." index="4"]
-position = Vector2(1800, -345)
+position = Vector2(2032, 202)
 
 [node name="Camera2D" parent="Player" index="6"]
 visible = false

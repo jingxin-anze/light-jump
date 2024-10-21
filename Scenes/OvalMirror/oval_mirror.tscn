@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://br5lctyc284mr"]
+[gd_scene load_steps=13 format=3 uid="uid://br5lctyc284mr"]
 
 [ext_resource type="Texture2D" uid="uid://c2t5jcc1330k1" path="res://Scenes/Mirror2/Resouces/mrror2-Sheet.png" id="1_r47kh"]
 [ext_resource type="Script" path="res://Scenes/Level2/oval_mirror.gd" id="2_yc76e"]
@@ -64,8 +64,11 @@ animations = [{
 radius = 6.36389
 height = 45.2549
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xa2rw"]
+polygon = PackedVector2Array(9.77179, -31.3132, 3.74243, 73.1504, -12.8867, 73.8372, -5.22437, -76.9982, 12.0685, -73.2623)
+
 [node name="OvalMirror" type="AnimatedSprite2D" groups=["oval_mirror", "wheel"]]
-position = Vector2(1557, 45.9999)
+position = Vector2(1557, 46)
 rotation = -0.958186
 sprite_frames = SubResource("SpriteFrames_qoijd")
 script = ExtResource("2_yc76e")
@@ -78,3 +81,6 @@ collision_mask = 16
 position = Vector2(-0.707105, 0.707109)
 shape = SubResource("CapsuleShape2D_oqbhp")
 debug_color = Color(0.842512, 0.32475, 0.521629, 0.42)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_xa2rw")

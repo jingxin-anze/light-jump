@@ -8,13 +8,12 @@
 [node name="Line2D" type="Line2D"]
 material = SubResource("ShaderMaterial_ans0y")
 default_color = Color(42.473, 18.28, 0, 1)
-texture_mode = 1
 script = ExtResource("1_ghslb")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
 position = Vector2(1.50463e-36, 1)
 scale = Vector2(16.43, 0.5)
 color = Color(0.96, 0.94592, 0.5376, 1)
+shadow_enabled = true
 texture = ExtResource("1_swbth")
 offset = Vector2(300, 0)

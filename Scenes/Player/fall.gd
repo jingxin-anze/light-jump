@@ -36,7 +36,7 @@ func physics_process_update(delta: float) -> void:
 
 ## 退出状态
 func exit() -> void:
-	#判断大减速
+	#判断减速
 	if time>death_time :
 		player.SPEED/=4
 		var timer:Timer=Timer.new()
@@ -48,8 +48,6 @@ func exit() -> void:
 			player.SPEED*=4
 			timer.queue_free())
 		print("大减速，下落时间为：",time)
-		print("da",player.SPEED)
-	#判断减速
 	elif time>extreme_time:
 		player.SPEED/=2
 		var timer:Timer=Timer.new()
@@ -61,9 +59,8 @@ func exit() -> void:
 			player.SPEED*=2
 			timer.queue_free())
 		print("减速，下落时间为：",time)
-		print("xiao",player.SPEED)
 	else:
 		print("下落时间为：",time)
+		
 	hand.speed_scale=1
-	
 	time=0.0
