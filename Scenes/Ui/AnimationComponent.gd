@@ -127,14 +127,15 @@ func on_enter() -> void:
 		add_tween(default_values, parallel_animations, enter_time,enter_delay, enter_transition, enter_easing, true)
 
 func add_tween(values: Dictionary, parallel: bool, second: float, delay: float, transition: Tween.TransitionType, easing: Tween.EaseType, entering: bool) -> void:
-	var tween = get_tree().create_tween()
-	tween.set_parallel(parallel)
-	tween.pause()
-	for property in properties:
-		tween.tween_property(target,str(property),values[property],second).set_trans(transition).set_ease(easing)
-	#await tween.tween_interval(1)
-	await get_tree().create_timer(delay).timeout
-	tween.play()
-	if entering:
-		await tween.finished
-		entered.emit()
+	if get_tree():
+		var tween = get_tree().create_tween()
+		tween.set_parallel(parallel)
+		tween.pause()
+		for property in properties:
+			tween.tween_property(target,str(property),values[property],second).set_trans(transition).set_ease(easing)
+		#await tween.tween_interval(1)
+		await get_tree().create_timer(delay).timeout
+		tween.play()
+		if entering:
+			await tween.finished
+			entered.emit()

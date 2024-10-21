@@ -5,8 +5,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_om3ra"]
 size = Vector2(1, 0.952382)
 
-[node name="DarkPlatform" type="Sprite2D"]
-modulate = Color(0, 0, 0, 1)
+[node name="DeepBulePlatform" type="Sprite2D"]
+modulate = Color(0.0018, 0.0018, 0.18, 1)
 scale = Vector2(122, 21)
 texture = SubResource("CanvasTexture_fuw7k")
 
