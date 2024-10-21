@@ -36,16 +36,34 @@ func physics_process_update(delta: float) -> void:
 
 ## 退出状态
 func exit() -> void:
-	#判断死亡
+	#判断大减速
 	if time>death_time :
 		player.SPEED/=4
-		await get_tree().create_timer(5).timeout
-		player.SPEED*=4
+		var timer:Timer=Timer.new()
+		add_child(timer)
+		timer.name="FallTimer"
+		timer.start(5)
+		timer.one_shot=true
+		timer.timeout.connect(func(): 
+			player.SPEED*=4
+			timer.queue_free())
+		print("大减速，下落时间为：",time)
+		print("da",player.SPEED)
 	#判断减速
 	elif time>extreme_time:
 		player.SPEED/=2
-		await get_tree().create_timer(5).timeout
-		player.SPEED*=2
+		var timer:Timer=Timer.new()
+		add_child(timer)
+		timer.name="FallTimer"
+		timer.start(5)
+		timer.one_shot=true
+		timer.timeout.connect(func(): 
+			player.SPEED*=2
+			timer.queue_free())
+		print("减速，下落时间为：",time)
+		print("xiao",player.SPEED)
+	else:
+		print("下落时间为：",time)
 	hand.speed_scale=1
-	print("下落持续时间为:",time)
+	
 	time=0.0

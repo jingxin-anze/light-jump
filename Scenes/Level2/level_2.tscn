@@ -41,7 +41,6 @@ self_modulate = Color(100, 100, 100, 1)
 script = ExtResource("2_0d0jv")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." index="0"]
-visible = false
 color = Color(0.144063, 0.144063, 0.144063, 1)
 
 [node name="Bg" parent="." index="1"]
@@ -74,15 +73,20 @@ enabled = false
 [node name="Bats" type="Node2D" parent="Props" index="0"]
 
 [node name="Bat" parent="Props/Bats" index="0" instance=ExtResource("5_ktyk2")]
+visible = false
+speed = 0.0
 
 [node name="Bat2" parent="Props/Bats" index="1" instance=ExtResource("5_ktyk2")]
 position = Vector2(489, -251)
+speed = 0.0
 
 [node name="Bat3" parent="Props/Bats" index="2" instance=ExtResource("5_ktyk2")]
 position = Vector2(623, -251)
+speed = 0.0
 
 [node name="Bat4" parent="Props/Bats" index="3" instance=ExtResource("5_ktyk2")]
 position = Vector2(722, -255)
+speed = 0.0
 
 [node name="Methanes" type="Node2D" parent="Props" index="1"]
 
@@ -171,7 +175,7 @@ position = Vector2(2713, 419)
 position = Vector2(2715, 129)
 
 [node name="Player" parent="." index="4"]
-position = Vector2(232, -57)
+position = Vector2(1800, -345)
 
 [node name="Camera2D" parent="Player" index="6"]
 visible = false
