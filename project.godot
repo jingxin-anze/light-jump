@@ -97,8 +97,12 @@ turn_left={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Enemy"
 2d_physics/layer_3="Ground"
-2d_physics/layer_4="只有光能检测到"
+2d_physics/layer_4="DarkPlatform"
 2d_physics/layer_5="Props"
+2d_physics/layer_6="Light"
+2d_physics/layer_7="Bat"
+2d_physics/layer_8="Snake"
+2d_physics/layer_9="IceGround"
 
 [rendering]
 
