@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 			light_ball_ins.is_free=true
 		light_ball_ins=light_ball.instantiate()
 		add_child(light_ball_ins)
-		light_ball_ins.start(Vector2(0,0),degrees_to_radians(vector),-90)
+		light_ball_ins.start(Vector2(0,0),degrees_to_radians(vector),0)
 		can_shoot=false
 	pass
 

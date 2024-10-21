@@ -63,13 +63,13 @@ position = Vector2(1948, 225)
 
 [node name="Crystal4" parent="Envir" index="5"]
 unique_name_in_owner = true
-position = Vector2(1558, -194)
+position = Vector2(1570, -89)
 rotation = 3.14159
 script = ExtResource("3_x16yq")
 light_ball = ExtResource("4_o8aap")
 
 [node name="Camera2D" type="Camera2D" parent="Envir/Crystal4" index="1"]
-position = Vector2(-1, -2.53518e-06)
+position = Vector2(-5.10215e-06, 2)
 enabled = false
 
 [node name="Bats" type="Node2D" parent="Props" index="0"]
@@ -185,6 +185,9 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 script = ExtResource("3_8tqgd")
+
+[node name="PointLight2D" parent="Player/Torch/Node" index="2"]
+position = Vector2(175, 161)
 
 [node name="Torch" type="Area2D" parent="Player/Torch" index="1"]
 position = Vector2(-21, -14)
