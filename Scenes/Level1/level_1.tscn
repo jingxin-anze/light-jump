@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://d0nxfjo0lk6el"]
+[gd_scene load_steps=52 format=4 uid="uid://d0nxfjo0lk6el"]
 
 [ext_resource type="Texture2D" uid="uid://dm4cl68ru4t3n" path="res://Asset/TileSet/map3.png" id="1_8cmpk"]
 [ext_resource type="Script" path="res://Scenes/Level1/level_1.gd" id="1_oqjah"]
@@ -9,8 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://hrui0frs4g7m" path="res://Scenes/Module/Crystal/Crystal.tscn" id="3_oqfmu"]
 [ext_resource type="Script" path="res://Scenes/Level1/float_torch.gd" id="4_8uulg"]
 [ext_resource type="Script" path="res://Scenes/Module/LightBackground/Script/point_light_2d.gd" id="4_43tl7"]
+[ext_resource type="Texture2D" uid="uid://fa0e7v03r23s" path="res://Scenes/Module/Crystal/Resource/shuijin-Sheet.png" id="5_bav4u"]
+[ext_resource type="Script" path="res://Scenes/Level2/level2_source_light.gd" id="5_g4kjs"]
 [ext_resource type="PackedScene" uid="uid://clp04bls37q2b" path="res://Scenes/Door/Door.tscn" id="5_i1gln"]
-[ext_resource type="Script" path="res://Scenes/Level1/sun_ray_manager.gd" id="7_qrvlf"]
 [ext_resource type="PackedScene" uid="uid://d0ksm38yg6k4j" path="res://Scenes/Module/Torch/Torch.tscn" id="8_7fsp1"]
 [ext_resource type="Script" path="res://Scenes/Level1/bonfire.gd" id="8_p4717"]
 [ext_resource type="Script" path="res://Scenes/Module/Torch/torch.gd" id="9_8xam4"]
@@ -19,8 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://dta85e3nl6oi1" path="res://Scenes/ChangeScene/change_scene.tscn" id="14_n4j3t"]
 [ext_resource type="PackedScene" uid="uid://mnpsqwvvsjsf" path="res://Scenes/Level2/level_2.tscn" id="15_dqxgq"]
 [ext_resource type="Script" path="res://Scenes/Level1/door_area.gd" id="16_vd3vo"]
-[ext_resource type="PackedScene" uid="uid://df47f4mv64qih" path="res://Scenes/Mirror/mirror.tscn" id="17_4iy42"]
+[ext_resource type="PackedScene" uid="uid://df47f4mv64qih" path="res://Scenes/mirror/mirror.tscn" id="17_4iy42"]
 [ext_resource type="PackedScene" uid="uid://co1sslt5eecir" path="res://Scenes/AirWall/air_wall.tscn" id="21_ajk31"]
+[ext_resource type="PackedScene" uid="uid://0ob2tjd60nwu" path="res://Test/TestLight/light_ball.tscn" id="21_wh45r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hv1lo"]
 texture = ExtResource("1_8cmpk")
@@ -139,6 +141,136 @@ terrain_set_0/terrain_0/name = "ground0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_hv1lo")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd788"]
+atlas = ExtResource("5_bav4u")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5ww8"]
+atlas = ExtResource("5_bav4u")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mot7m"]
+atlas = ExtResource("5_bav4u")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuafj"]
+atlas = ExtResource("5_bav4u")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggbia"]
+atlas = ExtResource("5_bav4u")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axbnc"]
+atlas = ExtResource("5_bav4u")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4vo7"]
+atlas = ExtResource("5_bav4u")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nklnd"]
+atlas = ExtResource("5_bav4u")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbsqx"]
+atlas = ExtResource("5_bav4u")
+region = Rect2(192, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pubk"]
+atlas = ExtResource("5_bav4u")
+region = Rect2(216, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ob6x"]
+atlas = ExtResource("5_bav4u")
+region = Rect2(240, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpb52"]
+atlas = ExtResource("5_bav4u")
+region = Rect2(264, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5o4o"]
+atlas = ExtResource("5_bav4u")
+region = Rect2(288, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31kq2"]
+atlas = ExtResource("5_bav4u")
+region = Rect2(312, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nedcn"]
+atlas = ExtResource("5_bav4u")
+region = Rect2(336, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77i50"]
+atlas = ExtResource("5_bav4u")
+region = Rect2(360, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jd82m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wd788")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5ww8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mot7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuafj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggbia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axbnc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4vo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nklnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbsqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pubk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ob6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpb52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5o4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31kq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nedcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77i50")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_74pry"]
+offsets = PackedFloat32Array(0, 0.785714)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lthvd"]
+gradient = SubResource("Gradient_74pry")
+fill = 1
+fill_from = Vector2(0.472477, 0.490826)
+fill_to = Vector2(0.825688, 0.137615)
+
 [sub_resource type="Gradient" id="Gradient_jtfx7"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
@@ -157,19 +289,16 @@ size = Vector2(348.5, 232.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ofx"]
 size = Vector2(22.6667, 70.75)
 
-[sub_resource type="Gradient" id="Gradient_oub7q"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_jfhj4"]
-gradient = SubResource("Gradient_oub7q")
-fill = 1
-fill_from = Vector2(0.477064, 0.426605)
-fill_to = Vector2(0.830275, 0.100917)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1eod"]
 size = Vector2(49, 285)
 
+[sub_resource type="Environment" id="Environment_l4n4q"]
+glow_enabled = true
+glow_strength = 0.85
+glow_hdr_threshold = 0.95
+
 [node name="Level1" type="Node2D"]
+self_modulate = Color(100, 100, 100, 1)
 script = ExtResource("1_oqjah")
 
 [node name="Bg" type="Sprite2D" parent="."]
@@ -187,10 +316,9 @@ tile_set = SubResource("TileSet_pnhyn")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Envir"]
 visible = false
-blend_mode = 1
 
 [node name="Crystal" parent="Envir" instance=ExtResource("3_oqfmu")]
-position = Vector2(1243, 996)
+position = Vector2(887, 990)
 
 [node name="Crystal2" parent="Envir" instance=ExtResource("3_oqfmu")]
 position = Vector2(1771, 994)
@@ -198,8 +326,19 @@ position = Vector2(1771, 994)
 [node name="Crystal3" parent="Envir" instance=ExtResource("3_oqfmu")]
 position = Vector2(2078, 993)
 
-[node name="Crystal4" parent="Envir" instance=ExtResource("3_oqfmu")]
-position = Vector2(2419, 994)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Envir"]
+modulate = Color(0.941333, 1, 0.12, 1)
+position = Vector2(1254.5, 985.5)
+scale = Vector2(2.04167, 1.79167)
+sprite_frames = SubResource("SpriteFrames_jd82m")
+autoplay = "default"
+script = ExtResource("5_g4kjs")
+light_ball = ExtResource("21_wh45r")
+vector = 270
+
+[node name="PointLight2D" type="PointLight2D" parent="Envir/AnimatedSprite2D"]
+color = Color(1, 1, 0, 1)
+texture = SubResource("GradientTexture2D_lthvd")
 
 [node name="Player" parent="." instance=ExtResource("2_bnyn2")]
 position = Vector2(1071, 711)
@@ -271,7 +410,7 @@ shape = SubResource("RectangleShape2D_b5o1r")
 debug_color = Color(0.853681, 0.333886, 0.419726, 0.42)
 
 [node name="Frog" parent="Props" instance=ExtResource("13_ke5qs")]
-position = Vector2(1417, 949)
+position = Vector2(1419, 947)
 
 [node name="Door" parent="Props" instance=ExtResource("5_i1gln")]
 position = Vector2(2576, 697)
@@ -287,27 +426,8 @@ position = Vector2(0, -0.125)
 shape = SubResource("RectangleShape2D_x0ofx")
 debug_color = Color(0.755347, 0.417439, 0.494449, 0.42)
 
-[node name="SourceLight" type="PointLight2D" parent="Props"]
-position = Vector2(1592, 444)
-scale = Vector2(3, 3)
-color = Color(0.98, 0.65072, 0.0392, 1)
-shadow_filter = 2
-shadow_filter_smooth = 3.4
-texture = SubResource("GradientTexture2D_jfhj4")
-script = ExtResource("4_43tl7")
-min_energy = 3.5
-max_energy = 5.0
-flicker_speed = 0.2
-
-[node name="SunRayManager" type="Node2D" parent="Props/SourceLight"]
-unique_name_in_owner = true
-script = ExtResource("7_qrvlf")
-
-[node name="Camera2D" type="Camera2D" parent="Props/SourceLight"]
-enabled = false
-
 [node name="Mirror" parent="Props" instance=ExtResource("17_4iy42")]
-position = Vector2(1218, 709)
+position = Vector2(1224, 706)
 
 [node name="ChangeScene" parent="." instance=ExtResource("14_n4j3t")]
 next_scene = ExtResource("15_dqxgq")
@@ -317,7 +437,15 @@ position = Vector2(2598.5, 693.5)
 shape = SubResource("RectangleShape2D_x1eod")
 
 [node name="AirWall" parent="." instance=ExtResource("21_ajk31")]
-position = Vector2(1266, 740)
+position = Vector2(1280, 740)
+collision_layer = 512
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.01, 0.01, 0.01, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l4n4q")
 
 [connection signal="body_entered" from="Props/Bonfire/Area2D" to="Props/Bonfire" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Props/Bonfire/SoundFree" to="Props/Bonfire" method="_on_sound_free_body_entered"]

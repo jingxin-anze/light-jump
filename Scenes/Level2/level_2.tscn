@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://72nu5kncdr2w" path="res://Scenes/RigidFrog/frog.tscn" id="13_8hpa2"]
 [ext_resource type="PackedScene" uid="uid://chiypkmmijilj" path="res://Scenes/DarkPlatform/dark_platform.tscn" id="13_d8n6q"]
 [ext_resource type="PackedScene" uid="uid://cxrq21acmfrxj" path="res://Scenes/Level3/level_3.tscn" id="16_msu28"]
-[ext_resource type="Texture2D" uid="uid://c2t5jcc1330k1" path="res://Scenes/Mirror2/Resouces/mrror2-Sheet.png" id="19_snha2"]
+[ext_resource type="Texture2D" uid="uid://c2t5jcc1330k1" path="res://Scenes/mirror2/Resouces/mrror2-Sheet.png" id="19_snha2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8ujo"]
 size = Vector2(300.5, 245)
@@ -63,12 +63,13 @@ position = Vector2(1948, 225)
 
 [node name="Crystal4" parent="Envir" index="5"]
 unique_name_in_owner = true
-position = Vector2(1566, -205)
+position = Vector2(1558, -194)
 rotation = 3.14159
 script = ExtResource("3_x16yq")
 light_ball = ExtResource("4_o8aap")
 
 [node name="Camera2D" type="Camera2D" parent="Envir/Crystal4" index="1"]
+position = Vector2(-1, -2.53518e-06)
 enabled = false
 
 [node name="Bats" type="Node2D" parent="Props" index="0"]
@@ -171,7 +172,7 @@ position = Vector2(2713, 419)
 position = Vector2(2715, 129)
 
 [node name="Player" parent="." index="4"]
-position = Vector2(232, -57)
+position = Vector2(1673, 218)
 
 [node name="Camera2D" parent="Player" index="6"]
 visible = false
