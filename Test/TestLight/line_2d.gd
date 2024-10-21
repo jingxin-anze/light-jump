@@ -16,6 +16,7 @@ func _physics_process(delta: float) -> void:
 	if points.size()<=max_points:
 		#若target存在则根据target的位置动态生成点
 		if is_instance_valid(target):
+			$PointLight2D.enabled = true
 			add_point(target.position)
 	#若点多余max_points则删除
 	else:

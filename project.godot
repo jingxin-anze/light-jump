@@ -103,6 +103,7 @@ turn_left={
 2d_physics/layer_7="Bat"
 2d_physics/layer_8="Snake"
 2d_physics/layer_9="IceGround"
+2d_physics/layer_10="AirWall"
 
 [rendering]
 

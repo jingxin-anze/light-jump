@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://br5lctyc284mr"]
 
-[ext_resource type="Texture2D" uid="uid://c2t5jcc1330k1" path="res://Scenes/Mirror2/Resouces/mrror2-Sheet.png" id="1_r47kh"]
+[ext_resource type="Texture2D" uid="uid://c2t5jcc1330k1" path="res://Scenes/mirror2/Resouces/mrror2-Sheet.png" id="1_r47kh"]
 [ext_resource type="Script" path="res://Scenes/Level2/oval_mirror.gd" id="2_yc76e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxjno"]

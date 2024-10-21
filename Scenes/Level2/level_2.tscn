@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://72nu5kncdr2w" path="res://Scenes/RigidFrog/frog.tscn" id="13_8hpa2"]
 [ext_resource type="PackedScene" uid="uid://chiypkmmijilj" path="res://Scenes/DarkPlatform/dark_platform.tscn" id="13_d8n6q"]
 [ext_resource type="PackedScene" uid="uid://cxrq21acmfrxj" path="res://Scenes/Level3/level_3.tscn" id="16_msu28"]
-[ext_resource type="Texture2D" uid="uid://c2t5jcc1330k1" path="res://Scenes/Mirror2/Resouces/mrror2-Sheet.png" id="19_snha2"]
+[ext_resource type="Texture2D" uid="uid://c2t5jcc1330k1" path="res://Scenes/mirror2/Resouces/mrror2-Sheet.png" id="19_snha2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8ujo"]
 size = Vector2(300.5, 245)
@@ -41,7 +41,8 @@ self_modulate = Color(100, 100, 100, 1)
 script = ExtResource("2_0d0jv")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." index="0"]
-color = Color(0.479834, 0.479834, 0.479834, 1)
+visible = false
+color = Color(0.144063, 0.144063, 0.144063, 1)
 
 [node name="Bg" parent="." index="1"]
 metadata/_edit_lock_ = true
@@ -62,31 +63,27 @@ position = Vector2(1948, 225)
 
 [node name="Crystal4" parent="Envir" index="5"]
 unique_name_in_owner = true
-position = Vector2(1566, -205)
+position = Vector2(1558, -194)
 rotation = 3.14159
 script = ExtResource("3_x16yq")
 light_ball = ExtResource("4_o8aap")
 
 [node name="Camera2D" type="Camera2D" parent="Envir/Crystal4" index="1"]
+position = Vector2(-1, -2.53518e-06)
 enabled = false
 
 [node name="Bats" type="Node2D" parent="Props" index="0"]
 
 [node name="Bat" parent="Props/Bats" index="0" instance=ExtResource("5_ktyk2")]
-visible = false
-speed = 0.0
 
 [node name="Bat2" parent="Props/Bats" index="1" instance=ExtResource("5_ktyk2")]
 position = Vector2(489, -251)
-speed = 0.0
 
 [node name="Bat3" parent="Props/Bats" index="2" instance=ExtResource("5_ktyk2")]
 position = Vector2(623, -251)
-speed = 0.0
 
 [node name="Bat4" parent="Props/Bats" index="3" instance=ExtResource("5_ktyk2")]
 position = Vector2(722, -255)
-speed = 0.0
 
 [node name="Methanes" type="Node2D" parent="Props" index="1"]
 
@@ -175,7 +172,7 @@ position = Vector2(2713, 419)
 position = Vector2(2715, 129)
 
 [node name="Player" parent="." index="4"]
-position = Vector2(2032, 202)
+position = Vector2(1673, 218)
 
 [node name="Camera2D" parent="Player" index="6"]
 visible = false
