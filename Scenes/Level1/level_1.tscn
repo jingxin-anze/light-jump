@@ -292,10 +292,16 @@ size = Vector2(22.6667, 70.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1eod"]
 size = Vector2(49, 285)
 
-[sub_resource type="Environment" id="Environment_l4n4q"]
+[sub_resource type="Environment" id="Environment_v7urh"]
+background_mode = 3
+background_color = Color(0.91, 0.881183, 0.0455, 1)
+background_energy_multiplier = 5.21
 glow_enabled = true
-glow_strength = 0.85
-glow_hdr_threshold = 0.95
+glow_levels/4 = 1.0
+glow_normalized = true
+glow_intensity = 1.57
+glow_strength = 0.68
+glow_blend_mode = 0
 
 [node name="Level1" type="Node2D"]
 self_modulate = Color(100, 100, 100, 1)
@@ -445,7 +451,7 @@ visible = false
 color = Color(0.01, 0.01, 0.01, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_l4n4q")
+environment = SubResource("Environment_v7urh")
 
 [connection signal="body_entered" from="Props/Bonfire/Area2D" to="Props/Bonfire" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Props/Bonfire/SoundFree" to="Props/Bonfire" method="_on_sound_free_body_entered"]

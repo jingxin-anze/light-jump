@@ -7,7 +7,6 @@
 
 [node name="Line2D" type="Line2D"]
 material = SubResource("ShaderMaterial_ans0y")
-points = PackedVector2Array(-366, 827)
 default_color = Color(42.473, 18.28, 0, 1)
 script = ExtResource("1_ghslb")
 
