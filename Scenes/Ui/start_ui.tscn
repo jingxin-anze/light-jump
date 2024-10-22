@@ -64,6 +64,7 @@ size_flags_vertical = 3
 theme_override_constants/separation = 20
 
 [node name="Start" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "开始游戏"
@@ -78,6 +79,7 @@ enter_delay = 0.1
 enter_scale = Vector2(0, 0)
 
 [node name="Contine" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "继续游戏"
@@ -92,6 +94,7 @@ enter_delay = 0.1
 enter_scale = Vector2(0, 0)
 
 [node name="Set" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "设置"
@@ -106,6 +109,7 @@ enter_delay = 0.1
 enter_scale = Vector2(0, 0)
 
 [node name="Exit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "退出游戏"

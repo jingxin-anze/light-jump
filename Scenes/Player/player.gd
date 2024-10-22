@@ -21,6 +21,7 @@ var is_on_cliff:bool
 @onready var jump_gravity: float = (2 * jump_height)/(jump_time_to_peak * jump_time_to_peak)
 @onready var fall_gravity: float = (2 * jump_height)/(fall_time_to_peak * fall_time_to_peak)
 
+
 @onready var coyote_time: Timer = $CoyoteTime
 @onready var body: AnimatedSprite2D = $Body
 @onready var state_macine: StateMachine = $StateMacine
@@ -28,7 +29,8 @@ var is_on_cliff:bool
 @onready var left: RayCast2D = %Left
 @onready var hand: AnimatedSprite2D = %Hand
 
-
+func _ready() -> void:
+	pass
 
 func _physics_process(delta: float) -> void:
 	#下落重力是否为零
