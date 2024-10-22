@@ -1,13 +1,10 @@
 extends Line2D
 #定义points数组里最多能有多少个点
 @export var max_points:int=220
-#光旋转的角度
-@export var light_degrees:float=14
 #定义目标（目标就是球）
 var target:CharacterBody2D
 
 func _ready() -> void:
-	#await  get_tree().create_timer(0.1).timeout
 	pass
 
 func _physics_process(delta: float) -> void:

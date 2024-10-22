@@ -20,8 +20,7 @@ func _ready() -> void:
 
 
 #初始化角度和自身的位置
-func start(pos,rotat,light_degrees):
-	line.light_degrees=light_degrees
+func start(pos,rotat):
 	rotation = rotat
 	position =pos
 	#速度为自身速度旋转rotation角度

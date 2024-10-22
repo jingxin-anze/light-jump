@@ -186,10 +186,6 @@ metadata/_edit_lock_ = true
 tile_map_data = PackedByteArray(0, 0, 106, 0, 252, 255, 0, 0, 1, 0, 2, 0, 0, 0, 107, 0, 252, 255, 0, 0, 1, 0, 2, 0, 0, 0)
 tile_set = SubResource("TileSet_xqlxh")
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Envir"]
-visible = false
-blend_mode = 1
-
 [node name="Crystal" parent="Envir" instance=ExtResource("3_xeace")]
 position = Vector2(1377, 996)
 
