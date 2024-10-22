@@ -17,6 +17,7 @@ var resolution_dir:Dictionary={
 }
 const LEVEL_1_ECHOES_IN_THE_NIGHT = preload("res://Asset/Sounds/Level1/Level 1_Echoes in the Night.mp3")
 
+
 func _ready() -> void:
 	AudioPlayer.play(LEVEL_1_ECHOES_IN_THE_NIGHT)
 	h_slider.value=AudioPlayer.get_volume(0)
@@ -40,3 +41,8 @@ func render_current_resolution():
 func _on_resolution_item_selected(index: int) -> void:
 	var key=resolution.get_item_text(index)
 	get_window().set_size(resolution_dir[key])
+
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.is_pressed():
+		self.queue_free()

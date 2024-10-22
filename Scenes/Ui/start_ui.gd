@@ -10,8 +10,8 @@ func _on_contine_pressed() -> void:
 
 
 func _on_set_pressed() -> void:
-	pass # Replace with function body.
-
+	var setting=preload("res://Scenes/Setting/setting.tscn").instantiate()
+	add_child(setting)
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()

@@ -28,21 +28,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("1_0axhj")
 script = ExtResource("1_bu0bt")
 metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HSlider" type="HSlider" parent="CanvasLayer"]
-unique_name_in_owner = true
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 628.0
-offset_top = 73.0
-offset_right = -532.0
-offset_bottom = -931.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.327
+anchor_top = 0.068
+anchor_right = 0.723
+anchor_bottom = 0.138
+offset_left = 0.159973
+offset_top = -0.440002
+offset_right = -0.160156
+offset_bottom = -0.0400085
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/slider = SubResource("StyleBoxTexture_8inxq")
@@ -52,10 +63,15 @@ max_value = 2.5
 value = 1.0
 
 [node name="Resolution" type="OptionButton" parent="CanvasLayer"]
-offset_left = 654.0
-offset_top = 216.0
-offset_right = 1376.0
-offset_bottom = 326.0
+anchors_preset = -1
+anchor_left = 0.341
+anchor_top = 0.2
+anchor_right = 0.717
+anchor_bottom = 0.302
+offset_left = -0.720032
+offset_right = -0.640015
+offset_bottom = -0.160004
 
+[connection signal="gui_input" from="CanvasLayer/Control" to="." method="_on_gui_input"]
 [connection signal="value_changed" from="CanvasLayer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="item_selected" from="CanvasLayer/Resolution" to="." method="_on_resolution_item_selected"]
