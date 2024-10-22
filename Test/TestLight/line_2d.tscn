@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwl4nswjj8h1d"]
+[gd_scene load_steps=3 format=3 uid="uid://dwl4nswjj8h1d"]
 
 [ext_resource type="Script" path="res://Test/TestLight/line_2d.gd" id="1_ghslb"]
-[ext_resource type="Texture2D" uid="uid://ccryl5xkwn1t0" path="res://Test/LevelTest/Art/光柱.png" id="1_swbth"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ans0y"]
 
@@ -9,13 +8,3 @@
 material = SubResource("ShaderMaterial_ans0y")
 default_color = Color(42.473, 18.28, 0, 1)
 script = ExtResource("1_ghslb")
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(8, 88)
-scale = Vector2(16.4167, 0.21)
-enabled = false
-color = Color(0.96, 0.94592, 0.5376, 1)
-shadow_enabled = true
-shadow_filter = 2
-texture = ExtResource("1_swbth")
-offset = Vector2(300, 0)

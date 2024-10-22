@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-@export_enum("red", "green", "bule") var color:String
+@export_enum("red", "green", "bule","1","2","3","4") var color:String
 @export var turn_speed:float=1.0
 @onready var player:CharacterBody2D=get_tree().get_first_node_in_group("player")
 
