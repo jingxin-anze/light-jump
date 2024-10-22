@@ -1,5 +1,5 @@
 class_name GameManager extends Resource
 
-var player_position:Vector2
+@export var player_position:Vector2
 
-var player_is_right:bool
+@export var player_is_right:bool
