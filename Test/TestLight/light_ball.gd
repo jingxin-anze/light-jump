@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
+class_name LightBall
 #定义球的速度
-@export var speed:int= 1000
+@export var speed:int= 20000
 var line:Line2D
 var is_free:bool
 

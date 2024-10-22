@@ -11,8 +11,9 @@ var player:Player
 func _physics_process(delta: float) -> void:
 	
 	if direction != sign(player.position.x - position.x):
-		filp()
-		direction = -direction
+		if abs(position.x - player.position.x) >50:
+			filp()
+			direction = -direction
 	move_and_slide()
 	
 func _ready() -> void:

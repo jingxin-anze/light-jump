@@ -90,9 +90,10 @@ shape = SubResource("RectangleShape2D_vq37p")
 script = ExtResource("3_dn4wg")
 current_state = NodePath("Idle")
 
-[node name="Idle" type="Node2D" parent="StateMachine"]
+[node name="Idle" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("snake")]
 scale = Vector2(0.971919, 1.01981)
 script = ExtResource("4_0emon")
+snake = NodePath("../..")
 
 [node name="Move" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("snake")]
 script = ExtResource("4_gfm37")

@@ -7,7 +7,8 @@ extends Line2D
 var target:CharacterBody2D
 
 func _ready() -> void:
-	#await  get_tree().create_timer(0.1).timeout
+	add_point(position)
+	await  get_tree().create_timer(0.1).timeout
 	pass
 
 func _physics_process(delta: float) -> void:

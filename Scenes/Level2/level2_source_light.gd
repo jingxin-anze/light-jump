@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name Night
+
 @export var light_ball:PackedScene 
 @export var can_shoot:bool=true
 var light_ball_ins:CharacterBody2D

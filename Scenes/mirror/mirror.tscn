@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://df47f4mv64qih"]
+[gd_scene load_steps=13 format=3 uid="uid://df47f4mv64qih"]
 
 [ext_resource type="Texture2D" uid="uid://dm4hrk3i78y5i" path="res://Scenes/mirror/mirror-Sheet.png" id="1_ejote"]
+[ext_resource type="Script" path="res://Scenes/mirror/Script/mirror.gd" id="1_wqxqr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n6fhh"]
 atlas = ExtResource("1_ejote")
@@ -75,6 +76,7 @@ scale = Vector2(0.987767, 1.02203)
 collision_layer = 16
 collision_mask = 565
 lock_rotation = true
+script = ExtResource("1_wqxqr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)
@@ -87,3 +89,5 @@ polygon = PackedVector2Array(-35.8795, 36.7791, -2.47307, 37.1554, 47.7323, -12.
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_6a5i8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
