@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://mnpsqwvvsjsf"]
+[gd_scene load_steps=28 format=4 uid="uid://mnpsqwvvsjsf"]
 
 [ext_resource type="PackedScene" uid="uid://c4ajgw6w6y7ra" path="res://Scenes/NormalLevel/normal_level.tscn" id="1_3ye6q"]
 [ext_resource type="Script" path="res://Scenes/Level2/level_2.gd" id="2_0d0jv"]
@@ -39,6 +39,9 @@ height = 46.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbe84"]
 size = Vector2(97, 69.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_no8gl"]
+size = Vector2(20, 296)
 
 [node name="Level2" instance=ExtResource("1_3ye6q")]
 self_modulate = Color(100, 100, 100, 1)
@@ -141,6 +144,7 @@ scale = Vector2(1, -1)
 position = Vector2(124, 309.05)
 rotation = -3.14043
 scale = Vector2(1, -1)
+collision_mask = 516
 
 [node name="OvalMirror" parent="Props" index="6" instance=ExtResource("11_rwrgp")]
 color = "red"
@@ -240,6 +244,15 @@ scale = Vector2(12.6019, -1.05838)
 [node name="Frog" parent="." index="8" instance=ExtResource("13_8hpa2")]
 visible = false
 position = Vector2(1718, 341)
+
+[node name="ImpactFilter" type="RigidBody2D" parent="." index="9"]
+position = Vector2(830, 324)
+collision_layer = 512
+collision_mask = 132
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ImpactFilter" index="0"]
+position = Vector2(0, -138)
+shape = SubResource("RectangleShape2D_no8gl")
 
 [connection signal="body_entered" from="Props/CliffWarn" to="Props/CliffWarn" method="_on_body_entered"]
 [connection signal="body_exited" from="Props/CliffWarn" to="Props/CliffWarn" method="_on_body_exited"]
