@@ -25,3 +25,8 @@ func _ready() -> void:
 func filp() -> void:
 	animated_sprite_2d.scale.x = -animated_sprite_2d.scale.x
 	
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is Player:
+		body.to_death = true

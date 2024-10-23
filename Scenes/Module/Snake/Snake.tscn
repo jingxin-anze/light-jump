@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8jkqh1r14od6"]
+[gd_scene load_steps=15 format=3 uid="uid://c8jkqh1r14od6"]
 
 [ext_resource type="Script" path="res://Scenes/Module/Snake/Script/snake.gd" id="1_mskcj"]
 [ext_resource type="Texture2D" uid="uid://x4xmmiaiyjo2" path="res://Scenes/Module/Snake/Reourses/snake-Sheet.png" id="1_ruf3o"]
@@ -45,6 +45,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vq37p"]
 size = Vector2(42, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ov13t"]
+size = Vector2(36, 35)
 
 [node name="Snake" type="CharacterBody2D"]
 scale = Vector2(-1, 1)
@@ -114,3 +117,13 @@ snake = NodePath("../..")
 target_position = Vector2(0, -94)
 collision_mask = 4
 collide_with_areas = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, 7.5)
+shape = SubResource("RectangleShape2D_ov13t")
+debug_color = Color(0.872, 0.332, 0.28, 0.984)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
