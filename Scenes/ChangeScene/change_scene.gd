@@ -11,4 +11,5 @@ func _on_body_entered(body: Node2D) -> void:
 	if next_scene.get_state().get_node_name(0)=="Level2":
 		data.is_new_start=true
 		data.is_contine_disabled=false
+		data.achieve_point["player_position"]=Vector2(200,-50)
 		ResourceSaver.save(data,"user://game_data.tres")
