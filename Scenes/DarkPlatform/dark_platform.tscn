@@ -1,14 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://chiypkmmijilj"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_fuw7k"]
+[ext_resource type="Texture2D" uid="uid://cky8cxw5v7ngx" path="res://Scenes/DarkPlatform/Resouces/platformt.png" id="1_7jsgl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_om3ra"]
 size = Vector2(1, 0.952382)
 
 [node name="DeepBluePlatform" type="Sprite2D"]
-modulate = Color(0.0018, 0.0018, 0.18, 1)
-scale = Vector2(122, 21)
-texture = SubResource("CanvasTexture_fuw7k")
+texture = ExtResource("1_7jsgl")
 metadata/is_black_platform = true
 
 [node name="DarkPlatform" type="StaticBody2D" parent="."]

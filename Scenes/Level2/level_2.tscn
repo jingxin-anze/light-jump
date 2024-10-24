@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://mnpsqwvvsjsf"]
+[gd_scene load_steps=30 format=4 uid="uid://mnpsqwvvsjsf"]
 
 [ext_resource type="PackedScene" uid="uid://c4ajgw6w6y7ra" path="res://Scenes/NormalLevel/normal_level.tscn" id="1_3ye6q"]
 [ext_resource type="Script" path="res://Scenes/Level2/level_2.gd" id="2_0d0jv"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://boalubf3kttpf" path="res://Test/LevelTest/test_level.tscn" id="12_hmc45"]
 [ext_resource type="PackedScene" uid="uid://72nu5kncdr2w" path="res://Scenes/RigidFrog/frog.tscn" id="13_8hpa2"]
 [ext_resource type="PackedScene" uid="uid://chiypkmmijilj" path="res://Scenes/DarkPlatform/dark_platform.tscn" id="13_d8n6q"]
+[ext_resource type="Shader" path="res://Scenes/Level2/shader/level_2.gdshader" id="14_fpoky"]
 [ext_resource type="Script" path="res://Scenes/Level2/methane_right.gd" id="14_q4bl5"]
 [ext_resource type="PackedScene" uid="uid://cxrq21acmfrxj" path="res://Scenes/Level3/level_3.tscn" id="16_msu28"]
 [ext_resource type="Script" path="res://Scenes/Level2/loader.gd" id="17_cna0w"]
@@ -29,6 +30,11 @@ size = Vector2(20, 288.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6kpx7"]
 size = Vector2(31, 223)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w8ksq"]
+shader = ExtResource("14_fpoky")
+shader_parameter/outline_width = 1.18
+shader_parameter/outline_color = Color(0.47, 0.1081, 0.1081, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_milht"]
 size = Vector2(125, 220)
@@ -174,6 +180,8 @@ position = Vector2(2720, 241)
 color = "green"
 
 [node name="DarkPlatform" parent="Props" index="13" instance=ExtResource("13_d8n6q")]
+modulate = Color(0.05208, 0.0312, 0.24, 1)
+material = SubResource("ShaderMaterial_w8ksq")
 position = Vector2(1836, 188)
 
 [node name="DarkPlatform2" parent="Props" index="14" instance=ExtResource("13_d8n6q")]
