@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlqkt4nobjp6n"]
+[gd_scene load_steps=5 format=3 uid="uid://dlqkt4nobjp6n"]
 
 [ext_resource type="Theme" uid="uid://c78axvp43v5yl" path="res://Data/Theme/start_ui_theme.tres" id="1_e3nsy"]
 [ext_resource type="Script" path="res://Scenes/Ui/start_ui.gd" id="2_hstqr"]
 [ext_resource type="Script" path="res://Scenes/Ui/AnimationComponent.gd" id="2_hvv3s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ff4s"]
+bg_color = Color(0.156718, 0.246226, 0.291919, 1)
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -78,6 +81,46 @@ enter_time = 0.4
 enter_delay = 0.1
 enter_scale = Vector2(0, 0)
 
+[node name="Cover" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer/Start"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.229
+anchor_top = -2.176
+anchor_right = 1.375
+anchor_bottom = 0.654
+offset_left = 0.240005
+offset_top = -0.0639954
+offset_right = 34.9999
+offset_bottom = 0.0559921
+theme_override_styles/panel = SubResource("StyleBoxFlat_3ff4s")
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer/Start/Cover"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.037
+anchor_bottom = 0.402
+offset_right = -0.226074
+offset_bottom = 18.23
+text = " 是否覆盖存档?"
+
+[node name="Yes" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer/Start/Cover"]
+layout_mode = 0
+offset_left = 20.0034
+offset_top = 234.0
+offset_right = 223.003
+offset_bottom = 343.0
+text = "是"
+
+[node name="No" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer/Start/Cover"]
+layout_mode = 0
+offset_left = 630.007
+offset_top = 246.0
+offset_right = 833.007
+offset_bottom = 355.0
+text = "否"
+
 [node name="Contine" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -124,6 +167,8 @@ enter_delay = 0.1
 enter_scale = Vector2(0, 0)
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer/Start/Cover/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer/Start/Cover/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer/Contine" to="." method="_on_contine_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer/Set" to="." method="_on_set_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

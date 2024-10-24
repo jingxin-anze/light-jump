@@ -39,10 +39,10 @@ func _physics_process(delta):
 		if collision.get_collider() is TileMapLayer:
 			velocity=Vector2(0,0)
 			
-		if collision.get_collider().name=="DarkPlatform":
-			print(collision.get_collider().get_parent())
-			collision.get_collider().get_parent().modulate=Color.ANTIQUE_WHITE
+		if collision.get_collider().name=="DeepBluePlatform":
+			collision.get_collider().get_parent().modulate=Color.BROWN
 			collision.get_collider().collision_layer=16
+			velocity=Vector2(0,0)
 
 	if is_free:
 		line.queue_free()

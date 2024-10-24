@@ -15,7 +15,7 @@ func _on_start_pressed() -> void:
 	if not data.is_new_start:
 		get_tree().call_deferred("change_scene_to_file","res://Scenes/Level1/level_1.tscn")
 	else:
-		pass
+		%Cover.visible=true
 
 func _on_contine_pressed() -> void:
 	var path:String
@@ -30,3 +30,15 @@ func _on_set_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+
+func _on_yes_pressed() -> void:
+	if FileAccess.file_exists("user://game_data.tres"):
+		DirAccess.remove_absolute("user://game_data.tres")
+		%Cover.hide()
+		get_tree().reload_current_scene()
+	else:
+		printt("无法找到存档文件！")
+	
+
+func _on_no_pressed() -> void:
+	%Cover.hide()

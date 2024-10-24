@@ -2,7 +2,7 @@ extends Control
 
 #引用节点
 @onready var h_slider: HSlider = %HSlider
-@onready var resolution: OptionButton = $CanvasLayer/Resolution
+@onready var resolution: OptionButton = %Resolution
 
 #列出分辨率
 var resolution_dir:Dictionary={

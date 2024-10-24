@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbnywxy4rbhf0"]
+[gd_scene load_steps=9 format=3 uid="uid://dbnywxy4rbhf0"]
 
 [ext_resource type="Theme" uid="uid://c78axvp43v5yl" path="res://Data/Theme/start_ui_theme.tres" id="1_0axhj"]
 [ext_resource type="Script" path="res://Scenes/Setting/setting.gd" id="1_bu0bt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pfww"]
+bg_color = Color(0.598155, 0.606749, 0.555482, 1)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_u2137"]
 
@@ -42,18 +45,35 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
-[node name="HSlider" type="HSlider" parent="CanvasLayer"]
-unique_name_in_owner = true
+[node name="Panel" type="Panel" parent="CanvasLayer"]
 anchors_preset = -1
-anchor_left = 0.327
-anchor_top = 0.068
-anchor_right = 0.723
-anchor_bottom = 0.138
-offset_left = 0.159973
-offset_top = -0.440002
-offset_right = -0.160156
-offset_bottom = -0.0400085
+anchor_left = 0.309
+anchor_top = 0.053
+anchor_right = 0.712
+anchor_bottom = 0.903
+offset_left = 7.71997
+offset_top = 3.76
+offset_right = 7.95996
+offset_bottom = 13.7599
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4pfww")
+metadata/_edit_lock_ = true
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.147
+anchor_right = 0.978
+anchor_bottom = 0.262
+offset_left = 22.0
+offset_top = -0.416
+offset_right = 0.0279541
+offset_bottom = -35.136
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/slider = SubResource("StyleBoxTexture_8inxq")
@@ -62,16 +82,21 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_k5c0
 max_value = 2.5
 value = 1.0
 
-[node name="Resolution" type="OptionButton" parent="CanvasLayer"]
+[node name="Resolution" type="OptionButton" parent="CanvasLayer/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.341
-anchor_top = 0.2
-anchor_right = 0.717
-anchor_bottom = 0.302
-offset_left = -0.720032
-offset_right = -0.640015
-offset_bottom = -0.160004
+anchor_left = 0.052
+anchor_top = 0.393
+anchor_right = 0.968
+anchor_bottom = 0.544
+offset_left = -0.248001
+offset_top = 0.29599
+offset_right = -0.232056
+offset_bottom = 0.167969
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="gui_input" from="CanvasLayer/Control" to="." method="_on_gui_input"]
-[connection signal="value_changed" from="CanvasLayer/HSlider" to="." method="_on_h_slider_value_changed"]
-[connection signal="item_selected" from="CanvasLayer/Resolution" to="." method="_on_resolution_item_selected"]
+[connection signal="value_changed" from="CanvasLayer/Panel/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="item_selected" from="CanvasLayer/Panel/Resolution" to="." method="_on_resolution_item_selected"]

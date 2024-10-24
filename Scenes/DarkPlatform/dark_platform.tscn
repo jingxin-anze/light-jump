@@ -3,16 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://cky8cxw5v7ngx" path="res://Scenes/DarkPlatform/Resouces/platformt.png" id="1_7jsgl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_om3ra"]
-size = Vector2(1, 0.952382)
+size = Vector2(68, 14)
 
 [node name="DeepBluePlatform" type="Sprite2D"]
+modulate = Color(0.883429, 0.752778, 0.714348, 1)
 texture = ExtResource("1_7jsgl")
 metadata/is_black_platform = true
 
-[node name="DarkPlatform" type="StaticBody2D" parent="."]
+[node name="DeepBluePlatform" type="StaticBody2D" parent="."]
 collision_layer = 8
 collision_mask = 22
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DarkPlatform"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeepBluePlatform"]
 visible = false
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_om3ra")
