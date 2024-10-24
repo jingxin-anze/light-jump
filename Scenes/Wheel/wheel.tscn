@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://82p42a4l8lc5"]
 
-[ext_resource type="Texture2D" uid="uid://cv5flhv3yq578" path="res://Scenes/Controller2/Resouces/ctroller2-Sheet.png" id="1_0svxw"]
+[ext_resource type="Texture2D" uid="uid://cv5flhv3yq578" path="res://Scenes/controller2/Resouces/ctroller2-Sheet.png" id="1_0svxw"]
 [ext_resource type="Script" path="res://Scenes/Level2/wheel.gd" id="2_a62lw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rldnk"]
