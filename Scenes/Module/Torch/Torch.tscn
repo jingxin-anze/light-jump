@@ -47,6 +47,7 @@ fill_from = Vector2(0.477064, 0.426605)
 fill_to = Vector2(0.830275, 0.100917)
 
 [node name="Torch" type="Node2D"]
+light_mask = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nsmy7")

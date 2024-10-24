@@ -297,11 +297,9 @@ background_mode = 3
 background_color = Color(0.91, 0.881183, 0.0455, 1)
 background_energy_multiplier = 5.21
 glow_enabled = true
-glow_levels/4 = 1.0
 glow_normalized = true
-glow_intensity = 1.57
-glow_strength = 0.68
-glow_blend_mode = 0
+glow_intensity = 2.24
+glow_strength = 0.67
 
 [node name="Level1" type="Node2D"]
 self_modulate = Color(100, 100, 100, 1)
@@ -344,10 +342,11 @@ vector = 270
 
 [node name="PointLight2D" type="PointLight2D" parent="Envir/AnimatedSprite2D"]
 color = Color(1, 1, 0, 1)
+range_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_lthvd")
 
 [node name="Player" parent="." instance=ExtResource("2_bnyn2")]
-position = Vector2(2620, 774)
+position = Vector2(484, 942)
 scale = Vector2(2, 2)
 SPEED = 170.0
 jump_height = 120.0
@@ -357,6 +356,9 @@ visible = false
 position = Vector2(-11, -10)
 scale = Vector2(0.0714286, 0.0714286)
 script = ExtResource("4_8uulg")
+
+[node name="Node" parent="Player/TestScenc" index="0"]
+light_mask = 2
 
 [node name="Backgroud" parent="Player/TestScenc/Node" index="0"]
 visible = false
@@ -432,6 +434,12 @@ position = Vector2(0, -0.125)
 shape = SubResource("RectangleShape2D_x0ofx")
 debug_color = Color(0.755347, 0.417439, 0.494449, 0.42)
 
+[node name="PointLight2D" type="PointLight2D" parent="Props/Door"]
+scale = Vector2(2, 2)
+color = Color(0.734286, 0.693335, 0.589532, 1)
+energy = 2.41
+texture = SubResource("GradientTexture2D_lthvd")
+
 [node name="Mirror" parent="Props" instance=ExtResource("17_4iy42")]
 position = Vector2(1170, 706)
 
@@ -447,7 +455,6 @@ position = Vector2(1280, 740)
 collision_layer = 512
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.01, 0.01, 0.01, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
