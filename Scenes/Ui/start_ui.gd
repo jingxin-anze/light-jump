@@ -22,6 +22,8 @@ func _on_contine_pressed() -> void:
 	match data.level:
 		"level2":
 				path="res://Scenes/Level2/level_2.tscn"
+		"level3":
+			path="res://Scenes/Level3/level_3.tscn"
 	get_tree().call_deferred("change_scene_to_file",path)
 
 func _on_set_pressed() -> void:

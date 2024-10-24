@@ -1,7 +1,9 @@
 extends AnimatedSprite2D
 
 @export_enum("red", "green", "bule","1","2","3","4") var color:String
-@export var turn_speed:float=1.0
+@export var turn_speed:float=0.5
+
+@export var emitter:Node2D
 @onready var player:CharacterBody2D=get_tree().get_first_node_in_group("player")
 
 var target_mirror:AnimatedSprite2D
@@ -19,7 +21,8 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed("turn_right"):
 			target_mirror.rotation_degrees+=turn_speed
 		if Input.is_action_just_released("turn_left") or Input.is_action_just_released("turn_right"):
-			%Crystal4.can_shoot=true
+			if is_instance_valid(emitter):
+				emitter.can_shoot=true
 
 func _on_wheel_area_body_entered(body: Node2D) -> void:
 	if body.name=="Player":
