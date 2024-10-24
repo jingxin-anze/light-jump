@@ -33,7 +33,7 @@ size = Vector2(31, 223)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w8ksq"]
 shader = ExtResource("14_fpoky")
-shader_parameter/outline_width = 1.405
+shader_parameter/outline_width = 1.18
 shader_parameter/outline_color = Color(0.47, 0.1081, 0.1081, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_milht"]
