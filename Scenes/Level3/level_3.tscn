@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://cxrq21acmfrxj"]
+[gd_scene load_steps=22 format=4 uid="uid://cxrq21acmfrxj"]
 
 [ext_resource type="PackedScene" uid="uid://c4ajgw6w6y7ra" path="res://Scenes/NormalLevel/normal_level.tscn" id="1_6x0qj"]
 [ext_resource type="PackedScene" uid="uid://xneumqgnss1q" path="res://Scenes/IceGround/ice_ground.tscn" id="2_657p4"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Scenes/Level3/vine.gd" id="6_dbwdi"]
 [ext_resource type="PackedScene" uid="uid://br5lctyc284mr" path="res://Scenes/OvalMirror/oval_mirror.tscn" id="7_7our1"]
 [ext_resource type="PackedScene" uid="uid://chiypkmmijilj" path="res://Scenes/DarkPlatform/dark_platform.tscn" id="8_3dqxb"]
+[ext_resource type="PackedScene" uid="uid://c8jkqh1r14od6" path="res://Scenes/Module/Snake/Snake.tscn" id="12_62f1h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1atre"]
 size = Vector2(22, 414.25)
@@ -290,6 +291,10 @@ scale = Vector2(1.69444, 0.84375)
 [node name="DeepBluePlatform" parent="DeepBluePlatforms" index="2" instance=ExtResource("8_3dqxb")]
 position = Vector2(774.625, -140.375)
 scale = Vector2(0.781249, 0.864584)
+
+[node name="Snake" parent="." index="7" instance=ExtResource("12_62f1h")]
+position = Vector2(1629, 69)
+scale = Vector2(1, 1)
 
 [connection signal="body_entered" from="Props/Vine" to="Props/Vine" method="_on_body_entered"]
 [connection signal="body_exited" from="Props/Vine" to="Props/Vine" method="_on_body_exited"]
