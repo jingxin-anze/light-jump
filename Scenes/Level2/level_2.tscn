@@ -1,9 +1,10 @@
-[gd_scene load_steps=27 format=4 uid="uid://mnpsqwvvsjsf"]
+[gd_scene load_steps=28 format=4 uid="uid://mnpsqwvvsjsf"]
 
 [ext_resource type="PackedScene" uid="uid://c4ajgw6w6y7ra" path="res://Scenes/NormalLevel/normal_level.tscn" id="1_3ye6q"]
 [ext_resource type="Script" path="res://Scenes/Level2/level_2.gd" id="2_0d0jv"]
 [ext_resource type="Script" path="res://Scenes/Level2/cliff_warn.gd" id="2_rf5m8"]
 [ext_resource type="Script" path="res://Scenes/Level2/camera_2d.gd" id="3_8tqgd"]
+[ext_resource type="Texture2D" uid="uid://egwqcyactcrg" path="res://Asset/Pics/Level3Bg.png" id="3_odfdx"]
 [ext_resource type="Script" path="res://Scenes/Level2/vine.gd" id="3_ucfki"]
 [ext_resource type="Script" path="res://Scenes/Level2/level2_source_light.gd" id="3_x16yq"]
 [ext_resource type="PackedScene" uid="uid://0ob2tjd60nwu" path="res://Test/TestLight/light_ball.tscn" id="4_o8aap"]
@@ -48,6 +49,7 @@ self_modulate = Color(100, 100, 100, 1)
 script = ExtResource("2_0d0jv")
 
 [node name="Bg" parent="." index="0"]
+texture = ExtResource("3_odfdx")
 metadata/_edit_lock_ = true
 
 [node name="TileMapLayer" parent="Envir" index="0"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b72hmchmgqtfv"
-path="res://.godot/imported/P`[KRUGPL5LIQ6GK1{W$U{E.png-6e1275c770bfb6ec4ac11eba310d7dc8.ctex"
+uid="uid://egwqcyactcrg"
+path="res://.godot/imported/Level3Bg.png-31fc6030b03cc474de094dfd818e9d70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Test/TempArt/P`[KRUGPL5LIQ6GK1{W$U{E.png"
-dest_files=["res://.godot/imported/P`[KRUGPL5LIQ6GK1{W$U{E.png-6e1275c770bfb6ec4ac11eba310d7dc8.ctex"]
+source_file="res://Asset/Pics/Level3Bg.png"
+dest_files=["res://.godot/imported/Level3Bg.png-31fc6030b03cc474de094dfd818e9d70.ctex"]
 
 [params]
 

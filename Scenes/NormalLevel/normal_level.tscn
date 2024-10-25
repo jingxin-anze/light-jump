@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://c4ajgw6w6y7ra"]
 
-[ext_resource type="Texture2D" uid="uid://b72hmchmgqtfv" path="res://Test/TempArt/P`[KRUGPL5LIQ6GK1{W$U{E.png" id="1_e5mvy"]
+[ext_resource type="Texture2D" uid="uid://b72hmchmgqtfv" path="res://Asset/Pics/Level1Bg.png" id="1_e5mvy"]
 [ext_resource type="Texture2D" uid="uid://dm4cl68ru4t3n" path="res://Asset/TileSet/map3.png" id="2_hy33q"]
 [ext_resource type="PackedScene" uid="uid://hrui0frs4g7m" path="res://Scenes/Module/Crystal/Crystal.tscn" id="3_xeace"]
 [ext_resource type="PackedScene" uid="uid://clsxih71pb6nd" path="res://Scenes/Player/player.tscn" id="4_jo88j"]
