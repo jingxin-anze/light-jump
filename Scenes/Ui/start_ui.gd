@@ -17,7 +17,6 @@ func _on_start_pressed() -> void:
 	else:
 		%Cover.visible=true
 
-
 func _on_contine_pressed() -> void:
 	var path:String
 	match data.level:

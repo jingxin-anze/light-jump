@@ -161,8 +161,8 @@ scale = Vector2(-1.50347, 4.46912)
 color = "bule"
 
 [node name="OvalMirror3" parent="Props" index="8" instance=ExtResource("11_rwrgp")]
-position = Vector2(2468, 363)
-scale = Vector2(1, 1.30075)
+position = Vector2(2465.05, 360.928)
+scale = Vector2(1, 2.52687)
 color = "green"
 
 [node name="Wheel" parent="Props" index="9" node_paths=PackedStringArray("emitter") instance=ExtResource("12_4p4rl")]
