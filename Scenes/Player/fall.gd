@@ -2,8 +2,11 @@ extends StateBase
 
 @export var player: Player 
 @export var vine_fall_speed:int=4500
+@export var speed_cut_time:float=0.8
 @export var extreme_time:float=0.7
 @export var death_time:float=0.92
+
+const HURT = preload("res://Asset/Sounds/Level2/hurt.mp3")
 var time:float
 var is_to_death:bool=true
 
@@ -37,30 +40,31 @@ func physics_process_update(delta: float) -> void:
 ## 退出状态
 func exit() -> void:
 	#判断减速
-	if time>death_time :
-		player.SPEED/=4
+	if time>speed_cut_time :
+		player.SPEED/=2.5
 		var timer:Timer=Timer.new()
 		add_child(timer)
 		timer.name="FallTimer"
 		timer.start(5)
 		timer.one_shot=true
 		timer.timeout.connect(func(): 
-			player.SPEED*=4
+			player.SPEED*=2.5
 			timer.queue_free())
-		print("大减速，下落时间为：",time)
-	elif time>extreme_time:
-		player.SPEED/=2
-		var timer:Timer=Timer.new()
-		add_child(timer)
-		timer.name="FallTimer"
-		timer.start(5)
-		timer.one_shot=true
-		timer.timeout.connect(func(): 
-			player.SPEED*=2
-			timer.queue_free())
-		print("减速，下落时间为：",time)
-	else:
-		print("下落时间为：",time)
+		AudioPlayer.play(HURT)
+		print("减速，下落时间为：",time," 标准时间为：",speed_cut_time)
+	#elif time>extreme_time:
+		#player.SPEED/=2
+		#var timer:Timer=Timer.new()
+		#add_child(timer)
+		#timer.name="FallTimer"
+		#timer.start(5)
+		#timer.one_shot=true
+		#timer.timeout.connect(func(): 
+			#player.SPEED*=2
+			#timer.queue_free())
+		#print("减速，下落时间为：",time)
+	#else:
+		#print("下落时间为：",time)
 		
 	hand.speed_scale=1
 	time=0.0
