@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dta85e3nl6oi1" path="res://Scenes/ChangeScene/change_scene.tscn" id="14_n4j3t"]
 [ext_resource type="PackedScene" uid="uid://mnpsqwvvsjsf" path="res://Scenes/Level2/level_2.tscn" id="15_dqxgq"]
 [ext_resource type="Script" path="res://Scenes/Level1/door_area.gd" id="16_vd3vo"]
-[ext_resource type="PackedScene" uid="uid://df47f4mv64qih" path="res://Scenes/mirror/mirror.tscn" id="17_4iy42"]
+[ext_resource type="PackedScene" uid="uid://df47f4mv64qih" path="res://Scenes/Mirror/mirror.tscn" id="17_4iy42"]
 [ext_resource type="PackedScene" uid="uid://co1sslt5eecir" path="res://Scenes/AirWall/air_wall.tscn" id="21_ajk31"]
 [ext_resource type="PackedScene" uid="uid://0ob2tjd60nwu" path="res://Test/TestLight/light_ball.tscn" id="21_wh45r"]
 
@@ -353,12 +353,7 @@ texture = SubResource("GradientTexture2D_lthvd")
 
 [node name="Player" parent="." instance=ExtResource("2_bnyn2")]
 visibility_layer = 2
-position = Vector2(330, 974)
-<<<<<<< Updated upstream
-position = Vector2(484, 942)
-=======
 position = Vector2(501, 956)
->>>>>>> Stashed changes
 scale = Vector2(2, 2)
 SPEED = 170.0
 jump_height = 120.0
@@ -461,6 +456,7 @@ position = Vector2(1280, 740)
 collision_layer = 512
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 position = Vector2(0, -1)
 color = Color(0.08, 0.08, 0.08, 1)
 
