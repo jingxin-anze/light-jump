@@ -352,7 +352,7 @@ texture = SubResource("GradientTexture2D_lthvd")
 
 [node name="Player" parent="." instance=ExtResource("2_bnyn2")]
 visibility_layer = 2
-position = Vector2(458, 914)
+position = Vector2(380, 961)
 scale = Vector2(2, 2)
 SPEED = 170.0
 jump_height = 120.0

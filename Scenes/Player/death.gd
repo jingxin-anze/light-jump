@@ -6,7 +6,7 @@ extends StateBase
 func enter() -> void:
 	get_tree().change_scene_to_packed(death_ui)
 
-func physics_process_update(delta: float) -> void:
+func physics_process_update(_delta: float) -> void:
 	pass
 
 ## 退出状态

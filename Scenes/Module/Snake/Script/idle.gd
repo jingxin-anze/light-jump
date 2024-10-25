@@ -9,7 +9,7 @@ var direction:int = 1
 func enter() -> void:
 	player = get_tree().get_first_node_in_group("player")
 
-func physics_process_update(delta: float) -> void:	
+func physics_process_update(_delta: float) -> void:	
 	if get_player_collide() is Player:
 		is_attack = true
 		state_machine.change_state("Move")

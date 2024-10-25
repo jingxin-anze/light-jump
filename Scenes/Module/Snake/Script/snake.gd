@@ -8,7 +8,7 @@ var player:Player
 @export var is_vine: bool = false
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	
 	if direction != sign(player.position.x - position.x):
 		if abs(position.x - player.position.x) >50:

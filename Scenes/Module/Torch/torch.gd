@@ -12,7 +12,7 @@ func _ready() -> void:
 	body=player.get_node("Body")
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	#print(hand.scale.x)
 	if body.scale.x>0:
 		position=Vector2(-4,2)

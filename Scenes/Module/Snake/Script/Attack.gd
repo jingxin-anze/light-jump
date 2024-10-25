@@ -7,7 +7,7 @@ var player: Player
 func enter() -> void:
 	animated_sprite_2d.play("Attack")
 
-func physics_process_update(delta: float) -> void:	
+func physics_process_update(_delta: float) -> void:	
 	if !animated_sprite_2d.is_playing():
 		state_machine.change_state("Move")
 	

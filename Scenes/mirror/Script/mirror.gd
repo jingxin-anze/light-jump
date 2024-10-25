@@ -8,14 +8,14 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if new_position != position:
 		if is_instance_valid(night_ball):
 			night_ball.can_shoot = true
 	new_position = position
 	
 
-func _on_body_entered(body: Node) -> void:
+func _on_body_entered(_body: Node) -> void:
 	print("qwe")
 	pass
 	

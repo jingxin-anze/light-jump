@@ -9,6 +9,6 @@ func _on_body_entered(body: Node2D) -> void:
 		audio.pitch_scale=0.6
 
 
-func _on_body_exited(body: Node2D) -> void:
+func _on_body_exited(_body: Node2D) -> void:
 	if is_instance_valid(audio):
 		AudioPlayer.destroy(audio)

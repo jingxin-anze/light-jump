@@ -13,7 +13,7 @@ var light_ball_ins:CharacterBody2D
 func _ready() -> void:
 	pass
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if can_shoot:
 		#若存在light_ball_ins则销毁
 		if is_instance_valid(light_ball_ins):

@@ -11,7 +11,7 @@ func _ready() -> void:
 	await  get_tree().create_timer(0.1).timeout
 	pass
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	
 	if points.size()<=max_points:
 		#若target存在则根据target的位置动态生成点

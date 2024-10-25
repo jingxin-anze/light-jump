@@ -17,7 +17,7 @@ func physics_process_update(delta: float) -> void:
 	
 	snake.velocity.y += gravity * delta
 	snake.velocity.x = snake.direction * speed
-	snake.velocity
+#	snake.velocity
 	if ground_detection.is_colliding():
 		state_machine.change_state("Move")
 		
