@@ -49,7 +49,6 @@ self_modulate = Color(100, 100, 100, 1)
 script = ExtResource("2_0d0jv")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." index="0"]
-visible = false
 color = Color(0.0177324, 0.0177324, 0.0177324, 1)
 
 [node name="Bg" parent="." index="1"]
