@@ -54,7 +54,7 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_oub7q")
 fill = 1
 fill_from = Vector2(0.477064, 0.426605)
-fill_to = Vector2(0.830275, 0.100917)
+fill_to = Vector2(0.852564, 0.119658)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dgq1i"]
 cull_mode = 2
