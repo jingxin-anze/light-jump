@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4ajgw6w6y7ra"]
+[gd_scene load_steps=12 format=3 uid="uid://c4ajgw6w6y7ra"]
 
 [ext_resource type="Texture2D" uid="uid://b72hmchmgqtfv" path="res://Test/TempArt/P`[KRUGPL5LIQ6GK1{W$U{E.png" id="1_e5mvy"]
 [ext_resource type="Texture2D" uid="uid://dm4cl68ru4t3n" path="res://Asset/TileSet/map3.png" id="2_hy33q"]
@@ -187,6 +187,21 @@ custom_data_layer_0/name = "tile_stop_light"
 custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_t8t5x")
 
+[sub_resource type="Environment" id="Environment_semt4"]
+background_mode = 3
+background_color = Color(0.91, 0.881183, 0.0455, 1)
+glow_enabled = true
+glow_levels/4 = 1.62
+glow_levels/5 = 2.26
+glow_normalized = true
+glow_mix = 0.071
+glow_bloom = 0.05
+glow_blend_mode = 4
+glow_hdr_threshold = 0.45
+glow_hdr_scale = 0.95
+glow_hdr_luminance_cap = 30.86
+glow_map_strength = 1.0
+
 [node name="NormalLevel" type="Node2D"]
 
 [node name="Bg" type="Sprite2D" parent="."]
@@ -212,6 +227,13 @@ position = Vector2(77, 993)
 
 [node name="Crystal4" parent="Envir" instance=ExtResource("3_xeace")]
 position = Vector2(2270, 992)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Envir"]
+environment = SubResource("Environment_semt4")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Envir"]
+position = Vector2(0, -1)
+color = Color(0.08, 0.08, 0.08, 1)
 
 [node name="Props" type="Node2D" parent="."]
 

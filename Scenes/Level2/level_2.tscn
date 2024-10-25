@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://mnpsqwvvsjsf"]
+[gd_scene load_steps=27 format=4 uid="uid://mnpsqwvvsjsf"]
 
 [ext_resource type="PackedScene" uid="uid://c4ajgw6w6y7ra" path="res://Scenes/NormalLevel/normal_level.tscn" id="1_3ye6q"]
 [ext_resource type="Script" path="res://Scenes/Level2/level_2.gd" id="2_0d0jv"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://d0ksm38yg6k4j" path="res://Scenes/Module/Torch/Torch.tscn" id="11_adcji"]
 [ext_resource type="PackedScene" uid="uid://br5lctyc284mr" path="res://Scenes/OvalMirror/oval_mirror.tscn" id="11_rwrgp"]
 [ext_resource type="PackedScene" uid="uid://82p42a4l8lc5" path="res://Scenes/Wheel/wheel.tscn" id="12_4p4rl"]
-[ext_resource type="PackedScene" uid="uid://boalubf3kttpf" path="res://Test/LevelTest/test_level.tscn" id="12_hmc45"]
 [ext_resource type="PackedScene" uid="uid://chiypkmmijilj" path="res://Scenes/DarkPlatform/dark_platform.tscn" id="13_d8n6q"]
 [ext_resource type="Script" path="res://Scenes/Level2/methane_right.gd" id="14_q4bl5"]
 [ext_resource type="PackedScene" uid="uid://cxrq21acmfrxj" path="res://Scenes/Level3/level_3.tscn" id="16_msu28"]
@@ -48,11 +47,7 @@ size = Vector2(20, 296)
 self_modulate = Color(100, 100, 100, 1)
 script = ExtResource("2_0d0jv")
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." index="0"]
-visible = false
-color = Color(0.0177324, 0.0177324, 0.0177324, 1)
-
-[node name="Bg" parent="." index="1"]
+[node name="Bg" parent="." index="0"]
 metadata/_edit_lock_ = true
 
 [node name="TileMapLayer" parent="Envir" index="0"]
@@ -201,7 +196,7 @@ script = ExtResource("14_q4bl5")
 position = Vector2(-1.5, -67)
 shape = SubResource("RectangleShape2D_milht")
 
-[node name="Player" parent="." index="4"]
+[node name="Player" parent="." index="3"]
 position = Vector2(212, -52)
 
 [node name="Camera2D" parent="Player" index="7"]
@@ -231,7 +226,7 @@ position = Vector2(3, 1)
 shape = SubResource("CapsuleShape2D_1k3sn")
 debug_color = Color(0.747569, 0.406549, 0.579744, 0.42)
 
-[node name="ChangeScene" parent="." index="5"]
+[node name="ChangeScene" parent="." index="4"]
 position = Vector2(2136, -79)
 next_scene = ExtResource("16_msu28")
 
@@ -240,15 +235,7 @@ position = Vector2(4.5, 17.75)
 shape = SubResource("RectangleShape2D_wbe84")
 debug_color = Color(0.764796, 0.407798, 0.504495, 0.42)
 
-[node name="TestLevel" parent="." index="6" instance=ExtResource("12_hmc45")]
-visible = false
-light_mask = 2
-
-[node name="PointLight2D" type="PointLight2D" parent="." index="7"]
-position = Vector2(418, 1)
-scale = Vector2(12.6019, -1.05838)
-
-[node name="ImpactFilter" type="RigidBody2D" parent="." index="8"]
+[node name="ImpactFilter" type="RigidBody2D" parent="." index="5"]
 position = Vector2(830, 324)
 collision_layer = 512
 collision_mask = 132

@@ -225,7 +225,7 @@ script = ExtResource("12_v4vgh")
 occluder = SubResource("OccluderPolygon2D_1uitq")
 
 [node name="Player" parent="." index="3"]
-position = Vector2(1398, -1211)
+position = Vector2(3199, 412)
 
 [node name="Camera2D" parent="Player" index="7"]
 zoom = Vector2(1.5, 1.5)
