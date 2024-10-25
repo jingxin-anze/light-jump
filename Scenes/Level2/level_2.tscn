@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://mnpsqwvvsjsf"]
+[gd_scene load_steps=29 format=4 uid="uid://mnpsqwvvsjsf"]
 
 [ext_resource type="PackedScene" uid="uid://c4ajgw6w6y7ra" path="res://Scenes/NormalLevel/normal_level.tscn" id="1_3ye6q"]
 [ext_resource type="Script" path="res://Scenes/Level2/level_2.gd" id="2_0d0jv"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://br5lctyc284mr" path="res://Scenes/OvalMirror/oval_mirror.tscn" id="11_rwrgp"]
 [ext_resource type="PackedScene" uid="uid://82p42a4l8lc5" path="res://Scenes/Wheel/wheel.tscn" id="12_4p4rl"]
 [ext_resource type="PackedScene" uid="uid://boalubf3kttpf" path="res://Test/LevelTest/test_level.tscn" id="12_hmc45"]
-[ext_resource type="PackedScene" uid="uid://72nu5kncdr2w" path="res://Scenes/RigidFrog/frog.tscn" id="13_8hpa2"]
 [ext_resource type="PackedScene" uid="uid://chiypkmmijilj" path="res://Scenes/DarkPlatform/dark_platform.tscn" id="13_d8n6q"]
 [ext_resource type="Shader" path="res://Scenes/Level2/shader/level_2.gdshader" id="14_fpoky"]
 [ext_resource type="Script" path="res://Scenes/Level2/methane_right.gd" id="14_q4bl5"]
@@ -54,6 +53,7 @@ self_modulate = Color(100, 100, 100, 1)
 script = ExtResource("2_0d0jv")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." index="0"]
+visible = false
 color = Color(0.0177324, 0.0177324, 0.0177324, 1)
 
 [node name="Bg" parent="." index="1"]
@@ -251,11 +251,7 @@ light_mask = 2
 position = Vector2(418, 1)
 scale = Vector2(12.6019, -1.05838)
 
-[node name="Frog" parent="." index="8" instance=ExtResource("13_8hpa2")]
-visible = false
-position = Vector2(1718, 341)
-
-[node name="ImpactFilter" type="RigidBody2D" parent="." index="9"]
+[node name="ImpactFilter" type="RigidBody2D" parent="." index="8"]
 position = Vector2(830, 324)
 collision_layer = 512
 collision_mask = 132

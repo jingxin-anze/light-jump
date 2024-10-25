@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://br5lctyc284mr"]
 
-[ext_resource type="Texture2D" uid="uid://c2t5jcc1330k1" path="res://Scenes/Mirror2/Resouces/mrror2-Sheet.png" id="1_r47kh"]
+[ext_resource type="Texture2D" uid="uid://c2t5jcc1330k1" path="res://Scenes/mirror2/Resouces/mrror2-Sheet.png" id="1_r47kh"]
 [ext_resource type="Script" path="res://Scenes/Level2/oval_mirror.gd" id="2_yc76e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxjno"]
@@ -64,15 +64,14 @@ animations = [{
 radius = 6.36389
 height = 45.2549
 
-[sub_resource type="Gradient" id="Gradient_74pry"]
-offsets = PackedFloat32Array(0, 0.785714)
+[sub_resource type="Gradient" id="Gradient_igh8r"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_kedkj"]
-gradient = SubResource("Gradient_74pry")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1ein5"]
+gradient = SubResource("Gradient_igh8r")
 fill = 1
-fill_from = Vector2(0.472477, 0.490826)
-fill_to = Vector2(0.825688, 0.137615)
+fill_from = Vector2(0.490826, 0.5)
+fill_to = Vector2(0.830275, 0.165138)
 
 [node name="OvalMirror" type="AnimatedSprite2D" groups=["oval_mirror", "wheel"]]
 position = Vector2(1557, 46)
