@@ -49,6 +49,7 @@ self_modulate = Color(100, 100, 100, 1)
 script = ExtResource("2_0d0jv")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." index="0"]
+visible = false
 color = Color(0.0177324, 0.0177324, 0.0177324, 1)
 
 [node name="Bg" parent="." index="1"]
@@ -141,7 +142,7 @@ rotation = -3.14043
 scale = Vector2(1, -1)
 
 [node name="Snake" parent="Props" index="5" instance=ExtResource("7_sr3l8")]
-position = Vector2(124, 309.05)
+position = Vector2(124, 308)
 rotation = -3.14043
 scale = Vector2(1, -1)
 collision_mask = 516
