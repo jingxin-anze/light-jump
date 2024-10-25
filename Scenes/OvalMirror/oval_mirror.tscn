@@ -89,5 +89,7 @@ shape = SubResource("CapsuleShape2D_oqbhp")
 debug_color = Color(0.842512, 0.32475, 0.521629, 0.42)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(0.04, 1, 0.888, 1)
-texture = SubResource("GradientTexture2D_1ein5")
+scale = Vector2(1.3, 1.3)
+color = Color(0.53459, 0.653633, 0.628639, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_kedkj")
