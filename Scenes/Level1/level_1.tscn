@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://d0nxfjo0lk6el"]
+[gd_scene load_steps=53 format=4 uid="uid://d0nxfjo0lk6el"]
 
 [ext_resource type="Texture2D" uid="uid://dm4cl68ru4t3n" path="res://Asset/TileSet/map3.png" id="1_8cmpk"]
 [ext_resource type="Script" path="res://Scenes/Level1/level_1.gd" id="1_oqjah"]
@@ -289,6 +289,9 @@ size = Vector2(348.5, 232.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ofx"]
 size = Vector2(22.6667, 70.75)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjrsg"]
+size = Vector2(20, 70)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1eod"]
 size = Vector2(49, 285)
 
@@ -353,7 +356,7 @@ texture = SubResource("GradientTexture2D_lthvd")
 
 [node name="Player" parent="." instance=ExtResource("2_bnyn2")]
 visibility_layer = 2
-position = Vector2(501, 956)
+position = Vector2(1101, 714)
 scale = Vector2(2, 2)
 SPEED = 170.0
 jump_height = 120.0
@@ -432,6 +435,7 @@ position = Vector2(2576, 697)
 scale = Vector2(3, 4)
 
 [node name="DoorArea" type="Area2D" parent="Props/Door"]
+position = Vector2(-9.33333, 0.25)
 collision_layer = 16
 collision_mask = 48
 script = ExtResource("16_vd3vo")
@@ -440,6 +444,14 @@ script = ExtResource("16_vd3vo")
 position = Vector2(0, -0.125)
 shape = SubResource("RectangleShape2D_x0ofx")
 debug_color = Color(0.755347, 0.417439, 0.494449, 0.42)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props/Door/DoorArea"]
+position = Vector2(10, -1)
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Door/DoorArea/StaticBody2D"]
+position = Vector2(-1.33333, 0)
+shape = SubResource("RectangleShape2D_wjrsg")
 
 [node name="Mirror" parent="Props" instance=ExtResource("17_4iy42")]
 position = Vector2(1170, 706)
