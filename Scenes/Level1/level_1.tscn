@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://d0nxfjo0lk6el"]
+[gd_scene load_steps=55 format=4 uid="uid://d0nxfjo0lk6el"]
 
 [ext_resource type="Texture2D" uid="uid://dm4cl68ru4t3n" path="res://Asset/TileSet/map3.png" id="1_8cmpk"]
 [ext_resource type="Script" path="res://Scenes/Level1/level_1.gd" id="1_oqjah"]
@@ -292,6 +292,16 @@ size = Vector2(22.6667, 70.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wjrsg"]
 size = Vector2(20, 70)
 
+[sub_resource type="Gradient" id="Gradient_ouxuf"]
+offsets = PackedFloat32Array(0, 0.780303, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.255659, 0.255659, 0.255659, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xqw7n"]
+gradient = SubResource("Gradient_ouxuf")
+fill = 1
+fill_from = Vector2(0.478632, 0.452991)
+fill_to = Vector2(0.871795, 0.209402)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1eod"]
 size = Vector2(49, 285)
 
@@ -356,7 +366,7 @@ texture = SubResource("GradientTexture2D_lthvd")
 
 [node name="Player" parent="." instance=ExtResource("2_bnyn2")]
 visibility_layer = 2
-position = Vector2(2566, 698)
+position = Vector2(356, 942)
 scale = Vector2(2, 2)
 SPEED = 170.0
 jump_height = 120.0
@@ -452,6 +462,12 @@ collision_layer = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Door/DoorArea/StaticBody2D"]
 position = Vector2(-1.33333, 0)
 shape = SubResource("RectangleShape2D_wjrsg")
+
+[node name="PointLight2D" type="PointLight2D" parent="Props/Door"]
+scale = Vector2(2, 2)
+color = Color(0.53459, 0.653633, 0.628639, 1)
+energy = 1.2
+texture = SubResource("GradientTexture2D_xqw7n")
 
 [node name="Mirror" parent="Props" instance=ExtResource("17_4iy42")]
 position = Vector2(1170, 706)
