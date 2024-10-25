@@ -21,9 +21,12 @@ func _physics_process(delta: float) -> void:
 		#生成light_ball_ins
 		light_ball_ins=light_ball.instantiate()
 		add_child(light_ball_ins)
+		
 		#初始化
 		light_ball_ins.start(Vector2(0,0),degrees_to_radians(vector))
 		can_shoot=false
+
+	
 	pass
 
 

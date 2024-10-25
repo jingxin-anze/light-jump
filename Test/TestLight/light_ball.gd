@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-class_name LightBall
+#class_name LightBall
 #定义球的速度
 @export var speed:int= 20000
 var line:Line2D
@@ -39,7 +39,7 @@ func _physics_process(delta):
 		if collision.get_collider() is TileMapLayer:
 			velocity=Vector2(0,0)
 			
-		if collision.get_collider().name=="DeepBluePlatform":
+		if collision.get_collider().has_meta("is_black_platform"):
 			collision.get_collider().get_parent().modulate=Color.BROWN
 			collision.get_collider().collision_layer=16
 			velocity=Vector2(0,0)

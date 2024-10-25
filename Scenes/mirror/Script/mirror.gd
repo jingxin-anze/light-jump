@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 			night_ball.can_shoot = true
 	new_position = position
 	
+	
 
 
 func _on_body_entered(body: Node) -> void:

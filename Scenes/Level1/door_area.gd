@@ -8,7 +8,6 @@ func _on_body_entered(body: Node2D) -> void:
 		var an:AnimatedSprite2D=get_parent().get_node("AnimatedSprite2D")
 		an.animation_finished.connect(fade_away.bind(an))
 		an.play("Open")
-	
 
 
 func fade_away(an):
