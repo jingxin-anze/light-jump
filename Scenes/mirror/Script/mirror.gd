@@ -1,6 +1,5 @@
 extends RigidBody2D
 
-
 var new_position: Vector2 = self.position
 var night_ball:Night
 # Called when the node enters the scene tree for the first time.
@@ -15,8 +14,6 @@ func _process(delta: float) -> void:
 			night_ball.can_shoot = true
 	new_position = position
 	
-	
-
 
 func _on_body_entered(body: Node) -> void:
 	print("qwe")
