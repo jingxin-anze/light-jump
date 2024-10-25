@@ -346,7 +346,11 @@ range_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_lthvd")
 
 [node name="Player" parent="." instance=ExtResource("2_bnyn2")]
+<<<<<<< Updated upstream
 position = Vector2(484, 942)
+=======
+position = Vector2(501, 956)
+>>>>>>> Stashed changes
 scale = Vector2(2, 2)
 SPEED = 170.0
 jump_height = 120.0

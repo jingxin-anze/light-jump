@@ -24,7 +24,7 @@ const LEVEL_1_ECHOES_IN_THE_NIGHT = preload("res://Asset/Sounds/Level1/Level 1_E
 #初始化
 func _ready() -> void:
 	#播放音频
-	AudioPlayer.play(LEVEL_1_ECHOES_IN_THE_NIGHT)
+	AudioPlayer.play(LEVEL_1_ECHOES_IN_THE_NIGHT,true)
 	#将总音量传入value
 	h_slider.value=AudioPlayer.get_volume(0)
 	#初始化OptionButton的item

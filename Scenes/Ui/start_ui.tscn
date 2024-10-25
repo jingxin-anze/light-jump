@@ -52,7 +52,7 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.32
 bbcode_enabled = true
-text = "那束[color=yellow]光[/color]，会到哪去？"
+text = "那束[color=yellow]光[/color]，会到哪去?"
 tab_size = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer2"]

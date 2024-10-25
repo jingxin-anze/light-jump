@@ -13,9 +13,13 @@ func _ready() -> void:
 
 func _on_start_pressed() -> void:
 	if not data.is_new_start:
-		get_tree().call_deferred("change_scene_to_file","res://Scenes/Level1/level_1.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Level1/level_1.tscn")
 	else:
+<<<<<<< Updated upstream
 		%Cover.visible=true
+=======
+		get_tree().quit()
+>>>>>>> Stashed changes
 
 func _on_contine_pressed() -> void:
 	var path:String
