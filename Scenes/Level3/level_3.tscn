@@ -85,7 +85,7 @@ color = "red"
 [node name="Player" parent="." index="3"]
 position = Vector2(1928, 521)
 
-[node name="Camera2D" parent="Player" index="6"]
+[node name="Camera2D" parent="Player" index="7"]
 zoom = Vector2(1.5, 1.5)
 script = null
 

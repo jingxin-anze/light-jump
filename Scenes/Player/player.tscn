@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://clsxih71pb6nd"]
+[gd_scene load_steps=44 format=3 uid="uid://clsxih71pb6nd"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_1knux"]
 [ext_resource type="Script" path="res://Scenes/Player/state_macine.gd" id="1_m666x"]
@@ -268,6 +268,8 @@ animations = [{
 radius = 5.0
 height = 20.0
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_l0sd3"]
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 279
 script = ExtResource("1_1knux")
@@ -353,3 +355,47 @@ collision_mask = 19
 
 [node name="CoyoteTime" type="Timer" parent="."]
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MoveLeft" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(93, 864)
+scale = Vector2(121, 104)
+texture_normal = SubResource("CanvasTexture_l0sd3")
+action = "move_left"
+
+[node name="MoveRight" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(298, 868)
+scale = Vector2(121, 104)
+texture_normal = SubResource("CanvasTexture_l0sd3")
+action = "move_right"
+
+[node name="MoveUp" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(1535, 678)
+scale = Vector2(121, 104)
+texture_normal = SubResource("CanvasTexture_l0sd3")
+action = "jump"
+
+[node name="MoveDown" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(1547, 868)
+scale = Vector2(121, 104)
+texture_normal = SubResource("CanvasTexture_l0sd3")
+action = "down"
+
+[node name="Attack2" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(1713, 768)
+scale = Vector2(121, 104)
+texture_normal = SubResource("CanvasTexture_l0sd3")
+action = "attack2"
+
+[node name="TurnRight" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(1549, 351)
+scale = Vector2(121, 104)
+texture_normal = SubResource("CanvasTexture_l0sd3")
+action = "turn_right"
+
+[node name="TurnLeft" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(1727, 353)
+scale = Vector2(121, 104)
+texture_normal = SubResource("CanvasTexture_l0sd3")
+action = "turn_left"
