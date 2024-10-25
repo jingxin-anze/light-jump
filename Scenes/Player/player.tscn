@@ -270,8 +270,6 @@ size = Vector2(6, 16)
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 279
 script = ExtResource("1_1knux")
-SPEED = 150.0
-jump_height = 100.0
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_65fxx")
