@@ -264,8 +264,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxmw3"]
-size = Vector2(6, 16)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hb3b5"]
+radius = 5.0
+height = 20.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 279
@@ -284,7 +285,7 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_uxmw3")
+shape = SubResource("CapsuleShape2D_hb3b5")
 
 [node name="StateMacine" type="Node2D" parent="." node_paths=PackedStringArray("current_state", "player")]
 script = ExtResource("1_m666x")
