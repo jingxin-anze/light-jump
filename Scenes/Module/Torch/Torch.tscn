@@ -55,6 +55,7 @@ animation = &"Buring"
 frame_progress = 0.777119
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+light_mask = 2
 position = Vector2(1, -19)
 scale = Vector2(6, -4.917)
 color = Color(0.98, 0.65072, 0.0392, 1)
