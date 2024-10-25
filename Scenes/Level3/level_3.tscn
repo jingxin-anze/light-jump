@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://cxrq21acmfrxj"]
+[gd_scene load_steps=25 format=4 uid="uid://cxrq21acmfrxj"]
 
 [ext_resource type="PackedScene" uid="uid://c4ajgw6w6y7ra" path="res://Scenes/NormalLevel/normal_level.tscn" id="1_6x0qj"]
 [ext_resource type="PackedScene" uid="uid://xneumqgnss1q" path="res://Scenes/IceGround/ice_ground.tscn" id="2_657p4"]
@@ -11,10 +11,9 @@
 [ext_resource type="Script" path="res://Scenes/Level3/vine.gd" id="6_dbwdi"]
 [ext_resource type="PackedScene" uid="uid://br5lctyc284mr" path="res://Scenes/OvalMirror/oval_mirror.tscn" id="7_7our1"]
 [ext_resource type="PackedScene" uid="uid://chiypkmmijilj" path="res://Scenes/DarkPlatform/dark_platform.tscn" id="8_3dqxb"]
-[ext_resource type="Texture2D" uid="uid://gqwsgr70cvo" path="res://Scenes/Module/LightBackground/Resource/精灵-005.png" id="10_1b1d7"]
-[ext_resource type="Texture2D" uid="uid://cwa1oyxleaknv" path="res://Scenes/Module/LightBackground/Resource/torch-Sheet.png" id="11_gfb5i"]
+[ext_resource type="Script" path="res://Scenes/Level3/trap_area.gd" id="10_fmyxa"]
 [ext_resource type="PackedScene" uid="uid://c8jkqh1r14od6" path="res://Scenes/Module/Snake/Snake.tscn" id="12_62f1h"]
-[ext_resource type="Script" path="res://Scenes/Module/LightBackground/Script/point_light_2d.gd" id="12_v4vgh"]
+[ext_resource type="PackedScene" uid="uid://dj6er3ilqgvjd" path="res://Scenes/Module/Methane/Methane.tscn" id="13_acumi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1atre"]
 size = Vector2(22, 414.25)
@@ -43,61 +42,8 @@ size = Vector2(901.5, 25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g02qo"]
 size = Vector2(682.5, 21)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nyh7i"]
-atlas = ExtResource("11_gfb5i")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qnk7m"]
-atlas = ExtResource("11_gfb5i")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_221lm"]
-atlas = ExtResource("11_gfb5i")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bh8dl"]
-atlas = ExtResource("11_gfb5i")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bbqvu"]
-atlas = ExtResource("11_gfb5i")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_41cst"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nyh7i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qnk7m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_221lm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bh8dl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bbqvu")
-}],
-"loop": true,
-"name": &"default",
-"speed": 6.0
-}]
-
-[sub_resource type="Gradient" id="Gradient_oub7q"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ibn1t"]
-gradient = SubResource("Gradient_oub7q")
-fill = 1
-fill_from = Vector2(0.477064, 0.426605)
-fill_to = Vector2(0.852564, 0.119658)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1uitq"]
-cull_mode = 2
-polygon = PackedVector2Array(-2.42282, -3.69622, -1.71616, -5.05151, 0.100948, -4.9283, 0.807602, -3.57302)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3gj3"]
+size = Vector2(20, 296)
 
 [node name="Level3" instance=ExtResource("1_6x0qj")]
 
@@ -133,6 +79,7 @@ rotation = 0.785398
 
 [node name="Bat" parent="Props/Bats" index="0" instance=ExtResource("2_jkich")]
 position = Vector2(96, 228)
+speed = 0.0
 
 [node name="Bat2" parent="Props/Bats" index="1" instance=ExtResource("2_jkich")]
 position = Vector2(137, 227)
@@ -140,14 +87,15 @@ speed = 0.0
 
 [node name="Wheels" type="Node2D" parent="Props" index="1"]
 
-[node name="Wheel" parent="Props/Wheels" index="0" node_paths=PackedStringArray("emitter") instance=ExtResource("3_2iofm")]
+[node name="Wheel" parent="Props/Wheels" index="0" instance=ExtResource("3_2iofm")]
 position = Vector2(3248, 1)
-emitter = NodePath("../../../Envir/Crystal")
 
 [node name="Frog" parent="Props" index="2" instance=ExtResource("4_mr8mx")]
 position = Vector2(1869, 437)
 
 [node name="Vine" type="Area2D" parent="Props" index="3"]
+collision_layer = 16
+collision_mask = 3
 script = ExtResource("6_dbwdi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Vine" index="0"]
@@ -178,6 +126,9 @@ rotation = 1.91463
 color = "red"
 
 [node name="TrapArea" type="Area2D" parent="Props" index="5"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("10_fmyxa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/TrapArea" index="0"]
 position = Vector2(361.938, 577)
@@ -199,33 +150,8 @@ shape = SubResource("RectangleShape2D_h4s1h")
 position = Vector2(1490.75, -694.5)
 shape = SubResource("RectangleShape2D_g02qo")
 
-[node name="Torch" type="Node2D" parent="Props" index="6"]
-position = Vector2(1284, -1221)
-scale = Vector2(0.7, 0.7)
-
-[node name="Backgroud" type="Sprite2D" parent="Props/Torch" index="0"]
-visible = false
-scale = Vector2(30.7677, -7.80901)
-texture = ExtResource("10_1b1d7")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Props/Torch" index="1"]
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_41cst")
-autoplay = "default"
-
-[node name="PointLight2D" type="PointLight2D" parent="Props/Torch" index="2"]
-scale = Vector2(9.90583, -8.11638)
-color = Color(0.98, 0.65072, 0.0392, 1)
-shadow_filter = 2
-shadow_filter_smooth = 3.4
-texture = SubResource("GradientTexture2D_ibn1t")
-script = ExtResource("12_v4vgh")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Props/Torch/PointLight2D" index="0"]
-occluder = SubResource("OccluderPolygon2D_1uitq")
-
 [node name="Player" parent="." index="3"]
-position = Vector2(3199, 412)
+position = Vector2(2210, -71)
 
 [node name="Camera2D" parent="Player" index="7"]
 zoom = Vector2(1.5, 1.5)
@@ -241,7 +167,7 @@ position = Vector2(1223.5, 107.359)
 scale = Vector2(765.002, -23.2813)
 
 [node name="IceGround5" parent="IceGrounds" index="1" instance=ExtResource("2_657p4")]
-position = Vector2(3455, -6.10352e-05)
+position = Vector2(2856.01, -402.25)
 scale = Vector2(95.9999, 16.5)
 
 [node name="IceGround6" parent="IceGrounds" index="2" instance=ExtResource("2_657p4")]
@@ -379,8 +305,34 @@ scale = Vector2(0.781249, 0.864584)
 [node name="Snake" parent="." index="7" instance=ExtResource("12_62f1h")]
 position = Vector2(1629, 69)
 scale = Vector2(1, 1)
+direction = -1
+
+[node name="ImpactFilter" type="RigidBody2D" parent="." index="8"]
+position = Vector2(812, 83)
+collision_layer = 512
+collision_mask = 132
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ImpactFilter" index="0"]
+position = Vector2(0, -138)
+shape = SubResource("RectangleShape2D_d3gj3")
+
+[node name="Methanes" type="Node2D" parent="." index="9"]
+position = Vector2(733, 72)
+
+[node name="Methane2" parent="Methanes" index="0" instance=ExtResource("13_acumi")]
+position = Vector2(76, 6)
+
+[node name="Methane4" parent="Methanes" index="1" instance=ExtResource("13_acumi")]
+position = Vector2(61, 6)
+
+[node name="Methane3" parent="Methanes" index="2" instance=ExtResource("13_acumi")]
+position = Vector2(45, 6)
+
+[node name="Methane" parent="Methanes" index="3" instance=ExtResource("13_acumi")]
+position = Vector2(23, 6)
 
 [connection signal="body_entered" from="Props/Vine" to="Props/Vine" method="_on_body_entered"]
 [connection signal="body_exited" from="Props/Vine" to="Props/Vine" method="_on_body_exited"]
+[connection signal="body_entered" from="Props/TrapArea" to="Props/TrapArea" method="_on_body_entered"]
 
 [editable path="Player/Torch"]
