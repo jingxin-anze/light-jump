@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2t5jcc1330k1"
-path="res://.godot/imported/mrror2-Sheet.png-0b67a1ad80f5b4df0662230a78c9f34a.ctex"
+uid="uid://b6ba2sqo0sihl"
+path="res://.godot/imported/platformt-black-Sheet.png-2d3c05ea7f5f872f5604c6b1f98916d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/mirror2/Resouces/mrror2-Sheet.png"
-dest_files=["res://.godot/imported/mrror2-Sheet.png-0b67a1ad80f5b4df0662230a78c9f34a.ctex"]
+source_file="res://Scenes/DarkPlatform/Resouces/platformt-black-Sheet.png"
+dest_files=["res://.godot/imported/platformt-black-Sheet.png-2d3c05ea7f5f872f5604c6b1f98916d4.ctex"]
 
 [params]
 
