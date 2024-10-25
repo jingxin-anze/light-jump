@@ -12,11 +12,11 @@ func _ready() -> void:
 	ResourceSaver.save(data,"user://game_data.tres")
 
 func _on_start_pressed() -> void:
-	if not data.is_new_start:
+	if not data.is_new_start :
 		get_tree().change_scene_to_file("res://Scenes/Level1/level_1.tscn")
 	else:
 		%Cover.visible=true
-		get_tree().quit()
+
 
 func _on_contine_pressed() -> void:
 	var path:String

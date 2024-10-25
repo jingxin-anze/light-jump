@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://br5lctyc284mr"]
+[gd_scene load_steps=14 format=3 uid="uid://br5lctyc284mr"]
 
 [ext_resource type="Texture2D" uid="uid://c2t5jcc1330k1" path="res://Scenes/Mirror2/Resouces/mrror2-Sheet.png" id="1_r47kh"]
 [ext_resource type="Script" path="res://Scenes/Level2/oval_mirror.gd" id="2_yc76e"]
@@ -64,6 +64,16 @@ animations = [{
 radius = 6.36389
 height = 45.2549
 
+[sub_resource type="Gradient" id="Gradient_74pry"]
+offsets = PackedFloat32Array(0, 0.785714)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kedkj"]
+gradient = SubResource("Gradient_74pry")
+fill = 1
+fill_from = Vector2(0.472477, 0.490826)
+fill_to = Vector2(0.825688, 0.137615)
+
 [node name="OvalMirror" type="AnimatedSprite2D" groups=["oval_mirror", "wheel"]]
 position = Vector2(1557, 46)
 rotation = -0.958186
@@ -78,3 +88,9 @@ collision_mask = 16
 position = Vector2(-0.707105, 0.707109)
 shape = SubResource("CapsuleShape2D_oqbhp")
 debug_color = Color(0.842512, 0.32475, 0.521629, 0.42)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(1.3, 1.3)
+color = Color(0.53459, 0.653633, 0.628639, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_kedkj")

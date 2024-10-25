@@ -357,6 +357,7 @@ collision_mask = 19
 one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="MoveLeft" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2(93, 864)
