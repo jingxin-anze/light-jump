@@ -1,8 +1,7 @@
 shader_type canvas_item;
 
 uniform float outline_width = 1.0;
-uniform vec4 outline_color: source_color = vec4(0,0,0,1);
-uniform bool is_black=true;
+uniform vec4 outline_color: source_color = vec4(11.892,0,0,1);
 
 void fragment() {
 	vec2 uv = UV;
