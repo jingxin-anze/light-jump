@@ -261,12 +261,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_74pry"]
+[sub_resource type="Gradient" id="Gradient_wupgn"]
 offsets = PackedFloat32Array(0, 0.785714)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_lthvd"]
-gradient = SubResource("Gradient_74pry")
+gradient = SubResource("Gradient_wupgn")
 fill = 1
 fill_from = Vector2(0.472477, 0.490826)
 fill_to = Vector2(0.825688, 0.137615)
@@ -356,7 +356,7 @@ texture = SubResource("GradientTexture2D_lthvd")
 
 [node name="Player" parent="." instance=ExtResource("2_bnyn2")]
 visibility_layer = 2
-position = Vector2(1101, 714)
+position = Vector2(390, 920)
 scale = Vector2(2, 2)
 SPEED = 170.0
 jump_height = 120.0
@@ -468,7 +468,6 @@ position = Vector2(1280, 740)
 collision_layer = 512
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 position = Vector2(0, -1)
 color = Color(0.08, 0.08, 0.08, 1)
 
