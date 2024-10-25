@@ -1,13 +1,78 @@
-[gd_scene load_steps=3 format=3 uid="uid://chiypkmmijilj"]
+[gd_scene load_steps=12 format=3 uid="uid://chiypkmmijilj"]
 
-[ext_resource type="Texture2D" uid="uid://cky8cxw5v7ngx" path="res://Scenes/DarkPlatform/Resouces/platformt.png" id="1_7jsgl"]
+[ext_resource type="Texture2D" uid="uid://b6ba2sqo0sihl" path="res://Scenes/DarkPlatform/Resouces/platformt-black-Sheet.png" id="1_4i772"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1si4l"]
+atlas = ExtResource("1_4i772")
+region = Rect2(0, 0, 72, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2240"]
+atlas = ExtResource("1_4i772")
+region = Rect2(72, 0, 72, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44ko2"]
+atlas = ExtResource("1_4i772")
+region = Rect2(144, 0, 72, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcccg"]
+atlas = ExtResource("1_4i772")
+region = Rect2(216, 0, 72, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wm0g"]
+atlas = ExtResource("1_4i772")
+region = Rect2(288, 0, 72, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pghwr"]
+atlas = ExtResource("1_4i772")
+region = Rect2(360, 0, 72, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prd3p"]
+atlas = ExtResource("1_4i772")
+region = Rect2(432, 0, 72, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fwgf"]
+atlas = ExtResource("1_4i772")
+region = Rect2(504, 0, 72, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vdct8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1si4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2240")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44ko2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcccg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wm0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pghwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prd3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fwgf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_om3ra"]
 size = Vector2(68, 14)
 
-[node name="DeepBluePlatform" type="Sprite2D"]
-modulate = Color(0.883429, 0.752778, 0.714348, 1)
-texture = ExtResource("1_7jsgl")
+[node name="DeepBluePlatform" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_vdct8")
+autoplay = "default"
+frame_progress = 0.0574617
 metadata/is_black_platform = true
 
 [node name="DeepBluePlatform" type="StaticBody2D" parent="."]
