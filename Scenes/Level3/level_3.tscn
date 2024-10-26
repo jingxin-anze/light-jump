@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://cxrq21acmfrxj"]
+[gd_scene load_steps=46 format=4 uid="uid://cxrq21acmfrxj"]
 
 [ext_resource type="PackedScene" uid="uid://c4ajgw6w6y7ra" path="res://Scenes/NormalLevel/normal_level.tscn" id="1_6x0qj"]
 [ext_resource type="PackedScene" uid="uid://xneumqgnss1q" path="res://Scenes/IceGround/ice_ground.tscn" id="2_657p4"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://Scenes/Level3/sucess_area.gd" id="15_j15ut"]
 [ext_resource type="Script" path="res://Scenes/Level3/achieve_points.gd" id="20_8v6xo"]
 [ext_resource type="Script" path="res://Scenes/Level3/loder.gd" id="20_mx5ni"]
+[ext_resource type="Script" path="res://Scenes/Level2/torch.gd" id="22_vif55"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3gj3"]
 size = Vector2(20, 296)
@@ -112,6 +113,10 @@ radius = 174.103
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0t6g"]
 size = Vector2(109, 93)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xv65n"]
+radius = 17.0
+height = 46.0
 
 [node name="Level3" instance=ExtResource("1_6x0qj")]
 script = ExtResource("2_lhvgs")
@@ -505,7 +510,7 @@ shape = SubResource("RectangleShape2D_s0t6g")
 debug_color = Color(0.829912, 0.361796, 0.416243, 0.42)
 
 [node name="Player" parent="." index="8"]
-position = Vector2(160, 460)
+position = Vector2(367, 509)
 
 [node name="Camera2D" parent="Player" index="7"]
 zoom = Vector2(1.5, 1.5)
@@ -514,6 +519,18 @@ limit_top = -1330
 limit_right = 3600
 limit_bottom = 720
 script = null
+
+[node name="Torch" type="Area2D" parent="Player/Torch" index="1"]
+position = Vector2(-21, -14)
+scale = Vector2(7, 7)
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("22_vif55")
+
+[node name="Collison" type="CollisionShape2D" parent="Player/Torch/Torch" index="0"]
+position = Vector2(3, 1)
+shape = SubResource("CapsuleShape2D_xv65n")
+debug_color = Color(0.747569, 0.406549, 0.579744, 0.42)
 
 [node name="Loder" type="Node2D" parent="Player" index="9"]
 script = ExtResource("20_mx5ni")
@@ -530,5 +547,6 @@ position = Vector2(2, 4)
 [connection signal="body_entered" from="Props/AchievePoints/AchieveArea3" to="Props/AchievePoints" method="_on_achieve_area_3_body_entered"]
 [connection signal="body_entered" from="Props/AchievePoints/AchieveArea4" to="Props/AchievePoints" method="_on_achieve_area_4_body_entered"]
 [connection signal="body_entered" from="Props/AchievePoints/AchieveArea5" to="Props/AchievePoints" method="_on_achieve_area_5_body_entered"]
+[connection signal="area_entered" from="Player/Torch/Torch" to="Player/Torch/Torch" method="_on_area_entered"]
 
 [editable path="Player/Torch"]

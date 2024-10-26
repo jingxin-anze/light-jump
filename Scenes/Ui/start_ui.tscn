@@ -208,7 +208,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.5
 theme_override_font_sizes/font_size = 64
-text = "操作指引:
+text = "电脑端操作指引:
 A:向左走
 D:向右走
 W:跳跃/向上爬
@@ -230,6 +230,6 @@ size_flags_stretch_ratio = 0.2
 [connection signal="pressed" from="PanelContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Contine" to="." method="_on_contine_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Set" to="." method="_on_set_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Author" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Author" to="." method="_on_author_pressed"]
 
 [editable path="PanelContainer/Torch"]

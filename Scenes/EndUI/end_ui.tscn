@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5ttf48fpbir3"]
+[gd_scene load_steps=12 format=3 uid="uid://b5ttf48fpbir3"]
 
 [ext_resource type="FontFile" uid="uid://dy6go34b526to" path="res://Asset/Font fun/IPix中文像素字体.ttf" id="1_bv11l"]
 [ext_resource type="PackedScene" uid="uid://dg1i5muyqauf5" path="res://Scenes/Module/LightBackground/LightBackground.tscn" id="2_7ujyt"]
+[ext_resource type="Script" path="res://Scenes/EndUI/end_ui.gd" id="2_mtiyi"]
 [ext_resource type="Script" path="res://Scenes/Ui/AnimationComponent.gd" id="2_vgnkw"]
 [ext_resource type="PackedScene" uid="uid://456wy7bp1ync" path="res://Scenes/Module/Bonfire/Bonfire.tscn" id="3_bd7vy"]
 [ext_resource type="Script" path="res://Scenes/Module/LightBackground/Script/point_light_2d.gd" id="4_7r21p"]
@@ -37,6 +38,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_c7jko")
+script = ExtResource("2_mtiyi")
 
 [node name="ThatLight" type="Label" parent="."]
 layout_mode = 1
@@ -83,33 +85,17 @@ enter_time = 0.4
 enter_delay = 0.1
 enter_scale = Vector2(0, 0)
 
-[node name="ReturnAchieve" type="Button" parent="."]
-layout_mode = 0
-offset_left = 664.0
-offset_top = 536.0
-offset_right = 1164.0
-offset_bottom = 686.0
-
-[node name="AnimationComponent" type="Node" parent="ReturnAchieve" node_paths=PackedStringArray("wait_for")]
-script = ExtResource("2_vgnkw")
-hover_scale = Vector2(1.2, 1.2)
-wait_for = NodePath("")
-enter_time = 0.4
-enter_delay = 0.1
-enter_scale = Vector2(0, 0)
-
 [node name="ReturnMain" type="Button" parent="."]
 layout_mode = 0
 offset_left = 664.0
-offset_top = 728.0
+offset_top = 659.0
 offset_right = 1164.0
-offset_bottom = 878.0
+offset_bottom = 809.0
 text = "返回主页面"
 
-[node name="AnimationComponent" type="Node" parent="ReturnMain" node_paths=PackedStringArray("wait_for")]
+[node name="AnimationComponent" type="Node" parent="ReturnMain"]
 script = ExtResource("2_vgnkw")
 hover_scale = Vector2(1.2, 1.2)
-wait_for = NodePath("")
 enter_time = 0.4
 enter_delay = 0.1
 enter_scale = Vector2(0, 0)
@@ -153,6 +139,9 @@ shadow_filter = 2
 shadow_filter_smooth = 3.4
 texture = SubResource("GradientTexture2D_38fii")
 script = ExtResource("4_7r21p")
+
+[connection signal="pressed" from="Author" to="." method="_on_author_pressed"]
+[connection signal="pressed" from="ReturnMain" to="." method="_on_return_main_pressed"]
 
 [editable path="Torch"]
 [editable path="Torch2"]

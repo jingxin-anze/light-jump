@@ -1,6 +1,7 @@
 extends Control
 
 var data:GameData
+var author=preload("res://Scenes/AuthorAndTanks/author_and_thanks.tscn")
 @onready var start: Button = %Start
 @onready var contine: Button = %Contine
 @onready var sett: Button = %Set
@@ -46,3 +47,8 @@ func _on_yes_pressed() -> void:
 
 func _on_no_pressed() -> void:
 	%Cover.hide()
+
+
+func _on_author_pressed() -> void:
+	var author_ins=author.instantiate()
+	add_child(author_ins)

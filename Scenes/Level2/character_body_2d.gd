@@ -67,8 +67,8 @@ func flay_state(dt):
 		dir=-(self.position-player.position).normalized()
 		#调整翻转
 		anim.flip_h=false if dir.x<0 else true
-		#若接近目标点进入此函数
-		if_near(player.position)
+		##若接近目标点进入此函数
+		#if_near(player.position)
 		#赋值velocity
 		velocity=dir*speed*dt
 	else:
@@ -106,10 +106,11 @@ func if_near(pos:Vector2):
 #若无灯光，则靠近玩家并飞离
 func _on_body_body_entered(body: Node2D) -> void:
 		body.SPEED/=2
+		AudioPlayer.play(preload("res://Asset/Sounds/Level2/hurt.mp3"))
 		is_flay_away=true
 		await get_tree().create_timer(5).timeout
 		body.SPEED*=2
-		AudioPlayer.play(preload("res://Asset/Sounds/Level2/hurt.mp3"))
+		
 
 #若进入区域，直接追击,此功能有bug，等会再修 ψ(*｀ー´)ψ
 #func _on_checker_body_entered(body: Node2D) -> void:
