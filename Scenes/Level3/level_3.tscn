@@ -172,12 +172,13 @@ position = Vector2(2960.75, -670)
 scale = Vector2(560.494, 54)
 
 [node name="IceGround21" parent="IceGrounds" index="13" instance=ExtResource("2_657p4")]
-position = Vector2(3512.01, -487)
-scale = Vector2(166.875, 81.5001)
+position = Vector2(3576.36, -486)
+scale = Vector2(52.7238, 81.5001)
 
 [node name="IceGround22" parent="IceGrounds" index="14" instance=ExtResource("2_657p4")]
-position = Vector2(3180.29, -517.5)
-scale = Vector2(187.429, 29)
+position = Vector2(3199.9, -523.599)
+rotation = -0.357792
+scale = Vector2(116.924, 44.1808)
 
 [node name="IceGround23" parent="IceGrounds" index="15" instance=ExtResource("2_657p4")]
 position = Vector2(3577.01, -729.782)
@@ -344,6 +345,11 @@ speed = 0.0
 position = Vector2(3248, 1)
 emitter = NodePath("../../../Envir/Crystal")
 
+[node name="Wheel2" parent="Props/Wheels" index="1" node_paths=PackedStringArray("emitter") instance=ExtResource("3_2iofm")]
+position = Vector2(3506, -550)
+color = "green"
+emitter = NodePath("../../../Envir/Crystal")
+
 [node name="Frog" parent="Props" index="2" instance=ExtResource("4_mr8mx")]
 position = Vector2(1869, 437)
 
@@ -378,6 +384,12 @@ debug_color = Color(0.635294, 0.486275, 0.54902, 0.419608)
 position = Vector2(3473, -102)
 rotation = 1.91463
 color = "red"
+
+[node name="OvalMirror2" parent="Props/Mirrors" index="1" instance=ExtResource("7_7our1")]
+position = Vector2(3427.09, -893.532)
+rotation = 2.27416
+scale = Vector2(1, 1.22343)
+color = "green"
 
 [node name="TrapArea" type="Area2D" parent="Props" index="5"]
 collision_layer = 4
@@ -434,7 +446,7 @@ script = ExtResource("15_j15ut")
 shape = SubResource("CircleShape2D_qleco")
 
 [node name="Player" parent="." index="9"]
-position = Vector2(3045, -580)
+position = Vector2(3376, -572)
 
 [node name="Camera2D" parent="Player" index="7"]
 zoom = Vector2(1.5, 1.5)
