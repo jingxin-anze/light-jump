@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://cxrq21acmfrxj"]
+[gd_scene load_steps=40 format=4 uid="uid://cxrq21acmfrxj"]
 
 [ext_resource type="PackedScene" uid="uid://c4ajgw6w6y7ra" path="res://Scenes/NormalLevel/normal_level.tscn" id="1_6x0qj"]
 [ext_resource type="PackedScene" uid="uid://xneumqgnss1q" path="res://Scenes/IceGround/ice_ground.tscn" id="2_657p4"]
@@ -19,6 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://dj6er3ilqgvjd" path="res://Scenes/Module/Methane/Methane.tscn" id="13_acumi"]
 [ext_resource type="Script" path="res://Scenes/Module/LightBackground/Script/point_light_2d.gd" id="14_p4yqa"]
 [ext_resource type="Script" path="res://Scenes/Level3/sucess_area.gd" id="15_j15ut"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3gj3"]
+size = Vector2(20, 296)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_48wol"]
 
@@ -101,19 +104,190 @@ fill = 1
 fill_from = Vector2(0.477064, 0.426605)
 fill_to = Vector2(0.852564, 0.119658)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dgq1i"]
-cull_mode = 2
-polygon = PackedVector2Array(-2.42282, -3.69622, -1.71616, -5.05151, 0.100948, -4.9283, 0.807602, -3.57302)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_kq6pf"]
-radius = 242.744
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3gj3"]
-size = Vector2(20, 296)
+[sub_resource type="CircleShape2D" id="CircleShape2D_qleco"]
+radius = 174.103
 
 [node name="Level3" instance=ExtResource("1_6x0qj")]
 
-[node name="Bg" parent="." index="0"]
+[node name="SucessBg" type="Sprite2D" parent="." index="0"]
+self_modulate = Color(0, 0, 0, 0)
+z_index = 2
+scale = Vector2(30.7677, -7.80901)
+texture = ExtResource("12_y3s04")
+
+[node name="IceGrounds" type="Node2D" parent="." index="1"]
+z_index = 1
+
+[node name="IceGround3" parent="IceGrounds" index="0" instance=ExtResource("2_657p4")]
+position = Vector2(1223.5, 107.359)
+scale = Vector2(765.002, -23.2813)
+
+[node name="IceGround5" parent="IceGrounds" index="1" instance=ExtResource("2_657p4")]
+position = Vector2(2856.01, -402.25)
+scale = Vector2(95.9999, 16.5)
+
+[node name="IceGround6" parent="IceGrounds" index="2" instance=ExtResource("2_657p4")]
+position = Vector2(2412.01, -400.251)
+scale = Vector2(216, 14.5)
+
+[node name="IceGround7" parent="IceGrounds" index="3" instance=ExtResource("2_657p4")]
+position = Vector2(419.378, -339.001)
+scale = Vector2(23.2482, 242.001)
+
+[node name="IceGround8" parent="IceGrounds" index="4" instance=ExtResource("2_657p4")]
+position = Vector2(323, -658)
+scale = Vector2(113, 22.0001)
+
+[node name="IceGround11" parent="IceGrounds" index="5" instance=ExtResource("2_657p4")]
+position = Vector2(735.503, -671.937)
+scale = Vector2(93.0003, 48.125)
+
+[node name="IceGround12" parent="IceGrounds" index="6" instance=ExtResource("2_657p4")]
+position = Vector2(998.878, -514.766)
+scale = Vector2(80.2501, 25.5312)
+
+[node name="IceGround14" parent="IceGrounds" index="7" instance=ExtResource("2_657p4")]
+position = Vector2(1453, -536)
+scale = Vector2(168.782, 21.0956)
+
+[node name="IceGround16" parent="IceGrounds" index="8" instance=ExtResource("2_657p4")]
+position = Vector2(1738.5, -539)
+scale = Vector2(47.0001, 20.0001)
+
+[node name="IceGround17" parent="IceGrounds" index="9" instance=ExtResource("2_657p4")]
+position = Vector2(1950, -537)
+scale = Vector2(268.002, 24)
+
+[node name="IceGround18" parent="IceGrounds" index="10" instance=ExtResource("2_657p4")]
+position = Vector2(2420.5, -674)
+scale = Vector2(331.001, 46)
+
+[node name="IceGround19" parent="IceGrounds" index="11" instance=ExtResource("2_657p4")]
+position = Vector2(2667.76, -538.5)
+scale = Vector2(618.5, 24.9999)
+
+[node name="IceGround20" parent="IceGrounds" index="12" instance=ExtResource("2_657p4")]
+position = Vector2(2960.75, -674)
+scale = Vector2(560.494, 46)
+
+[node name="IceGround21" parent="IceGrounds" index="13" instance=ExtResource("2_657p4")]
+position = Vector2(3512.01, -487)
+scale = Vector2(166.875, 81.5001)
+
+[node name="IceGround22" parent="IceGrounds" index="14" instance=ExtResource("2_657p4")]
+position = Vector2(3162.29, -513.875)
+scale = Vector2(151.438, 21.75)
+
+[node name="IceGround23" parent="IceGrounds" index="15" instance=ExtResource("2_657p4")]
+position = Vector2(3577.01, -729.782)
+scale = Vector2(53.7188, 394.438)
+
+[node name="IceGround24" parent="IceGrounds" index="16" instance=ExtResource("2_657p4")]
+position = Vector2(2520.01, -780.778)
+scale = Vector2(96.4297, 25.5547)
+
+[node name="IceGround25" parent="IceGrounds" index="17" instance=ExtResource("2_657p4")]
+position = Vector2(2316.01, -852.195)
+scale = Vector2(75.2151, 24.3887)
+
+[node name="IceGround26" parent="IceGrounds" index="18" instance=ExtResource("2_657p4")]
+position = Vector2(2198.2, -780.598)
+scale = Vector2(113.608, 23.1943)
+
+[node name="IceGround27" parent="IceGrounds" index="19" instance=ExtResource("2_657p4")]
+position = Vector2(1940.01, -756.25)
+scale = Vector2(232, 117.5)
+
+[node name="IceGround28" parent="IceGrounds" index="20" instance=ExtResource("2_657p4")]
+position = Vector2(1988, -826.188)
+scale = Vector2(136, 26.375)
+
+[node name="IceGround29" parent="IceGrounds" index="21" instance=ExtResource("2_657p4")]
+position = Vector2(2068, -686.001)
+scale = Vector2(148, 22.1875)
+
+[node name="IceGround30" parent="IceGrounds" index="22" instance=ExtResource("2_657p4")]
+position = Vector2(1465.5, -750)
+scale = Vector2(373, -110)
+
+[node name="IceGround32" parent="IceGrounds" index="23" instance=ExtResource("2_657p4")]
+position = Vector2(1408.51, -973)
+scale = Vector2(159, -22.875)
+
+[node name="IceGround33" parent="IceGrounds" index="24" instance=ExtResource("2_657p4")]
+position = Vector2(1789, -1068)
+scale = Vector2(129, -22.7187)
+
+[node name="IceGround34" parent="IceGrounds" index="25" instance=ExtResource("2_657p4")]
+position = Vector2(1484.88, -1139.79)
+scale = Vector2(136.246, -24.4289)
+
+[node name="IceGround35" parent="IceGrounds" index="26" instance=ExtResource("2_657p4")]
+position = Vector2(965.988, -733)
+scale = Vector2(374.031, -83.1518)
+
+[node name="IceGround36" parent="IceGrounds" index="27" instance=ExtResource("2_657p4")]
+position = Vector2(579.034, -823.848)
+scale = Vector2(406.063, -264.304)
+
+[node name="IceGround37" parent="IceGrounds" index="28" instance=ExtResource("2_657p4")]
+position = Vector2(224.503, -924.424)
+scale = Vector2(309.001, -473.153)
+
+[node name="IceGround38" parent="IceGrounds" index="29" instance=ExtResource("2_657p4")]
+position = Vector2(35.9867, -792.712)
+scale = Vector2(74.0314, -206.576)
+
+[node name="IceGround39" parent="IceGrounds" index="30" instance=ExtResource("2_657p4")]
+position = Vector2(38.7491, -1319.66)
+scale = Vector2(76.5041, -11.3219)
+
+[node name="DeepBluePlatforms" type="Node2D" parent="." index="2"]
+position = Vector2(1795, -309)
+scale = Vector2(2, 2)
+
+[node name="DeepBluePlatform2" parent="DeepBluePlatforms" index="0" instance=ExtResource("8_3dqxb")]
+position = Vector2(546, 118.5)
+scale = Vector2(0.965278, 0.854167)
+
+[node name="DeepBluePlatform3" parent="DeepBluePlatforms" index="1" instance=ExtResource("8_3dqxb")]
+position = Vector2(328.5, 108.5)
+scale = Vector2(1.69444, 0.84375)
+
+[node name="DeepBluePlatform" parent="DeepBluePlatforms" index="2" instance=ExtResource("8_3dqxb")]
+position = Vector2(774.625, -140.375)
+scale = Vector2(0.781249, 0.864584)
+
+[node name="Snake" parent="." index="3" instance=ExtResource("12_62f1h")]
+position = Vector2(1629, 69)
+scale = Vector2(1, 1)
+direction = -1
+
+[node name="ImpactFilter" type="RigidBody2D" parent="." index="4"]
+position = Vector2(812, 83)
+collision_layer = 512
+collision_mask = 132
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ImpactFilter" index="0"]
+position = Vector2(0, -138)
+shape = SubResource("RectangleShape2D_d3gj3")
+
+[node name="Methanes" type="Node2D" parent="." index="5"]
+position = Vector2(733, 72)
+
+[node name="Methane2" parent="Methanes" index="0" instance=ExtResource("13_acumi")]
+position = Vector2(76, 6)
+
+[node name="Methane4" parent="Methanes" index="1" instance=ExtResource("13_acumi")]
+position = Vector2(61, 6)
+
+[node name="Methane3" parent="Methanes" index="2" instance=ExtResource("13_acumi")]
+position = Vector2(45, 6)
+
+[node name="Methane" parent="Methanes" index="3" instance=ExtResource("13_acumi")]
+position = Vector2(23, 6)
+
+[node name="Bg" parent="." index="6"]
 position = Vector2(1795, -309)
 texture = ExtResource("2_xlhwy")
 
@@ -227,22 +401,16 @@ shape = SubResource("RectangleShape2D_h4s1h")
 position = Vector2(1490.75, -694.5)
 shape = SubResource("RectangleShape2D_g02qo")
 
-[node name="Torch" type="Node2D" parent="Props" index="6"]
-position = Vector2(1065, -1214)
-scale = Vector2(0.7, 0.7)
-
-[node name="Backgroud" type="Sprite2D" parent="Props/SucessTorch" index="0"]
-visible = false
-scale = Vector2(30.7677, -7.80901)
-texture = ExtResource("12_y3s04")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Props/SucessTorch" index="1"]
+[node name="SucessTorch" type="AnimatedSprite2D" parent="Props" index="6"]
+position = Vector2(1085, -1241)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_qtlui")
 autoplay = "default"
 
-[node name="PointLight2D" type="PointLight2D" parent="Props/Torch" index="2"]
-position = Vector2(-7.14304, -5.71435)
+[node name="Torch" type="Node2D" parent="Props/SucessTorch" index="0"]
+scale = Vector2(0.233333, 0.233333)
+
+[node name="PointLight2D" type="PointLight2D" parent="Props/SucessTorch/Torch" index="0"]
 scale = Vector2(7.79018, -6.80803)
 color = Color(0.999441, 0.765404, 0.458621, 1)
 energy = 1.61
@@ -254,19 +422,15 @@ min_energy = 0.3
 max_energy = 3.0
 flicker_speed = 0.2
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Props/SucessTorch/PointLight2D" index="0"]
-visible = false
-occluder = SubResource("OccluderPolygon2D_dgq1i")
-
-[node name="SucessArea" type="Area2D" parent="Props/SucessTorch" index="3"]
+[node name="SucessArea" type="Area2D" parent="Props/SucessTorch/Torch" index="1"]
+scale = Vector2(1.42857, 1.42857)
 collision_layer = 0
 script = ExtResource("15_j15ut")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/SucessTorch/SucessArea" index="0"]
-visible = false
-shape = SubResource("CircleShape2D_kq6pf")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/SucessTorch/Torch/SucessArea" index="0"]
+shape = SubResource("CircleShape2D_qleco")
 
-[node name="Player" parent="." index="3"]
+[node name="Player" parent="." index="9"]
 position = Vector2(266, -439)
 
 [node name="Camera2D" parent="Player" index="7"]
@@ -277,183 +441,11 @@ limit_right = 3600
 limit_bottom = 720
 script = null
 
-[node name="ChangeScene" parent="." index="4"]
+[node name="ChangeScene" parent="." index="10"]
 position = Vector2(2, 4)
-
-[node name="IceGrounds" type="Node2D" parent="." index="5"]
-
-[node name="IceGround3" parent="IceGrounds" index="0" instance=ExtResource("2_657p4")]
-position = Vector2(1223.5, 107.359)
-scale = Vector2(765.002, -23.2813)
-
-[node name="IceGround5" parent="IceGrounds" index="1" instance=ExtResource("2_657p4")]
-position = Vector2(2856.01, -402.25)
-scale = Vector2(95.9999, 16.5)
-
-[node name="IceGround6" parent="IceGrounds" index="2" instance=ExtResource("2_657p4")]
-position = Vector2(2412.01, -400.251)
-scale = Vector2(216, 14.5)
-
-[node name="IceGround7" parent="IceGrounds" index="3" instance=ExtResource("2_657p4")]
-position = Vector2(419.378, -339.001)
-scale = Vector2(23.2482, 242.001)
-
-[node name="IceGround8" parent="IceGrounds" index="4" instance=ExtResource("2_657p4")]
-position = Vector2(323, -658)
-scale = Vector2(113, 22.0001)
-
-[node name="IceGround11" parent="IceGrounds" index="5" instance=ExtResource("2_657p4")]
-position = Vector2(735.503, -671.937)
-scale = Vector2(93.0003, 48.125)
-
-[node name="IceGround12" parent="IceGrounds" index="6" instance=ExtResource("2_657p4")]
-position = Vector2(998.878, -514.766)
-scale = Vector2(80.2501, 25.5312)
-
-[node name="IceGround14" parent="IceGrounds" index="7" instance=ExtResource("2_657p4")]
-position = Vector2(1454.61, -516.547)
-scale = Vector2(168.782, 21.0956)
-
-[node name="IceGround16" parent="IceGrounds" index="8" instance=ExtResource("2_657p4")]
-position = Vector2(1738.5, -539)
-scale = Vector2(47.0001, 20.0001)
-
-[node name="IceGround17" parent="IceGrounds" index="9" instance=ExtResource("2_657p4")]
-position = Vector2(1950, -537)
-scale = Vector2(268.002, 24)
-
-[node name="IceGround18" parent="IceGrounds" index="10" instance=ExtResource("2_657p4")]
-position = Vector2(2420.5, -674)
-scale = Vector2(331.001, 46)
-
-[node name="IceGround19" parent="IceGrounds" index="11" instance=ExtResource("2_657p4")]
-position = Vector2(2667.76, -538.5)
-scale = Vector2(618.5, 24.9999)
-
-[node name="IceGround20" parent="IceGrounds" index="12" instance=ExtResource("2_657p4")]
-position = Vector2(2960.75, -674)
-scale = Vector2(560.494, 46)
-
-[node name="IceGround21" parent="IceGrounds" index="13" instance=ExtResource("2_657p4")]
-position = Vector2(3512.01, -487)
-scale = Vector2(166.875, 81.5001)
-
-[node name="IceGround22" parent="IceGrounds" index="14" instance=ExtResource("2_657p4")]
-position = Vector2(3162.29, -513.875)
-scale = Vector2(151.438, 21.75)
-
-[node name="IceGround23" parent="IceGrounds" index="15" instance=ExtResource("2_657p4")]
-position = Vector2(3577.01, -729.782)
-scale = Vector2(53.7188, 394.438)
-
-[node name="IceGround24" parent="IceGrounds" index="16" instance=ExtResource("2_657p4")]
-position = Vector2(2520.01, -780.778)
-scale = Vector2(96.4297, 25.5547)
-
-[node name="IceGround25" parent="IceGrounds" index="17" instance=ExtResource("2_657p4")]
-position = Vector2(2316.01, -852.195)
-scale = Vector2(75.2151, 24.3887)
-
-[node name="IceGround26" parent="IceGrounds" index="18" instance=ExtResource("2_657p4")]
-position = Vector2(2198.2, -780.598)
-scale = Vector2(113.608, 23.1943)
-
-[node name="IceGround27" parent="IceGrounds" index="19" instance=ExtResource("2_657p4")]
-position = Vector2(1940.01, -756.25)
-scale = Vector2(232, 117.5)
-
-[node name="IceGround28" parent="IceGrounds" index="20" instance=ExtResource("2_657p4")]
-position = Vector2(1988, -826.188)
-scale = Vector2(136, 26.375)
-
-[node name="IceGround29" parent="IceGrounds" index="21" instance=ExtResource("2_657p4")]
-position = Vector2(2068, -686.001)
-scale = Vector2(148, 22.1875)
-
-[node name="IceGround30" parent="IceGrounds" index="22" instance=ExtResource("2_657p4")]
-position = Vector2(1465.5, -750)
-scale = Vector2(373, -110)
-
-[node name="IceGround32" parent="IceGrounds" index="23" instance=ExtResource("2_657p4")]
-position = Vector2(1408.51, -973)
-scale = Vector2(159, -22.875)
-
-[node name="IceGround33" parent="IceGrounds" index="24" instance=ExtResource("2_657p4")]
-position = Vector2(1789, -1068)
-scale = Vector2(129, -22.7187)
-
-[node name="IceGround34" parent="IceGrounds" index="25" instance=ExtResource("2_657p4")]
-position = Vector2(1484.88, -1139.79)
-scale = Vector2(136.246, -24.4289)
-
-[node name="IceGround35" parent="IceGrounds" index="26" instance=ExtResource("2_657p4")]
-position = Vector2(965.988, -733)
-scale = Vector2(374.031, -83.1518)
-
-[node name="IceGround36" parent="IceGrounds" index="27" instance=ExtResource("2_657p4")]
-position = Vector2(579.034, -823.848)
-scale = Vector2(406.063, -264.304)
-
-[node name="IceGround37" parent="IceGrounds" index="28" instance=ExtResource("2_657p4")]
-position = Vector2(224.503, -924.424)
-scale = Vector2(309.001, -473.153)
-
-[node name="IceGround38" parent="IceGrounds" index="29" instance=ExtResource("2_657p4")]
-position = Vector2(35.9867, -792.712)
-scale = Vector2(74.0314, -206.576)
-
-[node name="IceGround39" parent="IceGrounds" index="30" instance=ExtResource("2_657p4")]
-position = Vector2(38.7491, -1319.66)
-scale = Vector2(76.5041, -11.3219)
-
-[node name="DeepBluePlatforms" type="Node2D" parent="." index="6"]
-position = Vector2(1795, -309)
-scale = Vector2(2, 2)
-
-[node name="DeepBluePlatform2" parent="DeepBluePlatforms" index="0" instance=ExtResource("8_3dqxb")]
-position = Vector2(546, 118.5)
-scale = Vector2(0.965278, 0.854167)
-
-[node name="DeepBluePlatform3" parent="DeepBluePlatforms" index="1" instance=ExtResource("8_3dqxb")]
-position = Vector2(328.5, 108.5)
-scale = Vector2(1.69444, 0.84375)
-
-[node name="DeepBluePlatform" parent="DeepBluePlatforms" index="2" instance=ExtResource("8_3dqxb")]
-position = Vector2(774.625, -140.375)
-scale = Vector2(0.781249, 0.864584)
-
-[node name="Snake" parent="." index="7" instance=ExtResource("12_62f1h")]
-position = Vector2(1629, 69)
-scale = Vector2(1, 1)
-direction = -1
-
-[node name="ImpactFilter" type="RigidBody2D" parent="." index="8"]
-position = Vector2(812, 83)
-collision_layer = 512
-collision_mask = 132
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ImpactFilter" index="0"]
-position = Vector2(0, -138)
-shape = SubResource("RectangleShape2D_d3gj3")
-
-[node name="Methanes" type="Node2D" parent="." index="9"]
-position = Vector2(733, 72)
-
-[node name="Methane2" parent="Methanes" index="0" instance=ExtResource("13_acumi")]
-position = Vector2(76, 6)
-
-[node name="Methane4" parent="Methanes" index="1" instance=ExtResource("13_acumi")]
-position = Vector2(61, 6)
-
-[node name="Methane3" parent="Methanes" index="2" instance=ExtResource("13_acumi")]
-position = Vector2(45, 6)
-
-[node name="Methane" parent="Methanes" index="3" instance=ExtResource("13_acumi")]
-position = Vector2(23, 6)
 
 [connection signal="body_entered" from="Props/Vine" to="Props/Vine" method="_on_body_entered"]
 [connection signal="body_exited" from="Props/Vine" to="Props/Vine" method="_on_body_exited"]
 [connection signal="body_entered" from="Props/TrapArea" to="Props/TrapArea" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/SucessTorch/SucessArea" to="Props/SucessTorch/SucessArea" method="_on_body_entered"]
 
 [editable path="Player/Torch"]
