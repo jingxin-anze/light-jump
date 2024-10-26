@@ -145,123 +145,119 @@ position = Vector2(1223.5, 107.359)
 scale = Vector2(765.002, -23.2813)
 
 [node name="IceGround5" parent="IceGrounds" index="1" instance=ExtResource("2_657p4")]
-position = Vector2(2856.01, -402.25)
-scale = Vector2(95.9999, 16.5)
+position = Vector2(2855.5, -402.25)
+scale = Vector2(347, 16.5)
 
-[node name="IceGround6" parent="IceGrounds" index="2" instance=ExtResource("2_657p4")]
-position = Vector2(2412.01, -400.251)
-scale = Vector2(216, 14.5)
-
-[node name="IceGround7" parent="IceGrounds" index="3" instance=ExtResource("2_657p4")]
+[node name="IceGround7" parent="IceGrounds" index="2" instance=ExtResource("2_657p4")]
 position = Vector2(419.378, -339.001)
 scale = Vector2(23.2482, 242.001)
 
-[node name="IceGround8" parent="IceGrounds" index="4" instance=ExtResource("2_657p4")]
+[node name="IceGround8" parent="IceGrounds" index="3" instance=ExtResource("2_657p4")]
 position = Vector2(1570, -652)
 scale = Vector2(113, 22.0001)
 
-[node name="IceGround11" parent="IceGrounds" index="5" instance=ExtResource("2_657p4")]
+[node name="IceGround11" parent="IceGrounds" index="4" instance=ExtResource("2_657p4")]
 position = Vector2(1161, -514)
 scale = Vector2(172, 31.0625)
 
-[node name="IceGround12" parent="IceGrounds" index="6" instance=ExtResource("2_657p4")]
+[node name="IceGround12" parent="IceGrounds" index="5" instance=ExtResource("2_657p4")]
 position = Vector2(691, -658)
 scale = Vector2(192, 21)
 
-[node name="IceGround14" parent="IceGrounds" index="7" instance=ExtResource("2_657p4")]
+[node name="IceGround14" parent="IceGrounds" index="6" instance=ExtResource("2_657p4")]
 position = Vector2(1453, -536)
 scale = Vector2(168.782, 21.0956)
 
-[node name="IceGround16" parent="IceGrounds" index="8" instance=ExtResource("2_657p4")]
+[node name="IceGround16" parent="IceGrounds" index="7" instance=ExtResource("2_657p4")]
 position = Vector2(2193.75, -661.5)
 scale = Vector2(147.5, 31.0001)
 
-[node name="IceGround17" parent="IceGrounds" index="9" instance=ExtResource("2_657p4")]
+[node name="IceGround17" parent="IceGrounds" index="8" instance=ExtResource("2_657p4")]
 position = Vector2(1950, -537)
 scale = Vector2(268.002, 24)
 
-[node name="IceGround18" parent="IceGrounds" index="10" instance=ExtResource("2_657p4")]
+[node name="IceGround18" parent="IceGrounds" index="9" instance=ExtResource("2_657p4")]
 position = Vector2(2420.5, -671.5)
 scale = Vector2(331.001, 51)
 
-[node name="IceGround19" parent="IceGrounds" index="11" instance=ExtResource("2_657p4")]
+[node name="IceGround19" parent="IceGrounds" index="10" instance=ExtResource("2_657p4")]
 position = Vector2(2667.76, -538.5)
 scale = Vector2(618.5, 24.9999)
 
-[node name="IceGround20" parent="IceGrounds" index="12" instance=ExtResource("2_657p4")]
+[node name="IceGround20" parent="IceGrounds" index="11" instance=ExtResource("2_657p4")]
 position = Vector2(2960.75, -670)
 scale = Vector2(560.494, 54)
 
-[node name="IceGround21" parent="IceGrounds" index="13" instance=ExtResource("2_657p4")]
+[node name="IceGround21" parent="IceGrounds" index="12" instance=ExtResource("2_657p4")]
 position = Vector2(3576.36, -486)
 scale = Vector2(52.7238, 81.5001)
 
-[node name="IceGround22" parent="IceGrounds" index="14" instance=ExtResource("2_657p4")]
+[node name="IceGround22" parent="IceGrounds" index="13" instance=ExtResource("2_657p4")]
 position = Vector2(3199.9, -523.599)
 rotation = -0.357792
 scale = Vector2(116.924, 44.1808)
 
-[node name="IceGround23" parent="IceGrounds" index="15" instance=ExtResource("2_657p4")]
+[node name="IceGround23" parent="IceGrounds" index="14" instance=ExtResource("2_657p4")]
 position = Vector2(3577.01, -729.782)
 scale = Vector2(53.7188, 394.438)
 
-[node name="IceGround24" parent="IceGrounds" index="16" instance=ExtResource("2_657p4")]
+[node name="IceGround24" parent="IceGrounds" index="15" instance=ExtResource("2_657p4")]
 position = Vector2(2520.01, -780.778)
 scale = Vector2(96.4297, 25.5547)
 
-[node name="IceGround25" parent="IceGrounds" index="17" instance=ExtResource("2_657p4")]
+[node name="IceGround25" parent="IceGrounds" index="16" instance=ExtResource("2_657p4")]
 position = Vector2(2316.01, -852.195)
 scale = Vector2(75.2151, 24.3887)
 
-[node name="IceGround26" parent="IceGrounds" index="18" instance=ExtResource("2_657p4")]
+[node name="IceGround26" parent="IceGrounds" index="17" instance=ExtResource("2_657p4")]
 position = Vector2(2198.2, -780.598)
 scale = Vector2(113.608, 23.1943)
 
-[node name="IceGround27" parent="IceGrounds" index="19" instance=ExtResource("2_657p4")]
+[node name="IceGround27" parent="IceGrounds" index="18" instance=ExtResource("2_657p4")]
 position = Vector2(1940.01, -756.25)
 scale = Vector2(232, 117.5)
 
-[node name="IceGround28" parent="IceGrounds" index="20" instance=ExtResource("2_657p4")]
+[node name="IceGround28" parent="IceGrounds" index="19" instance=ExtResource("2_657p4")]
 position = Vector2(1988, -826.188)
 scale = Vector2(136, 26.375)
 
-[node name="IceGround29" parent="IceGrounds" index="21" instance=ExtResource("2_657p4")]
+[node name="IceGround29" parent="IceGrounds" index="20" instance=ExtResource("2_657p4")]
 position = Vector2(2068, -686.001)
 scale = Vector2(148, 22.1875)
 
-[node name="IceGround30" parent="IceGrounds" index="22" instance=ExtResource("2_657p4")]
+[node name="IceGround30" parent="IceGrounds" index="21" instance=ExtResource("2_657p4")]
 position = Vector2(1465.5, -750)
 scale = Vector2(373, -110)
 
-[node name="IceGround32" parent="IceGrounds" index="23" instance=ExtResource("2_657p4")]
+[node name="IceGround32" parent="IceGrounds" index="22" instance=ExtResource("2_657p4")]
 position = Vector2(1408.51, -973)
 scale = Vector2(159, -22.875)
 
-[node name="IceGround33" parent="IceGrounds" index="24" instance=ExtResource("2_657p4")]
+[node name="IceGround33" parent="IceGrounds" index="23" instance=ExtResource("2_657p4")]
 position = Vector2(1789, -1068)
 scale = Vector2(129, -22.7187)
 
-[node name="IceGround34" parent="IceGrounds" index="25" instance=ExtResource("2_657p4")]
+[node name="IceGround34" parent="IceGrounds" index="24" instance=ExtResource("2_657p4")]
 position = Vector2(1484.88, -1139.79)
 scale = Vector2(136.246, -24.4289)
 
-[node name="IceGround35" parent="IceGrounds" index="26" instance=ExtResource("2_657p4")]
+[node name="IceGround35" parent="IceGrounds" index="25" instance=ExtResource("2_657p4")]
 position = Vector2(965.988, -733)
 scale = Vector2(374.031, -83.1518)
 
-[node name="IceGround36" parent="IceGrounds" index="27" instance=ExtResource("2_657p4")]
+[node name="IceGround36" parent="IceGrounds" index="26" instance=ExtResource("2_657p4")]
 position = Vector2(579.034, -823.848)
 scale = Vector2(406.063, -264.304)
 
-[node name="IceGround37" parent="IceGrounds" index="28" instance=ExtResource("2_657p4")]
+[node name="IceGround37" parent="IceGrounds" index="27" instance=ExtResource("2_657p4")]
 position = Vector2(224.503, -924.424)
 scale = Vector2(309.001, -473.153)
 
-[node name="IceGround38" parent="IceGrounds" index="29" instance=ExtResource("2_657p4")]
+[node name="IceGround38" parent="IceGrounds" index="28" instance=ExtResource("2_657p4")]
 position = Vector2(35.9867, -792.712)
 scale = Vector2(74.0314, -206.576)
 
-[node name="IceGround39" parent="IceGrounds" index="30" instance=ExtResource("2_657p4")]
+[node name="IceGround39" parent="IceGrounds" index="29" instance=ExtResource("2_657p4")]
 position = Vector2(38.7491, -1319.66)
 scale = Vector2(76.5041, -11.3219)
 
@@ -333,9 +329,6 @@ rotation = 1.309
 script = ExtResource("2_g0of5")
 light_ball = ExtResource("3_osext")
 vector = -15
-
-[node name="CanvasModulate" parent="Envir" index="8"]
-visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Envir" index="9"]
 texture = SubResource("CanvasTexture_48wol")
@@ -553,7 +546,7 @@ shape = SubResource("RectangleShape2D_s0t6g")
 debug_color = Color(0.829912, 0.361796, 0.416243, 0.42)
 
 [node name="Player" parent="." index="8"]
-position = Vector2(360, 511)
+position = Vector2(1422, -1196)
 
 [node name="Camera2D" parent="Player" index="7"]
 zoom = Vector2(1.5, 1.5)
@@ -576,6 +569,7 @@ shape = SubResource("CapsuleShape2D_xv65n")
 debug_color = Color(0.747569, 0.406549, 0.579744, 0.42)
 
 [node name="Loder" type="Node2D" parent="Player" index="9"]
+position = Vector2(382, -112)
 script = ExtResource("20_mx5ni")
 
 [node name="ChangeScene" parent="." index="9"]
