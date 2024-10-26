@@ -10,6 +10,7 @@ func _ready() -> void:
 	data=( ResourceLoader.load("user://game_data.tres") as GameData) if (ResourceLoader.load("user://game_data.tres")) else GameData.new()
 	contine.disabled=true if data.is_contine_disabled else false
 	ResourceSaver.save(data,"user://game_data.tres")
+	AudioPlayer.clear()
 
 func _on_start_pressed() -> void:
 	if not data.is_new_start:

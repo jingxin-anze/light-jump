@@ -3,6 +3,7 @@ extends Control
 @onready var data:GameData=ResourceLoader.load("user://game_data.tres") as GameData
 
 func _ready() -> void:
+	AudioPlayer.clear()
 	self.modulate.a=0
 	var t:Tween=get_tree().create_tween()
 	t.tween_property(self,"modulate:a",1,5)
