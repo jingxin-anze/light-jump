@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://cxrq21acmfrxj"]
+[gd_scene load_steps=41 format=4 uid="uid://cxrq21acmfrxj"]
 
 [ext_resource type="PackedScene" uid="uid://c4ajgw6w6y7ra" path="res://Scenes/NormalLevel/normal_level.tscn" id="1_6x0qj"]
 [ext_resource type="PackedScene" uid="uid://xneumqgnss1q" path="res://Scenes/IceGround/ice_ground.tscn" id="2_657p4"]
@@ -18,6 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://cwa1oyxleaknv" path="res://Scenes/Module/LightBackground/Resource/torch-Sheet.png" id="13_8ew8k"]
 [ext_resource type="PackedScene" uid="uid://dj6er3ilqgvjd" path="res://Scenes/Module/Methane/Methane.tscn" id="13_acumi"]
 [ext_resource type="Script" path="res://Scenes/Module/LightBackground/Script/point_light_2d.gd" id="14_p4yqa"]
+[ext_resource type="Script" path="res://Scenes/Level3/sucess_area.gd" id="15_j15ut"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_48wol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1atre"]
 size = Vector2(22, 414.25)
@@ -102,6 +105,9 @@ fill_to = Vector2(0.852564, 0.119658)
 cull_mode = 2
 polygon = PackedVector2Array(-2.42282, -3.69622, -1.71616, -5.05151, 0.100948, -4.9283, 0.807602, -3.57302)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kq6pf"]
+radius = 242.744
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3gj3"]
 size = Vector2(20, 296)
 
@@ -135,9 +141,15 @@ position = Vector2(2454, 537)
 [node name="Crystal6" parent="Envir" index="6" instance=ExtResource("4_5x8kr")]
 position = Vector2(137, -494)
 rotation = 0.785398
+script = ExtResource("2_g0of5")
+light_ball = ExtResource("3_osext")
+vector = -45
 
 [node name="CanvasModulate" parent="Envir" index="8"]
 visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Envir" index="9"]
+texture = SubResource("CanvasTexture_48wol")
 
 [node name="Bats" type="Node2D" parent="Props" index="0"]
 
@@ -215,21 +227,21 @@ shape = SubResource("RectangleShape2D_h4s1h")
 position = Vector2(1490.75, -694.5)
 shape = SubResource("RectangleShape2D_g02qo")
 
-[node name="Torch" type="Node2D" parent="Props" index="6"]
+[node name="SucessTorch" type="Node2D" parent="Props" index="6"]
 position = Vector2(1291, -1216)
 scale = Vector2(0.7, 0.7)
 
-[node name="Backgroud" type="Sprite2D" parent="Props/Torch" index="0"]
+[node name="Backgroud" type="Sprite2D" parent="Props/SucessTorch" index="0"]
 visible = false
 scale = Vector2(30.7677, -7.80901)
 texture = ExtResource("12_y3s04")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Props/Torch" index="1"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Props/SucessTorch" index="1"]
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_qtlui")
 autoplay = "default"
 
-[node name="PointLight2D" type="PointLight2D" parent="Props/Torch" index="2"]
+[node name="PointLight2D" type="PointLight2D" parent="Props/SucessTorch" index="2"]
 position = Vector2(-7.85698, -6.42846)
 scale = Vector2(7.79018, -6.80803)
 color = Color(0.999441, 0.765404, 0.458621, 1)
@@ -242,12 +254,20 @@ min_energy = 0.3
 max_energy = 3.0
 flicker_speed = 0.2
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Props/Torch/PointLight2D" index="0"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Props/SucessTorch/PointLight2D" index="0"]
 visible = false
 occluder = SubResource("OccluderPolygon2D_dgq1i")
 
+[node name="SucessArea" type="Area2D" parent="Props/SucessTorch" index="3"]
+collision_layer = 0
+script = ExtResource("15_j15ut")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/SucessTorch/SucessArea" index="0"]
+visible = false
+shape = SubResource("CircleShape2D_kq6pf")
+
 [node name="Player" parent="." index="3"]
-position = Vector2(2210, -71)
+position = Vector2(266, -439)
 
 [node name="Camera2D" parent="Player" index="7"]
 zoom = Vector2(1.5, 1.5)
@@ -275,7 +295,7 @@ position = Vector2(419.378, -339.001)
 scale = Vector2(23.2482, 242.001)
 
 [node name="IceGround8" parent="IceGrounds" index="4" instance=ExtResource("2_657p4")]
-position = Vector2(325.003, -659)
+position = Vector2(323, -658)
 scale = Vector2(113, 22.0001)
 
 [node name="IceGround11" parent="IceGrounds" index="5" instance=ExtResource("2_657p4")]
@@ -430,5 +450,6 @@ position = Vector2(23, 6)
 [connection signal="body_entered" from="Props/Vine" to="Props/Vine" method="_on_body_entered"]
 [connection signal="body_exited" from="Props/Vine" to="Props/Vine" method="_on_body_exited"]
 [connection signal="body_entered" from="Props/TrapArea" to="Props/TrapArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/SucessTorch/SucessArea" to="Props/SucessTorch/SucessArea" method="_on_body_entered"]
 
 [editable path="Player/Torch"]
