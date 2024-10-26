@@ -80,19 +80,15 @@ enabled = false
 
 [node name="Bat" parent="Props/Bats" index="0" instance=ExtResource("5_ktyk2")]
 visible = false
-speed = 0.0
 
 [node name="Bat2" parent="Props/Bats" index="1" instance=ExtResource("5_ktyk2")]
 position = Vector2(489, -251)
-speed = 0.0
 
 [node name="Bat3" parent="Props/Bats" index="2" instance=ExtResource("5_ktyk2")]
 position = Vector2(623, -251)
-speed = 0.0
 
 [node name="Bat4" parent="Props/Bats" index="3" instance=ExtResource("5_ktyk2")]
 position = Vector2(722, -255)
-speed = 0.0
 
 [node name="Methanes" type="Node2D" parent="Props" index="1"]
 
