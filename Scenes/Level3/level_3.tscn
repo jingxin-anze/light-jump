@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://cxrq21acmfrxj"]
+[gd_scene load_steps=43 format=4 uid="uid://cxrq21acmfrxj"]
 
 [ext_resource type="PackedScene" uid="uid://c4ajgw6w6y7ra" path="res://Scenes/NormalLevel/normal_level.tscn" id="1_6x0qj"]
 [ext_resource type="PackedScene" uid="uid://xneumqgnss1q" path="res://Scenes/IceGround/ice_ground.tscn" id="2_657p4"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dj6er3ilqgvjd" path="res://Scenes/Module/Methane/Methane.tscn" id="13_acumi"]
 [ext_resource type="Script" path="res://Scenes/Module/LightBackground/Script/point_light_2d.gd" id="14_p4yqa"]
 [ext_resource type="Script" path="res://Scenes/Level3/sucess_area.gd" id="15_j15ut"]
+[ext_resource type="Script" path="res://Scenes/Level3/achieve_points.gd" id="20_8v6xo"]
 [ext_resource type="Script" path="res://Scenes/Level3/loder.gd" id="20_mx5ni"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3gj3"]
@@ -107,6 +108,9 @@ fill_to = Vector2(0.852564, 0.119658)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qleco"]
 radius = 174.103
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0t6g"]
+size = Vector2(109, 93)
 
 [node name="Level3" instance=ExtResource("1_6x0qj")]
 metadata/_edit_vertical_guides_ = [2132.0]
@@ -438,6 +442,54 @@ position = Vector2(1629, 69)
 scale = Vector2(1, 1)
 direction = -1
 
+[node name="AchievePoints" type="Node2D" parent="Props" index="8"]
+script = ExtResource("20_8v6xo")
+
+[node name="AchieveArea1" type="Area2D" parent="Props/AchievePoints" index="0"]
+position = Vector2(1746, 450)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/AchievePoints/AchieveArea1" index="0"]
+position = Vector2(103, 7)
+shape = SubResource("RectangleShape2D_s0t6g")
+debug_color = Color(0.829912, 0.361796, 0.416243, 0.42)
+
+[node name="AchieveArea2" type="Area2D" parent="Props/AchievePoints" index="1"]
+position = Vector2(2861, 482)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/AchievePoints/AchieveArea2" index="0"]
+position = Vector2(103, 7)
+shape = SubResource("RectangleShape2D_s0t6g")
+debug_color = Color(0.829912, 0.361796, 0.416243, 0.42)
+
+[node name="AchieveArea3" type="Area2D" parent="Props/AchievePoints" index="2"]
+position = Vector2(3156, -32)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/AchievePoints/AchieveArea3" index="0"]
+position = Vector2(103, 7)
+shape = SubResource("RectangleShape2D_s0t6g")
+debug_color = Color(0.829912, 0.361796, 0.416243, 0.42)
+
+[node name="AchieveArea4" type="Area2D" parent="Props/AchievePoints" index="3"]
+position = Vector2(1565, -105)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/AchievePoints/AchieveArea4" index="0"]
+position = Vector2(103, 7)
+shape = SubResource("RectangleShape2D_s0t6g")
+debug_color = Color(0.829912, 0.361796, 0.416243, 0.42)
+
+[node name="AchieveArea5" type="Area2D" parent="Props/AchievePoints" index="4"]
+position = Vector2(2535, -752)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/AchievePoints/AchieveArea5" index="0"]
+position = Vector2(103, 7)
+shape = SubResource("RectangleShape2D_s0t6g")
+debug_color = Color(0.829912, 0.361796, 0.416243, 0.42)
+
 [node name="Player" parent="." index="8"]
 position = Vector2(682, 533)
 
@@ -459,5 +511,10 @@ position = Vector2(2, 4)
 [connection signal="body_exited" from="Props/Vine" to="Props/Vine" method="_on_body_exited"]
 [connection signal="body_entered" from="Props/TrapArea" to="Props/TrapArea" method="_on_body_entered"]
 [connection signal="body_entered" from="Props/SucessTorch/Torch/SucessArea" to="Props/SucessTorch/Torch/SucessArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/AchievePoints/AchieveArea1" to="Props/AchievePoints" method="_on_achieve_area_1_body_entered"]
+[connection signal="body_entered" from="Props/AchievePoints/AchieveArea2" to="Props/AchievePoints" method="_on_achieve_area_2_body_entered"]
+[connection signal="body_entered" from="Props/AchievePoints/AchieveArea3" to="Props/AchievePoints" method="_on_achieve_area_3_body_entered"]
+[connection signal="body_entered" from="Props/AchievePoints/AchieveArea4" to="Props/AchievePoints" method="_on_achieve_area_4_body_entered"]
+[connection signal="body_entered" from="Props/AchievePoints/AchieveArea5" to="Props/AchievePoints" method="_on_achieve_area_5_body_entered"]
 
 [editable path="Player/Torch"]
