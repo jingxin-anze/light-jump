@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://clsxih71pb6nd"]
+[gd_scene load_steps=57 format=3 uid="uid://clsxih71pb6nd"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_1knux"]
 [ext_resource type="Script" path="res://Scenes/Player/state_macine.gd" id="1_m666x"]
@@ -11,6 +11,20 @@
 [ext_resource type="Script" path="res://Scenes/Player/attack_2.gd" id="9_2pxhu"]
 [ext_resource type="Script" path="res://Scenes/Player/death.gd" id="10_5an85"]
 [ext_resource type="PackedScene" uid="uid://bntrd0ehljn5k" path="res://Scenes/DeathUI/death_ui.tscn" id="11_31ra5"]
+[ext_resource type="Texture2D" uid="uid://bvwjei8n07iug" path="res://Asset/Pics/UI_Phone/Left.png" id="12_ac5j7"]
+[ext_resource type="Texture2D" uid="uid://cn3rl1hm1p7ru" path="res://Asset/Pics/UI_Phone/Left_Press.png" id="13_2bund"]
+[ext_resource type="Texture2D" uid="uid://dj6mwswd37hh1" path="res://Asset/Pics/UI_Phone/Right.png" id="14_1mbfh"]
+[ext_resource type="Texture2D" uid="uid://dqaf2n7rivt3t" path="res://Asset/Pics/UI_Phone/Right_Press.png" id="15_y0how"]
+[ext_resource type="Texture2D" uid="uid://d0lbn0s2rtthk" path="res://Asset/Pics/UI_Phone/Up.png" id="16_a3wqw"]
+[ext_resource type="Texture2D" uid="uid://b7aqnj8vg83g3" path="res://Asset/Pics/UI_Phone/Up_Press.png" id="17_g1kvx"]
+[ext_resource type="Texture2D" uid="uid://c3kdbyecyvbj4" path="res://Asset/Pics/UI_Phone/Down.png" id="18_yqk2q"]
+[ext_resource type="Texture2D" uid="uid://xe4dxd3wk6dk" path="res://Asset/Pics/UI_Phone/Down_Press.png" id="19_mu5rg"]
+[ext_resource type="Texture2D" uid="uid://n2w8hexuyiuu" path="res://Asset/Pics/UI_Phone/Hand.png" id="20_nrr18"]
+[ext_resource type="Texture2D" uid="uid://b04u23c07c221" path="res://Asset/Pics/UI_Phone/Hand_Press.png" id="21_7dmjf"]
+[ext_resource type="Texture2D" uid="uid://3nfvglacljo3" path="res://Asset/Pics/UI_Phone/SSZ.png" id="22_gorti"]
+[ext_resource type="Texture2D" uid="uid://b4ie1i3pqwpxm" path="res://Asset/Pics/UI_Phone/SSZ_Press.png" id="23_1ltrj"]
+[ext_resource type="Texture2D" uid="uid://db21t8s7i4wxn" path="res://Asset/Pics/UI_Phone/NSZ.png" id="24_gpw56"]
+[ext_resource type="Texture2D" uid="uid://dvn263cxs1kkd" path="res://Asset/Pics/UI_Phone/NSZ_Press.png" id="25_o3xku"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4a211"]
 atlas = ExtResource("2_asxgp")
@@ -268,8 +282,6 @@ animations = [{
 radius = 5.0
 height = 22.0
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_l0sd3"]
-
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 279
 script = ExtResource("1_1knux")
@@ -360,42 +372,42 @@ one_shot = true
 
 [node name="MoveLeft" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2(93, 864)
-scale = Vector2(121, 104)
-texture_normal = SubResource("CanvasTexture_l0sd3")
+texture_normal = ExtResource("12_ac5j7")
+texture_pressed = ExtResource("13_2bund")
 action = "move_left"
 
 [node name="MoveRight" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2(298, 868)
-scale = Vector2(121, 104)
-texture_normal = SubResource("CanvasTexture_l0sd3")
+texture_normal = ExtResource("14_1mbfh")
+texture_pressed = ExtResource("15_y0how")
 action = "move_right"
 
 [node name="MoveUp" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2(1535, 678)
-scale = Vector2(121, 104)
-texture_normal = SubResource("CanvasTexture_l0sd3")
+texture_normal = ExtResource("16_a3wqw")
+texture_pressed = ExtResource("17_g1kvx")
 action = "jump"
 
 [node name="MoveDown" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2(1547, 868)
-scale = Vector2(121, 104)
-texture_normal = SubResource("CanvasTexture_l0sd3")
+texture_normal = ExtResource("18_yqk2q")
+texture_pressed = ExtResource("19_mu5rg")
 action = "down"
 
 [node name="Attack2" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2(1713, 768)
-scale = Vector2(121, 104)
-texture_normal = SubResource("CanvasTexture_l0sd3")
+texture_normal = ExtResource("20_nrr18")
+texture_pressed = ExtResource("21_7dmjf")
 action = "attack2"
 
 [node name="TurnRight" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2(1549, 351)
-scale = Vector2(121, 104)
-texture_normal = SubResource("CanvasTexture_l0sd3")
+texture_normal = ExtResource("22_gorti")
+texture_pressed = ExtResource("23_1ltrj")
 action = "turn_right"
 
 [node name="TurnLeft" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2(1727, 353)
-scale = Vector2(121, 104)
-texture_normal = SubResource("CanvasTexture_l0sd3")
+texture_normal = ExtResource("24_gpw56")
+texture_pressed = ExtResource("25_o3xku")
 action = "turn_left"
