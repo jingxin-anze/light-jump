@@ -40,7 +40,7 @@ func _physics_process(delta):
 			velocity=Vector2(0,0)
 			
 		if collision.get_collider().has_meta("is_black_platform"):
-			collision.get_collider().get_parent().modulate=Color.BROWN
+			collision.get_collider().get_parent().self_modulate=Color(5,1,1,1)
 			collision.get_collider().collision_layer=16
 			velocity=Vector2(0,0)
 

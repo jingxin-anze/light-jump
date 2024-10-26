@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://chiypkmmijilj"]
+[gd_scene load_steps=18 format=3 uid="uid://chiypkmmijilj"]
 
 [ext_resource type="Texture2D" uid="uid://b6ba2sqo0sihl" path="res://Scenes/DarkPlatform/Resouces/platformt-black-Sheet.png" id="1_4i772"]
 
@@ -69,6 +69,48 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_om3ra"]
 size = Vector2(68, 14)
 
+[sub_resource type="Curve" id="Curve_s3om5"]
+min_value = -1.0
+_data = [Vector2(0.0291859, -0.500906), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_njley"]
+curve = SubResource("Curve_s3om5")
+
+[sub_resource type="Curve" id="Curve_5xiji"]
+max_value = 2.0
+_data = [Vector2(0.0168971, 0.107911), 0.0, 0.0, 0, 0, Vector2(0.482335, 1.17521), 0.0, 0.0, 0, 0, Vector2(0.99232, 1.88612), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_kkvb3"]
+curve = SubResource("Curve_5xiji")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bu3wc"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(35, 20, 1)
+gravity = Vector3(0, -10, 0)
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_kkvb3")
+hue_variation_min = 0.2
+hue_variation_max = 0.6
+hue_variation_curve = SubResource("CurveTexture_njley")
+
+[sub_resource type="Environment" id="Environment_k5u53"]
+background_mode = 3
+background_color = Color(0.91, 0.881183, 0.0455, 1)
+glow_enabled = true
+glow_levels/4 = 1.62
+glow_levels/5 = 2.26
+glow_normalized = true
+glow_mix = 0.071
+glow_bloom = 0.05
+glow_blend_mode = 4
+glow_hdr_threshold = 0.45
+glow_hdr_scale = 0.95
+glow_hdr_luminance_cap = 30.86
+glow_map_strength = 1.0
+
 [node name="DeepBluePlatform" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_vdct8")
 autoplay = "default"
@@ -84,3 +126,12 @@ metadata/is_black_platform = true
 visible = false
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_om3ra")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(22.043, 1, 1, 1)
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_bu3wc")
+lifetime = 2.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_k5u53")
