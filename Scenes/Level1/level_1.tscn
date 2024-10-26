@@ -449,6 +449,16 @@ collision_layer = 16
 position = Vector2(-1.33333, 0)
 shape = SubResource("RectangleShape2D_wjrsg")
 
+[node name="PointLight2D" type="PointLight2D" parent="Props/Door"]
+position = Vector2(15.0832, -6.52827)
+scale = Vector2(8.8191, -7.78415)
+color = Color(0.953514, 0.65067, 0.433207, 1)
+shadow_filter = 2
+shadow_filter_smooth = 3.4
+texture = SubResource("GradientTexture2D_rykgi")
+texture_scale = 0.52
+script = ExtResource("4_43tl7")
+
 [node name="Mirror" parent="Props" instance=ExtResource("17_4iy42")]
 position = Vector2(1170, 706)
 
