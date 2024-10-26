@@ -384,11 +384,11 @@ collision_mask = 3
 script = ExtResource("10_fmyxa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/TrapArea" index="0"]
-position = Vector2(361.938, 577)
+position = Vector2(362, 584)
 shape = SubResource("RectangleShape2D_ubtn7")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Props/TrapArea" index="1"]
-position = Vector2(1826.5, 646)
+position = Vector2(1827, 654)
 shape = SubResource("RectangleShape2D_wbkqu")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Props/TrapArea" index="2"]
@@ -439,7 +439,7 @@ scale = Vector2(1, 1)
 direction = -1
 
 [node name="Player" parent="." index="8"]
-position = Vector2(1281, -1188)
+position = Vector2(682, 533)
 
 [node name="Camera2D" parent="Player" index="7"]
 zoom = Vector2(1.5, 1.5)
