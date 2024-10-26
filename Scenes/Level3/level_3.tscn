@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://cxrq21acmfrxj"]
+[gd_scene load_steps=47 format=4 uid="uid://cxrq21acmfrxj"]
 
 [ext_resource type="PackedScene" uid="uid://c4ajgw6w6y7ra" path="res://Scenes/NormalLevel/normal_level.tscn" id="1_6x0qj"]
 [ext_resource type="PackedScene" uid="uid://xneumqgnss1q" path="res://Scenes/IceGround/ice_ground.tscn" id="2_657p4"]
@@ -333,6 +333,9 @@ rotation = 1.309
 script = ExtResource("2_g0of5")
 light_ball = ExtResource("3_osext")
 vector = -15
+
+[node name="CanvasModulate" parent="Envir" index="8"]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Envir" index="9"]
 texture = SubResource("CanvasTexture_48wol")
