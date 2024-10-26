@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b5ttf48fpbir3"]
+[gd_scene load_steps=13 format=3 uid="uid://b5ttf48fpbir3"]
 
 [ext_resource type="FontFile" uid="uid://dy6go34b526to" path="res://Asset/Font fun/IPix中文像素字体.ttf" id="1_bv11l"]
 [ext_resource type="PackedScene" uid="uid://dg1i5muyqauf5" path="res://Scenes/Module/LightBackground/LightBackground.tscn" id="2_7ujyt"]
@@ -21,6 +21,8 @@ Button/styles/normal = SubResource("StyleBoxFlat_bxugt")
 Label/font_sizes/font_size = 64
 Label/fonts/font = ExtResource("1_bv11l")
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_ddes5"]
+
 [sub_resource type="Gradient" id="Gradient_oub7q"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
@@ -31,6 +33,7 @@ fill_from = Vector2(0.477064, 0.426605)
 fill_to = Vector2(0.852564, 0.119658)
 
 [node name="EndUI" type="Control"]
+z_index = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,6 +43,16 @@ grow_vertical = 2
 theme = SubResource("Theme_c7jko")
 script = ExtResource("2_mtiyi")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_ddes5")
+
 [node name="ThatLight" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -48,7 +61,7 @@ anchor_right = 0.5
 offset_left = -473.5
 offset_top = 34.0
 offset_right = 473.5
-offset_bottom = 175.0
+offset_bottom = 209.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 128
 text = "那束光,去了山顶"
@@ -71,7 +84,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Author" type="Button" parent="."]
-layout_mode = 0
 offset_left = 666.0
 offset_top = 362.0
 offset_right = 1166.0
@@ -86,7 +98,6 @@ enter_delay = 0.1
 enter_scale = Vector2(0, 0)
 
 [node name="ReturnMain" type="Button" parent="."]
-layout_mode = 0
 offset_left = 664.0
 offset_top = 659.0
 offset_right = 1164.0

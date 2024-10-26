@@ -2,7 +2,6 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name=="Player":
-		print(body)
 		body.can_fall=false
 		body.velocity.y=0
 		body.vine_fall=true
