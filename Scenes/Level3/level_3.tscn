@@ -136,6 +136,9 @@ position = Vector2(2454, 537)
 position = Vector2(137, -494)
 rotation = 0.785398
 
+[node name="CanvasModulate" parent="Envir" index="8"]
+visible = false
+
 [node name="Bats" type="Node2D" parent="Props" index="0"]
 
 [node name="Bat" parent="Props/Bats" index="0" instance=ExtResource("2_jkich")]
@@ -148,8 +151,9 @@ speed = 0.0
 
 [node name="Wheels" type="Node2D" parent="Props" index="1"]
 
-[node name="Wheel" parent="Props/Wheels" index="0" instance=ExtResource("3_2iofm")]
+[node name="Wheel" parent="Props/Wheels" index="0" node_paths=PackedStringArray("emitter") instance=ExtResource("3_2iofm")]
 position = Vector2(3248, 1)
+emitter = NodePath("../../../Envir/Crystal")
 
 [node name="Frog" parent="Props" index="2" instance=ExtResource("4_mr8mx")]
 position = Vector2(1869, 437)
