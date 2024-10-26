@@ -334,9 +334,6 @@ script = ExtResource("2_g0of5")
 light_ball = ExtResource("3_osext")
 vector = -15
 
-[node name="CanvasModulate" parent="Envir" index="8"]
-visible = false
-
 [node name="Sprite2D" type="Sprite2D" parent="Envir" index="9"]
 texture = SubResource("CanvasTexture_48wol")
 
