@@ -17,7 +17,7 @@ func _on_body_entered(body: Node2D) -> void:
 				
 			"Level3":
 				data.level="level3"
-				#data.achieve_point["player_position"]=Vector2(200,-50)
+				data.achieve_point["player_position"]=Vector2(110,470)
 				pass
 		ResourceSaver.save(data,"user://game_data.tres")
 		
