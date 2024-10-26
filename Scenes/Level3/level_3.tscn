@@ -112,6 +112,7 @@ radius = 174.103
 [node name="SucessBg" type="Sprite2D" parent="." index="0"]
 self_modulate = Color(0, 0, 0, 0)
 z_index = 2
+position = Vector2(0, -5)
 scale = Vector2(30.7677, -7.80901)
 texture = ExtResource("12_y3s04")
 
@@ -167,16 +168,16 @@ position = Vector2(2667.76, -538.5)
 scale = Vector2(618.5, 24.9999)
 
 [node name="IceGround20" parent="IceGrounds" index="12" instance=ExtResource("2_657p4")]
-position = Vector2(2960.75, -674)
-scale = Vector2(560.494, 46)
+position = Vector2(2960.75, -670)
+scale = Vector2(560.494, 54)
 
 [node name="IceGround21" parent="IceGrounds" index="13" instance=ExtResource("2_657p4")]
 position = Vector2(3512.01, -487)
 scale = Vector2(166.875, 81.5001)
 
 [node name="IceGround22" parent="IceGrounds" index="14" instance=ExtResource("2_657p4")]
-position = Vector2(3162.29, -513.875)
-scale = Vector2(151.438, 21.75)
+position = Vector2(3180.29, -517.5)
+scale = Vector2(187.429, 29)
 
 [node name="IceGround23" parent="IceGrounds" index="15" instance=ExtResource("2_657p4")]
 position = Vector2(3577.01, -729.782)
@@ -433,7 +434,7 @@ script = ExtResource("15_j15ut")
 shape = SubResource("CircleShape2D_qleco")
 
 [node name="Player" parent="." index="9"]
-position = Vector2(1349, -563)
+position = Vector2(3045, -580)
 
 [node name="Camera2D" parent="Player" index="7"]
 zoom = Vector2(1.5, 1.5)
