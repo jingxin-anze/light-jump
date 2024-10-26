@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d3hojk7sl01lu"
+path="res://.godot/imported/Reach for the Sky.mp3-7e8975f6143d7723ff73518bd0c8ea93.mp3str"
+
+[deps]
+
+source_file="res://Asset/Sounds/Level3/Reach for the Sky.mp3"
+dest_files=["res://.godot/imported/Reach for the Sky.mp3-7e8975f6143d7723ff73518bd0c8ea93.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

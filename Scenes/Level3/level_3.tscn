@@ -1,9 +1,10 @@
-[gd_scene load_steps=43 format=4 uid="uid://cxrq21acmfrxj"]
+[gd_scene load_steps=44 format=4 uid="uid://cxrq21acmfrxj"]
 
 [ext_resource type="PackedScene" uid="uid://c4ajgw6w6y7ra" path="res://Scenes/NormalLevel/normal_level.tscn" id="1_6x0qj"]
 [ext_resource type="PackedScene" uid="uid://xneumqgnss1q" path="res://Scenes/IceGround/ice_ground.tscn" id="2_657p4"]
 [ext_resource type="Script" path="res://Scenes/Level2/level2_source_light.gd" id="2_g0of5"]
 [ext_resource type="PackedScene" uid="uid://jhb0tjyojsnb" path="res://Scenes/Bat/bat.tscn" id="2_jkich"]
+[ext_resource type="Script" path="res://Scenes/Level3/level_3.gd" id="2_lhvgs"]
 [ext_resource type="Texture2D" uid="uid://egwqcyactcrg" path="res://Asset/Pics/Level3Bg.png" id="2_xlhwy"]
 [ext_resource type="PackedScene" uid="uid://82p42a4l8lc5" path="res://Scenes/Wheel/wheel.tscn" id="3_2iofm"]
 [ext_resource type="PackedScene" uid="uid://0ob2tjd60nwu" path="res://Test/TestLight/light_ball.tscn" id="3_osext"]
@@ -97,11 +98,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_oub7q"]
+[sub_resource type="Gradient" id="Gradient_kxuqv"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_kf4n5"]
-gradient = SubResource("Gradient_oub7q")
+gradient = SubResource("Gradient_kxuqv")
 fill = 1
 fill_from = Vector2(0.477064, 0.426605)
 fill_to = Vector2(0.852564, 0.119658)
@@ -113,6 +114,7 @@ radius = 174.103
 size = Vector2(109, 93)
 
 [node name="Level3" instance=ExtResource("1_6x0qj")]
+script = ExtResource("2_lhvgs")
 metadata/_edit_vertical_guides_ = [2132.0]
 
 [node name="Bg" parent="." index="0"]

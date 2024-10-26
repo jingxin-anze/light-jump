@@ -389,7 +389,7 @@ texture_pressed = ExtResource("17_g1kvx")
 action = "jump"
 
 [node name="MoveDown" type="TouchScreenButton" parent="CanvasLayer"]
-position = Vector2(1547, 868)
+position = Vector2(1540, 868)
 texture_normal = ExtResource("18_yqk2q")
 texture_pressed = ExtResource("19_mu5rg")
 action = "down"

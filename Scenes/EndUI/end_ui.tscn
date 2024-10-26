@@ -1,0 +1,160 @@
+[gd_scene load_steps=11 format=3 uid="uid://b5ttf48fpbir3"]
+
+[ext_resource type="FontFile" uid="uid://dy6go34b526to" path="res://Asset/Font fun/IPix中文像素字体.ttf" id="1_bv11l"]
+[ext_resource type="PackedScene" uid="uid://dg1i5muyqauf5" path="res://Scenes/Module/LightBackground/LightBackground.tscn" id="2_7ujyt"]
+[ext_resource type="Script" path="res://Scenes/Ui/AnimationComponent.gd" id="2_vgnkw"]
+[ext_resource type="PackedScene" uid="uid://456wy7bp1ync" path="res://Scenes/Module/Bonfire/Bonfire.tscn" id="3_bd7vy"]
+[ext_resource type="Script" path="res://Scenes/Module/LightBackground/Script/point_light_2d.gd" id="4_7r21p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fh65"]
+bg_color = Color(0.0627, 0.53618, 0.57, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxugt"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_c7jko"]
+Button/font_sizes/font_size = 64
+Button/fonts/font = ExtResource("1_bv11l")
+Button/styles/hover = SubResource("StyleBoxFlat_1fh65")
+Button/styles/normal = SubResource("StyleBoxFlat_bxugt")
+Label/font_sizes/font_size = 64
+Label/fonts/font = ExtResource("1_bv11l")
+
+[sub_resource type="Gradient" id="Gradient_oub7q"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_38fii"]
+gradient = SubResource("Gradient_oub7q")
+fill = 1
+fill_from = Vector2(0.477064, 0.426605)
+fill_to = Vector2(0.852564, 0.119658)
+
+[node name="EndUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_c7jko")
+
+[node name="ThatLight" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -473.5
+offset_top = 34.0
+offset_right = 473.5
+offset_bottom = 175.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 128
+text = "那束光,去了山顶"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NeverEnd" type="Label" parent="."]
+self_modulate = Color(1, 1, 0.184314, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -338.0
+offset_top = 146.0
+offset_right = 324.0
+offset_bottom = 287.0
+grow_horizontal = 2
+text = "那束光,永远不会熄灭."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Author" type="Button" parent="."]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 362.0
+offset_right = 1166.0
+offset_bottom = 512.0
+text = "制作人名单"
+
+[node name="AnimationComponent" type="Node" parent="Author"]
+script = ExtResource("2_vgnkw")
+hover_scale = Vector2(1.2, 1.2)
+enter_time = 0.4
+enter_delay = 0.1
+enter_scale = Vector2(0, 0)
+
+[node name="ReturnAchieve" type="Button" parent="."]
+layout_mode = 0
+offset_left = 664.0
+offset_top = 536.0
+offset_right = 1164.0
+offset_bottom = 686.0
+
+[node name="AnimationComponent" type="Node" parent="ReturnAchieve" node_paths=PackedStringArray("wait_for")]
+script = ExtResource("2_vgnkw")
+hover_scale = Vector2(1.2, 1.2)
+wait_for = NodePath("")
+enter_time = 0.4
+enter_delay = 0.1
+enter_scale = Vector2(0, 0)
+
+[node name="ReturnMain" type="Button" parent="."]
+layout_mode = 0
+offset_left = 664.0
+offset_top = 728.0
+offset_right = 1164.0
+offset_bottom = 878.0
+text = "返回主页面"
+
+[node name="AnimationComponent" type="Node" parent="ReturnMain" node_paths=PackedStringArray("wait_for")]
+script = ExtResource("2_vgnkw")
+hover_scale = Vector2(1.2, 1.2)
+wait_for = NodePath("")
+enter_time = 0.4
+enter_delay = 0.1
+enter_scale = Vector2(0, 0)
+
+[node name="Torch" parent="." instance=ExtResource("2_7ujyt")]
+visible = false
+position = Vector2(317, 611)
+
+[node name="Backgroud" parent="Torch/Node" index="0"]
+visible = false
+
+[node name="Torch2" parent="." instance=ExtResource("2_7ujyt")]
+visible = false
+position = Vector2(1600, 611)
+
+[node name="Backgroud" parent="Torch2/Node" index="0"]
+visible = false
+
+[node name="Bonfire" parent="." instance=ExtResource("3_bd7vy")]
+position = Vector2(317, 611)
+scale = Vector2(20, 20)
+
+[node name="PointLight2D" type="PointLight2D" parent="Bonfire"]
+scale = Vector2(7.79018, -6.80803)
+color = Color(0.517647, 0.588235, 0.552941, 1)
+energy = 0.7
+shadow_filter = 2
+shadow_filter_smooth = 3.4
+texture = SubResource("GradientTexture2D_38fii")
+script = ExtResource("4_7r21p")
+
+[node name="Bonfire2" parent="." instance=ExtResource("3_bd7vy")]
+position = Vector2(1651, 611)
+scale = Vector2(20, 20)
+
+[node name="PointLight2D" type="PointLight2D" parent="Bonfire2"]
+scale = Vector2(7.79018, -6.80803)
+color = Color(0.517647, 0.588235, 0.552941, 1)
+energy = 0.7
+shadow_filter = 2
+shadow_filter_smooth = 3.4
+texture = SubResource("GradientTexture2D_38fii")
+script = ExtResource("4_7r21p")
+
+[editable path="Torch"]
+[editable path="Torch2"]
+[editable path="Bonfire"]
+[editable path="Bonfire2"]
