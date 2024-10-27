@@ -18,13 +18,8 @@ var resolution_dir:Dictionary={
 	"800x600": Vector2i(800, 600) ,
 }
 
-#引入测试声音
-const LEVEL_1_ECHOES_IN_THE_NIGHT = preload("res://Asset/Sounds/Level1/Level 1_Echoes in the Night.mp3")
-
 #初始化
 func _ready() -> void:
-	#播放音频
-	AudioPlayer.play(LEVEL_1_ECHOES_IN_THE_NIGHT,true)
 	#将总音量传入value
 	h_slider.value=AudioPlayer.get_volume(0)
 	#初始化OptionButton的item

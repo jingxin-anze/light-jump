@@ -1,10 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbnywxy4rbhf0"]
+[gd_scene load_steps=10 format=3 uid="uid://dbnywxy4rbhf0"]
 
 [ext_resource type="Theme" uid="uid://c78axvp43v5yl" path="res://Data/Theme/start_ui_theme.tres" id="1_0axhj"]
 [ext_resource type="Script" path="res://Scenes/Setting/setting.gd" id="1_bu0bt"]
+[ext_resource type="FontFile" uid="uid://dy6go34b526to" path="res://Asset/Font fun/IPix中文像素字体.ttf" id="3_k827r"]
+
+[sub_resource type="Theme" id="Theme_t4tai"]
+Label/font_sizes/font_size = 76
+Label/fonts/font = ExtResource("3_k827r")
+PopupMenu/font_sizes/font_separator_size = 32
+PopupMenu/font_sizes/font_size = 32
+PopupMenu/font_sizes/title_font_size = 32
+PopupMenu/fonts/font = ExtResource("3_k827r")
+PopupMenu/fonts/title_font = ExtResource("3_k827r")
+PopupPanel/font_sizes/title_font_size = 64
+PopupPanel/fonts/title_font = ExtResource("3_k827r")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pfww"]
 bg_color = Color(0.598155, 0.606749, 0.555482, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_u2137"]
 
@@ -60,6 +76,7 @@ offset_bottom = 13.7599
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
+theme = SubResource("Theme_t4tai")
 theme_override_styles/panel = SubResource("StyleBoxFlat_4pfww")
 metadata/_edit_lock_ = true
 
@@ -70,10 +87,10 @@ anchors_preset = -1
 anchor_top = 0.147
 anchor_right = 0.978
 anchor_bottom = 0.262
-offset_left = 22.0
-offset_top = -0.416
-offset_right = 0.0279541
-offset_bottom = -35.136
+offset_left = 20.0001
+offset_top = 75.584
+offset_right = -1.97198
+offset_bottom = 40.864
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/slider = SubResource("StyleBoxTexture_8inxq")
@@ -91,12 +108,32 @@ anchor_left = 0.052
 anchor_top = 0.393
 anchor_right = 0.968
 anchor_bottom = 0.544
-offset_left = -0.248001
-offset_top = 0.29599
-offset_right = -0.232056
-offset_bottom = 0.167969
+offset_left = -2.24794
+offset_top = 154.296
+offset_right = -2.23199
+offset_bottom = 126.168
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Sound" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 6.10352e-05
+offset_top = 30.0
+offset_right = 754.0
+offset_bottom = 135.0
+text = "音量调节"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resolution2" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = -1.99994
+offset_top = 360.0
+offset_right = 752.0
+offset_bottom = 465.0
+text = "分辨率调节"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="gui_input" from="CanvasLayer/Control" to="." method="_on_gui_input"]
 [connection signal="value_changed" from="CanvasLayer/Panel/HSlider" to="." method="_on_h_slider_value_changed"]
