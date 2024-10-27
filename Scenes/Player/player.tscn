@@ -428,6 +428,7 @@ action = "turn_left"
 [node name="PhoneVisible" type="Button" parent="CanvasLayer"]
 offset_right = 137.0
 offset_bottom = 136.0
+focus_mode = 0
 theme_override_icons/icon = ExtResource("26_rw3lg")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_x0boo")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_dwjpe")
