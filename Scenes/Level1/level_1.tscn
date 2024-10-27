@@ -352,7 +352,7 @@ texture = SubResource("GradientTexture2D_lthvd")
 
 [node name="Player" parent="." instance=ExtResource("2_bnyn2")]
 visibility_layer = 2
-position = Vector2(453, 983)
+position = Vector2(487, 975)
 scale = Vector2(2, 2)
 SPEED = 170.0
 jump_height = 120.0
@@ -401,7 +401,7 @@ script = ExtResource("8_p4717")
 
 [node name="PointLight2D" type="PointLight2D" parent="Props/Bonfire"]
 position = Vector2(-3, -1)
-scale = Vector2(15.431, -12.643)
+scale = Vector2(18.301, -14.994)
 color = Color(0.98, 0.65072, 0.0392, 1)
 energy = 1.5
 shadow_filter = 2

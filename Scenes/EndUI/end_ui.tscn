@@ -84,6 +84,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Author" type="Button" parent="."]
+layout_mode = 0
 offset_left = 666.0
 offset_top = 362.0
 offset_right = 1166.0
@@ -98,6 +99,7 @@ enter_delay = 0.1
 enter_scale = Vector2(0, 0)
 
 [node name="ReturnMain" type="Button" parent="."]
+layout_mode = 0
 offset_left = 664.0
 offset_top = 659.0
 offset_right = 1164.0

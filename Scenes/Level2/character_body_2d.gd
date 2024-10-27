@@ -21,7 +21,7 @@ const BAT = preload("res://Asset/Sounds/Level2/bat_02.mp3")
 func _ready() -> void:
 	#给每个蝙蝠随机不同的返回点
 	randomize()
-	rand=Vector2(randi_range(500,2000),randi_range(-500,-600))
+	rand=Vector2(randi_range(-200,4500),randi_range(-1500,-2000))
 
 func _physics_process(delta: float) -> void:
 	#每帧检测，切换状态

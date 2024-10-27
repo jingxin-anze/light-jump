@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://clsxih71pb6nd"]
+[gd_scene load_steps=63 format=3 uid="uid://clsxih71pb6nd"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_1knux"]
 [ext_resource type="Script" path="res://Scenes/Player/state_macine.gd" id="1_m666x"]
@@ -25,6 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://b4ie1i3pqwpxm" path="res://Asset/Pics/UI_Phone/SSZ_Press.png" id="23_1ltrj"]
 [ext_resource type="Texture2D" uid="uid://db21t8s7i4wxn" path="res://Asset/Pics/UI_Phone/NSZ.png" id="24_gpw56"]
 [ext_resource type="Texture2D" uid="uid://dvn263cxs1kkd" path="res://Asset/Pics/UI_Phone/NSZ_Press.png" id="25_o3xku"]
+[ext_resource type="Texture2D" uid="uid://cv3bf7obbja5o" path="res://Asset/Pics/UI_Phone/Phone.png" id="26_rw3lg"]
+[ext_resource type="Script" path="res://Scenes/Player/phone_visible.gd" id="27_kjwab"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4a211"]
 atlas = ExtResource("2_asxgp")
@@ -282,6 +284,14 @@ animations = [{
 radius = 5.0
 height = 22.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x0boo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dwjpe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cq406"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_exd01"]
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 279
 script = ExtResource("1_1knux")
@@ -370,44 +380,62 @@ one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="MoveLeft" type="TouchScreenButton" parent="CanvasLayer"]
+[node name="CanvasGroup" type="CanvasGroup" parent="CanvasLayer"]
+unique_name_in_owner = true
+
+[node name="MoveLeft" type="TouchScreenButton" parent="CanvasLayer/CanvasGroup"]
 position = Vector2(93, 864)
 texture_normal = ExtResource("12_ac5j7")
 texture_pressed = ExtResource("13_2bund")
 action = "move_left"
 
-[node name="MoveRight" type="TouchScreenButton" parent="CanvasLayer"]
+[node name="MoveRight" type="TouchScreenButton" parent="CanvasLayer/CanvasGroup"]
 position = Vector2(298, 868)
 texture_normal = ExtResource("14_1mbfh")
 texture_pressed = ExtResource("15_y0how")
 action = "move_right"
 
-[node name="MoveUp" type="TouchScreenButton" parent="CanvasLayer"]
+[node name="MoveUp" type="TouchScreenButton" parent="CanvasLayer/CanvasGroup"]
 position = Vector2(1535, 678)
 texture_normal = ExtResource("16_a3wqw")
 texture_pressed = ExtResource("17_g1kvx")
 action = "jump"
 
-[node name="MoveDown" type="TouchScreenButton" parent="CanvasLayer"]
+[node name="MoveDown" type="TouchScreenButton" parent="CanvasLayer/CanvasGroup"]
 position = Vector2(1540, 868)
 texture_normal = ExtResource("18_yqk2q")
 texture_pressed = ExtResource("19_mu5rg")
 action = "down"
 
-[node name="Attack2" type="TouchScreenButton" parent="CanvasLayer"]
+[node name="Attack2" type="TouchScreenButton" parent="CanvasLayer/CanvasGroup"]
 position = Vector2(1713, 768)
 texture_normal = ExtResource("20_nrr18")
 texture_pressed = ExtResource("21_7dmjf")
 action = "attack2"
 
-[node name="TurnRight" type="TouchScreenButton" parent="CanvasLayer"]
+[node name="TurnRight" type="TouchScreenButton" parent="CanvasLayer/CanvasGroup"]
 position = Vector2(1549, 351)
 texture_normal = ExtResource("22_gorti")
 texture_pressed = ExtResource("23_1ltrj")
 action = "turn_right"
 
-[node name="TurnLeft" type="TouchScreenButton" parent="CanvasLayer"]
+[node name="TurnLeft" type="TouchScreenButton" parent="CanvasLayer/CanvasGroup"]
 position = Vector2(1727, 353)
 texture_normal = ExtResource("24_gpw56")
 texture_pressed = ExtResource("25_o3xku")
 action = "turn_left"
+
+[node name="PhoneVisible" type="Button" parent="CanvasLayer"]
+offset_right = 137.0
+offset_bottom = 136.0
+theme_override_icons/icon = ExtResource("26_rw3lg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x0boo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dwjpe")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cq406")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_exd01")
+icon = ExtResource("26_rw3lg")
+flat = true
+icon_alignment = 1
+script = ExtResource("27_kjwab")
+
+[connection signal="pressed" from="CanvasLayer/PhoneVisible" to="CanvasLayer/PhoneVisible" method="_on_pressed"]
