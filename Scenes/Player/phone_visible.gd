@@ -4,7 +4,6 @@ var show:Texture2D=preload("res://Asset/Pics/UI_Phone/Phone.png")
 var hide:Texture2D=preload("res://Asset/Pics/UI_Phone/Phone_Pressed.png")
 
 func _on_pressed() -> void:
-	print("yidianji")
 	%CanvasGroup.visible=!%CanvasGroup.visible
 	if %CanvasGroup.visible:
 		self.icon=show

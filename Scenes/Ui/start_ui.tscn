@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlqkt4nobjp6n"]
+[gd_scene load_steps=7 format=3 uid="uid://dlqkt4nobjp6n"]
 
 [ext_resource type="Theme" uid="uid://c78axvp43v5yl" path="res://Data/Theme/start_ui_theme.tres" id="1_e3nsy"]
 [ext_resource type="Script" path="res://Scenes/Ui/start_ui.gd" id="2_hstqr"]
 [ext_resource type="Script" path="res://Scenes/Ui/AnimationComponent.gd" id="2_hvv3s"]
+[ext_resource type="Texture2D" uid="uid://egwqcyactcrg" path="res://Asset/Pics/Level3Bg.png" id="3_t3t2m"]
 [ext_resource type="PackedScene" uid="uid://dg1i5muyqauf5" path="res://Scenes/Module/LightBackground/LightBackground.tscn" id="4_rcgkb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ff4s"]
@@ -17,6 +18,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_e3nsy")
 script = ExtResource("2_hstqr")
+
+[node name="Level3Bg" type="Sprite2D" parent="."]
+position = Vector2(967, 545.5)
+scale = Vector2(1.07031, 1.05762)
+texture = ExtResource("3_t3t2m")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
