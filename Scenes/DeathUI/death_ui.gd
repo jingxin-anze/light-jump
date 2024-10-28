@@ -9,6 +9,7 @@ func _ready() -> void:
 	t.tween_property(self,"modulate:a",1,5)
 	if Global.frog_on_strike:
 		%YouDie.text="青蛙罢工了"
+		Global.frog_on_strike = false
 
 
 func _on_return_achieve_point_pressed() -> void:
