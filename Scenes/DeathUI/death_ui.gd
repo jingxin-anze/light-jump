@@ -12,7 +12,6 @@ func _ready() -> void:
 
 
 func _on_return_achieve_point_pressed() -> void:
-	print(data.level)
 	match data.level:
 		"level1":
 			get_tree().change_scene_to_file("res://Scenes/Level1/level_1.tscn")

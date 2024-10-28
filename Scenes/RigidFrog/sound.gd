@@ -14,4 +14,5 @@ func _on_body_exited(_body: Node2D) -> void:
 		
 func _physics_process(delta: float) -> void:
 	if is_instance_valid(audio):
-		audio.pitch_scale=0.6
+		if audio.pitch_scale!=0.6:
+			audio.pitch_scale=0.6

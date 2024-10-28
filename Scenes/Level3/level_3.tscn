@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://cxrq21acmfrxj"]
+[gd_scene load_steps=49 format=4 uid="uid://cxrq21acmfrxj"]
 
 [ext_resource type="PackedScene" uid="uid://c4ajgw6w6y7ra" path="res://Scenes/NormalLevel/normal_level.tscn" id="1_6x0qj"]
 [ext_resource type="PackedScene" uid="uid://xneumqgnss1q" path="res://Scenes/IceGround/ice_ground.tscn" id="2_657p4"]
@@ -24,6 +24,15 @@
 [ext_resource type="Script" path="res://Scenes/Level3/achieve_points.gd" id="20_8v6xo"]
 [ext_resource type="Script" path="res://Scenes/Level3/loder.gd" id="20_mx5ni"]
 [ext_resource type="Script" path="res://Scenes/Level2/torch.gd" id="22_vif55"]
+
+[sub_resource type="Gradient" id="Gradient_5a04v"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t3uxa"]
+gradient = SubResource("Gradient_5a04v")
+fill = 2
+fill_from = Vector2(0.5, 0.463675)
+fill_to = Vector2(0.946581, 0.17094)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3gj3"]
 size = Vector2(20, 296)
@@ -100,11 +109,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_kxuqv"]
+[sub_resource type="Gradient" id="Gradient_55jxo"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_kf4n5"]
-gradient = SubResource("Gradient_kxuqv")
+gradient = SubResource("Gradient_55jxo")
 fill = 1
 fill_from = Vector2(0.477064, 0.426605)
 fill_to = Vector2(0.852564, 0.119658)
@@ -133,8 +142,7 @@ metadata/_edit_lock_ = true
 unique_name_in_owner = true
 self_modulate = Color(0, 0, 0, 0)
 z_index = 2
-position = Vector2(0, -5)
-scale = Vector2(30.7677, -7.80901)
+position = Vector2(-1295, -5)
 texture = ExtResource("12_y3s04")
 
 [node name="IceGrounds" type="Node2D" parent="." index="2"]
@@ -147,6 +155,12 @@ scale = Vector2(765.002, -23.2813)
 [node name="IceGround5" parent="IceGrounds" index="1" instance=ExtResource("2_657p4")]
 position = Vector2(2855.5, -402.25)
 scale = Vector2(347, 16.5)
+
+[node name="PointLight2D2" type="PointLight2D" parent="IceGrounds/IceGround5" index="3"]
+position = Vector2(0.0100867, 0.0151513)
+scale = Vector2(0.0173811, 0.0246212)
+color = Color(0.619608, 1, 1, 1)
+texture = SubResource("GradientTexture2D_t3uxa")
 
 [node name="IceGround7" parent="IceGrounds" index="2" instance=ExtResource("2_657p4")]
 position = Vector2(419.378, -339.001)
@@ -205,13 +219,31 @@ scale = Vector2(53.7188, 394.438)
 position = Vector2(2520.01, -780.778)
 scale = Vector2(96.4297, 25.5547)
 
+[node name="PointLight2D3" type="PointLight2D" parent="IceGrounds/IceGround24" index="3"]
+position = Vector2(0.0100867, 0.0151513)
+scale = Vector2(0.0173811, 0.0246212)
+color = Color(0.619608, 1, 1, 1)
+texture = SubResource("GradientTexture2D_t3uxa")
+
 [node name="IceGround25" parent="IceGrounds" index="16" instance=ExtResource("2_657p4")]
 position = Vector2(2316.01, -852.195)
 scale = Vector2(75.2151, 24.3887)
 
+[node name="PointLight2D3" type="PointLight2D" parent="IceGrounds/IceGround25" index="3"]
+position = Vector2(0.0100867, 0.0151513)
+scale = Vector2(0.0173811, 0.0246212)
+color = Color(0.619608, 1, 1, 1)
+texture = SubResource("GradientTexture2D_t3uxa")
+
 [node name="IceGround26" parent="IceGrounds" index="17" instance=ExtResource("2_657p4")]
 position = Vector2(2198.2, -780.598)
 scale = Vector2(113.608, 23.1943)
+
+[node name="PointLight2D3" type="PointLight2D" parent="IceGrounds/IceGround26" index="3"]
+position = Vector2(0.0100867, 0.0151513)
+scale = Vector2(0.0173811, 0.0246212)
+color = Color(0.619608, 1, 1, 1)
+texture = SubResource("GradientTexture2D_t3uxa")
 
 [node name="IceGround27" parent="IceGrounds" index="18" instance=ExtResource("2_657p4")]
 position = Vector2(1940.01, -756.25)
@@ -233,13 +265,31 @@ scale = Vector2(373, -110)
 position = Vector2(1408.51, -973)
 scale = Vector2(159, -22.875)
 
+[node name="PointLight2D3" type="PointLight2D" parent="IceGrounds/IceGround32" index="3"]
+position = Vector2(0.0100867, 0.0151513)
+scale = Vector2(0.0173811, 0.0246212)
+color = Color(0.619608, 1, 1, 1)
+texture = SubResource("GradientTexture2D_t3uxa")
+
 [node name="IceGround33" parent="IceGrounds" index="23" instance=ExtResource("2_657p4")]
 position = Vector2(1789, -1068)
 scale = Vector2(129, -22.7187)
 
+[node name="PointLight2D3" type="PointLight2D" parent="IceGrounds/IceGround33" index="3"]
+position = Vector2(0.0100867, 0.0151513)
+scale = Vector2(0.0173811, 0.0246212)
+color = Color(0.619608, 1, 1, 1)
+texture = SubResource("GradientTexture2D_t3uxa")
+
 [node name="IceGround34" parent="IceGrounds" index="24" instance=ExtResource("2_657p4")]
 position = Vector2(1484.88, -1139.79)
 scale = Vector2(136.246, -24.4289)
+
+[node name="PointLight2D3" type="PointLight2D" parent="IceGrounds/IceGround34" index="3"]
+position = Vector2(0.0100867, 0.0151513)
+scale = Vector2(0.0173811, 0.0246212)
+color = Color(0.619608, 1, 1, 1)
+texture = SubResource("GradientTexture2D_t3uxa")
 
 [node name="IceGround35" parent="IceGrounds" index="25" instance=ExtResource("2_657p4")]
 position = Vector2(965.988, -733)
@@ -321,7 +371,7 @@ position = Vector2(508, 539)
 position = Vector2(1636, 490)
 
 [node name="Crystal5" parent="Envir" index="5" instance=ExtResource("4_5x8kr")]
-position = Vector2(2454, 537)
+position = Vector2(2190, 560)
 
 [node name="Crystal6" parent="Envir" index="6" instance=ExtResource("4_5x8kr")]
 position = Vector2(137, -494)
@@ -372,6 +422,15 @@ position = Vector2(1692, -899)
 
 [node name="Crystal18" parent="Envir" index="22" instance=ExtResource("4_5x8kr")]
 position = Vector2(1718, -1091)
+
+[node name="Crystal19" parent="Envir" index="23" instance=ExtResource("4_5x8kr")]
+position = Vector2(2407, 585)
+
+[node name="Crystal20" parent="Envir" index="24" instance=ExtResource("4_5x8kr")]
+position = Vector2(2909, 514)
+
+[node name="Crystal21" parent="Envir" index="25" instance=ExtResource("4_5x8kr")]
+position = Vector2(3139, 537)
 
 [node name="Bats" type="Node2D" parent="Props" index="0"]
 
@@ -555,6 +614,9 @@ limit_top = -1330
 limit_right = 3600
 limit_bottom = 720
 script = null
+
+[node name="PointLight2D" parent="Player/Torch/Node" index="2"]
+position = Vector2(7.00012, -0.000294685)
 
 [node name="Torch" type="Area2D" parent="Player/Torch" index="1"]
 position = Vector2(-21, -14)

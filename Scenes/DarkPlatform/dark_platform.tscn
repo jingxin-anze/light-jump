@@ -74,7 +74,7 @@ min_value = -1.0
 _data = [Vector2(0.0291859, -0.500906), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_njley"]
+[sub_resource type="CurveTexture" id="CurveTexture_f5i7f"]
 curve = SubResource("Curve_s3om5")
 
 [sub_resource type="Curve" id="Curve_5xiji"]
@@ -82,7 +82,7 @@ max_value = 2.0
 _data = [Vector2(0.0168971, 0.107911), 0.0, 0.0, 0, 0, Vector2(0.482335, 1.17521), 0.0, 0.0, 0, 0, Vector2(0.99232, 1.88612), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_kkvb3"]
+[sub_resource type="CurveTexture" id="CurveTexture_s38lm"]
 curve = SubResource("Curve_5xiji")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bu3wc"]
@@ -91,10 +91,10 @@ emission_shape = 3
 emission_box_extents = Vector3(35, 20, 1)
 gravity = Vector3(0, -10, 0)
 scale_max = 2.0
-scale_curve = SubResource("CurveTexture_kkvb3")
+scale_curve = SubResource("CurveTexture_s38lm")
 hue_variation_min = 0.2
 hue_variation_max = 0.6
-hue_variation_curve = SubResource("CurveTexture_njley")
+hue_variation_curve = SubResource("CurveTexture_f5i7f")
 
 [sub_resource type="Environment" id="Environment_k5u53"]
 background_mode = 3

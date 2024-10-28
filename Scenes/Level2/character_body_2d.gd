@@ -45,8 +45,8 @@ func idle_state():
 		first_reading=true
 		first_idle=false
 		#销毁播放器
-		if is_instance_valid(audio):
-			AudioPlayer.destroy(audio)
+		#if is_instance_valid(audio):
+			#AudioPlayer.destroy(audio)
 		#重置飞远
 		is_flay_away=false
 		#等待五秒切换到reading
@@ -62,7 +62,7 @@ func flay_state(dt):
 	#若不飞远，则飞向玩家
 	if not is_flay_away:
 		#创建播放器并播放
-		audio=AudioPlayer.play(BAT,true,false,4)
+		#audio=AudioPlayer.play(BAT,true,false,4)
 		#获得玩家方向
 		dir=-(self.position-player.position).normalized()
 		#调整翻转
@@ -90,8 +90,8 @@ func reading_state():
 		#将reading设为false
 		first_reading=false
 		#销毁播放器
-		if is_instance_valid(audio):
-			AudioPlayer.destroy(audio)
+		#if is_instance_valid(audio):
+			#AudioPlayer.destroy(audio)
 		#等待1.5秒进入flay状态
 		await get_tree().create_timer(1.5).timeout
 		state=State.flay
@@ -117,3 +117,10 @@ func _on_body_body_entered(body: Node2D) -> void:
 	#if body.name=="Player":
 		#state=State.flay
 		#is_flay_away=false
+
+
+func _on_timer_timeout() -> void:
+	randomize()
+	var randi:int=randi_range(0,3)
+	if	is_equal_approx(randi,0):
+		audio=AudioPlayer.play(BAT,false,true,4)

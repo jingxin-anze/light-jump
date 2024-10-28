@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://xneumqgnss1q"]
+[gd_scene load_steps=6 format=3 uid="uid://xneumqgnss1q"]
 
 [ext_resource type="Script" path="res://Scenes/Level3/ice_ground.gd" id="1_hyqla"]
 
@@ -10,8 +10,23 @@ size = Vector2(1.00305, 0.977011)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lxgui"]
 size = Vector2(1.0128, 1.09195)
 
+[sub_resource type="Environment" id="Environment_45xv2"]
+background_mode = 3
+background_color = Color(0.91, 0.881183, 0.0455, 1)
+glow_enabled = true
+glow_levels/4 = 1.62
+glow_levels/5 = 2.26
+glow_normalized = true
+glow_mix = 0.071
+glow_bloom = 0.05
+glow_blend_mode = 4
+glow_hdr_threshold = 0.45
+glow_hdr_scale = 0.95
+glow_hdr_luminance_cap = 30.86
+glow_map_strength = 1.0
+
 [node name="IceGround" type="Sprite2D"]
-modulate = Color(0.780392, 1, 1, 1)
+self_modulate = Color(0.78, 1, 1, 1)
 scale = Vector2(820.5, 87)
 texture = SubResource("CanvasTexture_lsjq4")
 script = ExtResource("1_hyqla")
@@ -32,6 +47,9 @@ position = Vector2(0.00274223, 0.0172414)
 position = Vector2(-0.00487508, -0.045977)
 shape = SubResource("RectangleShape2D_lxgui")
 debug_color = Color(0.854298, 0.318687, 0.486206, 0.42)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_45xv2")
 
 [connection signal="body_entered" from="IceGroundArea" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="IceGroundArea" to="." method="_on_body_exited"]

@@ -100,4 +100,9 @@ position = Vector2(1, -11)
 shape = SubResource("CircleShape2D_8eeyf")
 debug_color = Color(0.715876, 0.457144, 0.425626, 0.42)
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
 [connection signal="body_entered" from="Body" to="." method="_on_body_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
