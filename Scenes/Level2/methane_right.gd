@@ -9,6 +9,6 @@ func _on_body_entered(body: Node2D) -> void:
 		data.achieve_point["player_position"]=self.position
 		data.achieve_point["player_body_scale"]=player.get_node("Body").scale.x
 		ResourceSaver.save(data,"user://game_data.tres")
-		lable=Label.new()
-		add_child(lable)
-		lable.text="到达存档点，已自动存档。"
+		#lable=Label.new()
+		#add_child(lable)
+		#lable.text="到达存档点，已自动存档。"

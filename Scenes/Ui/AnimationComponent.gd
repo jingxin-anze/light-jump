@@ -127,6 +127,8 @@ func on_enter() -> void:
 		add_tween(default_values, parallel_animations, enter_time,enter_delay, enter_transition, enter_easing, true)
 
 func add_tween(values: Dictionary, parallel: bool, second: float, delay: float, transition: Tween.TransitionType, easing: Tween.EaseType, entering: bool) -> void:
+	if !is_inside_tree():
+		return # 确保节点在场景树中才执行
 	if get_tree():
 		var tween = get_tree().create_tween()
 		tween.set_parallel(parallel)

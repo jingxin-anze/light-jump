@@ -8,9 +8,18 @@ var author=preload("res://Scenes/AuthorAndTanks/author_and_thanks.tscn")
 @onready var exit: Button = %Exit
 
 func _ready() -> void:
-	data=( ResourceLoader.load("user://game_data.tres") as GameData) if (ResourceLoader.load("user://game_data.tres")) else GameData.new()
-	contine.disabled=true if data.is_contine_disabled else false
-	ResourceSaver.save(data,"user://game_data.tres")
+	#data=( ResourceLoader.load("user://game_data.tres") as GameData) if (ResourceLoader.load("user://game_data.tres")) else GameData.new()
+	#contine.disabled=true if data.is_contine_disabled else false
+	#ResourceSaver.save(data,"user://game_data.tres")
+	#AudioPlayer.clear()
+	# 检查并加载游戏数据
+	var game_data_path = "user://game_data.tres"
+	if FileAccess.file_exists(game_data_path):
+		data = ResourceLoader.load(game_data_path) as GameData
+	else:
+		data = GameData.new()
+		ResourceSaver.save(data, game_data_path)
+	contine.disabled = data.is_contine_disabled
 	AudioPlayer.clear()
 
 func _on_start_pressed() -> void:
